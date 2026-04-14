@@ -83,12 +83,18 @@
     /* Ocultar elementos para animação do GSAP */
     .gsap-hide { opacity: 0; visibility: hidden; }
 
-    /* Fix para o text-shadow expandido: bounding box full-width para proteger caudas da métrica tipográfica e fade out suave apenas vertical */
+    /* Fix para o text-shadow expandido: reativando o fade-out inteligente isolado apenas no flanco esquerdo para proteger o Glow do "i", mantendo a direita impenetrável */
     .reveal-line-wrapper {
-      padding: 0.4em 0;
-      margin: -0.4em 0;
-      mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
-      -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+      padding: 0.4em 0 0.4em 0.8em;
+      margin: -0.4em 0 -0.4em -0.8em;
+      mask-image: 
+        linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%),
+        linear-gradient(to right, transparent 0%, black 5%, black 100%);
+      mask-composite: intersect;
+      -webkit-mask-image: 
+        linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%),
+        linear-gradient(to right, transparent 0%, black 5%, black 100%);
+      -webkit-mask-composite: source-in;
     }
   </style>
 </head>
