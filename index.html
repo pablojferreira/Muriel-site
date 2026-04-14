@@ -190,6 +190,60 @@
     .ds-nav-links::-webkit-scrollbar { display: none; }
     .ds-nav-links a { font-size:0.75rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em; color:#A0B3A8; padding: 0.45rem 0.85rem; border-radius: 9999px; white-space: nowrap; transition: color 0.3s ease, background 0.3s ease; text-decoration:none; }
     .ds-nav-links a:hover { color:#B6FF3C; background: rgba(182,255,60,0.08); }
+
+    /* ───── Global High-End Watermark ───── */
+    .bg-watermark {
+      position: fixed;
+      inset: 0;
+      z-index: 5;
+      pointer-events: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .watermark-img {
+      width: 63vw;
+      max-width: 672px;
+      opacity: 0.05;
+      filter: drop-shadow(0 0 30px rgba(182,255,60,0.05));
+      animation: watermark-pulse 10s ease-in-out infinite;
+      position: relative;
+      object-fit: contain;
+    }
+    @keyframes watermark-pulse {
+      0%, 100% { opacity: 0.04; filter: drop-shadow(0 0 0px rgba(182,255,60,0)); transform: scale(1); }
+      50% { opacity: 0.08; filter: drop-shadow(0 0 60px rgba(182,255,60,0.15)); transform: scale(1.02); }
+    }
+    .watermark-shimmer {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 63vw;
+      max-width: 672px;
+      height: 100vh;
+      transform: translate(-50%, -50%);
+      background: linear-gradient(
+        105deg,
+        transparent 0%,
+        transparent 45%,
+        rgba(255,255,255,0.08) 50%,
+        transparent 55%,
+        transparent 100%
+      );
+      background-size: 200% 100%;
+      animation: watermark-sweep 12s infinite;
+      mix-blend-mode: overlay;
+      -webkit-mask-image: url('Muriel_logo.png');
+      -webkit-mask-size: contain;
+      -webkit-mask-position: center;
+      -webkit-mask-repeat: no-repeat;
+      pointer-events: none;
+    }
+    @keyframes watermark-sweep {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
   </style>
 </head>
 <body class="selection:bg-[#B6FF3C] selection:text-black">
@@ -219,6 +273,12 @@
       <div class="bg-gradient"></div>
       <div class="bg-light"></div>
       <canvas class="bg-noise"></canvas>
+    </div>
+
+    <!-- Global Watermark Layer (Atrás do grid / Na frente do BG opaco) -->
+    <div class="bg-watermark">
+      <img src="Muriel_logo.png" alt="" class="watermark-img">
+      <div class="watermark-shimmer"></div>
     </div>
 
     <div class="max-w-[95rem] mx-auto px-6 lg:px-12 w-full relative z-10 grid lg:grid-cols-12 gap-10 lg:gap-12 xl:gap-16 items-stretch">
