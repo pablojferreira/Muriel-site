@@ -168,10 +168,10 @@
       <canvas class="bg-noise"></canvas>
     </div>
 
-    <div class="max-w-[90rem] mx-auto px-6 lg:px-12 w-full relative z-10 grid lg:grid-cols-12 gap-10 lg:gap-12 xl:gap-16 items-center">
+    <div class="max-w-[95rem] mx-auto px-6 lg:px-12 w-full relative z-10 grid lg:grid-cols-12 gap-10 lg:gap-12 xl:gap-16 items-stretch">
       
-      <!-- Coluna da Esquerda: Textos (Ocupa 6 colunas para evitar o natural breaking de palavras como "Transformamos o") -->
-      <div class="lg:col-span-6 flex flex-col items-start gap-5 z-20">
+      <!-- Coluna da Esquerda: Textos (Ocupa 5 colunas, altura flexível empurrando os extremos) -->
+      <div class="lg:col-span-5 flex flex-col items-start justify-between z-20 py-1">
         
         <!-- Headline -->
         <h1 class="gsap-headline w-full font-semibold tracking-tighter leading-[1.05] text-white glow-text-soft m-0 whitespace-nowrap text-[clamp(1.5rem,3.4vw,3.5rem)]">
@@ -183,8 +183,8 @@
         </h1>
         
         <!-- Subtitle -->
-        <p class="gsap-element text-base md:text-lg text-[#A0B3A8] font-light leading-relaxed max-w-[95%] m-0">
-          Documentários e sistemas narrativos para marcas que desejam construir presença, inspirar confiança e consolidar legitimidade.
+        <p class="gsap-element text-[#A0B3A8] font-light leading-relaxed m-0 text-base md:text-lg lg:text-[1.1rem] xl:text-lg w-[110%] lg:w-[115%] max-w-[600px]">
+          Documentários e sistemas narrativos para marcas que desejam<br class="hidden sm:block" /> construir presença, inspirar confiança e consolidar legitimidade.
         </p>
 
         <!-- Botões -->
@@ -204,8 +204,8 @@
         </div>
       </div>
 
-      <!-- Coluna da Direita: Mídia -->
-      <div class="lg:col-span-6 relative w-full z-10 flex items-center justify-center gsap-media">
+      <!-- Coluna da Direita: Mídia (Aumentado para 7 colunas em aspecto 16:9) -->
+      <div class="lg:col-span-7 relative w-full z-10 flex items-center justify-end gsap-media h-full">
         <!-- Floating orbital element decorator -->
         <div class="hidden xl:block absolute -top-5 -right-5 w-20 h-20 pointer-events-none z-20">
           <div class="absolute inset-0 rounded-full border border-[#B6FF3C]/20" style="animation: spin 18s linear infinite;"></div>
