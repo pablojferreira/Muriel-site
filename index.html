@@ -210,13 +210,6 @@
         <!-- Wrapper referencial para colar o Decorator no Showreel -->
         <div class="relative w-full aspect-video">
           
-          <!-- Floating orbital element decorator perfeitamente no vértice -->
-          <div class="hidden xl:block absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 w-20 h-20 pointer-events-none z-20">
-            <div class="absolute inset-0 rounded-full border border-[#B6FF3C]/20" style="animation: spin 18s linear infinite;"></div>
-            <div class="absolute inset-2 rounded-full border border-[#00FFC6]/20" style="animation: spin 14s linear infinite reverse;"></div>
-            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-[#B6FF3C] glow-btn"></div>
-          </div>
-
           <!-- Video Showreel -->
           <div class="absolute inset-0 w-full h-full video-wrapper group shadow-[0_25px_60px_-15px_rgba(0,0,0,0.8),0_0_80px_-20px_rgba(182,255,60,0.15)]">
           <!-- Play hint hover overlay -->
@@ -290,16 +283,7 @@
         delay: 0.1
       });
 
-      // 1. Reveal do Video
-      tl.to('.gsap-media', {
-        scale: 1,
-        opacity: 1,
-        rotationX: 0,
-        duration: 1.6,
-        ease: "power4.out"
-      });
-
-      // 2. Reveal da Headline (linhas subindo)
+      // 1. Reveal da Headline (linhas subindo)
       const lineSpans = document.querySelectorAll('.gsap-headline .reveal-line-wrapper span');
       tl.to(lineSpans, {
         y: "0%",
@@ -307,22 +291,31 @@
         duration: 1.1,
         stagger: 0.12,
         ease: "power4.out"
-      }, "-=1.2");
+      });
 
-      // 3. Stagger dos demais elementos (Eyebrow, Subtitle, Botões)
+      // 2. Stagger dos demais elementos da esquerda (Subtitle, Botões)
       tl.to('.gsap-element', {
         y: 0,
         opacity: 1,
         duration: 1,
         stagger: 0.15,
         ease: "power3.out"
+      }, "-=0.6");
+
+      // 3. Reveal do Video
+      tl.to('.gsap-media', {
+        scale: 1,
+        opacity: 1,
+        rotationX: 0,
+        duration: 1.6,
+        ease: "power4.out"
       }, "-=0.8");
 
       // 4. Reveal do scroll hint
       tl.to('.gsap-scroll-hint', {
         opacity: 0.6,
         duration: 1
-      }, "-=0.2");
+      }, "-=0.4");
 
     });
   </script>
