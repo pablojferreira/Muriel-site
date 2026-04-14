@@ -181,11 +181,38 @@
       from { transform: translate(-50%,-50%) rotate(0deg); }
       to { transform: translate(-50%,-50%) rotate(360deg); }
     }
+
+    /* ───── Top Nav (Design System) ───── */
+    .glass-nav { background: rgba(5, 8, 7, 0.75); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(182,255,60,0.12); }
+    .ds-top-nav { position: fixed; top:0; width:100%; z-index:50; }
+    .ds-top-nav-inner { margin: 0 auto; height: 5rem; display:flex; align-items:center; justify-content:space-between; gap: 1rem; }
+    .ds-nav-links { display:flex; align-items:center; gap:0.5rem; overflow-x: auto; -ms-overflow-style: none; scrollbar-width: none; }
+    .ds-nav-links::-webkit-scrollbar { display: none; }
+    .ds-nav-links a { font-size:0.75rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em; color:#A0B3A8; padding: 0.45rem 0.85rem; border-radius: 9999px; white-space: nowrap; transition: color 0.3s ease, background 0.3s ease; text-decoration:none; }
+    .ds-nav-links a:hover { color:#B6FF3C; background: rgba(182,255,60,0.08); }
   </style>
 </head>
 <body class="selection:bg-[#B6FF3C] selection:text-black">
   
-  <main class="relative min-h-screen flex items-center pt-20 pb-16 overflow-hidden cinematic-bg scanline" id="hero">
+  <!-- Navegação Topo (Fixa Responsiva) -->
+  <nav class="ds-top-nav glass-nav">
+    <div class="ds-top-nav-inner max-w-[95rem] w-full px-6 lg:px-12">
+      <!-- Logo Esquerda -->
+      <a href="#" class="shrink-0 group">
+        <img src="Muriel_nome.png" alt="Muriel Logo" class="h-5 md:h-6 opacity-90 group-hover:opacity-100 group-hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.4)] transition-all duration-300">
+      </a>
+
+      <!-- Links Direita -->
+      <div class="ds-nav-links">
+        <a href="#documenta" class="text-center leading-[1.15] flex flex-col justify-center">Muriel<br>Documenta</a>
+        <a href="#pos" class="text-center leading-[1.15] flex flex-col justify-center">Muriel<br>Pós</a>
+        <a href="#casulo" class="text-center leading-[1.15] flex flex-col justify-center">Muriel<br>Casulo</a>
+        <a href="#quem-somos" class="text-center leading-[1.15] flex flex-col justify-center">Quem<br>Somos</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="relative min-h-screen flex items-center pt-28 pb-16 overflow-hidden cinematic-bg scanline" id="hero">
     
     <!-- Cinematic Background -->
     <div class="hero-bg">
