@@ -1,0 +1,1783 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Design System | Hemesh Editor — Cinematic Video Editor</title>
+
+  <!-- Same assets as original -->
+  <script src="assets/resource_3fa48481346f.es"></script>
+  <script src="assets/iconify-icon_e19829e7f0e8.js"></script>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="assets/css2_19fd9cc6b396.css" rel="stylesheet"/>
+
+  <!-- Exact same inline styles from original -->
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .glass-card { background: rgba(10, 25, 18, 0.6); backdrop-filter: blur(12px); border: 1px solid rgba(182, 255, 60, 0.15); }
+    .glow-text { text-shadow: 0 0 20px rgba(182, 255, 60, 0.6); }
+    .glow-btn { box-shadow: 0 0 20px rgba(182, 255, 60, 0.4); }
+    .glow-btn:hover { box-shadow: 0 0 30px rgba(182, 255, 60, 0.8); }
+    .sweep-overlay { background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent); }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    /* Cinematic background animation */
+    @keyframes subtlePan { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+    .cinematic-bg { background: radial-gradient(circle at center, #0B1410 0%, #050807 100%); background-size: 200% 200%; animation: subtlePan 20s ease infinite; }
+
+    /* ─── Design System Nav ───────────────────────────── */
+    .ds-top-nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 50;
+      background: rgba(5, 8, 7, 0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(182,255,60,0.12);
+    }
+    .ds-top-nav-inner {
+      max-width: 72rem;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      height: 3.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0;
+      justify-content: space-between;
+    }
+    .ds-nav-brand {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #B6FF3C;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-shrink: 0;
+    }
+    .ds-nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.125rem;
+      overflow-x: auto;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    .ds-nav-links::-webkit-scrollbar { display: none; }
+    .ds-nav-links a {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #A0B3A8;
+      padding: 0.35rem 0.65rem;
+      border-radius: 0.375rem;
+      white-space: nowrap;
+      transition: color 0.2s, background 0.2s;
+      text-decoration: none;
+    }
+    .ds-nav-links a:hover {
+      color: #B6FF3C;
+      background: rgba(182,255,60,0.07);
+    }
+
+    /* ─── Design System Section Wrappers ───────────────── */
+    .ds-section {
+      padding: 6rem 0 4rem;
+    }
+    .ds-section-header {
+      margin-bottom: 3rem;
+    }
+    .ds-section-label {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: #B6FF3C;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .ds-section-label::after {
+      content: '';
+      display: block;
+      height: 1px;
+      width: 3rem;
+      background: rgba(182,255,60,0.3);
+    }
+    .ds-section-title {
+      font-size: clamp(1.5rem, 3vw, 2.25rem);
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      color: #fff;
+      margin: 0;
+    }
+    .ds-section-subtitle {
+      font-size: 0.813rem;
+      color: #A0B3A8;
+      margin-top: 0.4rem;
+    }
+    .ds-divider {
+      border: none;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      margin: 0;
+    }
+
+    /* ─── Typography Spec Table ────────────────────────── */
+    .typo-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .typo-table tr {
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .typo-table tr:last-child { border-bottom: none; }
+    .typo-table td {
+      padding: 1.25rem 0;
+      vertical-align: middle;
+    }
+    .typo-label {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #6B7F75;
+      width: 7rem;
+      flex-shrink: 0;
+    }
+    .typo-spec {
+      font-size: 0.65rem;
+      color: #6B7F75;
+      text-align: right;
+      white-space: nowrap;
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* ─── Color Swatches ───────────────────────────────── */
+    .swatch-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr));
+      gap: 1rem;
+    }
+    .swatch-card {
+      border-radius: 0.75rem;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.07);
+    }
+    .swatch-color {
+      height: 5rem;
+      width: 100%;
+    }
+    .swatch-info {
+      padding: 0.6rem 0.75rem;
+      background: rgba(10,25,18,0.6);
+    }
+    .swatch-name {
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: #fff;
+    }
+    .swatch-hex {
+      font-size: 0.6rem;
+      color: #6B7F75;
+      font-variant-numeric: tabular-nums;
+      margin-top: 0.1rem;
+    }
+
+    /* Gradient swatches */
+    .swatch-color.grad-primary   { background: linear-gradient(to right, #B6FF3C, #00FFC6); }
+    .swatch-color.grad-secondary { background: linear-gradient(to right, #fff, #A0B3A8, #fff); }
+    .swatch-color.grad-text      { background: linear-gradient(to bottom, #0B1410 0%, #050807 100%); }
+    .swatch-color.grad-glow-1    { background: radial-gradient(circle at center,#B6FF3C44,transparent 70%); }
+    .swatch-color.grad-glow-2    { background: radial-gradient(circle at center,#00FFC644,transparent 70%); }
+    .swatch-color.grad-sweep     { background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent); }
+
+    /* Surfaces */
+    .surface-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .surface-demo {
+      border-radius: 0.875rem;
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .surface-label-sm {
+      font-size: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #6B7F75;
+    }
+    .surface-name {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #fff;
+    }
+
+    /* ─── Component States Layout ──────────────────────── */
+    .states-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+    .state-cell {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .state-label {
+      font-size: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #6B7F75;
+    }
+
+    /* ─── Motion Gallery ───────────────────────────────── */
+    .motion-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+      gap: 1.5rem;
+    }
+    .motion-card {
+      border-radius: 1rem;
+      border: 1px solid rgba(255,255,255,0.07);
+      padding: 2rem 1.5rem;
+      background: rgba(10,25,18,0.4);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+    .motion-label {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #6B7F75;
+      text-align: center;
+    }
+    .motion-code {
+      font-size: 0.6rem;
+      color: #B6FF3C;
+      background: rgba(182,255,60,0.06);
+      padding: 0.2rem 0.5rem;
+      border-radius: 0.25rem;
+      font-family: 'Courier New', monospace;
+    }
+
+    /* Layout pattern demo boxes */
+    .layout-demo {
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 1rem;
+      overflow: hidden;
+    }
+    .layout-demo-label {
+      font-size: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #6B7F75;
+      padding: 0.5rem 1rem;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .layout-demo-body {
+      padding: 1.5rem;
+    }
+    .mock-block {
+      background: rgba(182,255,60,0.06);
+      border: 1px dashed rgba(182,255,60,0.2);
+      border-radius: 0.375rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.6rem;
+      color: #6B7F75;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    /* Icon grid */
+    .icon-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(6rem, 1fr));
+      gap: 0.75rem;
+    }
+    .icon-cell {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.875rem 0.5rem;
+      border-radius: 0.75rem;
+      border: 1px solid rgba(255,255,255,0.05);
+      background: rgba(10,25,18,0.4);
+      transition: border-color 0.2s, background 0.2s;
+      cursor: default;
+    }
+    .icon-cell:hover {
+      border-color: rgba(182,255,60,0.3);
+      background: rgba(182,255,60,0.05);
+    }
+    .icon-cell-label {
+      font-size: 0.55rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #6B7F75;
+      text-align: center;
+      line-height: 1.3;
+    }
+
+    /* Ping dot (same as hero) */
+    @keyframes ping-anim {
+      75%, 100% { transform: scale(2); opacity: 0; }
+    }
+    .animate-ping { animation: ping-anim 1s cubic-bezier(0,0,0.2,1) infinite; }
+
+    /* Bounce (same as scroll indicator) */
+    @keyframes bounce-anim {
+      0%, 100% { transform: translateY(-25%); animation-timing-function: cubic-bezier(0.8,0,1,1); }
+      50% { transform: none; animation-timing-function: cubic-bezier(0,0,0.2,1); }
+    }
+    .animate-bounce { animation: bounce-anim 1s infinite; }
+
+    /* Fade-in (same as hero stagger) */
+    @keyframes fade-in { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  </style>
+</head>
+
+<body class="bg-[#050807] text-[#FFFFFF] antialiased selection:bg-[#B6FF3C] selection:text-black min-h-screen flex flex-col relative">
+
+<!-- ══════════════════════════════════════════════════════════
+     DESIGN SYSTEM TOP NAV (horizontal anchors)
+═══════════════════════════════════════════════════════════ -->
+<nav class="ds-top-nav">
+  <div class="ds-top-nav-inner">
+    <span class="ds-nav-brand">
+      <span class="w-2 h-2 rounded-full bg-[#B6FF3C] glow-btn"></span>
+      Design System
+    </span>
+    <div class="ds-nav-links">
+      <a href="#section-hero">Hero</a>
+      <a href="#section-typography">Typography</a>
+      <a href="#section-colors">Colors</a>
+      <a href="#section-components">Components</a>
+      <a href="#section-layout">Layout</a>
+      <a href="#section-motion">Motion</a>
+      <a href="#section-icons">Icons</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════════════════════════
+     SECTION 0 — HERO (exact clone, text adapted)
+═══════════════════════════════════════════════════════════ -->
+<section class="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden cinematic-bg" id="section-hero">
+  <!-- Ambient Glow -->
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#B6FF3C] rounded-full blur-[150px] opacity-10 pointer-events-none"></div>
+  <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full glass-card text-xs text-[#B6FF3C] mb-6 animate-[fade-in_1s_ease-out]">
+      <span class="relative flex h-2 w-2">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#B6FF3C] opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-2 w-2 bg-[#B6FF3C]"></span>
+      </span>
+      Living Design System
+    </div>
+    <h1 class="text-5xl md:text-7xl lg:text-8xl font-semibold tracking-tighter leading-tight mb-6 animate-[fade-in_1s_ease-out_0.2s_both]">
+      Hemesh Editor <br/>
+      <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-[#A0B3A8] to-white glow-text text-4xl md:text-6xl">Design System</span>
+    </h1>
+    <p class="text-lg md:text-xl text-[#A0B3A8] max-w-2xl mx-auto mb-10 font-light animate-[fade-in_1s_ease-out_0.4s_both]">
+      A living reference of every token, component, animation, and layout pattern powering this cinematic design.
+    </p>
+    <div class="flex flex-wrap items-center justify-center gap-4 mb-16 animate-[fade-in_1s_ease-out_0.6s_both]">
+      <a class="group relative px-6 py-3 rounded-full border border-[#B6FF3C]/50 text-white text-sm hover:bg-[#B6FF3C]/10 transition-all overflow-hidden flex items-center gap-2" href="#section-components">
+        <iconify-icon class="text-lg" icon="solar:layers-linear"></iconify-icon>
+        <span>View Components</span>
+        <div class="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out sweep-overlay skew-x-12"></div>
+      </a>
+      <a class="group relative px-6 py-3 rounded-full bg-[#B6FF3C] text-black text-sm font-medium hover:scale-105 transition-all glow-btn overflow-hidden flex items-center gap-2" href="#section-typography">
+        <iconify-icon class="text-lg" icon="solar:bolt-linear"></iconify-icon>
+        <span>Typography</span>
+        <div class="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out bg-gradient-to-r from-transparent via-white/50 to-transparent skew-x-12"></div>
+      </a>
+    </div>
+    <!-- Social / Quick Links (exact clone) -->
+    <div class="flex flex-wrap justify-center gap-4 animate-[fade-in_1s_ease-out_0.8s_both]">
+      <a class="group flex items-center gap-2 px-4 py-2 rounded-lg bg-[#B6FF3C] text-black text-xs font-medium hover:scale-105 glow-btn transition-all" href="#section-colors">
+        <iconify-icon class="text-base" icon="solar:palette-round-bold-duotone"></iconify-icon>
+        Colors
+      </a>
+      <a class="group flex items-center gap-2 px-4 py-2 rounded-lg bg-[#B6FF3C] text-black text-xs font-medium hover:scale-105 glow-btn transition-all" href="#section-motion">
+        <iconify-icon class="text-base" icon="solar:magic-stick-3-linear"></iconify-icon>
+        Motion
+      </a>
+      <a class="group flex items-center gap-2 px-4 py-2 rounded-lg bg-[#B6FF3C] text-black text-xs font-medium hover:scale-105 glow-btn transition-all" href="#section-icons">
+        <iconify-icon class="text-base" icon="solar:star-linear"></iconify-icon>
+        Icons
+      </a>
+    </div>
+  </div>
+  <!-- Scroll indicator (exact clone) -->
+  <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50">
+    <span class="text-[10px] uppercase tracking-widest text-[#A0B3A8]">Scroll</span>
+    <iconify-icon class="animate-bounce text-[#B6FF3C]" icon="solar:arrow-down-linear"></iconify-icon>
+  </div>
+</section>
+
+<hr class="ds-divider"/>
+
+
+<!-- ══════════════════════════════════════════════════════════
+     SECTION 1 — TYPOGRAPHY
+═══════════════════════════════════════════════════════════ -->
+<section class="ds-section py-24 relative z-10" id="section-typography">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="ds-section-header">
+      <p class="ds-section-label"><iconify-icon icon="solar:text-underline-linear"></iconify-icon> Section 01</p>
+      <h2 class="ds-section-title">Typography</h2>
+      <p class="ds-section-subtitle">Every text style used in the design — exact classes, no approximations.</p>
+    </div>
+
+    <table class="typo-table">
+      <tbody>
+
+        <!-- H1 -->
+        <tr>
+          <td style="width:7rem; padding-right:1.5rem;">
+            <span class="typo-label">Heading 1</span>
+          </td>
+          <td style="padding-right:1rem;">
+            <!-- Exact class from hero h1 -->
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-semibold tracking-tighter leading-tight" style="font-size:clamp(2rem,5vw,3rem);">
+              Hemesh <br/>
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-[#A0B3A8] to-white glow-text" style="font-size:0.7em;">Design System</span>
+            </h1>
+          </td>
+          <td class="typo-spec" style="width:9rem;">
+            80–96px / tight<br/>
+            <code class="text-[0.55rem] text-[#B6FF3C]">font-semibold tracking-tighter</code>
+          </td>
+        </tr>
+
+        <!-- H2 large (About section) -->
+        <tr>
+          <td style="width:7rem; padding-right:1.5rem;">
+            <span class="typo-label">Heading 2 — Large</span>
+          </td>
+          <td style="padding-right:1rem;">
+            <h2 class="text-3xl md:text-5xl font-semibold tracking-tight">Architect of <span class="text-[#B6FF3C]">Visuals</span></h2>
+          </td>
+          <td class="typo-spec" style="width:9rem;">
+            30–48px / tight<br/>
+            <code class="text-[0.55rem] text-[#B6FF3C]">font-semibold tracking-tight</code>
+          </td>
+        </tr>
+
+        <!-- H2 gradient (Portfolio section) -->
+        <tr>
+          <td style="width:7rem; padding-right:1.5rem;">
+            <span class="typo-label">Heading 2 — Gradient</span>
+          </td>
+          <td style="padding-right:1rem;">
+            <h2 class="text-3xl md:text-5xl font-semibold tracking-tight">Selected <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#B6FF3C] to-[#00FFC6]">Works</span></h2>
+          </td>
+          <td class="typo-spec" style="width:9rem;">
+            30–48px / tight<br/>
+            <code class="text-[0.55rem] text-[#B6FF3C]">bg-gradient-to-r from-[#B6FF3C] to-[#00FFC6]</code>
+          </td>
+        </tr>
+
+        <!-- H3 — Service card heading -->
+        <tr>
+          <td style="width:7rem; padding-right:1.5rem;">
+            <span class="typo-label">Heading 3</span>
+          </td>
+          <td style="padding-right:1rem;">
+            <h3 class="text-lg font-medium">Cinematic Video Editing</h3>
+          </td>
+          <td class="typo-spec" style="width:9rem;">
+            18px / medium<br/>
+            <code class="text-[0.55rem] text-[#B6FF3C]">text-lg font-medium</code>
+          </td>
+        </tr>
+
+        <!-- H3 — Portfolio card heading -->
+        <tr>
+          <td style="width:7rem; padding-right:1.5rem;">
+            <span class="typo-label">Heading 3 — Card</span>
+          </td>
+          <td style="padding-right:1rem;">
+            <h3 class="text-white font-medium text-lg">Urban Tech Brand Ad</h3>
+          </td>
+          <td class="typo-spec" style="width:9rem;">
+            18px / medium<br/>
+            <code class="text-[0.55rem] text-[#B6FF3C]">font-medium text-lg</code>
+          </td>
+        </tr>
+
+        <!-- Heading 4 — Pricing tier -->
+        <tr>
+          <td style="width:7rem; padding-right:1.5rem;">
+            <span class="typo-label">Heading 4 — Price</span>
+          </td>
+          <td style="padding-right:1rem;">
+            <span class="text-4xl font-semibold text-[#B6FF3C]">₹800+</span>
+          </td>
+          <td class="typo-spec" style="width:9rem;">
+            36px / semibold<br/>
+            <code class="text-[0.55rem] text-[#B6FF3C]">text-4xl font-semibold</code>
+          </td>
+        </tr>
+
+        <!-- Nav brand -->
+        <tr>
+          <td style="width:7rem; padding-right:1.5rem;">
+            <span class="typo-label">Bold L — Brand</span>
+          </td>
+          <td style="padding-right:1rem;">
+            <span class="text-xl font-semibold tracking-tighter text-[#B6FF3C] flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-[#B6FF3C] glow-btn"></span>
+              HEMESH EDITOR
+            </span>
+          </td>
+          <td class="typo-spec" style="width:9rem;">
+            20px / semibold<br/>
+            <code class="text-[0.55rem] text-[#B6FF3C]">text-xl font-semibold tracking-tighter</code>
+          </td>
+        </tr>
+
+        <!-- Body Large -->
+        <tr>
+          <td style="width:7rem; padding-right:1.5rem;">
+            <span class="typo-label">Paragraph — Large</span>
+          </td>
+          <td style="padding-right:1rem;">
+            <p class="text-lg md:text-xl text-[#A0B3A8] font-light">Turning your vision into cinematic reality. Elevating brands through motion.</p>
+          </td>
+          <td class="typo-spec" style="width:9rem;">
+            18–20px / light<br/>
+            <code class="text-[0.55rem] text-[#B6FF3C]">text-xl font-light text-[#A0B3A8]</code>
+          </td>
+        </tr>
+
+        <!-- Regular M -->
+        <tr>
+          <td style="width:7rem; padding-right:1.5rem;">
+            <span class="typo-label">Regular M</span>
+          </td>
+          <td style="padding-right:1rem;">
+            <p class="text-sm text-[#A0B3A8]">High-end deliverables tailored for modern digital platforms and creators.</p>
+          </td>
+          <td class="typo-spec" style="width:9rem;">
+            14px / normal<br/>
+            <code class="text-[0.55rem] text-[#B6FF3C]">text-sm text-[#A0B3A8]</code>
+          </td>
+        </tr>
+
+        <!-- Regular S — card body -->
+        <tr>
+          <td style="width:7rem; padding-right:1.5rem;">
+            <span class="typo-label">Regular S — Card</span>
+          </td>
+          <td style="padding-right:1rem;">
+            <p class="text-xs text-[#A0B3A8]">Color grading, seamless transitions, and narrative-driven cuts for YouTube &amp; Ads.</p>
+          </td>
+          <td class="typo-spec" style="width:9rem;">
+            12px / normal<br/>
+            <code class="text-[0.55rem] text-[#B6FF3C]">text-xs text-[#A0B3A8]</code>
+          </td>
+        </tr>
+
+        <!-- Eyebrow / Label -->
+        <tr>
+          <td style="width:7rem; padding-right:1.5rem;">
+            <span class="typo-label">Label — Eyebrow</span>
+          </td>
+          <td style="padding-right:1rem;">
+            <p class="text-xs text-[#6B7F75] uppercase tracking-wider">Core Expertise</p>
+          </td>
+          <td class="typo-spec" style="width:9rem;">
+            12px / uppercase<br/>
+            <code class="text-[0.55rem] text-[#B6FF3C]">text-xs uppercase tracking-wider</code>
+          </td>
+        </tr>
+
+        <!-- Badge / Tag -->
+        <tr>
+          <td style="width:7rem; padding-right:1.5rem;">
+            <span class="typo-label">Badge — Tag</span>
+          </td>
+          <td style="padding-right:1rem;">
+            <span class="text-[10px] uppercase tracking-wider text-[#B6FF3C] bg-[#B6FF3C]/10 px-2 py-0.5 rounded-sm">Cinematic</span>
+          </td>
+          <td class="typo-spec" style="width:9rem;">
+            10px / uppercase<br/>
+            <code class="text-[0.55rem] text-[#B6FF3C]">text-[10px] uppercase tracking-wider</code>
+          </td>
+        </tr>
+
+        <!-- Testimonial italic -->
+        <tr>
+          <td style="width:7rem; padding-right:1.5rem;">
+            <span class="typo-label">Italic — Quote</span>
+          </td>
+          <td style="padding-right:1rem;">
+            <p class="text-sm text-white/90 italic">"He took raw footage and made it look like a high-budget documentary."</p>
+          </td>
+          <td class="typo-spec" style="width:9rem;">
+            14px / italic<br/>
+            <code class="text-[0.55rem] text-[#B6FF3C]">text-sm text-white/90 italic</code>
+          </td>
+        </tr>
+
+        <!-- Scroll indicator micro-label -->
+        <tr>
+          <td style="width:7rem; padding-right:1.5rem;">
+            <span class="typo-label">Micro — Scroll</span>
+          </td>
+          <td style="padding-right:1rem;">
+            <span class="text-[10px] uppercase tracking-widest text-[#A0B3A8]">Scroll</span>
+          </td>
+          <td class="typo-spec" style="width:9rem;">
+            10px / tracking-widest<br/>
+            <code class="text-[0.55rem] text-[#B6FF3C]">text-[10px] tracking-widest</code>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<hr class="ds-divider"/>
+
+
+<!-- ══════════════════════════════════════════════════════════
+     SECTION 2 — COLORS & SURFACES
+═══════════════════════════════════════════════════════════ -->
+<section class="ds-section py-24 relative bg-[#0B1410]" id="section-colors">
+  <div class="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+  <div class="max-w-6xl mx-auto px-6 relative z-10">
+    <div class="ds-section-header">
+      <p class="ds-section-label"><iconify-icon icon="solar:palette-round-linear"></iconify-icon> Section 02</p>
+      <h2 class="ds-section-title">Colors &amp; Surfaces</h2>
+      <p class="ds-section-subtitle">Brand colors, backgrounds, borders, overlays, and gradients as used in the reference.</p>
+    </div>
+
+    <!-- Brand Colors -->
+    <p class="text-xs text-[#6B7F75] uppercase tracking-wider mb-4">Brand Colors</p>
+    <div class="swatch-grid mb-10">
+      <div class="swatch-card">
+        <div class="swatch-color" style="background:#B6FF3C;"></div>
+        <div class="swatch-info">
+          <p class="swatch-name">Acid Green</p>
+          <p class="swatch-hex">#B6FF3C — Primary accent, CTA, glow</p>
+        </div>
+      </div>
+      <div class="swatch-card">
+        <div class="swatch-color" style="background:#00FFC6;"></div>
+        <div class="swatch-info">
+          <p class="swatch-name">Cyan Mint</p>
+          <p class="swatch-hex">#00FFC6 — Secondary accent, motion cards</p>
+        </div>
+      </div>
+      <div class="swatch-card">
+        <div class="swatch-color" style="background:#25D366;"></div>
+        <div class="swatch-info">
+          <p class="swatch-name">WhatsApp Green</p>
+          <p class="swatch-hex">#25D366 — Floating CTA button</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Backgrounds -->
+    <p class="text-xs text-[#6B7F75] uppercase tracking-wider mb-4">Backgrounds</p>
+    <div class="swatch-grid mb-10">
+      <div class="swatch-card">
+        <div class="swatch-color" style="background:#050807;"></div>
+        <div class="swatch-info">
+          <p class="swatch-name">Page BG</p>
+          <p class="swatch-hex">#050807 — body, nav, footer</p>
+        </div>
+      </div>
+      <div class="swatch-card">
+        <div class="swatch-color" style="background:#0B1410;"></div>
+        <div class="swatch-info">
+          <p class="swatch-name">Section BG</p>
+          <p class="swatch-hex">#0B1410 — services, pricing, contact</p>
+        </div>
+      </div>
+      <div class="swatch-card">
+        <div class="swatch-color" style="background:rgba(10,25,18,0.6); border: 1px solid rgba(182,255,60,0.15);"></div>
+        <div class="swatch-info">
+          <p class="swatch-name">Glass Card</p>
+          <p class="swatch-hex">rgba(10,25,18,0.6) + blur(12px)</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Text Colors -->
+    <p class="text-xs text-[#6B7F75] uppercase tracking-wider mb-4">Text Colors</p>
+    <div class="swatch-grid mb-10">
+      <div class="swatch-card">
+        <div class="swatch-color" style="background:#FFFFFF;"></div>
+        <div class="swatch-info">
+          <p class="swatch-name">White</p>
+          <p class="swatch-hex">#FFFFFF — primary body text</p>
+        </div>
+      </div>
+      <div class="swatch-card">
+        <div class="swatch-color" style="background:#A0B3A8;"></div>
+        <div class="swatch-info">
+          <p class="swatch-name">Muted</p>
+          <p class="swatch-hex">#A0B3A8 — secondary/supporting text</p>
+        </div>
+      </div>
+      <div class="swatch-card">
+        <div class="swatch-color" style="background:#6B7F75;"></div>
+        <div class="swatch-info">
+          <p class="swatch-name">Subtle</p>
+          <p class="swatch-hex">#6B7F75 — labels, eyebrows, footnotes</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Borders & Overlays -->
+    <p class="text-xs text-[#6B7F75] uppercase tracking-wider mb-4">Borders &amp; Overlays</p>
+    <div class="surface-row mb-10">
+      <div class="surface-demo" style="background:rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);">
+        <span class="surface-label-sm">border-white/10</span>
+        <span class="surface-name">Default card border</span>
+      </div>
+      <div class="surface-demo" style="background:rgba(182,255,60,0.04); border: 1px solid rgba(182,255,60,0.15);">
+        <span class="surface-label-sm">border-[#B6FF3C]/15</span>
+        <span class="surface-name">Glass card border</span>
+      </div>
+      <div class="surface-demo" style="background:rgba(182,255,60,0.04); border: 1px solid rgba(182,255,60,0.4);">
+        <span class="surface-label-sm">border-[#B6FF3C]/40</span>
+        <span class="surface-name">Pro card (highlighted)</span>
+      </div>
+      <div class="surface-demo" style="background:rgba(0,0,0,0.8);">
+        <span class="surface-label-sm">bg-gradient-to-t</span>
+        <span class="surface-name">Portfolio overlay (black/80)</span>
+      </div>
+    </div>
+
+    <!-- Gradients -->
+    <p class="text-xs text-[#6B7F75] uppercase tracking-wider mb-4">Gradients</p>
+    <div class="swatch-grid">
+      <div class="swatch-card">
+        <div class="swatch-color grad-primary"></div>
+        <div class="swatch-info">
+          <p class="swatch-name">Brand Gradient</p>
+          <p class="swatch-hex">from-[#B6FF3C] to-[#00FFC6] — portfolio heading</p>
+        </div>
+      </div>
+      <div class="swatch-card">
+        <div class="swatch-color grad-secondary"></div>
+        <div class="swatch-info">
+          <p class="swatch-name">Text Gradient</p>
+          <p class="swatch-hex">from-white via-[#A0B3A8] to-white — hero subheading</p>
+        </div>
+      </div>
+      <div class="swatch-card">
+        <div class="swatch-color" style="background: radial-gradient(circle at center, #0B1410 0%, #050807 100%);"></div>
+        <div class="swatch-info">
+          <p class="swatch-name">Cinematic BG</p>
+          <p class="swatch-hex">radial + subtlePan animation — hero</p>
+        </div>
+      </div>
+      <div class="swatch-card">
+        <div class="swatch-color grad-glow-1"></div>
+        <div class="swatch-info">
+          <p class="swatch-name">Ambient Glow — Green</p>
+          <p class="swatch-hex">#B6FF3C/10 radial — hero glow ball</p>
+        </div>
+      </div>
+      <div class="swatch-card">
+        <div class="swatch-color grad-glow-2"></div>
+        <div class="swatch-info">
+          <p class="swatch-name">Ambient Glow — Cyan</p>
+          <p class="swatch-hex">#00FFC6/10 radial — contact section</p>
+        </div>
+      </div>
+      <div class="swatch-card">
+        <div class="swatch-color grad-sweep"></div>
+        <div class="swatch-info">
+          <p class="swatch-name">Sweep Overlay</p>
+          <p class="swatch-hex">transparent → white/20 → transparent</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="ds-divider"/>
+
+
+<!-- ══════════════════════════════════════════════════════════
+     SECTION 3 — UI COMPONENTS
+═══════════════════════════════════════════════════════════ -->
+<section class="ds-section py-24 relative z-10" id="section-components">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="ds-section-header">
+      <p class="ds-section-label"><iconify-icon icon="solar:widget-linear"></iconify-icon> Section 03</p>
+      <h2 class="ds-section-title">UI Components</h2>
+      <p class="ds-section-subtitle">All interactive elements with their canonical states.</p>
+    </div>
+
+    <!-- ── Buttons ── -->
+    <p class="text-xs text-[#6B7F75] uppercase tracking-wider mb-5">Buttons</p>
+    <div class="states-row mb-12">
+      <!-- Primary CTA (green fill) -->
+      <div class="state-cell">
+        <a class="group relative px-6 py-3 rounded-full bg-[#B6FF3C] text-black text-sm font-medium hover:scale-105 transition-all glow-btn overflow-hidden flex items-center gap-2" href="#">
+          <iconify-icon class="text-lg" icon="solar:bolt-linear"></iconify-icon>
+          <span>Hire Me</span>
+          <div class="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out bg-gradient-to-r from-transparent via-white/50 to-transparent skew-x-12"></div>
+        </a>
+        <span class="state-label">Primary CTA — Default / Hover</span>
+      </div>
+      <!-- Ghost CTA (bordered) -->
+      <div class="state-cell">
+        <a class="group relative px-6 py-3 rounded-full border border-[#B6FF3C]/50 text-white text-sm hover:bg-[#B6FF3C]/10 transition-all overflow-hidden flex items-center gap-2" href="#">
+          <iconify-icon class="text-lg" icon="solar:play-circle-linear"></iconify-icon>
+          <span>View Portfolio</span>
+          <div class="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out sweep-overlay skew-x-12"></div>
+        </a>
+        <span class="state-label">Ghost CTA — Default / Hover</span>
+      </div>
+      <!-- Small social button -->
+      <div class="state-cell">
+        <a class="group flex items-center gap-2 px-4 py-2 rounded-lg bg-[#B6FF3C] text-black text-xs font-medium hover:scale-105 glow-btn transition-all" href="#">
+          <iconify-icon class="text-base" icon="solar:play-stream-linear"></iconify-icon>
+          YouTube
+        </a>
+        <span class="state-label">Social Tag Button</span>
+      </div>
+      <!-- Order now (card inner btn) -->
+      <div class="state-cell">
+        <a class="px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-xs hover:bg-[#B6FF3C] hover:text-black hover:border-[#B6FF3C] transition-all relative overflow-hidden group/btn flex items-center gap-2" href="#">
+          <span class="relative z-10">Order Now</span>
+          <div class="absolute inset-0 -translate-x-full group-hover/btn:translate-x-full transition-transform duration-500 ease-in-out bg-gradient-to-r from-transparent via-white/50 to-transparent skew-x-12"></div>
+        </a>
+        <span class="state-label">Card Inline Button (green on hover)</span>
+      </div>
+      <!-- Pricing pay now (full-width) -->
+      <div class="state-cell" style="width: 200px;">
+        <a class="block w-full text-center py-3 rounded-xl bg-[#B6FF3C] text-black hover:scale-[1.02] transition-transform text-sm font-medium glow-btn" href="#">Pay Now</a>
+        <span class="state-label">Pricing Primary CTA</span>
+      </div>
+      <!-- Pricing pay now secondary -->
+      <div class="state-cell" style="width: 200px;">
+        <a class="block w-full text-center py-3 rounded-xl border border-white/10 hover:bg-white/5 transition-colors text-sm font-medium" href="#">Pay Now</a>
+        <span class="state-label">Pricing Secondary CTA</span>
+      </div>
+      <!-- Outline link -->
+      <div class="state-cell">
+        <a class="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/20 text-sm hover:bg-white/5 transition-colors" href="#">
+          View More on YouTube <iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
+        </a>
+        <span class="state-label">Outline Link Button</span>
+      </div>
+    </div>
+
+
+    <!-- ── Filter Tabs ── -->
+    <p class="text-xs text-[#6B7F75] uppercase tracking-wider mb-4">Filter Tabs (Portfolio)</p>
+    <div class="flex flex-wrap gap-2 mb-12">
+      <button class="px-4 py-1.5 rounded-full bg-[#B6FF3C]/10 text-[#B6FF3C] border border-[#B6FF3C]/30 text-xs font-medium">All</button>
+      <button class="px-4 py-1.5 rounded-full bg-white/5 text-[#A0B3A8] border border-white/10 text-xs hover:text-white transition-colors">Editing</button>
+      <button class="px-4 py-1.5 rounded-full bg-white/5 text-[#A0B3A8] border border-white/10 text-xs hover:text-white transition-colors">Motion</button>
+      <button class="px-4 py-1.5 rounded-full bg-white/5 text-[#A0B3A8] border border-white/10 text-xs hover:text-white transition-colors">Ads</button>
+    </div>
+
+    <!-- ── Skill Tags with Sweep ── -->
+    <p class="text-xs text-[#6B7F75] uppercase tracking-wider mb-4">Skill Tags (sweep hover)</p>
+    <div class="flex flex-wrap gap-3 mb-12">
+      <div class="group relative px-4 py-2 rounded-lg glass-card text-xs overflow-hidden cursor-default">
+        <span class="relative z-10 flex items-center gap-2"><iconify-icon class="text-[#B6FF3C]" icon="solar:video-frame-linear"></iconify-icon> Video Editing</span>
+        <div class="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out sweep-overlay skew-x-12"></div>
+      </div>
+      <div class="group relative px-4 py-2 rounded-lg glass-card text-xs overflow-hidden cursor-default">
+        <span class="relative z-10 flex items-center gap-2"><iconify-icon class="text-[#00FFC6]" icon="solar:camera-add-linear"></iconify-icon> Photography</span>
+        <div class="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out sweep-overlay skew-x-12"></div>
+      </div>
+      <div class="group relative px-4 py-2 rounded-lg glass-card text-xs overflow-hidden cursor-default">
+        <span class="relative z-10 flex items-center gap-2"><iconify-icon class="text-[#B6FF3C]" icon="solar:magic-stick-3-linear"></iconify-icon> Motion Graphics</span>
+        <div class="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out sweep-overlay skew-x-12"></div>
+      </div>
+      <div class="group relative px-4 py-2 rounded-lg glass-card text-xs overflow-hidden cursor-default">
+        <span class="relative z-10 flex items-center gap-2"><iconify-icon class="text-[#00FFC6]" icon="solar:text-field-focus-linear"></iconify-icon> Typography</span>
+        <div class="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out sweep-overlay skew-x-12"></div>
+      </div>
+    </div>
+
+    <!-- ── Form Inputs ── -->
+    <p class="text-xs text-[#6B7F75] uppercase tracking-wider mb-4">Form Inputs (default / focus)</p>
+    <div class="glass-card p-8 rounded-2xl border border-white/10 max-w-xl mb-12">
+      <form class="space-y-6">
+        <div>
+          <label class="block text-xs text-[#A0B3A8] mb-2 uppercase tracking-wider">Name — Default</label>
+          <input class="w-full bg-[#050807]/50 border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#B6FF3C] focus:ring-1 focus:ring-[#B6FF3C] transition-all placeholder:text-white/20" placeholder="John Doe" type="text"/>
+        </div>
+        <div>
+          <label class="block text-xs text-[#A0B3A8] mb-2 uppercase tracking-wider">Email — Focus ring ([#B6FF3C])</label>
+          <input class="w-full bg-[#050807]/50 border border-[#B6FF3C] ring-1 ring-[#B6FF3C] rounded-xl px-4 py-3 text-sm focus:outline-none transition-all" placeholder="john@example.com" type="email" value="john@example.com"/>
+        </div>
+        <div>
+          <label class="block text-xs text-[#A0B3A8] mb-2 uppercase tracking-wider">Project Details — Textarea</label>
+          <textarea class="w-full bg-[#050807]/50 border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#B6FF3C] focus:ring-1 focus:ring-[#B6FF3C] transition-all placeholder:text-white/20 resize-none" placeholder="Tell me about your vision..." rows="3"></textarea>
+        </div>
+        <button class="w-full py-4 rounded-xl bg-[#B6FF3C] text-black font-medium hover:scale-[1.02] transition-transform glow-btn flex items-center justify-center gap-2" type="button">
+          <span>Let's Work Together</span>
+          <iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
+        </button>
+      </form>
+    </div>
+
+    <!-- ── Service Card (glass-card full) ── -->
+    <p class="text-xs text-[#6B7F75] uppercase tracking-wider mb-4">Service Card (hover: lift-up + sweep)</p>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+      <!-- Green accent card -->
+      <div class="group relative glass-card rounded-2xl p-6 overflow-hidden hover:-translate-y-2 transition-transform duration-300 flex flex-col h-full">
+        <div class="absolute top-0 right-0 w-32 h-32 bg-[#B6FF3C]/10 rounded-full blur-3xl group-hover:bg-[#B6FF3C]/20 transition-colors"></div>
+        <div class="mb-6 w-12 h-12 rounded-xl bg-[#050807] border border-[#B6FF3C]/30 flex items-center justify-center text-[#B6FF3C] group-hover:scale-110 transition-transform">
+          <iconify-icon icon="solar:clapperboard-edit-linear" stroke-width="1.5" width="24"></iconify-icon>
+        </div>
+        <h3 class="text-lg font-medium mb-2">Cinematic Editing</h3>
+        <p class="text-xs text-[#A0B3A8] mb-6 flex-grow">Color grading, seamless transitions, and narrative-driven cuts.</p>
+        <div class="flex items-center justify-between mt-auto">
+          <span class="text-lg font-semibold text-white">₹400</span>
+          <a class="px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-xs hover:bg-[#B6FF3C] hover:text-black hover:border-[#B6FF3C] transition-all relative overflow-hidden group/btn" href="#">
+            <span class="relative z-10">Order Now</span>
+            <div class="absolute inset-0 -translate-x-full group-hover/btn:translate-x-full transition-transform duration-500 ease-in-out bg-gradient-to-r from-transparent via-white/50 to-transparent skew-x-12"></div>
+          </a>
+        </div>
+        <div class="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out sweep-overlay skew-x-12 pointer-events-none z-20"></div>
+      </div>
+      <!-- Cyan accent card -->
+      <div class="group relative glass-card rounded-2xl p-6 overflow-hidden hover:-translate-y-2 transition-transform duration-300 flex flex-col h-full">
+        <div class="absolute top-0 right-0 w-32 h-32 bg-[#00FFC6]/10 rounded-full blur-3xl group-hover:bg-[#00FFC6]/20 transition-colors"></div>
+        <div class="mb-6 w-12 h-12 rounded-xl bg-[#050807] border border-[#00FFC6]/30 flex items-center justify-center text-[#00FFC6] group-hover:scale-110 transition-transform">
+          <iconify-icon icon="solar:layers-linear" stroke-width="1.5" width="24"></iconify-icon>
+        </div>
+        <h3 class="text-lg font-medium mb-2">Motion Graphics</h3>
+        <p class="text-xs text-[#A0B3A8] mb-6 flex-grow">Custom animations, lower thirds, and dynamic visual effects.</p>
+        <div class="flex items-center justify-between mt-auto">
+          <span class="text-lg font-semibold text-white">₹500</span>
+          <a class="px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-xs hover:bg-[#00FFC6] hover:text-black hover:border-[#00FFC6] transition-all relative overflow-hidden group/btn" href="#">
+            <span class="relative z-10">Order Now</span>
+            <div class="absolute inset-0 -translate-x-full group-hover/btn:translate-x-full transition-transform duration-500 ease-in-out bg-gradient-to-r from-transparent via-white/50 to-transparent skew-x-12"></div>
+          </a>
+        </div>
+        <div class="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out sweep-overlay skew-x-12 pointer-events-none z-20"></div>
+      </div>
+    </div>
+
+    <!-- ── Pricing Cards ── -->
+    <p class="text-xs text-[#6B7F75] uppercase tracking-wider mb-4">Pricing Cards (Basic / Pro highlighted / Add-on)</p>
+    <div class="grid md:grid-cols-3 gap-8 items-center mb-12">
+      <!-- Basic -->
+      <div class="glass-card rounded-2xl p-8 border border-white/5">
+        <h3 class="text-lg font-medium text-[#A0B3A8] mb-2">Basic Editing</h3>
+        <div class="flex items-baseline gap-1 mb-6">
+          <span class="text-4xl font-semibold">₹400</span>
+          <span class="text-xs text-[#6B7F75]">/video</span>
+        </div>
+        <ul class="space-y-4 mb-8 text-sm text-[#A0B3A8]">
+          <li class="flex items-center gap-2"><iconify-icon class="text-[#00FFC6]" icon="solar:check-circle-linear"></iconify-icon> Basic Cuts &amp; Trims</li>
+          <li class="flex items-center gap-2"><iconify-icon class="text-[#00FFC6]" icon="solar:check-circle-linear"></iconify-icon> Standard Color Grading</li>
+          <li class="flex items-center gap-2"><iconify-icon class="text-[#00FFC6]" icon="solar:check-circle-linear"></iconify-icon> 1 Revision</li>
+        </ul>
+        <a class="block w-full text-center py-3 rounded-xl border border-white/10 hover:bg-white/5 transition-colors text-sm font-medium" href="#">Pay Now</a>
+      </div>
+      <!-- Pro (highlighted, lifted) -->
+      <div class="glass-card rounded-2xl p-8 border border-[#B6FF3C]/40 relative transform md:-translate-y-4 shadow-[0_0_30px_rgba(182,255,60,0.1)]">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 px-3 py-1 bg-[#B6FF3C] text-black text-[10px] uppercase tracking-widest font-semibold rounded-full">Most Popular</div>
+        <h3 class="text-lg font-medium text-white mb-2">Advanced Editing</h3>
+        <div class="flex items-baseline gap-1 mb-6">
+          <span class="text-4xl font-semibold text-[#B6FF3C]">₹800+</span>
+          <span class="text-xs text-[#6B7F75]">/project</span>
+        </div>
+        <ul class="space-y-4 mb-8 text-sm text-white/90">
+          <li class="flex items-center gap-2"><iconify-icon class="text-[#B6FF3C]" icon="solar:check-circle-linear"></iconify-icon> Cinematic Color Grading</li>
+          <li class="flex items-center gap-2"><iconify-icon class="text-[#B6FF3C]" icon="solar:check-circle-linear"></iconify-icon> Motion Graphics &amp; VFX</li>
+          <li class="flex items-center gap-2"><iconify-icon class="text-[#B6FF3C]" icon="solar:check-circle-linear"></iconify-icon> 3 Revisions included</li>
+        </ul>
+        <a class="block w-full text-center py-3 rounded-xl bg-[#B6FF3C] text-black hover:scale-[1.02] transition-transform text-sm font-medium glow-btn" href="#">Pay Now</a>
+      </div>
+      <!-- Add-on -->
+      <div class="glass-card rounded-2xl p-8 border border-white/5">
+        <h3 class="text-lg font-medium text-[#A0B3A8] mb-2">Thumbnail Design</h3>
+        <div class="flex items-baseline gap-1 mb-6">
+          <span class="text-4xl font-semibold">₹100</span>
+          <span class="text-xs text-[#6B7F75]">/design</span>
+        </div>
+        <ul class="space-y-4 mb-8 text-sm text-[#A0B3A8]">
+          <li class="flex items-center gap-2"><iconify-icon class="text-[#00FFC6]" icon="solar:check-circle-linear"></iconify-icon> High CTR Focus</li>
+          <li class="flex items-center gap-2"><iconify-icon class="text-[#00FFC6]" icon="solar:check-circle-linear"></iconify-icon> Custom Typography</li>
+          <li class="flex items-center gap-2"><iconify-icon class="text-[#00FFC6]" icon="solar:check-circle-linear"></iconify-icon> Source File included</li>
+        </ul>
+        <a class="block w-full text-center py-3 rounded-xl border border-white/10 hover:bg-white/5 transition-colors text-sm font-medium" href="#">Pay Now</a>
+      </div>
+    </div>
+
+    <!-- ── Testimonial Card ── -->
+    <p class="text-xs text-[#6B7F75] uppercase tracking-wider mb-4">Testimonial Card (horizontal scroll snap)</p>
+    <div class="flex overflow-x-auto gap-6 pb-6 snap-x no-scrollbar mb-12">
+      <div class="min-w-[300px] md:min-w-[400px] glass-card p-6 rounded-2xl snap-center shrink-0 border border-white/5 hover:border-[#B6FF3C]/30 transition-colors">
+        <div class="flex text-[#B6FF3C] mb-4 text-sm">
+          <iconify-icon icon="solar:star-bold" width="16"></iconify-icon>
+          <iconify-icon icon="solar:star-bold" width="16"></iconify-icon>
+          <iconify-icon icon="solar:star-bold" width="16"></iconify-icon>
+          <iconify-icon icon="solar:star-bold" width="16"></iconify-icon>
+          <iconify-icon icon="solar:star-bold" width="16"></iconify-icon>
+        </div>
+        <p class="text-sm text-white/90 mb-6 italic">"Hemesh completely transformed my vlog. Cinematic grading retained viewers 30% longer!"</p>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-xs font-medium">AJ</div>
+          <div><p class="text-sm font-medium">Arjun J.</p><p class="text-xs text-[#A0B3A8]">Tech YouTuber</p></div>
+        </div>
+      </div>
+      <div class="min-w-[300px] md:min-w-[400px] glass-card p-6 rounded-2xl snap-center shrink-0 border border-white/5 hover:border-[#B6FF3C]/30 transition-colors">
+        <div class="flex text-[#B6FF3C] mb-4 text-sm">
+          <iconify-icon icon="solar:star-bold" width="16"></iconify-icon>
+          <iconify-icon icon="solar:star-bold" width="16"></iconify-icon>
+          <iconify-icon icon="solar:star-bold" width="16"></iconify-icon>
+          <iconify-icon icon="solar:star-bold" width="16"></iconify-icon>
+          <iconify-icon icon="solar:star-bold" width="16"></iconify-icon>
+        </div>
+        <p class="text-sm text-white/90 mb-6 italic">"The thumbnails alone paid for the service. Impressions skyrocketed!"</p>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-xs font-medium">SR</div>
+          <div><p class="text-sm font-medium">Sarah R.</p><p class="text-xs text-[#A0B3A8]">Finance Creator</p></div>
+        </div>
+      </div>
+      <div class="min-w-[300px] md:min-w-[400px] glass-card p-6 rounded-2xl snap-center shrink-0 border border-white/5 hover:border-[#00FFC6]/30 transition-colors">
+        <div class="flex text-[#B6FF3C] mb-4 text-sm">
+          <iconify-icon icon="solar:star-bold" width="16"></iconify-icon>
+          <iconify-icon icon="solar:star-bold" width="16"></iconify-icon>
+          <iconify-icon icon="solar:star-bold" width="16"></iconify-icon>
+          <iconify-icon icon="solar:star-bold" width="16"></iconify-icon>
+          <iconify-icon icon="solar:star-half-bold" width="16"></iconify-icon>
+        </div>
+        <p class="text-sm text-white/90 mb-6 italic">"Very professional. The pricing is completely justified by the premium output."</p>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-xs font-medium">KL</div>
+          <div><p class="text-sm font-medium">Kevin L.</p><p class="text-xs text-[#A0B3A8]">Podcast Host</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Contact Item (pill icon + hover) ── -->
+    <p class="text-xs text-[#6B7F75] uppercase tracking-wider mb-4">Contact Row Item (hover state: icon fills accent)</p>
+    <div class="space-y-4 max-w-md">
+      <a class="group flex items-center gap-4 p-4 rounded-xl glass-card hover:border-[#B6FF3C]/50 transition-colors" href="#">
+        <div class="w-12 h-12 rounded-full bg-[#B6FF3C]/10 flex items-center justify-center text-[#B6FF3C] group-hover:bg-[#B6FF3C] group-hover:text-black transition-colors">
+          <iconify-icon icon="solar:letter-linear" width="24"></iconify-icon>
+        </div>
+        <div>
+          <p class="text-xs text-[#A0B3A8] uppercase tracking-wider">Email</p>
+          <p class="text-sm font-medium">rtfriderm@gmail.com</p>
+        </div>
+      </a>
+      <a class="group flex items-center gap-4 p-4 rounded-xl glass-card hover:border-[#00FFC6]/50 transition-colors" href="#">
+        <div class="w-12 h-12 rounded-full bg-[#00FFC6]/10 flex items-center justify-center text-[#00FFC6] group-hover:bg-[#00FFC6] group-hover:text-black transition-colors">
+          <iconify-icon icon="solar:phone-calling-linear" width="24"></iconify-icon>
+        </div>
+        <div>
+          <p class="text-xs text-[#A0B3A8] uppercase tracking-wider">Phone / WhatsApp</p>
+          <p class="text-sm font-medium">+91 8475046358</p>
+        </div>
+      </a>
+    </div>
+
+    <!-- ── Floating Widgets ── -->
+    <p class="text-xs text-[#6B7F75] uppercase tracking-wider mb-4 mt-12">Floating Widgets (non-fixed for display)</p>
+    <div class="flex gap-4 items-start flex-wrap">
+      <!-- WhatsApp button -->
+      <div class="state-cell">
+        <a class="w-12 h-12 rounded-full bg-[#25D366] flex items-center justify-center text-white shadow-[0_0_15px_rgba(37,211,102,0.5)] hover:shadow-[0_0_25px_rgba(37,211,102,0.8)] hover:scale-105 transition-all duration-300 relative group" href="#">
+          <iconify-icon icon="solar:phone-calling-linear" stroke-width="1.5" width="24"></iconify-icon>
+        </a>
+        <span class="state-label">WhatsApp FAB</span>
+      </div>
+      <!-- Three-dot nav icon -->
+      <div class="state-cell">
+        <button class="w-10 h-10 rounded-full glass-card flex items-center justify-center text-white hover:text-[#B6FF3C] transition-colors border border-white/10 hover:border-[#B6FF3C]/50">
+          <iconify-icon icon="solar:menu-dots-bold" stroke-width="1.5" width="20"></iconify-icon>
+        </button>
+        <span class="state-label">Menu Dots FAB</span>
+      </div>
+      <!-- Social icon footer -->
+      <div class="state-cell">
+        <a class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-[#A0B3A8] hover:text-[#B6FF3C] hover:border-[#B6FF3C] transition-colors" href="#">
+          <iconify-icon icon="solar:play-stream-linear" width="20"></iconify-icon>
+        </a>
+        <span class="state-label">Footer Social Icon</span>
+      </div>
+    </div>
+
+    <!-- ── About Info Table ── -->
+    <p class="text-xs text-[#6B7F75] uppercase tracking-wider mb-4 mt-12">About — Info Table (glass-card, border-b border-white/5)</p>
+    <div class="glass-card rounded-2xl p-6 space-y-4 max-w-sm">
+      <div class="flex justify-between items-center border-b border-white/5 pb-4">
+        <span class="text-xs text-[#6B7F75] uppercase tracking-wider">Name</span>
+        <span class="text-sm font-medium">Hemesh Kumar</span>
+      </div>
+      <div class="flex justify-between items-center border-b border-white/5 pb-4">
+        <span class="text-xs text-[#6B7F75] uppercase tracking-wider">Education</span>
+        <span class="text-sm font-medium">BBA (F&amp;T), ADCA</span>
+      </div>
+      <div class="flex justify-between items-center pb-2">
+        <span class="text-xs text-[#6B7F75] uppercase tracking-wider">Highlights</span>
+        <span class="text-sm font-medium text-right max-w-[200px]">Worked with global creators &amp; emerging brands</span>
+      </div>
+    </div>
+
+    <!-- ── Portfolio Card (aspect-video) ── -->
+    <p class="text-xs text-[#6B7F75] uppercase tracking-wider mb-4 mt-12">Portfolio Card (hover: scale + play button reveal)</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
+      <div class="group relative aspect-video rounded-2xl overflow-hidden glass-card cursor-pointer">
+        <div class="absolute inset-0 bg-[#0B1410] bg-cover bg-center transition-transform duration-700 group-hover:scale-105 opacity-60 mix-blend-luminosity group-hover:mix-blend-normal group-hover:opacity-80" style="background-image: url('https://images.unsplash.com/photo-1536240478700-b869070f9279?q=80&w=2000&auto=format&fit=crop');"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <div class="w-16 h-16 rounded-full bg-[#B6FF3C]/20 backdrop-blur-sm border border-[#B6FF3C]/50 flex items-center justify-center text-[#B6FF3C]">
+            <iconify-icon icon="solar:play-bold" width="28"></iconify-icon>
+          </div>
+        </div>
+        <div class="absolute bottom-0 left-0 p-5 w-full transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="text-[10px] uppercase tracking-wider text-[#B6FF3C] bg-[#B6FF3C]/10 px-2 py-0.5 rounded-sm">Cinematic</span>
+          </div>
+          <h3 class="text-white font-medium text-lg">Urban Tech Brand Ad</h3>
+        </div>
+      </div>
+      <div class="group relative aspect-video rounded-2xl overflow-hidden glass-card cursor-pointer">
+        <div class="absolute inset-0 bg-[#0B1410] bg-cover bg-center transition-transform duration-700 group-hover:scale-105 opacity-60 mix-blend-luminosity group-hover:mix-blend-normal group-hover:opacity-80" style="background-image: url('assets/photo-1550745165-9bc0b252726f_3466a60d0649.avif');"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <div class="w-16 h-16 rounded-full bg-[#00FFC6]/20 backdrop-blur-sm border border-[#00FFC6]/50 flex items-center justify-center text-[#00FFC6]">
+            <iconify-icon icon="solar:play-bold" width="28"></iconify-icon>
+          </div>
+        </div>
+        <div class="absolute bottom-0 left-0 p-5 w-full transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="text-[10px] uppercase tracking-wider text-[#00FFC6] bg-[#00FFC6]/10 px-2 py-0.5 rounded-sm">Motion Graphics</span>
+          </div>
+          <h3 class="text-white font-medium text-lg">Gaming Montage VFX</h3>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="ds-divider"/>
+
+
+<!-- ══════════════════════════════════════════════════════════
+     SECTION 4 — LAYOUT & SPACING
+═══════════════════════════════════════════════════════════ -->
+<section class="ds-section py-24 relative bg-[#0B1410]" id="section-layout">
+  <div class="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+  <div class="max-w-6xl mx-auto px-6 relative z-10">
+    <div class="ds-section-header">
+      <p class="ds-section-label"><iconify-icon icon="solar:square-top-down-linear"></iconify-icon> Section 04</p>
+      <h2 class="ds-section-title">Layout &amp; Spacing</h2>
+      <p class="ds-section-subtitle">Container widths, grid systems, section paddings, and split patterns.</p>
+    </div>
+
+    <!-- Spacing tokens -->
+    <p class="text-xs text-[#6B7F75] uppercase tracking-wider mb-4">Spacing Tokens (Tailwind defaults used)</p>
+    <div class="flex flex-wrap gap-3 mb-10">
+      <div class="glass-card rounded-lg px-4 py-3 text-xs">
+        <p class="text-[#B6FF3C] font-mono mb-1">px-6</p>
+        <p class="text-[#6B7F75]">Section padding</p>
+      </div>
+      <div class="glass-card rounded-lg px-4 py-3 text-xs">
+        <p class="text-[#B6FF3C] font-mono mb-1">py-24</p>
+        <p class="text-[#6B7F75]">Section vertical</p>
+      </div>
+      <div class="glass-card rounded-lg px-4 py-3 text-xs">
+        <p class="text-[#B6FF3C] font-mono mb-1">mb-16</p>
+        <p class="text-[#6B7F75]">Section heading gap</p>
+      </div>
+      <div class="glass-card rounded-lg px-4 py-3 text-xs">
+        <p class="text-[#B6FF3C] font-mono mb-1">gap-6</p>
+        <p class="text-[#6B7F75]">Card grids</p>
+      </div>
+      <div class="glass-card rounded-lg px-4 py-3 text-xs">
+        <p class="text-[#B6FF3C] font-mono mb-1">gap-12</p>
+        <p class="text-[#6B7F75]">Split layout</p>
+      </div>
+      <div class="glass-card rounded-lg px-4 py-3 text-xs">
+        <p class="text-[#B6FF3C] font-mono mb-1">gap-16</p>
+        <p class="text-[#6B7F75]">Contact LG grid</p>
+      </div>
+      <div class="glass-card rounded-lg px-4 py-3 text-xs">
+        <p class="text-[#B6FF3C] font-mono mb-1">h-16</p>
+        <p class="text-[#6B7F75]">Navbar height</p>
+      </div>
+      <div class="glass-card rounded-lg px-4 py-3 text-xs">
+        <p class="text-[#B6FF3C] font-mono mb-1">pt-16</p>
+        <p class="text-[#6B7F75]">Hero top offset (nav)</p>
+      </div>
+    </div>
+
+    <!-- Container widths -->
+    <p class="text-xs text-[#6B7F75] uppercase tracking-wider mb-4">Container Widths</p>
+    <div class="flex flex-col gap-3 mb-10">
+      <div class="layout-demo">
+        <p class="layout-demo-label">max-w-7xl mx-auto px-6 — Services, Portfolio, Footer (80rem)</p>
+        <div class="layout-demo-body">
+          <div class="mock-block h-10" style="max-width: 100%;">max-w-7xl container</div>
+        </div>
+      </div>
+      <div class="layout-demo">
+        <p class="layout-demo-label">max-w-6xl mx-auto px-6 — About, Pricing, Contact (72rem)</p>
+        <div class="layout-demo-body">
+          <div class="mock-block h-10" style="max-width: 88.8%;">max-w-6xl container</div>
+        </div>
+      </div>
+      <div class="layout-demo">
+        <p class="layout-demo-label">max-w-4xl mx-auto px-6 — Hero text (56rem)</p>
+        <div class="layout-demo-body">
+          <div class="mock-block h-10" style="max-width: 77.7%;">max-w-4xl container (hero)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pattern 1: Hero Layout -->
+    <p class="text-xs text-[#6B7F75] uppercase tracking-wider mb-4">Pattern 1 — Hero (centered single-column, full-screen)</p>
+    <div class="layout-demo mb-8">
+      <p class="layout-demo-label">min-h-screen flex items-center justify-center text-center relative overflow-hidden cinematic-bg</p>
+      <div class="layout-demo-body">
+        <div class="relative rounded-xl overflow-hidden cinematic-bg" style="min-height: 14rem; display:flex; align-items:center; justify-content:center;">
+          <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] bg-[#B6FF3C] rounded-full blur-[80px] opacity-10 pointer-events-none"></div>
+          <div style="text-align:center; position:relative; z-index:1;">
+            <div class="mock-block" style="width:12rem; height:1.5rem; margin:0 auto 0.75rem;">Badge pill</div>
+            <div class="mock-block" style="width:20rem; height:3rem; margin:0 auto 0.75rem; max-width:90%;">H1 — Heading (gradient span)</div>
+            <div class="mock-block" style="width:15rem; height:1.25rem; margin:0 auto 1rem; max-width:80%;">Paragraph subtitle</div>
+            <div style="display:flex; gap:0.75rem; justify-content:center;">
+              <div class="mock-block" style="width:7rem; height:2.25rem;">Ghost CTA</div>
+              <div class="mock-block" style="width:7rem; height:2.25rem; background:rgba(182,255,60,0.13);">Primary CTA</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pattern 2: Split Layout (About) -->
+    <p class="text-xs text-[#6B7F75] uppercase tracking-wider mb-4">Pattern 2 — Split (md:grid-cols-2 gap-12 — About section)</p>
+    <div class="layout-demo mb-8">
+      <p class="layout-demo-label">grid md:grid-cols-2 gap-12 items-center</p>
+      <div class="layout-demo-body">
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="mock-block" style="height:10rem;">Image / Media side (aspect-[4/5])</div>
+          <div class="flex flex-col gap-3">
+            <div class="mock-block" style="height:2rem;">H2 heading</div>
+            <div class="mock-block" style="height:4rem;">glass-card info table</div>
+            <div class="mock-block" style="height:2.5rem;">Skill tags row</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pattern 3: 4-column grid (Services) -->
+    <p class="text-xs text-[#6B7F75] uppercase tracking-wider mb-4">Pattern 3 — 4-Column Grid (md:grid-cols-2 lg:grid-cols-4 gap-6 — Services)</p>
+    <div class="layout-demo mb-8">
+      <p class="layout-demo-label">grid md:grid-cols-2 lg:grid-cols-4 gap-6</p>
+      <div class="layout-demo-body">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-3">
+          <div class="mock-block" style="height:8rem;">Card 1<br/>glass-card</div>
+          <div class="mock-block" style="height:8rem;">Card 2<br/>glass-card</div>
+          <div class="mock-block" style="height:8rem;">Card 3<br/>glass-card</div>
+          <div class="mock-block" style="height:8rem;">Card 4<br/>glass-card</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pattern 4: Portfolio grid (1/2/3-col with span) -->
+    <p class="text-xs text-[#6B7F75] uppercase tracking-wider mb-4">Pattern 4 — Portfolio Grid (grid-cols-3 with lg:col-span-2)</p>
+    <div class="layout-demo mb-8">
+      <p class="layout-demo-label">grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6</p>
+      <div class="layout-demo-body">
+        <div class="grid grid-cols-3 gap-3">
+          <div class="mock-block" style="height:6rem;">Item 1<br/>col-span-1</div>
+          <div class="mock-block col-span-2" style="height:6rem; grid-column: span 2;">Item 2<br/>lg:col-span-2</div>
+          <div class="mock-block" style="height:6rem;">Item 3</div>
+          <div class="mock-block" style="height:6rem;">Item 4</div>
+          <div class="mock-block" style="height:6rem;">Item 5</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pattern 5: Contact (lg:grid-cols-2 gap-16) -->
+    <p class="text-xs text-[#6B7F75] uppercase tracking-wider mb-4">Pattern 5 — Contact Split (lg:grid-cols-2 gap-16)</p>
+    <div class="layout-demo">
+      <p class="layout-demo-label">grid lg:grid-cols-2 gap-16</p>
+      <div class="layout-demo-body">
+        <div class="grid lg:grid-cols-2 gap-6">
+          <div class="flex flex-col gap-2">
+            <div class="mock-block" style="height:2rem;">H2 + paragraph</div>
+            <div class="mock-block" style="height:2.5rem;">Contact row item ×3</div>
+            <div class="mock-block" style="height:2.5rem;">Contact row item</div>
+            <div class="mock-block" style="height:2.5rem;">Contact row item</div>
+          </div>
+          <div class="mock-block" style="height:12rem;">glass-card form (inputs + textarea + CTA)</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="ds-divider"/>
+
+
+<!-- ══════════════════════════════════════════════════════════
+     SECTION 5 — MOTION & INTERACTION
+═══════════════════════════════════════════════════════════ -->
+<section class="ds-section py-24 relative z-10" id="section-motion">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="ds-section-header">
+      <p class="ds-section-label"><iconify-icon icon="solar:bolt-linear"></iconify-icon> Section 05</p>
+      <h2 class="ds-section-title">Motion &amp; Interaction</h2>
+      <p class="ds-section-subtitle">All animation classes, keyframes, and transition behaviors, live and interactive.</p>
+    </div>
+
+    <!-- ── Entrance Animations ── -->
+    <p class="text-xs text-[#6B7F75] uppercase tracking-wider mb-4">Entrance Animations (staggered fade-in, hero)</p>
+    <p class="text-xs text-[#A0B3A8] mb-6">The hero uses <code class="text-[#B6FF3C] text-[0.65rem] bg-[#B6FF3C]/06 px-1 py-0.5 rounded">animate-[fade-in_1s_ease-out_Xs_both]</code> with delays 0s → 0.2s → 0.4s → 0.6s → 0.8s. Scroll back up to the <a href="#section-hero" class="text-[#B6FF3C] hover:underline">Hero section</a> to see them on load.</p>
+
+    <div class="motion-grid mb-12">
+      <!-- subtlePan -->
+      <div class="motion-card">
+        <div class="w-24 h-24 rounded-full cinematic-bg border border-[#B6FF3C]/20" style="animation: subtlePan 20s ease infinite;"></div>
+        <span class="motion-label">Cinematic BG Pan</span>
+        <span class="motion-code">@keyframes subtlePan</span>
+        <p class="text-xs text-[#6B7F75] text-center">20s ease infinite · background-position oscillates 0%→100%→0%</p>
+      </div>
+
+      <!-- animate-ping (status dot) -->
+      <div class="motion-card">
+        <span class="relative flex h-6 w-6">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#B6FF3C] opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-6 w-6 bg-[#B6FF3C]"></span>
+        </span>
+        <span class="motion-label">Ping Pulse</span>
+        <span class="motion-code">.animate-ping</span>
+        <p class="text-xs text-[#6B7F75] text-center">scale(2) opacity:0 · 1s cubic-bezier infinite · Used: "Available" badge</p>
+      </div>
+
+      <!-- animate-bounce (scroll indicator) -->
+      <div class="motion-card">
+        <iconify-icon class="animate-bounce text-[#B6FF3C] text-3xl" icon="solar:arrow-down-linear"></iconify-icon>
+        <span class="motion-label">Bounce</span>
+        <span class="motion-code">.animate-bounce</span>
+        <p class="text-xs text-[#6B7F75] text-center">translateY(-25%) · 1s infinite · Used: scroll indicator arrow</p>
+      </div>
+
+      <!-- Sweep overlay (hover to see) -->
+      <div class="motion-card">
+        <div class="group relative px-8 py-4 rounded-full border border-[#B6FF3C]/50 text-white text-sm overflow-hidden flex items-center gap-2 cursor-pointer">
+          <iconify-icon icon="solar:play-circle-linear"></iconify-icon>
+          <span>Hover Me</span>
+          <div class="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out sweep-overlay skew-x-12"></div>
+        </div>
+        <span class="motion-label">Sweep Overlay</span>
+        <span class="motion-code">.sweep-overlay + skew-x-12</span>
+        <p class="text-xs text-[#6B7F75] text-center">translateX(-100%) → 100% · 700ms ease-in-out · Used: ghost CTA, skill tags, service cards</p>
+      </div>
+
+      <!-- White shimmer on primary CTA -->
+      <div class="motion-card">
+        <div class="group relative px-8 py-4 rounded-full bg-[#B6FF3C] text-black text-sm font-medium overflow-hidden flex items-center gap-2 cursor-pointer">
+          <iconify-icon icon="solar:bolt-linear"></iconify-icon>
+          <span>Hover Me</span>
+          <div class="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out bg-gradient-to-r from-transparent via-white/50 to-transparent skew-x-12"></div>
+        </div>
+        <span class="motion-label">White Shimmer</span>
+        <span class="motion-code">bg-gradient-to-r via-white/50</span>
+        <p class="text-xs text-[#6B7F75] text-center">translateX(-100%) → 100% · 700ms · Used: primary CTA, pricing pay now</p>
+      </div>
+
+      <!-- Card sweep (service card, 1000ms) -->
+      <div class="motion-card">
+        <div class="group relative glass-card px-6 py-4 rounded-xl overflow-hidden cursor-pointer">
+          <p class="text-sm relative z-10">Hover service card</p>
+          <p class="text-xs text-[#A0B3A8] relative z-10">Lift + full-card sweep</p>
+          <div class="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out sweep-overlay skew-x-12 pointer-events-none z-20"></div>
+        </div>
+        <span class="motion-label">Full-Card Sweep</span>
+        <span class="motion-code">.sweep-overlay · 1000ms</span>
+        <p class="text-xs text-[#6B7F75] text-center">translateX(-100%)→100% · 1000ms · Used: service card bg sweep</p>
+      </div>
+
+      <!-- Card lift (hover:-translate-y-2) -->
+      <div class="motion-card">
+        <div class="group glass-card px-6 py-4 rounded-xl hover:-translate-y-2 transition-transform duration-300 cursor-pointer">
+          <p class="text-sm">Hover to lift</p>
+          <p class="text-xs text-[#A0B3A8]">Service cards lift on hover</p>
+        </div>
+        <span class="motion-label">Card Lift</span>
+        <span class="motion-code">hover:-translate-y-2</span>
+        <p class="text-xs text-[#6B7F75] text-center">translateY(-8px) · 300ms · Used: all service cards</p>
+      </div>
+
+      <!-- Icon scale (service icon) -->
+      <div class="motion-card">
+        <div class="group">
+          <div class="w-12 h-12 rounded-xl bg-[#050807] border border-[#B6FF3C]/30 flex items-center justify-center text-[#B6FF3C] group-hover:scale-110 transition-transform cursor-pointer">
+            <iconify-icon icon="solar:clapperboard-edit-linear" stroke-width="1.5" width="24"></iconify-icon>
+          </div>
+        </div>
+        <span class="motion-label">Icon Scale</span>
+        <span class="motion-code">group-hover:scale-110</span>
+        <p class="text-xs text-[#6B7F75] text-center">scale(1.1) on parent hover · Used: service card icons</p>
+      </div>
+
+      <!-- Scale CTA (hover:scale-105) -->
+      <div class="motion-card">
+        <a class="px-6 py-3 rounded-full bg-[#B6FF3C] text-black text-sm font-medium hover:scale-105 transition-all glow-btn" href="#">Scale on Hover</a>
+        <span class="motion-label">Scale &amp; Glow</span>
+        <span class="motion-code">hover:scale-105 + .glow-btn</span>
+        <p class="text-xs text-[#6B7F75] text-center">scale(1.05) · box-shadow 20px→30px · Used: Primary CTA, social tags</p>
+      </div>
+
+      <!-- Portfolio image scale -->
+      <div class="motion-card">
+        <div class="group relative w-36 aspect-video rounded-xl overflow-hidden glass-card cursor-pointer">
+          <div class="absolute inset-0 bg-[#0B1410] bg-cover bg-center transition-transform duration-700 group-hover:scale-105 mix-blend-luminosity group-hover:mix-blend-normal" style="background-image: url('https://images.unsplash.com/photo-1536240478700-b869070f9279?q=80&w=400&auto=format&fit=crop');"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+          <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div class="w-8 h-8 rounded-full bg-[#B6FF3C]/20 border border-[#B6FF3C]/50 flex items-center justify-center text-[#B6FF3C]">
+              <iconify-icon icon="solar:play-bold" width="14"></iconify-icon>
+            </div>
+          </div>
+        </div>
+        <span class="motion-label">Portfolio Reveal</span>
+        <span class="motion-code">group-hover:scale-105 + opacity-0→100</span>
+        <p class="text-xs text-[#6B7F75] text-center">Image scale 700ms + play overlay 300ms opacity reveal</p>
+      </div>
+
+      <!-- Portfolio label slide -->
+      <div class="motion-card">
+        <div class="group relative glass-card px-6 py-4 rounded-xl overflow-hidden cursor-pointer">
+          <div class="transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+            <span class="text-[10px] uppercase tracking-wider text-[#B6FF3C] bg-[#B6FF3C]/10 px-2 py-0.5 rounded-sm">Tag</span>
+            <p class="text-white font-medium text-sm mt-1">Card title slides up</p>
+          </div>
+        </div>
+        <span class="motion-label">Label Slide-Up</span>
+        <span class="motion-code">translate-y-2 → translate-y-0</span>
+        <p class="text-xs text-[#6B7F75] text-center">translateY(8px) → 0 · 300ms · Used: portfolio card bottom label</p>
+      </div>
+
+      <!-- WhatsApp glow -->
+      <div class="motion-card">
+        <a class="w-12 h-12 rounded-full bg-[#25D366] flex items-center justify-center text-white shadow-[0_0_15px_rgba(37,211,102,0.5)] hover:shadow-[0_0_25px_rgba(37,211,102,0.8)] hover:scale-105 transition-all duration-300" href="#">
+          <iconify-icon icon="solar:phone-calling-linear" stroke-width="1.5" width="24"></iconify-icon>
+        </a>
+        <span class="motion-label">FAB Glow Scale</span>
+        <span class="motion-code">shadow + scale-105 · 300ms</span>
+        <p class="text-xs text-[#6B7F75] text-center">box-shadow 15px→25px + scale(1.05) · Used: WhatsApp FAB</p>
+      </div>
+
+    </div><!-- end motion-grid -->
+
+    <!-- ── Transition Timing Reference ── -->
+    <p class="text-xs text-[#6B7F75] uppercase tracking-wider mb-4">Transition Timing Reference</p>
+    <div class="glass-card rounded-2xl overflow-hidden">
+      <table class="typo-table w-full">
+        <thead>
+          <tr style="border-bottom: 1px solid rgba(255,255,255,0.08);">
+            <th class="text-left py-3 px-5 text-[0.6rem] uppercase tracking-wider text-[#6B7F75]">Duration</th>
+            <th class="text-left py-3 px-5 text-[0.6rem] uppercase tracking-wider text-[#6B7F75]">Easing</th>
+            <th class="text-left py-3 px-5 text-[0.6rem] uppercase tracking-wider text-[#6B7F75]">Usage</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+            <td class="py-3 px-5 text-xs text-[#B6FF3C] font-mono">300ms</td>
+            <td class="py-3 px-5 text-xs text-[#A0B3A8]">default / ease</td>
+            <td class="py-3 px-5 text-xs text-[#A0B3A8]">Card lift, icon scale, portfolio label slide, opacity reveals</td>
+          </tr>
+          <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+            <td class="py-3 px-5 text-xs text-[#B6FF3C] font-mono">500ms</td>
+            <td class="py-3 px-5 text-xs text-[#A0B3A8]">ease-in-out</td>
+            <td class="py-3 px-5 text-xs text-[#A0B3A8]">Card inner button shimmer</td>
+          </tr>
+          <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+            <td class="py-3 px-5 text-xs text-[#B6FF3C] font-mono">700ms</td>
+            <td class="py-3 px-5 text-xs text-[#A0B3A8]">ease-in-out</td>
+            <td class="py-3 px-5 text-xs text-[#A0B3A8]">Ghost/primary CTA sweep, portfolio image scale</td>
+          </tr>
+          <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+            <td class="py-3 px-5 text-xs text-[#B6FF3C] font-mono">1000ms</td>
+            <td class="py-3 px-5 text-xs text-[#A0B3A8]">ease-in-out</td>
+            <td class="py-3 px-5 text-xs text-[#A0B3A8]">Full service card body sweep</td>
+          </tr>
+          <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+            <td class="py-3 px-5 text-xs text-[#B6FF3C] font-mono">1s both</td>
+            <td class="py-3 px-5 text-xs text-[#A0B3A8]">ease-out (fade-in KF)</td>
+            <td class="py-3 px-5 text-xs text-[#A0B3A8]">Hero stagger: 0s / 0.2s / 0.4s / 0.6s / 0.8s delays</td>
+          </tr>
+          <tr>
+            <td class="py-3 px-5 text-xs text-[#B6FF3C] font-mono">20s infinite</td>
+            <td class="py-3 px-5 text-xs text-[#A0B3A8]">ease (subtlePan KF)</td>
+            <td class="py-3 px-5 text-xs text-[#A0B3A8]">Hero cinematic-bg gradient pan</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</section>
+
+<hr class="ds-divider"/>
+
+
+<!-- ══════════════════════════════════════════════════════════
+     SECTION 6 — ICONS
+═══════════════════════════════════════════════════════════ -->
+<section class="ds-section py-24 relative bg-[#0B1410]" id="section-icons">
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,#00FFC611,transparent_50%)]"></div>
+  <div class="max-w-6xl mx-auto px-6 relative z-10">
+    <div class="ds-section-header">
+      <p class="ds-section-label"><iconify-icon icon="solar:star-linear"></iconify-icon> Section 06</p>
+      <h2 class="ds-section-title">Icons</h2>
+      <p class="ds-section-subtitle">Solar icon set via Iconify — all icons used in the reference, with size and color variants.</p>
+    </div>
+
+    <!-- Icon system info -->
+    <div class="glass-card rounded-xl p-5 mb-8 flex flex-wrap gap-8 items-start">
+      <div>
+        <p class="text-xs text-[#6B7F75] uppercase tracking-wider mb-1">Library</p>
+        <p class="text-sm font-medium text-[#B6FF3C]">Solar (Iconify)</p>
+      </div>
+      <div>
+        <p class="text-xs text-[#6B7F75] uppercase tracking-wider mb-1">Web Component</p>
+        <p class="text-sm font-medium font-mono">&lt;iconify-icon icon="solar:…"&gt;</p>
+      </div>
+      <div>
+        <p class="text-xs text-[#6B7F75] uppercase tracking-wider mb-1">Stroke</p>
+        <p class="text-sm font-medium">Default / stroke-width="1.5" (linear variants)</p>
+      </div>
+      <div>
+        <p class="text-xs text-[#6B7F75] uppercase tracking-wider mb-1">Sizes Used</p>
+        <p class="text-sm font-medium">16px · 20px · 24px · 28px · text-base · text-lg · text-3xl</p>
+      </div>
+      <div>
+        <p class="text-xs text-[#6B7F75] uppercase tracking-wider mb-1">Colors</p>
+        <p class="text-sm font-medium">Inherits text color: <span class="text-[#B6FF3C]">#B6FF3C</span> · <span class="text-[#00FFC6]">#00FFC6</span> · white · <span class="text-[#A0B3A8]">#A0B3A8</span></p>
+      </div>
+    </div>
+
+    <!-- Size variants -->
+    <p class="text-xs text-[#6B7F75] uppercase tracking-wider mb-4">Size Variants (bolt icon)</p>
+    <div class="flex items-end gap-8 mb-10 flex-wrap">
+      <div class="state-cell">
+        <iconify-icon class="text-[#B6FF3C]" icon="solar:bolt-linear" width="14"></iconify-icon>
+        <span class="state-label">14px</span>
+      </div>
+      <div class="state-cell">
+        <iconify-icon class="text-[#B6FF3C]" icon="solar:bolt-linear" width="16"></iconify-icon>
+        <span class="state-label">16px</span>
+      </div>
+      <div class="state-cell">
+        <iconify-icon class="text-[#B6FF3C]" icon="solar:bolt-linear" width="20"></iconify-icon>
+        <span class="state-label">20px (text-lg)</span>
+      </div>
+      <div class="state-cell">
+        <iconify-icon class="text-[#B6FF3C]" icon="solar:bolt-linear" width="24"></iconify-icon>
+        <span class="state-label">24px (base)</span>
+      </div>
+      <div class="state-cell">
+        <iconify-icon class="text-[#B6FF3C]" icon="solar:bolt-linear" width="28"></iconify-icon>
+        <span class="state-label">28px</span>
+      </div>
+      <div class="state-cell">
+        <iconify-icon class="text-[#B6FF3C]" icon="solar:bolt-linear" width="36"></iconify-icon>
+        <span class="state-label">36px</span>
+      </div>
+      <div class="state-cell">
+        <iconify-icon class="text-[#B6FF3C] text-6xl" icon="solar:user-id-linear"></iconify-icon>
+        <span class="state-label">text-6xl (placeholder)</span>
+      </div>
+    </div>
+
+    <!-- Color inheritance -->
+    <p class="text-xs text-[#6B7F75] uppercase tracking-wider mb-4">Color Inheritance</p>
+    <div class="flex gap-8 mb-10 flex-wrap">
+      <div class="state-cell">
+        <iconify-icon class="text-[#B6FF3C]" icon="solar:video-frame-linear" width="28"></iconify-icon>
+        <span class="state-label">text-[#B6FF3C]</span>
+      </div>
+      <div class="state-cell">
+        <iconify-icon class="text-[#00FFC6]" icon="solar:camera-add-linear" width="28"></iconify-icon>
+        <span class="state-label">text-[#00FFC6]</span>
+      </div>
+      <div class="state-cell">
+        <iconify-icon class="text-white" icon="solar:arrow-right-linear" width="28"></iconify-icon>
+        <span class="state-label">text-white</span>
+      </div>
+      <div class="state-cell">
+        <iconify-icon class="text-[#A0B3A8]" icon="solar:play-stream-linear" width="28"></iconify-icon>
+        <span class="state-label">text-[#A0B3A8]</span>
+      </div>
+      <div class="state-cell">
+        <iconify-icon class="text-black" icon="solar:bolt-linear" style="background:#B6FF3C; padding:4px; border-radius:4px;" width="28"></iconify-icon>
+        <span class="state-label">text-black (on CTA)</span>
+      </div>
+    </div>
+
+    <!-- All icons used -->
+    <p class="text-xs text-[#6B7F75] uppercase tracking-wider mb-4">All Icons Used in Reference</p>
+    <div class="icon-grid">
+      <!-- Navigation / UI -->
+      <div class="icon-cell">
+        <iconify-icon class="text-[#B6FF3C] text-xl" icon="solar:menu-dots-bold" stroke-width="1.5"></iconify-icon>
+        <span class="icon-cell-label">menu-dots-bold</span>
+      </div>
+      <div class="icon-cell">
+        <iconify-icon class="text-[#B6FF3C] text-xl" icon="solar:arrow-down-linear"></iconify-icon>
+        <span class="icon-cell-label">arrow-down-linear</span>
+      </div>
+      <div class="icon-cell">
+        <iconify-icon class="text-[#B6FF3C] text-xl" icon="solar:arrow-right-linear"></iconify-icon>
+        <span class="icon-cell-label">arrow-right-linear</span>
+      </div>
+      <!-- Social / Contact -->
+      <div class="icon-cell">
+        <iconify-icon class="text-[#B6FF3C] text-xl" icon="solar:letter-linear"></iconify-icon>
+        <span class="icon-cell-label">letter-linear</span>
+      </div>
+      <div class="icon-cell">
+        <iconify-icon class="text-[#B6FF3C] text-xl" icon="solar:lock-password-linear"></iconify-icon>
+        <span class="icon-cell-label">lock-password-linear</span>
+      </div>
+      <div class="icon-cell">
+        <iconify-icon class="text-[#B6FF3C] text-xl" icon="solar:phone-calling-linear" stroke-width="1.5"></iconify-icon>
+        <span class="icon-cell-label">phone-calling-linear</span>
+      </div>
+      <div class="icon-cell">
+        <iconify-icon class="text-[#B6FF3C] text-xl" icon="solar:camera-linear"></iconify-icon>
+        <span class="icon-cell-label">camera-linear</span>
+      </div>
+      <div class="icon-cell">
+        <iconify-icon class="text-[#B6FF3C] text-xl" icon="solar:play-stream-linear"></iconify-icon>
+        <span class="icon-cell-label">play-stream-linear</span>
+      </div>
+      <!-- Hero / CTA -->
+      <div class="icon-cell">
+        <iconify-icon class="text-[#B6FF3C] text-xl" icon="solar:play-circle-linear"></iconify-icon>
+        <span class="icon-cell-label">play-circle-linear</span>
+      </div>
+      <div class="icon-cell">
+        <iconify-icon class="text-[#B6FF3C] text-xl" icon="solar:bolt-linear"></iconify-icon>
+        <span class="icon-cell-label">bolt-linear</span>
+      </div>
+      <!-- Skills / About -->
+      <div class="icon-cell">
+        <iconify-icon class="text-[#B6FF3C] text-xl" icon="solar:video-frame-linear"></iconify-icon>
+        <span class="icon-cell-label">video-frame-linear</span>
+      </div>
+      <div class="icon-cell">
+        <iconify-icon class="text-[#B6FF3C] text-xl" icon="solar:camera-add-linear"></iconify-icon>
+        <span class="icon-cell-label">camera-add-linear</span>
+      </div>
+      <div class="icon-cell">
+        <iconify-icon class="text-[#B6FF3C] text-xl" icon="solar:magic-stick-3-linear"></iconify-icon>
+        <span class="icon-cell-label">magic-stick-3-linear</span>
+      </div>
+      <div class="icon-cell">
+        <iconify-icon class="text-[#B6FF3C] text-xl" icon="solar:text-field-focus-linear"></iconify-icon>
+        <span class="icon-cell-label">text-field-focus-linear</span>
+      </div>
+      <div class="icon-cell">
+        <iconify-icon class="text-[#B6FF3C] text-xl" icon="solar:user-id-linear"></iconify-icon>
+        <span class="icon-cell-label">user-id-linear</span>
+      </div>
+      <!-- Services -->
+      <div class="icon-cell">
+        <iconify-icon class="text-[#B6FF3C] text-xl" icon="solar:clapperboard-edit-linear" stroke-width="1.5"></iconify-icon>
+        <span class="icon-cell-label">clapperboard-edit-linear</span>
+      </div>
+      <div class="icon-cell">
+        <iconify-icon class="text-[#B6FF3C] text-xl" icon="solar:layers-linear" stroke-width="1.5"></iconify-icon>
+        <span class="icon-cell-label">layers-linear</span>
+      </div>
+      <div class="icon-cell">
+        <iconify-icon class="text-[#B6FF3C] text-xl" icon="solar:text-underline-linear" stroke-width="1.5"></iconify-icon>
+        <span class="icon-cell-label">text-underline-linear</span>
+      </div>
+      <div class="icon-cell">
+        <iconify-icon class="text-[#B6FF3C] text-xl" icon="solar:gallery-wide-linear" stroke-width="1.5"></iconify-icon>
+        <span class="icon-cell-label">gallery-wide-linear</span>
+      </div>
+      <!-- Portfolio / Play -->
+      <div class="icon-cell">
+        <iconify-icon class="text-[#B6FF3C] text-xl" icon="solar:play-bold"></iconify-icon>
+        <span class="icon-cell-label">play-bold</span>
+      </div>
+      <!-- Pricing -->
+      <div class="icon-cell">
+        <iconify-icon class="text-[#B6FF3C] text-xl" icon="solar:check-circle-linear"></iconify-icon>
+        <span class="icon-cell-label">check-circle-linear</span>
+      </div>
+      <!-- Testimonials -->
+      <div class="icon-cell">
+        <iconify-icon class="text-[#B6FF3C] text-xl" icon="solar:star-bold"></iconify-icon>
+        <span class="icon-cell-label">star-bold</span>
+      </div>
+      <div class="icon-cell">
+        <iconify-icon class="text-[#B6FF3C] text-xl" icon="solar:star-half-bold"></iconify-icon>
+        <span class="icon-cell-label">star-half-bold</span>
+      </div>
+      <div class="icon-cell">
+        <iconify-icon class="text-[#B6FF3C] text-xl" icon="solar:star-linear"></iconify-icon>
+        <span class="icon-cell-label">star-linear</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     FOOTER (exact clone)
+═══════════════════════════════════════════════════════════ -->
+<footer class="border-t border-white/10 bg-[#050807] py-12">
+  <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+    <div class="flex items-center gap-2 text-xl font-semibold tracking-tighter text-[#B6FF3C]">
+      <span class="w-2 h-2 rounded-full bg-[#B6FF3C] glow-btn"></span>
+      DESIGN SYSTEM
+    </div>
+    <div class="flex gap-6 text-sm text-[#A0B3A8]">
+      <a class="hover:text-white transition-colors" href="#section-hero">Hero</a>
+      <a class="hover:text-white transition-colors" href="#section-typography">Typography</a>
+      <a class="hover:text-white transition-colors" href="#section-colors">Colors</a>
+      <a class="hover:text-white transition-colors" href="#section-components">Components</a>
+      <a class="hover:text-white transition-colors" href="#section-motion">Motion</a>
+      <a class="hover:text-white transition-colors" href="#section-icons">Icons</a>
+    </div>
+    <div class="flex gap-4">
+      <a class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-[#A0B3A8] hover:text-[#B6FF3C] hover:border-[#B6FF3C] transition-colors" href="index.html">
+        <iconify-icon icon="solar:arrow-left-linear" width="20"></iconify-icon>
+      </a>
+    </div>
+  </div>
+  <div class="text-center text-xs text-[#6B7F75] mt-12">
+    Design System · Hemesh Editor · All cinematic rights reserved.
+  </div>
+</footer>
+
+</body>
+</html>
