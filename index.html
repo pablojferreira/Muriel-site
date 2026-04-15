@@ -795,17 +795,19 @@
   <section id="nucleos" class="relative w-full py-32 lg:py-48 bg-[#2d322f] overflow-hidden border-t border-[#3F556B]/20">
     
     <!-- Fundo abstrato cinemático -->
-    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#3F556B]/10 via-[#2d322f] to-[#2d322f] pointer-events-none"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#3F556B]/10 via-[#2d322f] to-[#2d322f] pointer-events-none z-0"></div>
+
+    <!-- Marca d'água do Logo (Sublime) -->
+    <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-0 overflow-hidden mix-blend-overlay">
+      <img src="Muriel_logo.png" alt="" class="w-[150%] md:w-[100%] max-w-[1400px] object-contain opacity-[0.03] lg:opacity-5 select-none" />
+    </div>
 
     <div class="max-w-[1400px] mx-auto px-6 relative z-10 flex flex-col w-full h-full">
 
       <!-- Título da Seção -->
-      <div class="text-left md:text-center w-full mb-16 lg:mb-24 animate-on-scroll [animation:animationIn_1.2s_ease-out_0.2s_both]">
-        <span class="text-xs uppercase font-semibold tracking-[0.2em] text-[#3F556B] mb-6 block">Arquitetura da Produtora</span>
-        <h2 class="font-display text-4xl md:text-5xl lg:text-[4.5rem] font-semibold tracking-tighter uppercase text-[#ebedea] leading-[0.9]">
-          Os três núcleos <br class="hidden md:block"/>
-          <span class="font-accent italic font-normal normal-case text-[#3F556B] mt-2 lg:mt-6 block text-[3.5rem] md:text-6xl lg:text-[5.5rem] leading-[0.9]">da Muriel</span>
-        </h2>
+      <div class="flex flex-col items-center text-center w-full mb-16 lg:mb-24 animate-on-scroll [animation:animationIn_1.2s_ease-out_0.2s_both]">
+        <span class="text-sm md:text-base lg:text-lg uppercase font-semibold tracking-[0.2em] text-[#3F556B] mb-8 lg:mb-14 block">Arquitetura da Produtora</span>
+        <img src="Muriel_logomarca.png" alt="Núcleos da Muriel" class="h-20 md:h-28 lg:h-[140px] w-auto object-contain" />
       </div>
 
       <!-- Accordion Interativo (Flex-basis expansion) -->
@@ -813,8 +815,14 @@
         
         <!-- Pílula 1: Muriel Documenta -->
         <div class="group relative flex-1 hover:flex-[2.5] bg-[#1e2420] border border-white/5 hover:border-[#3F556B]/50 transition-all duration-[800ms] ease-[cubic-bezier(0.19,1,0.22,1)] overflow-hidden cursor-pointer flex flex-col justify-end shadow-sm hover:shadow-[0_20px_60px_rgba(63,85,107,0.15)]">
+          <!-- Background Layers -->
           <div class="absolute inset-0 bg-gradient-to-t from-[#2d322f] to-[#1e2420] opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-0"></div>
           <div class="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors duration-700 z-0"></div>
+          
+          <!-- Marca Específica (Logomarca do Pilar) -->
+          <div class="absolute inset-0 flex flex-col items-center justify-start pt-24 md:pt-32 lg:pt-40 pointer-events-none z-0 overflow-hidden">
+            <img src="Muriel_Doc_logo.png" alt="" class="w-[45%] md:w-[40%] lg:w-[30%] object-contain select-none transition-all duration-[1000ms] ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:scale-105 opacity-5 lg:opacity-10 group-hover:opacity-100" />
+          </div>
           
           <div class="absolute top-6 right-6 lg:top-10 lg:right-10 flex flex-col justify-center items-center w-12 h-12 lg:w-16 lg:h-16 rounded-full border border-white/10 group-hover:border-[#3F556B] group-hover:bg-[#3F556B] transition-all duration-[800ms] z-10 text-[#ebedea]/30 group-hover:text-white">
             <span class="font-display text-xl lg:text-2xl font-bold leading-none">I</span>
@@ -828,7 +836,8 @@
             <div class="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-[800ms] ease-[cubic-bezier(0.19,1,0.22,1)] w-full">
               <div class="overflow-hidden min-h-0">
                 <p class="font-sans text-[#ebedea]/60 lg:text-xl font-light pt-4 lg:pt-6 border-t border-white/10 mt-2 lg:mt-6 pr-4 lg:pr-8 w-[280px] lg:w-[400px] opacity-0 group-hover:opacity-100 transition-opacity duration-1000 delay-100 whitespace-normal">
-                  Documentários de marca & sistemas narrativos.
+                  Documentários de marca<br />
+                  & sistemas narrativos.
                 </p>
               </div>
             </div>
@@ -837,8 +846,14 @@
 
         <!-- Pílula 2: Muriel Pós -->
         <div class="group relative flex-1 hover:flex-[2.5] bg-[#1e2420] border border-white/5 hover:border-[#3F556B]/50 transition-all duration-[800ms] ease-[cubic-bezier(0.19,1,0.22,1)] overflow-hidden cursor-pointer flex flex-col justify-end shadow-sm hover:shadow-[0_20px_60px_rgba(63,85,107,0.15)]">
+          <!-- Background Layers -->
           <div class="absolute inset-0 bg-gradient-to-t from-[#2d322f] to-[#1e2420] opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-0"></div>
           <div class="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors duration-700 z-0"></div>
+          
+          <!-- Marca Específica (Logomarca do Pilar) -->
+          <div class="absolute inset-0 flex flex-col items-center justify-start pt-24 md:pt-32 lg:pt-40 pointer-events-none z-0 overflow-hidden">
+            <img src="Muriel_Pós_logo.png" alt="" class="w-[45%] md:w-[40%] lg:w-[30%] object-contain select-none transition-all duration-[1000ms] ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:scale-105 opacity-5 lg:opacity-10 group-hover:opacity-100" />
+          </div>
           
           <div class="absolute top-6 right-6 lg:top-10 lg:right-10 flex flex-col justify-center items-center w-12 h-12 lg:w-16 lg:h-16 rounded-full border border-white/10 group-hover:border-[#3F556B] group-hover:bg-[#3F556B] transition-all duration-[800ms] z-10 text-[#ebedea]/30 group-hover:text-white">
             <span class="font-display text-xl lg:text-2xl font-bold leading-none">II</span>
@@ -852,7 +867,8 @@
             <div class="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-[800ms] ease-[cubic-bezier(0.19,1,0.22,1)] w-full">
               <div class="overflow-hidden min-h-0">
                 <p class="font-sans text-[#ebedea]/60 lg:text-xl font-light pt-4 lg:pt-6 border-t border-white/10 mt-2 lg:mt-6 pr-4 lg:pr-8 w-[280px] lg:w-[400px] opacity-0 group-hover:opacity-100 transition-opacity duration-1000 delay-100 whitespace-normal">
-                  Onde o material bruto se torna narrativa estratégica.
+                  Onde o seu material bruto<br />
+                  se torna narrativa estratégica.
                 </p>
               </div>
             </div>
@@ -861,8 +877,14 @@
 
         <!-- Pílula 3: Muriel Casulo -->
         <div class="group relative flex-1 hover:flex-[2.5] bg-[#1e2420] border border-white/5 hover:border-[#3F556B]/50 transition-all duration-[800ms] ease-[cubic-bezier(0.19,1,0.22,1)] overflow-hidden cursor-pointer flex flex-col justify-end shadow-sm hover:shadow-[0_20px_60px_rgba(63,85,107,0.15)]">
+          <!-- Background Layers -->
           <div class="absolute inset-0 bg-gradient-to-t from-[#2d322f] to-[#1e2420] opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-0"></div>
           <div class="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors duration-700 z-0"></div>
+          
+          <!-- Marca Específica (Logomarca do Pilar) -->
+          <div class="absolute inset-0 flex flex-col items-center justify-start pt-24 md:pt-32 lg:pt-40 pointer-events-none z-0 overflow-hidden">
+            <img src="Muriel_Cas_logo.png" alt="" class="w-[45%] md:w-[40%] lg:w-[30%] object-contain select-none transition-all duration-[1000ms] ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:scale-105 opacity-5 lg:opacity-10 group-hover:opacity-100" />
+          </div>
           
           <div class="absolute top-6 right-6 lg:top-10 lg:right-10 flex flex-col justify-center items-center w-12 h-12 lg:w-16 lg:h-16 rounded-full border border-white/10 group-hover:border-[#3F556B] group-hover:bg-[#3F556B] transition-all duration-[800ms] z-10 text-[#ebedea]/30 group-hover:text-white">
             <span class="font-display text-xl lg:text-2xl font-bold leading-none">III</span>
@@ -876,7 +898,8 @@
             <div class="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-[800ms] ease-[cubic-bezier(0.19,1,0.22,1)] w-full">
               <div class="overflow-hidden min-h-0">
                 <p class="font-sans text-[#ebedea]/60 lg:text-xl font-light pt-4 lg:pt-6 border-t border-white/10 mt-2 lg:mt-6 pr-4 lg:pr-8 w-[280px] lg:w-[400px] opacity-0 group-hover:opacity-100 transition-opacity duration-1000 delay-100 whitespace-normal">
-                  Incubadora de projetos independentes & laboratório de linguagem.
+                  Incubadora de projetos independentes<br />
+                  & laboratório de linguagem.
                 </p>
               </div>
             </div>
