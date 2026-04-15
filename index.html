@@ -288,6 +288,56 @@
     </div>
   </main>
 
+  <!-- SEÇÃO 2: Tese & O Problema -->
+  <section id="problema" class="relative w-full py-32 lg:py-48 bg-[#ebedea] border-t border-[#2d322f]/10 overflow-hidden">
+    <div class="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
+      
+      <!-- TESE -->
+      <div class="mb-24 md:mb-32 max-w-5xl animate-on-scroll [animation:animationIn_1.2s_ease-out_0.2s_both]">
+        <h2 class="font-display text-4xl md:text-5xl lg:text-7xl font-semibold tracking-tighter uppercase text-[#2d322f] leading-[0.95]">
+          Toda marca produz conteúdo,<br class="hidden md:block"> mas poucas conseguem criar um <span class="text-[#3F556B]">significado duradouro.</span>
+        </h2>
+      </div>
+
+      <!-- GRID: Argumentos & Conclusão -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 items-stretch pt-12 border-t border-[#2d322f]/10">
+        
+        <!-- Argumentos -->
+        <div class="lg:col-span-5 flex flex-col justify-center gap-10 animate-on-scroll [animation:animationIn_1.2s_ease-out_0.4s_both]">
+          <div class="flex items-start gap-5">
+            <iconify-icon icon="solar:danger-triangle-linear" width="28" class="text-[#3F556B] mt-1 shrink-0"></iconify-icon>
+            <p class="font-sans text-xl md:text-2xl text-[#2d322f]/70 leading-relaxed font-light">
+              Filmes institucionais soam <span class="font-semibold text-[#2d322f]">promocionais</span>.
+            </p>
+          </div>
+          <div class="flex items-start gap-5">
+            <iconify-icon icon="solar:ghost-smile-linear" width="28" class="text-[#3F556B] mt-1 shrink-0"></iconify-icon>
+            <p class="font-sans text-xl md:text-2xl text-[#2d322f]/70 leading-relaxed font-light">
+              Conteúdo digital parece <span class="font-semibold text-[#2d322f]">fragmentário e descartável</span>.
+            </p>
+          </div>
+        </div>
+
+        <!-- Conclusão (Cartão Escuro Obsidian) -->
+        <div class="lg:col-start-7 lg:col-span-6 bg-[#1e2420] text-white p-10 md:p-14 lg:p-16 shadow-[0_8px_32px_rgba(30,36,32,0.25)] relative overflow-hidden animate-on-scroll [animation:animationIn_1.2s_ease-out_0.6s_both]">
+          <!-- Soft Gradient Highlight (Steel Blue / Carbon mix) -->
+          <div class="absolute inset-x-0 -top-1/2 h-full bg-gradient-to-b from-[#3F556B]/20 to-transparent blur-3xl pointer-events-none"></div>
+          
+          <div class="relative z-10">
+            <span class="text-sm uppercase font-semibold tracking-[0.2em] text-[#3F556B] mb-10 block">Resultado</span>
+            
+            <p class="font-accent italic text-3xl md:text-4xl lg:text-[2.5rem] text-white leading-snug">
+              Narrativas que <span class="text-white/60">não se sustentam</span> no tempo,<br>
+              <span class="text-white/60 block mt-5">despertam pouca confiança,</span>
+              <span class="text-[#3F556B] block mt-8 pb-2 border-b-2 border-[#3F556B] inline-block font-semibold not-italic font-display uppercase tracking-wider text-2xl lg:text-3xl">geram baixo impacto real.</span>
+            </p>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
   <script>
     // Smooth Scroll System via Lenis
     const lenis = new Lenis({
@@ -306,6 +356,27 @@
       requestAnimationFrame(raf);
     }
     requestAnimationFrame(raf);
+
+    // Intersection Observer for Animate On Scroll
+    (function () {
+      const once = true;
+      if (!window.__inViewIO) {
+        window.__inViewIO = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("animate");
+              if (once) window.__inViewIO.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1, rootMargin: "0px 0px -10% 0px" });
+      }
+      window.initInViewAnimations = function (selector = ".animate-on-scroll") {
+        document.querySelectorAll(selector).forEach((el) => {
+          window.__inViewIO.observe(el);
+        });
+      };
+      document.addEventListener("DOMContentLoaded", () => initInViewAnimations());
+    })();
 
     // Video Fullscreen Engine
     function openFullscreenVideo() {
