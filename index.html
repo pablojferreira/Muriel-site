@@ -90,7 +90,8 @@
     .bg-base {
       position: absolute;
       inset: 0;
-      background: #ebedea; /* Fundo base combinando com o resto da página */
+      background: #ebedea;
+      /* Fundo base combinando com o resto da página */
     }
 
     .bg-layers {
@@ -102,7 +103,8 @@
     .layer {
       position: absolute;
       border-radius: 50%;
-      opacity: 0.7; /* Opacidade reforçada para que as formas apareçam */
+      opacity: 0.7;
+      /* Opacidade reforçada para que as formas apareçam */
       mix-blend-mode: multiply;
     }
 
@@ -134,18 +136,33 @@
     }
 
     @keyframes float1 {
-      0% { transform: translate(0px, 0px) scale(1); }
-      100% { transform: translate(40px, -30px) scale(1.05); }
+      0% {
+        transform: translate(0px, 0px) scale(1);
+      }
+
+      100% {
+        transform: translate(40px, -30px) scale(1.05);
+      }
     }
 
     @keyframes float2 {
-      0% { transform: translate(0px, 0px) scale(1); }
-      100% { transform: translate(-30px, 40px) scale(1.08); }
+      0% {
+        transform: translate(0px, 0px) scale(1);
+      }
+
+      100% {
+        transform: translate(-30px, 40px) scale(1.08);
+      }
     }
 
     @keyframes float3 {
-      0% { transform: translate(0px, 0px) scale(1); }
-      100% { transform: translate(20px, 30px) scale(1.04); }
+      0% {
+        transform: translate(0px, 0px) scale(1);
+      }
+
+      100% {
+        transform: translate(20px, 30px) scale(1.04);
+      }
     }
 
     .bg-noise {
@@ -153,8 +170,10 @@
       inset: 0;
       width: 100%;
       height: 100%;
-      opacity: 0.055; /* Grain mais forte */
-      mix-blend-mode: multiply; /* Melhor saturação dos grãos */
+      opacity: 0.055;
+      /* Grain mais forte */
+      mix-blend-mode: multiply;
+      /* Melhor saturação dos grãos */
     }
   </style>
 </head>
@@ -172,7 +191,7 @@
             class="h-4 md:h-5 opacity-80 group-hover:opacity-100 transition-all duration-300 filter brightness-0">
         </a>
       </div>
-      
+
       <!-- Links & Interações Direita -->
       <div class="flex justify-end items-center gap-10">
         <nav class="hidden md:flex justify-end gap-10">
@@ -193,7 +212,7 @@
             Somos<span
               class="absolute bottom-0 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-[#3F556B] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span></a>
         </nav>
-        
+
         <button aria-label="Menu" class="md:hidden text-[#2d322f] hover:text-[#3F556B] transition-colors duration-300">
           <iconify-icon height="24" icon="solar:hamburger-menu-linear" width="24"></iconify-icon>
         </button>
@@ -290,29 +309,35 @@
   </main>
 
   <!-- SEÇÃO 2: Tese & O Problema -->
-  <section id="problema" class="relative w-full py-32 lg:py-48 bg-[#ebedea] border-t border-[#2d322f]/10 overflow-hidden">
+  <section id="problema"
+    class="relative w-full py-32 lg:py-48 bg-[#ebedea] border-t border-[#2d322f]/10 overflow-hidden">
     <div class="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
-      
+
       <!-- TESE -->
       <div class="mb-24 md:mb-32 max-w-5xl animate-on-scroll [animation:animationIn_1.2s_ease-out_0.2s_both]">
-        <h2 class="font-display text-4xl md:text-5xl lg:text-7xl font-semibold tracking-tighter uppercase text-[#2d322f] leading-[0.95]">
-          Toda marca produz conteúdo,<br class="hidden md:block"> mas poucas conseguem criar um <span class="text-[#3F556B]">significado duradouro.</span>
+        <h2
+          class="font-display text-4xl md:text-5xl lg:text-7xl font-semibold tracking-tighter uppercase text-[#2d322f] leading-[0.95]">
+          Toda marca produz conteúdo,<br class="hidden md:block"> mas poucas conseguem criar um <span
+            class="text-[#3F556B]">significado duradouro.</span>
         </h2>
       </div>
 
       <!-- GRID: Argumentos & Conclusão -->
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 items-stretch pt-12 border-t border-[#2d322f]/10">
-        
+
         <!-- Argumentos -->
-        <div class="lg:col-span-5 flex flex-col justify-center gap-10 animate-on-scroll [animation:animationIn_1.2s_ease-out_0.4s_both]">
+        <div
+          class="lg:col-span-5 flex flex-col justify-center gap-10 animate-on-scroll [animation:animationIn_1.2s_ease-out_0.4s_both]">
           <div class="flex items-start gap-5">
-            <iconify-icon icon="solar:danger-triangle-linear" width="28" class="text-[#3F556B] mt-1 shrink-0"></iconify-icon>
+            <iconify-icon icon="solar:danger-triangle-linear" width="28"
+              class="text-[#3F556B] mt-1 shrink-0"></iconify-icon>
             <p class="font-sans text-xl md:text-2xl text-[#2d322f]/70 leading-relaxed font-light">
               Filmes institucionais soam <span class="font-semibold text-[#2d322f]">promocionais</span>.
             </p>
           </div>
           <div class="flex items-start gap-5">
-            <iconify-icon icon="solar:ghost-smile-linear" width="28" class="text-[#3F556B] mt-1 shrink-0"></iconify-icon>
+            <iconify-icon icon="solar:ghost-smile-linear" width="28"
+              class="text-[#3F556B] mt-1 shrink-0"></iconify-icon>
             <p class="font-sans text-xl md:text-2xl text-[#2d322f]/70 leading-relaxed font-light">
               Conteúdo digital parece <span class="font-semibold text-[#2d322f]">fragmentário e descartável</span>.
             </p>
@@ -320,19 +345,84 @@
         </div>
 
         <!-- Conclusão (Cartão Escuro Obsidian) -->
-        <div class="lg:col-start-7 lg:col-span-6 bg-[#1e2420] text-white p-10 md:p-14 lg:p-16 shadow-[0_8px_32px_rgba(30,36,32,0.25)] relative overflow-hidden animate-on-scroll [animation:animationIn_1.2s_ease-out_0.6s_both]">
+        <div
+          class="lg:col-start-7 lg:col-span-6 bg-[#1e2420] text-white p-10 md:p-14 lg:p-16 shadow-[0_8px_32px_rgba(30,36,32,0.25)] relative overflow-hidden animate-on-scroll [animation:animationIn_1.2s_ease-out_0.6s_both]">
           <!-- Soft Gradient Highlight (Steel Blue / Carbon mix) -->
-          <div class="absolute inset-x-0 -top-1/2 h-full bg-gradient-to-b from-[#3F556B]/20 to-transparent blur-3xl pointer-events-none"></div>
-          
+          <div
+            class="absolute inset-x-0 -top-1/2 h-full bg-gradient-to-b from-[#3F556B]/20 to-transparent blur-3xl pointer-events-none">
+          </div>
+
           <div class="relative z-10">
             <span class="text-sm uppercase font-semibold tracking-[0.2em] text-[#3F556B] mb-10 block">Resultado</span>
-            
+
             <p class="font-accent italic text-3xl md:text-4xl lg:text-[2.5rem] text-white leading-snug">
               Narrativas que <span class="text-white/60">não se sustentam</span> no tempo,<br>
               <span class="text-white/60 block mt-5">despertam pouca confiança,</span>
-              <span class="text-[#3F556B] block mt-8 pb-2 border-b-2 border-[#3F556B] inline-block font-semibold not-italic font-display uppercase tracking-wider text-2xl lg:text-3xl">geram baixo impacto real.</span>
+              <span
+                class="text-[#3F556B] block mt-8 pb-2 border-b-2 border-[#3F556B] inline-block font-semibold not-italic font-display uppercase tracking-wider text-2xl lg:text-3xl">geram
+                baixo impacto real.</span>
             </p>
           </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO 3: A Solução (Validação Simbólica) -->
+  <section id="solucao" class="relative w-full py-32 lg:py-56 bg-[#3F556B] text-white overflow-hidden">
+    
+    <!-- Fundo Imersivo Decorativo -->
+    <div class="absolute inset-x-0 -top-1/4 h-[150%] w-full bg-gradient-to-br from-[#1e2420]/40 to-transparent pointer-events-none blur-3xl mix-blend-multiply"></div>
+
+    <div class="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-20 items-center">
+        
+        <!-- Título Principal -->
+        <div class="lg:col-span-6 flex flex-col gap-6 animate-on-scroll [animation:animationIn_1.2s_ease-out_0.2s_both]">
+          <span class="text-xs uppercase font-semibold tracking-[0.2em] text-[#ebedea]/60">Nossa premissa</span>
+          
+          <h2 class="font-display text-4xl md:text-5xl lg:text-7xl font-semibold tracking-tighter uppercase text-[#ebedea] leading-[0.95]">
+            Documentário não é <br class="hidden xl:block"> publicidade.
+            <span class="block font-accent italic font-normal normal-case mt-6 lg:mt-8 text-4xl md:text-5xl lg:text-[4rem] text-[#ebedea]/90 tracking-normal pb-2">
+              É validação simbólica.
+            </span>
+          </h2>
+        </div>
+
+        <!-- Lista de Sustentação -->
+        <div class="lg:col-span-5 lg:col-start-8 flex flex-col">
+          
+          <!-- Tópico 1 -->
+          <div class="border-t border-[#ebedea]/20 py-8 lg:py-10 animate-on-scroll [animation:animationIn_1s_ease-out_0.4s_both]">
+            <div class="flex items-start gap-6 lg:gap-8 hover:translate-x-3 transition-transform duration-500 ease-out">
+              <span class="font-display text-xs md:text-sm font-semibold tracking-[0.15em] text-[#ebedea]/40 mt-1.5 shrink-0 w-8">01</span>
+              <p class="font-sans text-2xl md:text-3xl text-[#ebedea] font-light leading-[1.2] tracking-tight">
+                Organiza o discurso da marca.
+              </p>
+            </div>
+          </div>
+
+          <!-- Tópico 2 -->
+          <div class="border-t border-[#ebedea]/20 py-8 lg:py-10 animate-on-scroll [animation:animationIn_1s_ease-out_0.5s_both]">
+            <div class="flex items-start gap-6 lg:gap-8 hover:translate-x-3 transition-transform duration-500 ease-out">
+              <span class="font-display text-xs md:text-sm font-semibold tracking-[0.15em] text-[#ebedea]/40 mt-1.5 shrink-0 w-8">02</span>
+              <p class="font-sans text-2xl md:text-3xl text-[#ebedea] font-light leading-[1.2] tracking-tight">
+                Ancora a narrativa no real.
+              </p>
+            </div>
+          </div>
+
+          <!-- Tópico 3 -->
+          <div class="border-y border-[#ebedea]/20 py-8 lg:py-10 animate-on-scroll [animation:animationIn_1s_ease-out_0.6s_both]">
+            <div class="flex items-start gap-6 lg:gap-8 hover:translate-x-3 transition-transform duration-500 ease-out">
+              <span class="font-display text-xs md:text-sm font-semibold tracking-[0.15em] text-[#ebedea]/40 mt-1.5 shrink-0 w-8">03</span>
+              <p class="font-sans text-2xl md:text-3xl text-[#ebedea] font-light leading-[1.2] tracking-tight">
+                Sustenta um ecossistema consistente de conteúdos.
+              </p>
+            </div>
+          </div>
+
         </div>
         
       </div>
