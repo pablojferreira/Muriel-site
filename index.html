@@ -446,11 +446,12 @@
   <!-- SEÇÃO 4: Sistema Orbital Muriel™ -->
   <section id="sistema-orbital"
     class="relative w-full py-32 lg:py-48 bg-[#ebedea] border-t border-[#2d322f]/10 overflow-hidden">
-    <div class="max-w-[1400px] mx-auto px-6 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-12 items-center">
+    <div
+      class="max-w-[1400px] mx-auto px-6 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-12 items-center">
 
       <!-- Esquerda: Gráfico Orbital & Legenda -->
       <div class="lg:col-span-7 relative flex items-center justify-center min-h-[600px] lg:justify-start">
-        
+
         <!-- Painel de Legenda Responsivo -->
         <div id="orbital-legend"
           class="absolute left-0 lg:left-0 top-0 lg:top-8 z-40 bg-white/95 backdrop-blur-md p-6 lg:p-8 w-[280px] lg:w-[320px] transition-all duration-500 opacity-0 translate-y-4 pointer-events-none shadow-[0_8px_32px_rgba(45,50,47,0.1)] border-l-4">
@@ -465,127 +466,129 @@
         <div
           class="relative w-full max-w-[800px] aspect-square flex items-center justify-center isolate overflow-visible scale-75 md:scale-75 lg:scale-[0.80] xl:scale-90 animate-on-scroll [animation:animationIn_1.5s_ease-out_0.4s_both]">
 
-        <!-- Linhas Axiais em SVG (Interativas) -->
-        <svg class="absolute inset-0 w-full h-full z-0 overflow-visible opacity-30" viewBox="0 0 800 800" fill="none"
-          xmlns="http://www.w3.org/2000/svg">
-          <!-- Hitboxes Invisíveis e Largas para estabilizar o hover continuamente -->
-          <circle class="orbit-trigger cursor-crosshair" data-orbit="4" cx="400" cy="400" r="380" stroke="transparent"
-            stroke-width="40" pointer-events="stroke" />
-          <circle class="orbit-trigger cursor-crosshair" data-orbit="3" cx="400" cy="400" r="280" stroke="transparent"
-            stroke-width="40" pointer-events="stroke" />
-          <circle class="orbit-trigger cursor-crosshair" data-orbit="2" cx="400" cy="400" r="180" stroke="transparent"
-            stroke-width="40" pointer-events="stroke" />
-          <circle class="orbit-trigger cursor-crosshair" data-orbit="1" cx="400" cy="400" r="100" stroke="transparent"
-            stroke-width="40" pointer-events="stroke" />
+          <!-- Linhas Axiais em SVG (Interativas) -->
+          <svg class="absolute inset-0 w-full h-full z-0 overflow-visible opacity-30" viewBox="0 0 800 800" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <!-- Hitboxes Invisíveis e Largas para estabilizar o hover continuamente -->
+            <circle class="orbit-trigger cursor-crosshair" data-orbit="4" cx="400" cy="400" r="380" stroke="transparent"
+              stroke-width="40" pointer-events="stroke" />
+            <circle class="orbit-trigger cursor-crosshair" data-orbit="3" cx="400" cy="400" r="280" stroke="transparent"
+              stroke-width="40" pointer-events="stroke" />
+            <circle class="orbit-trigger cursor-crosshair" data-orbit="2" cx="400" cy="400" r="180" stroke="transparent"
+              stroke-width="40" pointer-events="stroke" />
+            <circle class="orbit-trigger cursor-crosshair" data-orbit="1" cx="400" cy="400" r="100" stroke="transparent"
+              stroke-width="40" pointer-events="stroke" />
 
-          <!-- Linhas Visíveis Perfuradas -->
-          <circle class="orbit-visual transition-all duration-300 pointer-events-none" data-visual="4" cx="400" cy="400"
-            r="380" stroke-width="1.5" stroke-dasharray="4 8" stroke="#d6a65c" opacity="0.4" />
-          <circle class="orbit-visual transition-all duration-300 pointer-events-none" data-visual="3" cx="400" cy="400"
-            r="280" stroke-width="1.5" stroke-dasharray="4 8" stroke="#b36a4d" opacity="0.4" />
-          <circle class="orbit-visual transition-all duration-300 pointer-events-none" data-visual="2" cx="400" cy="400"
-            r="180" stroke-width="1.5" stroke-dasharray="4 8" stroke="#4a6352" opacity="0.5" />
-          <circle class="orbit-visual transition-all duration-300 pointer-events-none" data-visual="1" cx="400" cy="400"
-            r="100" stroke-width="1.5" stroke-dasharray="4 8" stroke="#3F556B" opacity="0.6" />
-        </svg>
+            <!-- Linhas Visíveis Perfuradas -->
+            <circle class="orbit-visual transition-all duration-300 pointer-events-none" data-visual="4" cx="400"
+              cy="400" r="380" stroke-width="1.5" stroke-dasharray="4 8" stroke="#d6a65c" opacity="0.4" />
+            <circle class="orbit-visual transition-all duration-300 pointer-events-none" data-visual="3" cx="400"
+              cy="400" r="280" stroke-width="1.5" stroke-dasharray="4 8" stroke="#b36a4d" opacity="0.4" />
+            <circle class="orbit-visual transition-all duration-300 pointer-events-none" data-visual="2" cx="400"
+              cy="400" r="180" stroke-width="1.5" stroke-dasharray="4 8" stroke="#4a6352" opacity="0.5" />
+            <circle class="orbit-visual transition-all duration-300 pointer-events-none" data-visual="1" cx="400"
+              cy="400" r="100" stroke-width="1.5" stroke-dasharray="4 8" stroke="#3F556B" opacity="0.6" />
+          </svg>
 
-        <!-- O1 (Alta Densidade) -->
-        <div class="absolute w-[200px] h-[200px] rounded-full orbit-track orbit-1 pointer-events-none">
-          <div style="left: 50%; top: 0%;"
-            class="absolute -ml-4 -mt-4 w-8 h-8 rounded-full bg-[#3F556B] flex items-center justify-center orbit-item orbit-trigger cursor-pointer pointer-events-auto hover:scale-125 transition-all duration-300 shadow-lg"
-            data-orbit="1"></div>
-          <div style="left: 93.3%; top: 75%;"
-            class="absolute -ml-4 -mt-4 w-8 h-8 rounded-full bg-[#3F556B] flex items-center justify-center orbit-item orbit-trigger cursor-pointer pointer-events-auto hover:scale-125 transition-all duration-300 shadow-lg"
-            data-orbit="1"></div>
-          <div style="left: 6.7%; top: 75%;"
-            class="absolute -ml-4 -mt-4 w-8 h-8 rounded-full bg-[#3F556B] flex items-center justify-center orbit-item orbit-trigger cursor-pointer pointer-events-auto hover:scale-125 transition-all duration-300 shadow-lg"
-            data-orbit="1"></div>
+          <!-- O1 (Alta Densidade) -->
+          <div class="absolute w-[200px] h-[200px] rounded-full orbit-track orbit-1 pointer-events-none">
+            <div style="left: 50%; top: 0%;"
+              class="absolute -ml-4 -mt-4 w-8 h-8 rounded-full bg-[#3F556B] flex items-center justify-center orbit-item orbit-trigger cursor-pointer pointer-events-auto hover:scale-125 transition-all duration-300 shadow-lg"
+              data-orbit="1"></div>
+            <div style="left: 93.3%; top: 75%;"
+              class="absolute -ml-4 -mt-4 w-8 h-8 rounded-full bg-[#3F556B] flex items-center justify-center orbit-item orbit-trigger cursor-pointer pointer-events-auto hover:scale-125 transition-all duration-300 shadow-lg"
+              data-orbit="1"></div>
+            <div style="left: 6.7%; top: 75%;"
+              class="absolute -ml-4 -mt-4 w-8 h-8 rounded-full bg-[#3F556B] flex items-center justify-center orbit-item orbit-trigger cursor-pointer pointer-events-auto hover:scale-125 transition-all duration-300 shadow-lg"
+              data-orbit="1"></div>
+          </div>
+
+          <!-- O2 (Média Densidade) -->
+          <div class="absolute w-[360px] h-[360px] rounded-full orbit-track orbit-2 pointer-events-none">
+            <div style="left: 85.35%; top: 14.65%;"
+              class="absolute -ml-3 -mt-3 w-6 h-6 rounded-full bg-[#4a6352] orbit-item orbit-trigger cursor-pointer pointer-events-auto hover:scale-150 transition-all duration-300 shadow-md"
+              data-orbit="2"></div>
+            <div style="left: 85.35%; top: 85.35%;"
+              class="absolute -ml-3 -mt-3 w-6 h-6 rounded-full bg-[#4a6352] orbit-item orbit-trigger cursor-pointer pointer-events-auto hover:scale-150 transition-all duration-300 shadow-md"
+              data-orbit="2"></div>
+            <div style="left: 14.65%; top: 85.35%;"
+              class="absolute -ml-3 -mt-3 w-6 h-6 rounded-full bg-[#4a6352] orbit-item orbit-trigger cursor-pointer pointer-events-auto hover:scale-150 transition-all duration-300 shadow-md"
+              data-orbit="2"></div>
+            <div style="left: 14.65%; top: 14.65%;"
+              class="absolute -ml-3 -mt-3 w-6 h-6 rounded-full bg-[#4a6352] orbit-item orbit-trigger cursor-pointer pointer-events-auto hover:scale-150 transition-all duration-300 shadow-md"
+              data-orbit="2"></div>
+          </div>
+
+          <!-- O3 (Baixa Densidade) -->
+          <div class="absolute w-[560px] h-[560px] rounded-full orbit-track orbit-3 pointer-events-none">
+            <div style="left: 50%; top: 0%;"
+              class="absolute -ml-2 -mt-2 w-4 h-4 rounded-full bg-[#b36a4d] orbit-item orbit-trigger cursor-pointer pointer-events-auto hover:scale-150 transition-all duration-300 shadow-sm"
+              data-orbit="3"></div>
+            <div style="left: 97.55%; top: 34.55%;"
+              class="absolute -ml-2 -mt-2 w-4 h-4 rounded-full bg-[#b36a4d] orbit-item orbit-trigger cursor-pointer pointer-events-auto hover:scale-150 transition-all duration-300 shadow-sm"
+              data-orbit="3"></div>
+            <div style="left: 79.39%; top: 90.45%;"
+              class="absolute -ml-2 -mt-2 w-4 h-4 rounded-full bg-[#b36a4d] orbit-item orbit-trigger cursor-pointer pointer-events-auto hover:scale-150 transition-all duration-300 shadow-sm"
+              data-orbit="3"></div>
+            <div style="left: 20.61%; top: 90.45%;"
+              class="absolute -ml-2 -mt-2 w-4 h-4 rounded-full bg-[#b36a4d] orbit-item orbit-trigger cursor-pointer pointer-events-auto hover:scale-150 transition-all duration-300 shadow-sm"
+              data-orbit="3"></div>
+            <div style="left: 2.45%; top: 34.55%;"
+              class="absolute -ml-2 -mt-2 w-4 h-4 rounded-full bg-[#b36a4d] orbit-item orbit-trigger cursor-pointer pointer-events-auto hover:scale-150 transition-all duration-300 shadow-sm"
+              data-orbit="3"></div>
+          </div>
+
+          <!-- O4 (Performance) -->
+          <div class="absolute w-[760px] h-[760px] rounded-full orbit-track orbit-4 pointer-events-none">
+            <div style="left: 100%; top: 50%;"
+              class="absolute -ml-[6px] -mt-[6px] w-3 h-3 rounded-full bg-[#d6a65c] orbit-item orbit-trigger cursor-pointer pointer-events-auto hover:scale-[2] transition-all duration-300 shadow-sm"
+              data-orbit="4"></div>
+            <div style="left: 85.36%; top: 85.36%;"
+              class="absolute -ml-[6px] -mt-[6px] w-3 h-3 rounded-full bg-[#d6a65c] orbit-item orbit-trigger cursor-pointer pointer-events-auto hover:scale-[2] transition-all duration-300 shadow-sm"
+              data-orbit="4"></div>
+            <div style="left: 50%; top: 100%;"
+              class="absolute -ml-[6px] -mt-[6px] w-3 h-3 rounded-full bg-[#d6a65c] orbit-item orbit-trigger cursor-pointer pointer-events-auto hover:scale-[2] transition-all duration-300 shadow-sm"
+              data-orbit="4"></div>
+            <div style="left: 14.64%; top: 85.36%;"
+              class="absolute -ml-[6px] -mt-[6px] w-3 h-3 rounded-full bg-[#d6a65c] orbit-item orbit-trigger cursor-pointer pointer-events-auto hover:scale-[2] transition-all duration-300 shadow-sm"
+              data-orbit="4"></div>
+            <div style="left: 0%; top: 50%;"
+              class="absolute -ml-[6px] -mt-[6px] w-3 h-3 rounded-full bg-[#d6a65c] orbit-item orbit-trigger cursor-pointer pointer-events-auto hover:scale-[2] transition-all duration-300 shadow-sm"
+              data-orbit="4"></div>
+            <div style="left: 14.64%; top: 14.64%;"
+              class="absolute -ml-[6px] -mt-[6px] w-3 h-3 rounded-full bg-[#d6a65c] orbit-item orbit-trigger cursor-pointer pointer-events-auto hover:scale-[2] transition-all duration-300 shadow-sm"
+              data-orbit="4"></div>
+            <div style="left: 50%; top: 0%;"
+              class="absolute -ml-[6px] -mt-[6px] w-3 h-3 rounded-full bg-[#d6a65c] orbit-item orbit-trigger cursor-pointer pointer-events-auto hover:scale-[2] transition-all duration-300 shadow-sm"
+              data-orbit="4"></div>
+            <div style="left: 85.36%; top: 14.64%;"
+              class="absolute -ml-[6px] -mt-[6px] w-3 h-3 rounded-full bg-[#d6a65c] orbit-item orbit-trigger cursor-pointer pointer-events-auto hover:scale-[2] transition-all duration-300 shadow-sm"
+              data-orbit="4"></div>
+          </div>
+
+          <!-- O CENTRO (Documentário) -->
+          <div
+            class="absolute flex flex-col items-center justify-center w-[70px] h-[70px] bg-[#1e2420] text-white rounded-full z-50 shadow-[0_0_40px_rgba(30,36,32,0.6)] border border-white/20 orbit-trigger pointer-events-auto hover:scale-110 transition-transform duration-500 cursor-pointer"
+            data-orbit="0" id="orbit-core">
+          </div>
+
         </div>
-
-        <!-- O2 (Média Densidade) -->
-        <div class="absolute w-[360px] h-[360px] rounded-full orbit-track orbit-2 pointer-events-none">
-          <div style="left: 85.35%; top: 14.65%;"
-            class="absolute -ml-3 -mt-3 w-6 h-6 rounded-full bg-[#4a6352] orbit-item orbit-trigger cursor-pointer pointer-events-auto hover:scale-150 transition-all duration-300 shadow-md"
-            data-orbit="2"></div>
-          <div style="left: 85.35%; top: 85.35%;"
-            class="absolute -ml-3 -mt-3 w-6 h-6 rounded-full bg-[#4a6352] orbit-item orbit-trigger cursor-pointer pointer-events-auto hover:scale-150 transition-all duration-300 shadow-md"
-            data-orbit="2"></div>
-          <div style="left: 14.65%; top: 85.35%;"
-            class="absolute -ml-3 -mt-3 w-6 h-6 rounded-full bg-[#4a6352] orbit-item orbit-trigger cursor-pointer pointer-events-auto hover:scale-150 transition-all duration-300 shadow-md"
-            data-orbit="2"></div>
-          <div style="left: 14.65%; top: 14.65%;"
-            class="absolute -ml-3 -mt-3 w-6 h-6 rounded-full bg-[#4a6352] orbit-item orbit-trigger cursor-pointer pointer-events-auto hover:scale-150 transition-all duration-300 shadow-md"
-            data-orbit="2"></div>
-        </div>
-
-        <!-- O3 (Baixa Densidade) -->
-        <div class="absolute w-[560px] h-[560px] rounded-full orbit-track orbit-3 pointer-events-none">
-          <div style="left: 50%; top: 0%;"
-            class="absolute -ml-2 -mt-2 w-4 h-4 rounded-full bg-[#b36a4d] orbit-item orbit-trigger cursor-pointer pointer-events-auto hover:scale-150 transition-all duration-300 shadow-sm"
-            data-orbit="3"></div>
-          <div style="left: 97.55%; top: 34.55%;"
-            class="absolute -ml-2 -mt-2 w-4 h-4 rounded-full bg-[#b36a4d] orbit-item orbit-trigger cursor-pointer pointer-events-auto hover:scale-150 transition-all duration-300 shadow-sm"
-            data-orbit="3"></div>
-          <div style="left: 79.39%; top: 90.45%;"
-            class="absolute -ml-2 -mt-2 w-4 h-4 rounded-full bg-[#b36a4d] orbit-item orbit-trigger cursor-pointer pointer-events-auto hover:scale-150 transition-all duration-300 shadow-sm"
-            data-orbit="3"></div>
-          <div style="left: 20.61%; top: 90.45%;"
-            class="absolute -ml-2 -mt-2 w-4 h-4 rounded-full bg-[#b36a4d] orbit-item orbit-trigger cursor-pointer pointer-events-auto hover:scale-150 transition-all duration-300 shadow-sm"
-            data-orbit="3"></div>
-          <div style="left: 2.45%; top: 34.55%;"
-            class="absolute -ml-2 -mt-2 w-4 h-4 rounded-full bg-[#b36a4d] orbit-item orbit-trigger cursor-pointer pointer-events-auto hover:scale-150 transition-all duration-300 shadow-sm"
-            data-orbit="3"></div>
-        </div>
-
-        <!-- O4 (Performance) -->
-        <div class="absolute w-[760px] h-[760px] rounded-full orbit-track orbit-4 pointer-events-none">
-          <div style="left: 100%; top: 50%;"
-            class="absolute -ml-[6px] -mt-[6px] w-3 h-3 rounded-full bg-[#d6a65c] orbit-item orbit-trigger cursor-pointer pointer-events-auto hover:scale-[2] transition-all duration-300 shadow-sm"
-            data-orbit="4"></div>
-          <div style="left: 85.36%; top: 85.36%;"
-            class="absolute -ml-[6px] -mt-[6px] w-3 h-3 rounded-full bg-[#d6a65c] orbit-item orbit-trigger cursor-pointer pointer-events-auto hover:scale-[2] transition-all duration-300 shadow-sm"
-            data-orbit="4"></div>
-          <div style="left: 50%; top: 100%;"
-            class="absolute -ml-[6px] -mt-[6px] w-3 h-3 rounded-full bg-[#d6a65c] orbit-item orbit-trigger cursor-pointer pointer-events-auto hover:scale-[2] transition-all duration-300 shadow-sm"
-            data-orbit="4"></div>
-          <div style="left: 14.64%; top: 85.36%;"
-            class="absolute -ml-[6px] -mt-[6px] w-3 h-3 rounded-full bg-[#d6a65c] orbit-item orbit-trigger cursor-pointer pointer-events-auto hover:scale-[2] transition-all duration-300 shadow-sm"
-            data-orbit="4"></div>
-          <div style="left: 0%; top: 50%;"
-            class="absolute -ml-[6px] -mt-[6px] w-3 h-3 rounded-full bg-[#d6a65c] orbit-item orbit-trigger cursor-pointer pointer-events-auto hover:scale-[2] transition-all duration-300 shadow-sm"
-            data-orbit="4"></div>
-          <div style="left: 14.64%; top: 14.64%;"
-            class="absolute -ml-[6px] -mt-[6px] w-3 h-3 rounded-full bg-[#d6a65c] orbit-item orbit-trigger cursor-pointer pointer-events-auto hover:scale-[2] transition-all duration-300 shadow-sm"
-            data-orbit="4"></div>
-          <div style="left: 50%; top: 0%;"
-            class="absolute -ml-[6px] -mt-[6px] w-3 h-3 rounded-full bg-[#d6a65c] orbit-item orbit-trigger cursor-pointer pointer-events-auto hover:scale-[2] transition-all duration-300 shadow-sm"
-            data-orbit="4"></div>
-          <div style="left: 85.36%; top: 14.64%;"
-            class="absolute -ml-[6px] -mt-[6px] w-3 h-3 rounded-full bg-[#d6a65c] orbit-item orbit-trigger cursor-pointer pointer-events-auto hover:scale-[2] transition-all duration-300 shadow-sm"
-            data-orbit="4"></div>
-        </div>
-
-        <!-- O CENTRO (Documentário) -->
-        <div
-          class="absolute flex flex-col items-center justify-center w-[70px] h-[70px] bg-[#1e2420] text-white rounded-full z-50 shadow-[0_0_40px_rgba(30,36,32,0.6)] border border-white/20 orbit-trigger pointer-events-auto hover:scale-110 transition-transform duration-500 cursor-pointer"
-          data-orbit="0" id="orbit-core">
-        </div>
-
-      </div>
       </div>
 
       <!-- Direita: Conteúdo Textual e Botões -->
       <div class="lg:col-span-5 flex flex-col justify-center text-center lg:text-left z-10 pt-12 lg:pt-0">
         <div class="flex flex-col gap-6 animate-on-scroll [animation:animationIn_1.2s_ease-out_0.2s_both]">
           <span class="text-xs uppercase font-semibold tracking-[0.2em] text-[#3F556B]">Ecossistema Narrativo</span>
-          <h2 class="font-display text-4xl md:text-5xl lg:text-[3.5rem] font-semibold tracking-tighter uppercase text-[#2d322f] leading-[0.9]">
-            Sistema Orbital 
+          <h2
+            class="font-display text-4xl md:text-5xl lg:text-[3.5rem] font-semibold tracking-tighter uppercase text-[#2d322f] leading-[0.9]">
+            Sistema Orbital
             <span class="block text-[#3F556B] mt-1 xl:mt-2">Muriel&trade;</span>
           </h2>
-          <p class="mt-4 text-xl md:text-2xl font-light text-[#2d322f]/80 leading-relaxed font-sans max-w-xl mx-auto lg:mx-0">
+          <p
+            class="mt-4 text-xl md:text-2xl font-light text-[#2d322f]/80 leading-relaxed font-sans max-w-xl mx-auto lg:mx-0">
             Um método que transforma a realidade da sua marca em um ecossistema estruturado de conteúdos.
           </p>
-          
+
           <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start w-full lg:w-auto">
             <!-- Primary Button (Dark State) -->
             <a href="#diagnostico"
@@ -605,31 +608,43 @@
   </section>
 
   <!-- SEÇÃO 5: O que entregamos -->
-  <section id="entregas" class="relative w-full py-32 lg:py-48 bg-[#1e2420] text-white overflow-hidden border-t border-[#ebedea]/5">
-    
+  <section id="entregas"
+    class="relative w-full py-32 lg:py-48 bg-[#1e2420] text-white overflow-hidden border-t border-[#ebedea]/5">
+
     <!-- Fundo abstrato cinemático lateral -->
-    <div class="absolute inset-y-0 right-0 w-1/2 bg-gradient-to-l from-[#3F556B]/10 to-transparent pointer-events-none mix-blend-screen opacity-60"></div>
+    <div
+      class="absolute inset-y-0 right-0 w-1/2 bg-gradient-to-l from-[#3F556B]/10 to-transparent pointer-events-none mix-blend-screen opacity-60">
+    </div>
 
     <div class="max-w-[1400px] mx-auto px-6 relative z-10 flex flex-col items-start lg:items-center">
-      
+
       <!-- Cabeçalho da Seção -->
-      <div class="text-left lg:text-center mb-20 lg:mb-28 animate-on-scroll [animation:animationIn_1.2s_ease-out_0.2s_both]">
-        <span class="text-xs uppercase font-semibold tracking-[0.2em] text-[#3F556B] mb-6 block">Processo Criativo</span>
-        <h2 class="font-display text-4xl md:text-5xl lg:text-7xl font-semibold tracking-tighter uppercase text-[#ebedea] leading-[0.9]">
+      <div
+        class="text-left lg:text-center mb-20 lg:mb-28 animate-on-scroll [animation:animationIn_1.2s_ease-out_0.2s_both]">
+        <span class="text-xs uppercase font-semibold tracking-[0.2em] text-[#3F556B] mb-6 block">Processo
+          Criativo</span>
+        <h2
+          class="font-display text-4xl md:text-5xl lg:text-7xl font-semibold tracking-tighter uppercase text-[#ebedea] leading-[0.9]">
           O que <span class="font-accent italic font-normal normal-case text-[#3F556B]">entregamos</span>
         </h2>
       </div>
 
       <!-- Grid de Entregáveis -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-10 w-full animate-on-scroll [animation:animationIn_1.5s_ease-out_0.4s_both]">
-        
+      <div
+        class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-10 w-full animate-on-scroll [animation:animationIn_1.5s_ease-out_0.4s_both]">
+
         <!-- Entrega 01 -->
-        <div class="group relative flex flex-col overflow-hidden items-start p-10 lg:p-14 bg-[#2d322f]/40 backdrop-blur-md border border-[#ebedea]/10 hover:border-[#3F556B]/50 hover:bg-[#2d322f]/80 transition-all duration-700 hover:-translate-y-3 hover:shadow-[0_20px_60px_rgba(30,36,32,0.8)] cursor-default lg:mt-24">
-          <div class="absolute -right-4 -bottom-6 font-display text-[140px] lg:text-[180px] leading-none font-bold text-[#ebedea]/[0.03] group-hover:text-[#3F556B]/10 transition-colors duration-700 pointer-events-none select-none z-0">01</div>
-          
+        <div
+          class="group relative flex flex-col overflow-hidden items-start p-10 lg:p-14 bg-[#2d322f]/40 backdrop-blur-md border border-[#ebedea]/10 hover:border-[#3F556B]/50 hover:bg-[#2d322f]/80 transition-all duration-700 hover:-translate-y-3 hover:shadow-[0_20px_60px_rgba(30,36,32,0.8)] cursor-default lg:mt-24">
+          <div
+            class="absolute -right-4 -bottom-6 font-display text-[140px] lg:text-[180px] leading-none font-bold text-[#ebedea]/[0.03] group-hover:text-[#3F556B]/10 transition-colors duration-700 pointer-events-none select-none z-0">
+            01</div>
+
           <div class="relative z-10 flex flex-col h-full w-full">
             <div class="w-10 h-0.5 bg-[#3F556B] mb-12 group-hover:w-20 transition-all duration-700"></div>
-            <h3 class="font-display text-2xl lg:text-3xl font-semibold uppercase tracking-tighter text-[#ebedea] mb-6 pr-4">Diagnóstico narrativo</h3>
+            <h3
+              class="font-display text-2xl lg:text-3xl font-semibold uppercase tracking-tighter text-[#ebedea] mb-6 pr-4">
+              Diagnóstico narrativo</h3>
             <p class="font-sans text-base lg:text-lg text-[#ebedea]/60 font-light leading-relaxed mt-auto max-w-[90%]">
               Mapeamos o potencial narrativo da sua marca.
             </p>
@@ -637,12 +652,17 @@
         </div>
 
         <!-- Entrega 02 -->
-        <div class="group relative flex flex-col overflow-hidden items-start p-10 lg:p-14 bg-[#2d322f]/40 backdrop-blur-md border border-[#ebedea]/10 hover:border-[#3F556B]/50 hover:bg-[#2d322f]/80 transition-all duration-700 hover:-translate-y-3 hover:shadow-[0_20px_60px_rgba(30,36,32,0.8)] cursor-default lg:mt-12">
-          <div class="absolute -right-4 -bottom-6 font-display text-[140px] lg:text-[180px] leading-none font-bold text-[#ebedea]/[0.03] group-hover:text-[#3F556B]/10 transition-colors duration-700 pointer-events-none select-none z-0">02</div>
-          
+        <div
+          class="group relative flex flex-col overflow-hidden items-start p-10 lg:p-14 bg-[#2d322f]/40 backdrop-blur-md border border-[#ebedea]/10 hover:border-[#3F556B]/50 hover:bg-[#2d322f]/80 transition-all duration-700 hover:-translate-y-3 hover:shadow-[0_20px_60px_rgba(30,36,32,0.8)] cursor-default lg:mt-12">
+          <div
+            class="absolute -right-4 -bottom-6 font-display text-[140px] lg:text-[180px] leading-none font-bold text-[#ebedea]/[0.03] group-hover:text-[#3F556B]/10 transition-colors duration-700 pointer-events-none select-none z-0">
+            02</div>
+
           <div class="relative z-10 flex flex-col h-full w-full">
             <div class="w-10 h-0.5 bg-[#3F556B] mb-12 group-hover:w-20 transition-all duration-700"></div>
-            <h3 class="font-display text-2xl lg:text-3xl font-semibold uppercase tracking-tighter text-[#ebedea] mb-6 pr-4">Filme de fundamento</h3>
+            <h3
+              class="font-display text-2xl lg:text-3xl font-semibold uppercase tracking-tighter text-[#ebedea] mb-6 pr-4">
+              Filme de fundamento</h3>
             <p class="font-sans text-base lg:text-lg text-[#ebedea]/60 font-light leading-relaxed mt-auto max-w-[90%]">
               O eixo central, onde a narrativa ganha densidade e legitimidade.
             </p>
@@ -650,12 +670,17 @@
         </div>
 
         <!-- Entrega 03 -->
-        <div class="group relative flex flex-col overflow-hidden items-start p-10 lg:p-14 bg-[#2d322f]/40 backdrop-blur-md border border-[#ebedea]/10 hover:border-[#3F556B]/50 hover:bg-[#2d322f]/80 transition-all duration-700 hover:-translate-y-3 hover:shadow-[0_20px_60px_rgba(30,36,32,0.8)] cursor-default">
-          <div class="absolute -right-4 -bottom-6 font-display text-[140px] lg:text-[180px] leading-none font-bold text-[#ebedea]/[0.03] group-hover:text-[#3F556B]/10 transition-colors duration-700 pointer-events-none select-none z-0">03</div>
-          
+        <div
+          class="group relative flex flex-col overflow-hidden items-start p-10 lg:p-14 bg-[#2d322f]/40 backdrop-blur-md border border-[#ebedea]/10 hover:border-[#3F556B]/50 hover:bg-[#2d322f]/80 transition-all duration-700 hover:-translate-y-3 hover:shadow-[0_20px_60px_rgba(30,36,32,0.8)] cursor-default">
+          <div
+            class="absolute -right-4 -bottom-6 font-display text-[140px] lg:text-[180px] leading-none font-bold text-[#ebedea]/[0.03] group-hover:text-[#3F556B]/10 transition-colors duration-700 pointer-events-none select-none z-0">
+            03</div>
+
           <div class="relative z-10 flex flex-col h-full w-full">
             <div class="w-10 h-0.5 bg-[#3F556B] mb-12 group-hover:w-20 transition-all duration-700"></div>
-            <h3 class="font-display text-2xl lg:text-3xl font-semibold uppercase tracking-tighter text-[#ebedea] mb-6 pr-4">Ecossistema narrativo</h3>
+            <h3
+              class="font-display text-2xl lg:text-3xl font-semibold uppercase tracking-tighter text-[#ebedea] mb-6 pr-4">
+              Ecossistema narrativo</h3>
             <p class="font-sans text-base lg:text-lg text-[#ebedea]/60 font-light leading-relaxed mt-auto max-w-[90%]">
               Desdobramento estratégico para campanhas, redes sociais e plataformas digitais.
             </p>
@@ -663,6 +688,104 @@
         </div>
 
       </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO 6: Como Funciona -->
+  <section id="processo"
+    class="relative w-full py-32 lg:py-48 bg-[#f4f6f3] text-[#2d322f] overflow-hidden border-t border-[#2d322f]/10">
+    <div class="max-w-[1400px] mx-auto px-6 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-12">
+
+      <!-- Coluna Fixa Esquerda (Tese) -->
+      <div
+        class="lg:col-span-5 flex flex-col justify-start lg:sticky lg:top-48 h-fit animate-on-scroll [animation:animationIn_1.2s_ease-out_0.2s_both]">
+        <span class="text-xs uppercase font-semibold tracking-[0.2em] text-[#3F556B] mb-6 block">O Processo
+          Muriel</span>
+        <h2
+          class="font-display text-4xl md:text-5xl lg:text-5xl font-semibold tracking-tighter uppercase text-[#2d322f] leading-[0.95] mb-12">
+          A maioria das produtoras entrega filmes. <br class="hidden lg:block" />
+          <span
+            class="font-accent italic font-normal normal-case text-[#3F556B] mt-6 lg:mt-8 block text-[3.5rem] md:text-6xl lg:text-7xl leading-[0.9]">A
+            Muriel constrói sistemas narrativos.</span>
+        </h2>
+
+        <!-- Benefícios Secundários -->
+        <ul class="flex flex-col gap-6 mt-4">
+          <li
+            class="flex items-center gap-6 text-[#2d322f]/80 font-sans text-[1.1rem] font-medium tracking-wide group hover:text-[#3F556B] transition-colors duration-300">
+            <span
+              class="flex items-center justify-center w-10 h-10 rounded-full bg-white shadow-sm border border-[#2d322f]/10 text-[#3F556B] shrink-0 group-hover:bg-[#3F556B] group-hover:text-white transition-colors duration-300"><iconify-icon
+                icon="solar:check-read-linear" width="20"></iconify-icon></span>
+            Coerência ao longo do tempo.
+          </li>
+          <li
+            class="flex items-center gap-6 text-[#2d322f]/80 font-sans text-[1.1rem] font-medium tracking-wide group hover:text-[#3F556B] transition-colors duration-300">
+            <span
+              class="flex items-center justify-center w-10 h-10 rounded-full bg-white shadow-sm border border-[#2d322f]/10 text-[#3F556B] shrink-0 group-hover:bg-[#3F556B] group-hover:text-white transition-colors duration-300"><iconify-icon
+                icon="solar:check-read-linear" width="20"></iconify-icon></span>
+            Multiplicação consistente de conteúdo.
+          </li>
+          <li
+            class="flex items-center gap-6 text-[#2d322f]/80 font-sans text-[1.1rem] font-medium tracking-wide group hover:text-[#3F556B] transition-colors duration-300">
+            <span
+              class="flex items-center justify-center w-10 h-10 rounded-full bg-white shadow-sm border border-[#2d322f]/10 text-[#3F556B] shrink-0 group-hover:bg-[#3F556B] group-hover:text-white transition-colors duration-300"><iconify-icon
+                icon="solar:check-read-linear" width="20"></iconify-icon></span>
+            Maior eficiência estratégica.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Coluna Direita (Linha do Tempo) -->
+      <div class="lg:col-span-6 lg:col-start-7 flex flex-col relative pt-12 lg:pt-0">
+        <!-- Eixo Y (A Linha Contínua) -->
+        <div
+          class="absolute left-2 md:left-3 top-2 bottom-6 w-px bg-gradient-to-b from-[#3F556B]/40 via-[#2d322f]/20 to-transparent">
+        </div>
+
+        <div class="flex flex-col gap-24 lg:gap-32 relative z-10 w-full">
+
+          <!-- Etapa 1 -->
+          <div
+            class="group relative pl-10 md:pl-16 animate-on-scroll hover:translate-x-4 transition-transform duration-500 ease-out [animation:animationIn_1.2s_ease-out_0.4s_both] cursor-default">
+            <span
+              class="absolute left-0 md:left-1 top-1.5 flex items-center justify-center w-4 h-4 rounded-full bg-[#f4f6f3] border-4 border-[#3F556B] shadow-[0_0_0_4px_rgba(63,85,107,0.1)] group-hover:scale-125 transition-transform duration-300"></span>
+            <span
+              class="text-[10px] md:text-xs uppercase tracking-[0.25em] font-semibold text-[#3F556B] mb-6 block">Etapa 1
+              &nbsp;|&nbsp; Diagnóstico</span>
+            <h3
+              class="font-display text-4xl lg:text-5xl font-semibold uppercase tracking-tighter text-[#2d322f] leading-[0.95]">
+              Identificação de território, tensões e verdade documental.</h3>
+          </div>
+
+          <!-- Etapa 2 -->
+          <div
+            class="group relative pl-10 md:pl-16 animate-on-scroll hover:translate-x-4 transition-transform duration-500 ease-out [animation:animationIn_1.2s_ease-out_0.6s_both] cursor-default">
+            <span
+              class="absolute left-0 md:left-1 top-1.5 flex items-center justify-center w-4 h-4 rounded-full bg-[#f4f6f3] border-4 border-[#1e2420] shadow-[0_0_0_4px_rgba(30,36,32,0.05)] group-hover:scale-125 transition-transform duration-300"></span>
+            <span
+              class="text-[10px] md:text-xs uppercase tracking-[0.25em] font-semibold text-[#1e2420] mb-6 block">Etapa 2
+              &nbsp;|&nbsp; Construção</span>
+            <h3
+              class="font-display text-4xl lg:text-5xl font-semibold uppercase tracking-tighter text-[#2d322f] opacity-80 leading-[0.95] group-hover:opacity-100 transition-opacity duration-300">
+              Desenvolvimento do filme de fundamento e da arquitetura narrativa.</h3>
+          </div>
+
+          <!-- Etapa 3 -->
+          <div
+            class="group relative pl-10 md:pl-16 animate-on-scroll hover:translate-x-4 transition-transform duration-500 ease-out [animation:animationIn_1.2s_ease-out_0.8s_both] cursor-default">
+            <span
+              class="absolute left-0 md:left-1 top-1.5 flex items-center justify-center w-4 h-4 rounded-full bg-[#f4f6f3] border-4 border-[#b36a4d] shadow-[0_0_0_4px_rgba(179,106,77,0.1)] group-hover:scale-125 transition-transform duration-300"></span>
+            <span
+              class="text-[10px] md:text-xs uppercase tracking-[0.25em] font-semibold text-[#b36a4d] mb-6 block">Etapa 3
+              &nbsp;|&nbsp; Desdobramento</span>
+            <h3
+              class="font-display text-4xl lg:text-5xl font-semibold uppercase tracking-tighter text-[#2d322f] opacity-80 leading-[0.95] group-hover:opacity-100 transition-opacity duration-300">
+              Transformação em sistema modular de conteúdos.</h3>
+          </div>
+
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -684,6 +807,21 @@
       requestAnimationFrame(raf);
     }
     requestAnimationFrame(raf);
+
+    // Elegant Guided Scroll to Section 6
+    document.querySelectorAll('a[href="#processo"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          lenis.scrollTo(target, {
+            duration: 2.4, 
+            // easeInOutCubic for buttery smooth acceleration and deceleration
+            easing: (t) => t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2
+          });
+        }
+      });
+    });
 
     // Intersection Observer for Animate On Scroll
     (function () {
