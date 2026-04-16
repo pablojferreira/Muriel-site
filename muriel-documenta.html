@@ -106,34 +106,82 @@
     </div>
   </header>
 
-  <main class="relative min-h-[70vh] pt-32 lg:pt-48 pb-16 overflow-hidden flex flex-col items-center justify-center">
-
-    <!-- Abstract Editorial Background -->
+  <main class="relative min-h-[90vh] lg:min-h-screen w-full bg-[#ebedea] text-[#2d322f] overflow-hidden pb-24 lg:pb-32">
+    <!-- Organic Editorial Background (Canvas Native) -->
     <div class="hero-bg">
       <div class="bg-base"></div>
       <div class="bg-layers">
         <div class="layer layer-1"></div>
-        <div class="layer layer-2"></div>
-        <div class="layer layer-3"></div>
+        <div class="layer layer-2" style="background: #3F556B; opacity: 0.15; top: 30%; left: 60%;"></div>
+        <div class="layer layer-3" style="background: #ffffff; width: 800px; height: 800px; opacity: 0.8; top: -20%; left: -10%;"></div>
       </div>
       <canvas class="bg-noise"></canvas>
     </div>
 
-    <div class="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12 text-center animate-on-scroll [animation:animationIn_1.2s_ease-out_0.2s_both]">
-      <span class="text-xs uppercase font-semibold tracking-[0.2em] text-[#3F556B] mb-6 block">Em construção</span>
-      <h1 class="font-display text-[4rem] md:text-[6rem] lg:text-[8rem] font-semibold tracking-tighter uppercase text-[#2d322f] leading-[0.9]">
-        Muriel <br><span class="font-accent italic font-normal normal-case text-[#3F556B]">Documenta</span>
-      </h1>
-      <p class="font-sans text-base md:text-lg font-light text-[#2d322f]/70 max-w-2xl mx-auto mt-8">
-        A página dedicada aos nossos processos cinematográficos e narrativos profundos está sendo produzida com os mais altos padrões do AEX Design System.
-      </p>
+    <!-- The Box-Busting Layout -->
+    <div class="relative z-10 w-full h-full max-w-[1400px] mx-auto px-6 lg:px-12 flex flex-col justify-center pt-32 lg:pt-48">
       
-      <a href="index.html" class="mt-12 inline-flex items-center gap-3 border border-[#2d322f]/20 bg-transparent text-[#2d322f] px-8 py-4 font-semibold uppercase tracking-widest text-sm hover:bg-[#2d322f] hover:text-[#ebedea] transition-all duration-300 group">
-        <iconify-icon icon="solar:arrow-left-linear" width="20" height="20" class="group-hover:-translate-x-1 transition-transform"></iconify-icon>
-        VOLTAR AO INÍCIO
-      </a>
-    </div>
+      <!-- Label -->
+      <div class="flex items-center gap-4 mb-8 lg:mb-16 animate-on-scroll [animation:animationIn_1.2s_ease-out_0.1s_both]">
+        <div class="w-12 lg:w-16 h-[2px] bg-[#3F556B]"></div>
+        <span class="font-sans text-xs md:text-sm font-bold uppercase tracking-[0.25em] text-[#3F556B]">Diagnóstico Narrativo</span>
+      </div>
 
+      <!-- Main Question -->
+      <h1 class="relative font-display text-[4rem] md:text-[6.5rem] lg:text-[8.5rem] xl:text-[10rem] font-bold tracking-tighter uppercase text-[#1e2420] leading-[0.85] w-full flex flex-col z-20">
+        <span class="animate-on-scroll [animation:animationIn_1.2s_ease-out_0.2s_both] text-left">Sua marca <span class="italic font-accent normal-case font-normal text-[#3F556B]">sustenta</span></span>
+        <span class="animate-on-scroll [animation:animationIn_1.2s_ease-out_0.4s_both] flex items-center justify-end w-full mt-2 lg:mt-4">
+          <span class="italic font-accent normal-case font-normal text-[#1e2420]">um documentário?</span>
+        </span>
+      </h1>
+
+      <!-- The Twist & Subtitle -->
+      <div class="mt-16 lg:mt-24 w-full flex flex-col lg:flex-row items-center justify-between gap-16 lg:gap-8 relative z-30">
+        
+        <!-- Or Just Content? Massive Box Offset -->
+        <div class="w-full lg:w-[45%] relative animate-on-scroll [animation:animationIn_1.2s_ease-out_0.6s_both]">
+          <!-- Shadow anchor -->
+          <div class="absolute inset-0 bg-[#3F556B] translate-x-4 translate-y-4 lg:translate-x-6 lg:translate-y-6 -z-10 transition-transform duration-500 hover:translate-x-2 hover:translate-y-2"></div>
+          
+          <div class="relative bg-[#1e2420] text-white p-12 lg:p-14 xl:p-16 shadow-[0_30px_60px_rgba(0,0,0,0.4)] group overflow-hidden border border-[#3F556B]/30 cursor-default">
+            <!-- Sweep highlight hover -->
+            <div class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-[150%] group-hover:translate-x-[150%] transition-transform duration-[1.2s] ease-in-out"></div>
+            
+            <h2 class="font-display text-5xl md:text-6xl lg:text-[4.5rem] xl:text-[5.5rem] uppercase font-bold tracking-tighter leading-[0.9] mb-0 relative z-10 w-full">
+              <span class="text-white/40 font-light tracking-tight">Ou</span> <span class="italic font-accent normal-case text-white">só</span> <br>
+              <span class="text-[#ebedea] underline decoration-2 underline-offset-4 decoration-[#3F556B] group-hover:decoration-white transition-colors duration-500">conteúdo?</span>
+            </h2>
+            
+            <div class="absolute bottom-0 right-0 p-6 transform group-hover:scale-110 transition-transform duration-500 z-10 hidden sm:block">
+              <iconify-icon icon="solar:camera-minimalistic-linear" width="80" height="80" class="text-[#3F556B] opacity-20 group-hover:opacity-40 transition-opacity duration-300"></iconify-icon>
+            </div>
+          </div>
+        </div>
+
+        <!-- Details & CTA -->
+        <div class="w-full lg:w-[50%] flex flex-col items-start lg:pl-16 relative">
+          
+          <p class="font-sans text-xl lg:text-[1.7rem] font-light text-[#2d322f] leading-relaxed mb-10 animate-on-scroll [animation:animationIn_1.2s_ease-out_0.7s_both]">
+            Diagnóstico concreto para identificar o 
+            <span class="font-bold relative inline-block text-[#1e2420] px-1">
+              potencial narrativo atual
+              <span class="absolute bottom-1 left-0 w-full h-[8px] bg-[#3F556B]/30 -z-10"></span>
+            </span> 
+            da sua marca – e como transformá-lo em valor.
+          </p>
+          
+          <a href="#solicitar" class="group relative flex items-center justify-center bg-[#1e2420] text-white px-10 py-5 lg:px-12 lg:py-6 overflow-hidden animate-on-scroll [animation:animationIn_1.2s_ease-out_0.9s_both] w-full md:w-auto shadow-[0_20px_40px_rgba(30,36,32,0.3)]">
+            <span class="absolute inset-0 bg-[#3F556B] -translate-x-[101%] group-hover:translate-x-0 transition-transform duration-[600ms] ease-[cubic-bezier(0.19,1,0.22,1)] z-0"></span>
+            
+            <div class="relative z-10 flex items-center gap-4 text-xs lg:text-sm font-semibold uppercase tracking-[0.2em] group-hover:text-white transition-colors duration-300">
+              SOLICITAR DIAGNÓSTICO NARRATIVO
+              <iconify-icon icon="solar:arrow-right-up-linear" width="24" height="24" class="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"></iconify-icon>
+            </div>
+          </a>
+        </div>
+
+      </div>
+    </div>
   </main>
 
   <script>
@@ -175,6 +223,43 @@
       };
       document.addEventListener("DOMContentLoaded", () => initInViewAnimations());
     })();
+
+    // Editorial Grain (Noise)
+    const canvas = document.querySelector('.bg-noise');
+    if (canvas) {
+      const ctx = canvas.getContext('2d');
+
+      function resizeCanvas() {
+        canvas.width = window.innerWidth / 2;
+        canvas.height = window.innerHeight / 2;
+      }
+
+      resizeCanvas();
+      window.addEventListener('resize', resizeCanvas);
+
+      function renderNoise() {
+        const imageData = ctx.createImageData(canvas.width, canvas.height);
+        const buffer = new Uint32Array(imageData.data.buffer);
+
+        for (let i = 0; i < buffer.length; i++) {
+          const val = Math.random() * 255 | 0;
+          buffer[i] =
+            (255 << 24) |
+            (val << 16) |
+            (val << 8) |
+            val;
+        }
+
+        ctx.putImageData(imageData, 0, 0);
+      }
+
+      function loopNoise() {
+        renderNoise();
+        requestAnimationFrame(loopNoise);
+      }
+
+      loopNoise();
+    }
   </script>
 </body>
 </html>
