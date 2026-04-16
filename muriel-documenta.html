@@ -746,6 +746,124 @@
     </div>
   </section>
 
+  <!-- SEÇÃO 5: Para quem é -->
+  <section class="relative w-full py-24 lg:py-40 bg-[#ebedea] text-[#1e2420] overflow-hidden">
+    
+    <!-- Grain Noise -->
+    <canvas class="bg-noise absolute inset-0 w-full h-full opacity-30 pointer-events-none mix-blend-overlay z-0"></canvas>
+
+    <div class="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10 flex flex-col lg:flex-row gap-16 lg:gap-24">
+      
+      <!-- Left: Sticky Title -->
+      <div class="w-full lg:w-[35%] xl:w-[30%] lg:sticky lg:top-48 animate-on-scroll [animation:animationIn_1.2s_ease-out_0.2s_both] shrink-0 h-fit">
+        <div class="flex items-center gap-4 mb-8">
+          <div class="w-12 h-[2px] bg-[#3F556B]"></div>
+          <span class="font-sans text-xs md:text-sm font-bold uppercase tracking-[0.25em] text-[#3F556B]">Público Alvo</span>
+        </div>
+        
+        <h2 class="font-display text-[5rem] md:text-[6.5rem] lg:text-[7rem] font-bold tracking-tighter uppercase leading-[0.8] text-[#1e2420] flex flex-col">
+          <span>Para</span>
+          <span class="text-transparent [-webkit-text-stroke:2px_#1e2420]">quem</span>
+          <span class="italic font-accent normal-case font-normal text-[#3F556B] relative left-4 lg:left-12 -mt-4">é?</span>
+        </h2>
+      </div>
+
+      <!-- Right: Interactive List -->
+      <div class="w-full lg:flex-1 flex flex-col justify-center mt-8 lg:mt-0">
+        <div class="border-t-2 border-[#1e2420]/10 w-full mb-0"></div>
+        
+        <!-- Row 1 -->
+        <div class="group relative border-b-2 border-[#1e2420]/10 cursor-pointer overflow-hidden animate-on-scroll [animation:animationIn_1.2s_ease-out_0.3s_both]">
+          <div class="absolute inset-0 bg-[#1e2420] transform scale-y-0 group-hover:scale-y-100 transition-transform duration-[800ms] ease-in-out origin-bottom z-0"></div>
+          
+          <div class="relative z-10 py-10 lg:py-16 px-4 lg:px-8 flex items-center justify-between transition-colors duration-700">
+             <div class="flex items-center gap-6 md:gap-12 w-full">
+               <span class="font-display text-2xl lg:text-3xl font-bold opacity-30 group-hover:opacity-100 group-hover:text-[#3F556B] transition-all duration-700 transform group-hover:translate-x-4">01</span>
+               <h3 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold uppercase tracking-tight text-[#1e2420] group-hover:text-white transition-all duration-700 transform group-hover:translate-x-8">Fundadores</h3>
+             </div>
+             
+             <!-- Arrow indicator -->
+             <div class="hidden md:flex w-14 h-14 rounded-full border border-[#1e2420]/20 group-hover:border-white/20 items-center justify-center transform group-hover:-rotate-45 group-hover:bg-[#3F556B] group-hover:scale-110 transition-all duration-700 overflow-hidden relative z-20 shrink-0">
+               <iconify-icon icon="solar:arrow-right-linear" class="text-3xl text-[#1e2420] group-hover:text-white transition-colors duration-700"></iconify-icon>
+             </div>
+          </div>
+
+          <!-- Abstract hover deco graphic -->
+          <div class="absolute inset-y-0 right-[20%] flex items-center justify-center opacity-0 group-hover:opacity-10 group-hover:-translate-x-16 transition-all duration-[1s] ease-out z-0 pointer-events-none transform scale-50 group-hover:scale-100">
+             <iconify-icon icon="solar:crown-bold-duotone" width="280" height="280" class="text-[#ebedea]"></iconify-icon>
+          </div>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="group relative border-b-2 border-[#1e2420]/10 cursor-pointer overflow-hidden animate-on-scroll [animation:animationIn_1.2s_ease-out_0.5s_both]">
+          <div class="absolute inset-0 bg-[#1e2420] transform scale-y-0 group-hover:scale-y-100 transition-transform duration-[800ms] ease-in-out origin-bottom z-0"></div>
+          
+          <div class="relative z-10 py-10 lg:py-16 px-4 lg:px-8 flex items-center justify-between transition-colors duration-700">
+             <div class="flex items-center gap-6 md:gap-12 w-full">
+               <span class="font-display text-2xl lg:text-3xl font-bold opacity-30 group-hover:opacity-100 group-hover:text-[#3F556B] transition-all duration-700 transform group-hover:translate-x-4">02</span>
+               <h3 class="font-display text-4xl md:text-5xl xl:text-6xl font-bold uppercase tracking-tight text-[#1e2420] group-hover:text-white transition-all duration-700 transform group-hover:translate-x-8">Líderes de <br class="md:hidden">marketing</h3>
+             </div>
+             
+             <!-- Arrow indicator -->
+             <div class="hidden md:flex w-14 h-14 rounded-full border border-[#1e2420]/20 group-hover:border-white/20 items-center justify-center transform group-hover:-rotate-45 group-hover:bg-[#3F556B] group-hover:scale-110 transition-all duration-700 overflow-hidden relative z-20 shrink-0">
+               <iconify-icon icon="solar:arrow-right-linear" class="text-3xl text-[#1e2420] group-hover:text-white transition-colors duration-700"></iconify-icon>
+             </div>
+          </div>
+
+          <!-- Abstract hover deco graphic -->
+          <div class="absolute inset-y-0 right-[20%] flex items-center justify-center opacity-0 group-hover:opacity-10 group-hover:-translate-x-16 transition-all duration-[1s] ease-out z-0 pointer-events-none transform scale-50 group-hover:scale-100">
+             <iconify-icon icon="solar:target-bold-duotone" width="280" height="280" class="text-[#ebedea]"></iconify-icon>
+          </div>
+        </div>
+
+        <!-- Row 3 -->
+        <div class="group relative border-b-2 border-[#1e2420]/10 cursor-pointer overflow-hidden animate-on-scroll [animation:animationIn_1.2s_ease-out_0.7s_both]">
+          <div class="absolute inset-0 bg-[#1e2420] transform scale-y-0 group-hover:scale-y-100 transition-transform duration-[800ms] ease-in-out origin-bottom z-0"></div>
+          
+          <div class="relative z-10 py-10 lg:py-16 px-4 lg:px-8 flex items-center justify-between transition-colors duration-700">
+             <div class="flex items-center gap-6 md:gap-12 w-full">
+               <span class="font-display text-2xl lg:text-3xl font-bold opacity-30 group-hover:opacity-100 group-hover:text-[#3F556B] transition-all duration-700 transform group-hover:translate-x-4">03</span>
+               <h3 class="font-display text-4xl md:text-[2.8rem] xl:text-[3.5rem] leading-[1.1] font-bold uppercase tracking-tight text-[#1e2420] group-hover:text-white transition-all duration-700 transform group-hover:translate-x-8">Branding <span class="opacity-50 mx-2">/</span> <br class="hidden md:block">Comunicação</h3>
+             </div>
+             
+             <!-- Arrow indicator -->
+             <div class="hidden md:flex w-14 h-14 rounded-full border border-[#1e2420]/20 group-hover:border-white/20 items-center justify-center transform group-hover:-rotate-45 group-hover:bg-[#3F556B] group-hover:scale-110 transition-all duration-700 overflow-hidden relative z-20 shrink-0">
+               <iconify-icon icon="solar:arrow-right-linear" class="text-3xl text-[#1e2420] group-hover:text-white transition-colors duration-700"></iconify-icon>
+             </div>
+          </div>
+
+          <!-- Abstract hover deco graphic -->
+          <div class="absolute inset-y-0 right-[20%] flex items-center justify-center opacity-0 group-hover:opacity-10 group-hover:-translate-x-16 transition-all duration-[1s] ease-out z-0 pointer-events-none transform scale-50 group-hover:scale-100">
+             <iconify-icon icon="solar:megaphone-bold-duotone" width="280" height="280" class="text-[#ebedea]"></iconify-icon>
+          </div>
+        </div>
+
+        <!-- Row 4 -->
+        <div class="group relative border-b-2 border-[#1e2420]/10 cursor-pointer overflow-hidden animate-on-scroll [animation:animationIn_1.2s_ease-out_0.9s_both]">
+          <div class="absolute inset-0 bg-[#1e2420] transform scale-y-0 group-hover:scale-y-100 transition-transform duration-[800ms] ease-in-out origin-bottom z-0"></div>
+          
+          <div class="relative z-10 py-10 lg:py-16 px-4 lg:px-8 flex items-center justify-between transition-colors duration-700">
+             <div class="flex items-center gap-6 md:gap-12 w-full">
+               <span class="font-display text-2xl lg:text-3xl font-bold opacity-30 group-hover:opacity-100 group-hover:text-[#3F556B] transition-all duration-700 transform group-hover:translate-x-4">04</span>
+               <h3 class="font-display text-3xl md:text-5xl lg:text-[2.8rem] xl:text-[3.5rem] font-bold uppercase tracking-tight text-[#1e2420] group-hover:text-white transition-all duration-700 transform group-hover:translate-x-8">Agências <br class="md:hidden">Estratégicas</h3>
+             </div>
+             
+             <!-- Arrow indicator -->
+             <div class="hidden md:flex w-14 h-14 rounded-full border border-[#1e2420]/20 group-hover:border-white/20 items-center justify-center transform group-hover:-rotate-45 group-hover:bg-[#3F556B] group-hover:scale-110 transition-all duration-700 overflow-hidden relative z-20 shrink-0">
+               <iconify-icon icon="solar:arrow-right-linear" class="text-3xl text-[#1e2420] group-hover:text-white transition-colors duration-700"></iconify-icon>
+             </div>
+          </div>
+
+          <!-- Abstract hover deco graphic -->
+          <div class="absolute inset-y-0 right-[20%] flex items-center justify-center opacity-0 group-hover:opacity-10 group-hover:-translate-x-16 transition-all duration-[1s] ease-out z-0 pointer-events-none transform scale-50 group-hover:scale-100">
+             <iconify-icon icon="solar:lightbulb-bolt-bold-duotone" width="280" height="280" class="text-[#ebedea]"></iconify-icon>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <script>
     // Smooth Scroll System via Lenis
     const lenis = new Lenis({
