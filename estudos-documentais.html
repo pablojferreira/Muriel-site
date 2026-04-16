@@ -56,6 +56,7 @@
         transform: translateY(30px);
         filter: blur(8px);
       }
+
       100% {
         opacity: 1;
         transform: translateY(0);
@@ -79,8 +80,13 @@
     }
 
     @keyframes marquee {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
     }
 
     .bg-noise {
@@ -142,129 +148,188 @@
 
   <!-- HERO da Subpágina de Estudos (Dark Mode Marquee) -->
   <main class="relative min-h-screen w-full flex items-center pt-32 pb-24 overflow-hidden bg-[#1e2420]">
-      <!-- Grid AEX Dark -->
-      <div class="absolute inset-0 z-0 pointer-events-none mix-blend-overlay opacity-[0.03]" style="background-image: linear-gradient(rgba(235, 237, 234, 0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(235, 237, 234, 0.5) 1px, transparent 1px); background-size: 80px 80px;"></div>
-      
-      <!-- Glow -->
-      <div class="absolute -top-40 -left-40 w-[800px] h-[800px] bg-[#3F556B]/20 rounded-full blur-[150px] pointer-events-none z-0"></div>
+    <!-- Grid AEX Dark -->
+    <div class="absolute inset-0 z-0 pointer-events-none mix-blend-overlay opacity-[0.03]"
+      style="background-image: linear-gradient(rgba(235, 237, 234, 0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(235, 237, 234, 0.5) 1px, transparent 1px); background-size: 80px 80px;">
+    </div>
 
-      <!-- "FORA DA CAIXA" Background Marquee -->
-      <div class="absolute top-1/2 -translate-y-1/2 left-0 opacity-[0.025] pointer-events-none select-none z-0 flex whitespace-nowrap overflow-hidden w-[200vw]">
-         <h2 class="font-display text-[20rem] lg:text-[35rem] font-bold uppercase leading-none tracking-tight mix-blend-overlay [animation:marquee_30s_linear_infinite] will-change-transform text-white">
-            ESTUDOS DOCUMENTAIS &nbsp;&mdash;&nbsp; ESTUDOS DOCUMENTAIS &nbsp;&mdash;&nbsp; ESTUDOS DOCUMENTAIS &nbsp;&mdash;&nbsp; ESTUDOS DOCUMENTAIS &nbsp;&mdash;&nbsp;
-         </h2>
+    <!-- Glow -->
+    <div
+      class="absolute -top-40 -left-40 w-[800px] h-[800px] bg-[#3F556B]/20 rounded-full blur-[150px] pointer-events-none z-0">
+    </div>
+
+    <!-- "FORA DA CAIXA" Background Marquee -->
+    <div
+      class="absolute top-1/2 -translate-y-1/2 left-0 opacity-[0.025] pointer-events-none select-none z-0 flex whitespace-nowrap overflow-hidden w-[200vw]">
+      <h2
+        class="font-display text-[20rem] lg:text-[35rem] font-bold uppercase leading-none tracking-tight mix-blend-overlay [animation:marquee_30s_linear_infinite] will-change-transform text-white">
+        ESTUDOS DOCUMENTAIS &nbsp;&mdash;&nbsp; ESTUDOS DOCUMENTAIS &nbsp;&mdash;&nbsp; ESTUDOS DOCUMENTAIS
+        &nbsp;&mdash;&nbsp; ESTUDOS DOCUMENTAIS &nbsp;&mdash;&nbsp;
+      </h2>
+    </div>
+
+    <div class="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12 w-full flex flex-col items-start text-left">
+      <div class="flex items-center gap-4 mb-8 lg:mb-14 [animation:animationIn_1.2s_ease-out_both] delay-100">
+        <div class="w-1.5 h-1.5 rounded-full bg-[#3F556B] animate-pulse"></div>
+        <span class="font-sans text-xs md:text-sm font-bold uppercase tracking-[0.25em] text-[#3F556B]">Fase 01 &mdash;
+          Início de Escopo</span>
       </div>
 
-      <div class="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12 w-full flex flex-col items-start text-left">
-         <div class="flex items-center gap-4 mb-8 lg:mb-14 [animation:animationIn_1.2s_ease-out_both] delay-100">
-             <div class="w-1.5 h-1.5 rounded-full bg-[#3F556B] animate-pulse"></div>
-             <span class="font-sans text-xs md:text-sm font-bold uppercase tracking-[0.25em] text-[#3F556B]">Fase 01 &mdash; Início de Escopo</span>
-         </div>
-         
-         <h1 class="text-[5rem] md:text-[7rem] lg:text-[9.5rem] xl:text-[11.5rem] leading-[0.9] text-white [animation:animationIn_1.5s_ease-out_both] delay-300 relative group cursor-default">
-             <span class="block font-display font-bold uppercase tracking-tighter text-white">Comece</span>
-             <span class="relative overflow-hidden inline-block group-hover:text-[#3F556B] transition-colors duration-[1s]">
-               <span class="italic font-accent normal-case font-normal pr-4 lg:pr-6">pelo</span><span class="font-display font-bold tracking-tighter uppercase text-[#3F556B] group-hover:text-white transition-colors duration-[1s] relative z-10">REAL.</span>
-               <span class="absolute bottom-2 lg:bottom-4 left-0 w-full h-[2px] lg:h-[4px] bg-[#3F556B]/40 hidden md:block"></span>
-             </span>
-         </h1>
+      <h1
+        class="text-[5rem] md:text-[7rem] lg:text-[9.5rem] xl:text-[11.5rem] leading-[0.9] text-white [animation:animationIn_1.5s_ease-out_both] delay-300 relative group cursor-default">
+        <span class="block font-display font-bold uppercase tracking-tighter text-white">Comece</span>
+        <span class="relative overflow-hidden inline-block group-hover:text-[#3F556B] transition-colors duration-[1s]">
+          <span class="italic font-accent normal-case font-normal pr-4 lg:pr-6">pelo</span><span
+            class="font-display font-bold tracking-tighter uppercase text-[#3F556B] group-hover:text-white transition-colors duration-[1s] relative z-10">REAL.</span>
+          <span
+            class="absolute bottom-2 lg:bottom-4 left-0 w-full h-[2px] lg:h-[4px] bg-[#3F556B]/40 hidden md:block"></span>
+        </span>
+      </h1>
 
-         <p class="font-sans text-lg md:text-xl lg:text-[1.35rem] font-light text-[#ebedea]/60 max-w-[580px] mt-12 lg:mt-16 [animation:animationIn_1.5s_ease-out_both] delay-500 leading-relaxed border-l-2 border-[#3F556B]/40 pl-6 ml-1">
-            <strong class="font-bold text-white uppercase tracking-widest text-xs lg:text-sm">Estudos documentais</strong> para marcas autorais que desejam transformar sua trajetória em narrativa &ndash; com <span class="text-white italic font-serif">rigor</span>, <span class="text-white italic font-serif">sensibilidade</span> e <span class="text-[#3F556B] font-bold tracking-widest">valor no tempo.</span>
-         </p>
+      <p
+        class="font-sans text-lg md:text-xl lg:text-[1.35rem] font-light text-[#ebedea]/60 max-w-[580px] mt-12 lg:mt-16 [animation:animationIn_1.5s_ease-out_both] delay-500 leading-relaxed border-l-2 border-[#3F556B]/40 pl-6 ml-1">
+        <strong class="font-bold text-white uppercase tracking-widest text-xs lg:text-sm">Estudos documentais</strong>
+        para marcas autorais que desejam transformar sua trajetória em narrativa &ndash; com <span
+          class="text-white italic font-serif">rigor</span>, <span
+          class="text-white italic font-serif">sensibilidade</span> e <span
+          class="text-[#3F556B] font-bold tracking-widest">valor no tempo.</span>
+      </p>
 
-         <a href="#comecar" class="mt-16 lg:mt-24 group relative inline-flex items-center justify-between w-full sm:w-auto bg-[#ebedea] text-[#1e2420] overflow-hidden px-8 py-6 lg:px-12 border border-transparent shadow-[0_20px_50px_rgba(0,0,0,0.5)] [animation:animationIn_1.5s_ease-out_both] delay-700">
-             <span class="absolute inset-0 w-full h-full bg-[#3F556B] transform scale-x-0 origin-right group-hover:scale-x-100 transition-transform duration-[800ms] ease-[cubic-bezier(0.19,1,0.22,1)] z-0"></span>
-             
-             <span class="relative z-10 font-sans font-bold text-xs lg:text-sm uppercase tracking-[0.25em] group-hover:text-white transition-colors duration-500 pr-12 text-left leading-tight">
-                Quero começar um estudo documental
-             </span>
-             
-             <div class="relative z-10 w-10 h-10 lg:w-12 lg:h-12 flex items-center justify-center bg-[#1e2420] text-[#ebedea] rounded-full group-hover:bg-white group-hover:text-[#1e2420] transition-colors duration-500 shrink-0">
-                <iconify-icon icon="solar:arrow-right-up-linear" width="22" class="group-hover:rotate-45 transition-transform duration-500"></iconify-icon>
-             </div>
-         </a>
-      </div>
+      <a href="#comecar"
+        class="mt-16 lg:mt-24 group relative inline-flex items-center justify-between w-full sm:w-auto bg-[#ebedea] text-[#1e2420] overflow-hidden px-8 py-6 lg:px-12 border border-transparent shadow-[0_20px_50px_rgba(0,0,0,0.5)] [animation:animationIn_1.5s_ease-out_both] delay-700">
+        <span
+          class="absolute inset-0 w-full h-full bg-[#3F556B] transform scale-x-0 origin-right group-hover:scale-x-100 transition-transform duration-[800ms] ease-[cubic-bezier(0.19,1,0.22,1)] z-0"></span>
 
-      <!-- Scroll Hint bottom -->
-      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-80 [animation:animationIn_0.8s_ease-out_1.2s_both] z-20">
-        <span class="font-sans text-[10px] uppercase tracking-[0.2em] text-[#3F556B] font-semibold">Explore</span>
-        <iconify-icon class="animate-bounce text-white" icon="solar:arrow-down-linear"></iconify-icon>
-      </div>
+        <span
+          class="relative z-10 font-sans font-bold text-xs lg:text-sm uppercase tracking-[0.25em] group-hover:text-white transition-colors duration-500 pr-12 text-left leading-tight">
+          Quero começar um estudo documental
+        </span>
+
+        <div
+          class="relative z-10 w-10 h-10 lg:w-12 lg:h-12 flex items-center justify-center bg-[#1e2420] text-[#ebedea] rounded-full group-hover:bg-white group-hover:text-[#1e2420] transition-colors duration-500 shrink-0">
+          <iconify-icon icon="solar:arrow-right-up-linear" width="22"
+            class="group-hover:rotate-45 transition-transform duration-500"></iconify-icon>
+        </div>
+      </a>
+    </div>
+
+    <!-- Scroll Hint bottom -->
+    <div
+      class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-80 [animation:animationIn_0.8s_ease-out_1.2s_both] z-20">
+      <span class="font-sans text-[10px] uppercase tracking-[0.2em] text-[#3F556B] font-semibold">Explore</span>
+      <iconify-icon class="animate-bounce text-white" icon="solar:arrow-down-linear"></iconify-icon>
+    </div>
   </main>
 
   <!-- 2ª DOBRA: O Manifesto de Partida -->
   <section class="relative w-full bg-[#131715] text-[#ebedea] py-32 lg:py-48 overflow-hidden z-20">
-     <!-- Grid Arquitetural Fundo Secundário -->
-     <div class="absolute inset-0 z-0 pointer-events-none mix-blend-overlay opacity-[0.03]" style="background-image: linear-gradient(rgba(235, 237, 234, 0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(235, 237, 234, 0.5) 1px, transparent 1px); background-size: 40px 40px;"></div>
-     <!-- Luz de Preenchimento -->
-     <div class="absolute top-[20%] right-[-20%] w-[600px] h-[600px] bg-[#3F556B]/10 rounded-full blur-[150px] pointer-events-none z-0"></div>
-     
-     <div class="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10 flex flex-col lg:flex-row items-start justify-between gap-20 lg:gap-24">
-         
-         <!-- Left Block: Editorial Quote -->
-         <div class="w-full lg:w-[55%] flex flex-col relative [animation:animationIn_1.5s_ease-out_both] animate-on-scroll">
-             <div class="flex items-center gap-4 mb-4 lg:mb-6">
-                 <div class="w-8 h-[1px] bg-[#3F556B]"></div>
-                 <span class="font-sans text-[10px] md:text-xs font-bold uppercase tracking-[0.25em] text-[#3F556B]">Manifesto de partida</span>
-             </div>
-             
-             <h2 class="font-display text-[4rem] md:text-[5rem] lg:text-[6.5rem] uppercase font-bold tracking-tighter leading-[0.85] text-white">
-                <span class="block text-[#696D6A] italic font-accent normal-case font-normal tracking-wide translate-y-3 lg:translate-y-6 relative z-30 drop-shadow-xl">nem toda marca</span>
-                <span class="block text-white tracking-widest relative z-10">
-                   <span class="md:block md:mb-4 lg:mb-6">começa com</span>
-                   <span class="md:block md:mb-4 lg:mb-6">um grande</span>
-                   <span class="block md:inline-block text-[#3F556B] underline decoration-4 underline-offset-[8px] lg:underline-offset-[16px] decoration-[#3F556B]/30">filme.</span>
-                </span>
-             </h2>
+    <!-- Grid Arquitetural Fundo Secundário -->
+    <div class="absolute inset-0 z-0 pointer-events-none mix-blend-overlay opacity-[0.03]"
+      style="background-image: linear-gradient(rgba(235, 237, 234, 0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(235, 237, 234, 0.5) 1px, transparent 1px); background-size: 40px 40px;">
+    </div>
+    <!-- Luz de Preenchimento -->
+    <div
+      class="absolute top-[20%] right-[-20%] w-[600px] h-[600px] bg-[#3F556B]/10 rounded-full blur-[150px] pointer-events-none z-0">
+    </div>
 
-             <p class="font-sans text-xl lg:text-[1.85rem] font-light mt-16 lg:mt-24 text-[#ebedea]/60 leading-relaxed max-w-[620px] border-l-2 border-[#3F556B]/40 pl-6 lg:pl-10 ml-2">
-                Mas toda marca que constrói <strong class="font-display text-white uppercase tracking-tighter text-3xl lg:text-[2.75rem] mx-2 translate-y-2 inline-block">RELEVÂNCIA</strong> começa por uma <span class="text-white italic normal-case font-accent text-2xl lg:text-[2rem] px-1">história verdadeira</span> bem contada.
-             </p>
-         </div>
+    <div
+      class="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10 flex flex-col lg:flex-row items-start justify-between gap-20 lg:gap-24">
 
-         <!-- Right Block: Bullets Stepper -->
-         <div class="w-full lg:w-[40%] flex flex-col pt-8 lg:pt-24 relative">
-             <h3 class="font-sans text-xs lg:text-sm uppercase tracking-[0.2em] font-normal text-[#ebedea]/50 mb-14 border-b border-white/5 pb-6 [animation:animationIn_1.5s_ease-out_both] delay-200 animate-on-scroll">
-                Os Estudos documentais Muriel <br class="hidden lg:block"><strong class="font-bold text-white tracking-[0.25em]">são o primeiro passo.</strong>
-             </h3>
+      <!-- Left Block: Editorial Quote -->
+      <div
+        class="w-full lg:w-[55%] flex flex-col relative [animation:animationIn_1.5s_ease-out_both] animate-on-scroll">
+        <div class="flex items-center gap-4 mb-4 lg:mb-6">
+          <div class="w-8 h-[1px] bg-[#3F556B]"></div>
+          <span class="font-sans text-[10px] md:text-xs font-bold uppercase tracking-[0.25em] text-[#3F556B]">Manifesto
+            de partida</span>
+        </div>
 
-             <ul class="flex flex-col relative">
-                <!-- Timeline Tracker Line -->
-                <div class="absolute left-[13px] top-[15px] bottom-16 w-[1px] bg-gradient-to-b from-[#3F556B] via-[#3F556B]/30 to-transparent"></div>
+        <h2
+          class="font-display text-[4rem] md:text-[5rem] lg:text-[6.5rem] uppercase font-bold tracking-tighter leading-[0.85] text-white">
+          <span
+            class="block text-[#696D6A] italic font-accent normal-case font-normal tracking-wide translate-y-3 lg:translate-y-6 relative z-30 drop-shadow-xl">nem
+            toda marca</span>
+          <span class="block text-white tracking-widest relative z-10">
+            <span class="md:block md:mb-4 lg:mb-6">começa com</span>
+            <span class="md:block md:mb-4 lg:mb-6">um grande</span>
+            <span
+              class="block md:inline-block text-[#3F556B] underline decoration-4 underline-offset-[8px] lg:underline-offset-[16px] decoration-[#3F556B]/30">filme.</span>
+          </span>
+        </h2>
 
-                <!-- Ponto 1 -->
-                <li class="group relative flex gap-8 lg:gap-10 items-start py-8 cursor-default [animation:animationIn_1.5s_ease-out_both] delay-300 animate-on-scroll">
-                    <div class="relative w-7 h-7 shrink-0 rounded-full bg-[#131715] border-2 border-[#3F556B] flex items-center justify-center mt-1 group-hover:scale-125 group-hover:bg-[#3F556B] transition-all duration-500 z-10">
-                        <div class="w-1.5 h-1.5 rounded-full bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100"></div>
-                    </div>
-                    <div class="flex flex-col">
-                        <span class="font-display text-4xl lg:text-5xl text-white opacity-20 group-hover:opacity-100 transition-opacity duration-500 font-bold uppercase tracking-tighter leading-none mb-3">Mais <br class="hidden lg:block">acessíveis</span>
-                    </div>
-                </li>
+        <p
+          class="font-sans text-xl lg:text-[1.85rem] font-light mt-16 lg:mt-24 text-[#ebedea]/60 leading-relaxed max-w-[620px] border-l-2 border-[#3F556B]/40 pl-6 lg:pl-10 ml-2">
+          Mas toda marca que constrói <strong
+            class="font-display text-white uppercase tracking-tighter text-3xl lg:text-[2.75rem] mx-2 translate-y-2 inline-block">RELEVÂNCIA</strong>
+          começa por uma <span class="text-white italic normal-case font-accent text-2xl lg:text-[2rem] px-1">história
+            verdadeira</span> bem contada.
+        </p>
+      </div>
 
-                <!-- Ponto 2 -->
-                <li class="group relative flex gap-8 lg:gap-10 items-start py-8 cursor-default [animation:animationIn_1.5s_ease-out_both] delay-500 animate-on-scroll">
-                    <div class="relative w-7 h-7 shrink-0 rounded-full bg-[#131715] border-2 border-[#3F556B] flex items-center justify-center mt-1 group-hover:scale-125 group-hover:bg-[#3F556B] transition-all duration-500 z-10">
-                        <div class="w-1.5 h-1.5 rounded-full bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100"></div>
-                    </div>
-                    <div class="flex flex-col">
-                        <span class="font-display text-4xl lg:text-5xl text-white opacity-20 group-hover:opacity-100 transition-opacity duration-500 font-bold uppercase tracking-tighter leading-none mb-3">Mais <br class="hidden lg:block">íntimos.</span>
-                    </div>
-                </li>
+      <!-- Right Block: Bullets Stepper -->
+      <div class="w-full lg:w-[40%] flex flex-col pt-8 lg:pt-24 relative">
+        <h3
+          class="font-sans text-sm lg:text-base uppercase tracking-[0.2em] font-normal text-[#ebedea]/50 mb-14 border-b border-white/5 pb-6 [animation:animationIn_1.5s_ease-out_both] delay-200 animate-on-scroll">
+          Os Estudos documentais Muriel <br class="hidden lg:block"><strong
+            class="font-bold text-white tracking-[0.25em]">são o primeiro passo.</strong>
+        </h3>
 
-                <!-- Ponto 3 -->
-                <li class="group relative flex gap-8 lg:gap-10 items-start py-8 cursor-default [animation:animationIn_1.5s_ease-out_both] delay-700 animate-on-scroll">
-                    <div class="relative w-7 h-7 shrink-0 rounded-full bg-[#131715] border-2 border-[#3F556B] flex items-center justify-center mt-1 group-hover:scale-125 group-hover:bg-[#3F556B] transition-all duration-500 z-10">
-                        <div class="w-1.5 h-1.5 rounded-full bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100"></div>
-                    </div>
-                    <div class="flex flex-col">
-                        <span class="font-display text-4xl lg:text-5xl text-white opacity-20 group-hover:opacity-100 transition-opacity duration-500 font-bold uppercase tracking-tighter leading-none mb-3">Profundamente <br class="hidden lg:block">estratégicos</span>
-                    </div>
-                </li>
-             </ul>
-         </div>
-     </div>
+        <ul class="flex flex-col relative">
+          <!-- Timeline Tracker Line -->
+          <div
+            class="absolute left-[13px] top-[15px] bottom-16 w-[1px] bg-gradient-to-b from-[#3F556B] via-[#3F556B]/30 to-transparent">
+          </div>
+
+          <!-- Ponto 1 -->
+          <li
+            class="group relative flex gap-8 lg:gap-10 items-start py-8 cursor-default [animation:animationIn_1.5s_ease-out_both] delay-300 animate-on-scroll">
+            <div
+              class="relative w-7 h-7 shrink-0 rounded-full bg-[#131715] border-2 border-[#3F556B] flex items-center justify-center mt-1 group-hover:scale-125 group-hover:bg-[#3F556B] transition-all duration-500 z-10">
+              <div
+                class="w-1.5 h-1.5 rounded-full bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
+              </div>
+            </div>
+            <div class="flex flex-col">
+              <span
+                class="font-display text-4xl lg:text-5xl text-white opacity-20 group-hover:opacity-100 transition-opacity duration-500 font-bold uppercase tracking-tighter leading-none mb-3">Mais
+                <br class="hidden lg:block">acessíveis</span>
+            </div>
+          </li>
+
+          <!-- Ponto 2 -->
+          <li
+            class="group relative flex gap-8 lg:gap-10 items-start py-8 cursor-default [animation:animationIn_1.5s_ease-out_both] delay-500 animate-on-scroll">
+            <div
+              class="relative w-7 h-7 shrink-0 rounded-full bg-[#131715] border-2 border-[#3F556B] flex items-center justify-center mt-1 group-hover:scale-125 group-hover:bg-[#3F556B] transition-all duration-500 z-10">
+              <div
+                class="w-1.5 h-1.5 rounded-full bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
+              </div>
+            </div>
+            <div class="flex flex-col">
+              <span
+                class="font-display text-4xl lg:text-5xl text-white opacity-20 group-hover:opacity-100 transition-opacity duration-500 font-bold uppercase tracking-tighter leading-none mb-3">Mais
+                <br class="hidden lg:block">íntimos</span>
+            </div>
+          </li>
+
+          <!-- Ponto 3 -->
+          <li
+            class="group relative flex gap-8 lg:gap-10 items-start py-8 cursor-default [animation:animationIn_1.5s_ease-out_both] delay-700 animate-on-scroll">
+            <div
+              class="relative w-7 h-7 shrink-0 rounded-full bg-[#131715] border-2 border-[#3F556B] flex items-center justify-center mt-1 group-hover:scale-125 group-hover:bg-[#3F556B] transition-all duration-500 z-10">
+              <div
+                class="w-1.5 h-1.5 rounded-full bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
+              </div>
+            </div>
+            <div class="flex flex-col">
+              <span
+                class="font-display text-4xl lg:text-5xl text-white opacity-20 group-hover:opacity-100 transition-opacity duration-500 font-bold uppercase tracking-tighter leading-none mb-3">Profundamente
+                <br class="hidden lg:block">estratégicos</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
   </section>
 
   <script>
@@ -316,4 +381,5 @@
     document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
   </script>
 </body>
+
 </html>
