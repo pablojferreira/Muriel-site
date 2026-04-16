@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Muriel Documenta | Muriel Filmes</title>
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lenis via CDN -->
+  <script src="https://unpkg.com/lenis@1.0.45/dist/lenis.min.js"></script>
+
+  <!-- Tooling -->
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
+  <!-- GSAP Core -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+  <!-- Google Fonts for AEX Design System -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&display=swap"
+    rel="stylesheet">
+
+  <style>
+    /* ───── AEX Design System Typography ───── */
+    body { font-family: 'Inter', sans-serif; }
+    .font-display { font-family: 'Oswald', sans-serif; }
+    .font-accent { font-family: 'Playfair Display', serif; }
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #ebedea; }
+    ::-webkit-scrollbar-thumb { background: #3F556B; }
+
+    @keyframes animationIn {
+      0% { opacity: 0; transform: translateY(30px); filter: blur(8px); }
+      100% { opacity: 1; transform: translateY(0); filter: blur(0px); }
+    }
+
+    .animate-on-scroll { animation-play-state: paused !important; }
+    .animate-on-scroll.animate { animation-play-state: running !important; }
+
+    html, body {
+      overflow-x: hidden !important;
+      min-height: 100% !important;
+      scroll-behavior: auto !important;
+    }
+
+    /* ───── Abstract Editorial Background ───── */
+    .hero-bg { position: absolute; inset: 0; overflow: hidden; z-index: 0; pointer-events: none; }
+    .bg-base { position: absolute; inset: 0; background: #ebedea; }
+    .bg-layers { position: absolute; inset: 0; filter: blur(60px); }
+    .layer { position: absolute; border-radius: 50%; opacity: 0.7; mix-blend-mode: multiply; }
+    .layer-1 { width: 600px; height: 600px; background: #f2f2f2; top: 10%; left: 15%; animation: float1 28s ease-in-out infinite alternate; }
+    .layer-2 { width: 500px; height: 500px; background: #eaeaea; top: 40%; left: 55%; animation: float2 32s ease-in-out infinite alternate; }
+    .layer-3 { width: 700px; height: 700px; background: #f5f5f5; top: 60%; left: 20%; animation: float3 36s ease-in-out infinite alternate; }
+    
+    @keyframes float1 { 0% { transform: translate(0px, 0px) scale(1); } 100% { transform: translate(40px, -30px) scale(1.05); } }
+    @keyframes float2 { 0% { transform: translate(0px, 0px) scale(1); } 100% { transform: translate(-30px, 40px) scale(1.08); } }
+    @keyframes float3 { 0% { transform: translate(0px, 0px) scale(1); } 100% { transform: translate(20px, 30px) scale(1.04); } }
+    
+    .bg-noise { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.055; mix-blend-mode: multiply; }
+  </style>
+</head>
+
+<body class="bg-[#ebedea] text-[#2d322f] antialiased selection:bg-[#3F556B] selection:text-white overflow-x-hidden">
+
+  <!-- Navegação Topo (Design System Pattern) -->
+  <header class="fixed top-0 inset-x-0 w-full border-b border-[#2d322f]/10 bg-[#ebedea]/60 backdrop-blur-xl z-50">
+    <div class="max-w-[1400px] mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
+      <!-- Logo Esquerda -->
+      <div class="flex justify-start items-center">
+        <a href="index.html" class="shrink-0 group flex items-center">
+          <img src="Muriel_nome.png" alt="Muriel Logo"
+            class="h-4 md:h-5 opacity-80 group-hover:opacity-100 transition-all duration-300 filter brightness-0">
+        </a>
+      </div>
+
+      <!-- Links & Interações Direita -->
+      <div class="flex justify-end items-center gap-10">
+        <nav class="hidden md:flex justify-end gap-10">
+          <a href="muriel-documenta.html"
+            class="relative group text-xs font-bold text-[#3F556B] transition-colors duration-300 uppercase tracking-[0.15em] py-2 whitespace-nowrap">Muriel
+            Documenta<span
+              class="absolute bottom-0 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-[#3F556B] opacity-100 transition-opacity duration-300"></span></a>
+          <a href="index.html#pos"
+            class="relative group text-xs font-semibold text-[#2d322f]/70 hover:text-[#3F556B] transition-colors duration-300 uppercase tracking-[0.15em] py-2 whitespace-nowrap">Muriel
+            Pós<span
+              class="absolute bottom-0 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-[#3F556B] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span></a>
+          <a href="index.html#casulo"
+            class="relative group text-xs font-semibold text-[#2d322f]/70 hover:text-[#3F556B] transition-colors duration-300 uppercase tracking-[0.15em] py-2 whitespace-nowrap">Muriel
+            Casulo<span
+              class="absolute bottom-0 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-[#3F556B] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span></a>
+          <a href="index.html#quem-somos"
+            class="relative group text-xs font-semibold text-[#2d322f]/70 hover:text-[#3F556B] transition-colors duration-300 uppercase tracking-[0.15em] py-2 whitespace-nowrap">Quem
+            Somos<span
+              class="absolute bottom-0 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-[#3F556B] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span></a>
+        </nav>
+
+        <button aria-label="Menu" class="md:hidden text-[#2d322f] hover:text-[#3F556B] transition-colors duration-300">
+          <iconify-icon height="24" icon="solar:hamburger-menu-linear" width="24"></iconify-icon>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="relative min-h-[70vh] pt-32 lg:pt-48 pb-16 overflow-hidden flex flex-col items-center justify-center">
+
+    <!-- Abstract Editorial Background -->
+    <div class="hero-bg">
+      <div class="bg-base"></div>
+      <div class="bg-layers">
+        <div class="layer layer-1"></div>
+        <div class="layer layer-2"></div>
+        <div class="layer layer-3"></div>
+      </div>
+      <canvas class="bg-noise"></canvas>
+    </div>
+
+    <div class="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12 text-center animate-on-scroll [animation:animationIn_1.2s_ease-out_0.2s_both]">
+      <span class="text-xs uppercase font-semibold tracking-[0.2em] text-[#3F556B] mb-6 block">Em construção</span>
+      <h1 class="font-display text-[4rem] md:text-[6rem] lg:text-[8rem] font-semibold tracking-tighter uppercase text-[#2d322f] leading-[0.9]">
+        Muriel <br><span class="font-accent italic font-normal normal-case text-[#3F556B]">Documenta</span>
+      </h1>
+      <p class="font-sans text-base md:text-lg font-light text-[#2d322f]/70 max-w-2xl mx-auto mt-8">
+        A página dedicada aos nossos processos cinematográficos e narrativos profundos está sendo produzida com os mais altos padrões do AEX Design System.
+      </p>
+      
+      <a href="index.html" class="mt-12 inline-flex items-center gap-3 border border-[#2d322f]/20 bg-transparent text-[#2d322f] px-8 py-4 font-semibold uppercase tracking-widest text-sm hover:bg-[#2d322f] hover:text-[#ebedea] transition-all duration-300 group">
+        <iconify-icon icon="solar:arrow-left-linear" width="20" height="20" class="group-hover:-translate-x-1 transition-transform"></iconify-icon>
+        VOLTAR AO INÍCIO
+      </a>
+    </div>
+
+  </main>
+
+  <script>
+    // Smooth Scroll System via Lenis
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      direction: 'vertical',
+      gestureDirection: 'vertical',
+      smooth: true,
+      mouseMultiplier: 1,
+      smoothTouch: false,
+      touchMultiplier: 2,
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    // Intersection Observer for Animate On Scroll
+    (function () {
+      const once = true;
+      if (!window.__inViewIO) {
+        window.__inViewIO = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("animate");
+              if (once) window.__inViewIO.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1, rootMargin: "0px 0px -10% 0px" });
+      }
+      window.initInViewAnimations = function (selector = ".animate-on-scroll") {
+        document.querySelectorAll(selector).forEach((el) => {
+          window.__inViewIO.observe(el);
+        });
+      };
+      document.addEventListener("DOMContentLoaded", () => initInViewAnimations());
+    })();
+  </script>
+</body>
+</html>
