@@ -27,41 +27,152 @@
 
   <style>
     /* ───── AEX Design System Typography ───── */
-    body { font-family: 'Inter', sans-serif; }
-    .font-display { font-family: 'Oswald', sans-serif; }
-    .font-accent { font-family: 'Playfair Display', serif; }
-    ::-webkit-scrollbar { width: 8px; }
-    ::-webkit-scrollbar-track { background: #ebedea; }
-    ::-webkit-scrollbar-thumb { background: #3F556B; }
-
-    @keyframes animationIn {
-      0% { opacity: 0; transform: translateY(30px); filter: blur(8px); }
-      100% { opacity: 1; transform: translateY(0); filter: blur(0px); }
+    body {
+      font-family: 'Inter', sans-serif;
     }
 
-    .animate-on-scroll { animation-play-state: paused !important; }
-    .animate-on-scroll.animate { animation-play-state: running !important; }
+    .font-display {
+      font-family: 'Oswald', sans-serif;
+    }
 
-    html, body {
+    .font-accent {
+      font-family: 'Playfair Display', serif;
+    }
+
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #ebedea;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #3F556B;
+    }
+
+    @keyframes animationIn {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+        filter: blur(8px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0px);
+      }
+    }
+
+    .animate-on-scroll {
+      animation-play-state: paused !important;
+    }
+
+    .animate-on-scroll.animate {
+      animation-play-state: running !important;
+    }
+
+    html,
+    body {
       overflow-x: hidden !important;
       min-height: 100% !important;
       scroll-behavior: auto !important;
     }
 
     /* ───── Abstract Editorial Background ───── */
-    .hero-bg { position: absolute; inset: 0; overflow: hidden; z-index: 0; pointer-events: none; }
-    .bg-base { position: absolute; inset: 0; background: #ebedea; }
-    .bg-layers { position: absolute; inset: 0; filter: blur(60px); }
-    .layer { position: absolute; border-radius: 50%; opacity: 0.7; mix-blend-mode: multiply; }
-    .layer-1 { width: 600px; height: 600px; background: #f2f2f2; top: 10%; left: 15%; animation: float1 28s ease-in-out infinite alternate; }
-    .layer-2 { width: 500px; height: 500px; background: #eaeaea; top: 40%; left: 55%; animation: float2 32s ease-in-out infinite alternate; }
-    .layer-3 { width: 700px; height: 700px; background: #f5f5f5; top: 60%; left: 20%; animation: float3 36s ease-in-out infinite alternate; }
-    
-    @keyframes float1 { 0% { transform: translate(0px, 0px) scale(1); } 100% { transform: translate(40px, -30px) scale(1.05); } }
-    @keyframes float2 { 0% { transform: translate(0px, 0px) scale(1); } 100% { transform: translate(-30px, 40px) scale(1.08); } }
-    @keyframes float3 { 0% { transform: translate(0px, 0px) scale(1); } 100% { transform: translate(20px, 30px) scale(1.04); } }
-    
-    .bg-noise { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.055; mix-blend-mode: multiply; }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .bg-base {
+      position: absolute;
+      inset: 0;
+      background: #ebedea;
+    }
+
+    .bg-layers {
+      position: absolute;
+      inset: 0;
+      filter: blur(60px);
+    }
+
+    .layer {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.7;
+      mix-blend-mode: multiply;
+    }
+
+    .layer-1 {
+      width: 600px;
+      height: 600px;
+      background: #f2f2f2;
+      top: 10%;
+      left: 15%;
+      animation: float1 28s ease-in-out infinite alternate;
+    }
+
+    .layer-2 {
+      width: 500px;
+      height: 500px;
+      background: #eaeaea;
+      top: 40%;
+      left: 55%;
+      animation: float2 32s ease-in-out infinite alternate;
+    }
+
+    .layer-3 {
+      width: 700px;
+      height: 700px;
+      background: #f5f5f5;
+      top: 60%;
+      left: 20%;
+      animation: float3 36s ease-in-out infinite alternate;
+    }
+
+    @keyframes float1 {
+      0% {
+        transform: translate(0px, 0px) scale(1);
+      }
+
+      100% {
+        transform: translate(40px, -30px) scale(1.05);
+      }
+    }
+
+    @keyframes float2 {
+      0% {
+        transform: translate(0px, 0px) scale(1);
+      }
+
+      100% {
+        transform: translate(-30px, 40px) scale(1.08);
+      }
+    }
+
+    @keyframes float3 {
+      0% {
+        transform: translate(0px, 0px) scale(1);
+      }
+
+      100% {
+        transform: translate(20px, 30px) scale(1.04);
+      }
+    }
+
+    .bg-noise {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.055;
+      mix-blend-mode: multiply;
+    }
   </style>
 </head>
 
@@ -113,69 +224,92 @@
       <div class="bg-layers">
         <div class="layer layer-1"></div>
         <div class="layer layer-2" style="background: #3F556B; opacity: 0.15; top: 30%; left: 60%;"></div>
-        <div class="layer layer-3" style="background: #ffffff; width: 800px; height: 800px; opacity: 0.8; top: -20%; left: -10%;"></div>
+        <div class="layer layer-3"
+          style="background: #ffffff; width: 800px; height: 800px; opacity: 0.8; top: -20%; left: -10%;"></div>
       </div>
       <canvas class="bg-noise"></canvas>
     </div>
 
     <!-- The Box-Busting Layout -->
-    <div class="relative z-10 w-full h-full max-w-[1400px] mx-auto px-6 lg:px-12 flex flex-col justify-center pt-32 lg:pt-48">
-      
+    <div
+      class="relative z-10 w-full h-full max-w-[1400px] mx-auto px-6 lg:px-12 flex flex-col justify-center pt-32 lg:pt-48">
+
       <!-- Label -->
-      <div class="flex items-center gap-4 mb-8 lg:mb-16 animate-on-scroll [animation:animationIn_1.2s_ease-out_0.1s_both]">
+      <div
+        class="flex items-center gap-4 mb-8 lg:mb-16 animate-on-scroll [animation:animationIn_1.2s_ease-out_0.1s_both]">
         <div class="w-12 lg:w-16 h-[2px] bg-[#3F556B]"></div>
-        <span class="font-sans text-xs md:text-sm font-bold uppercase tracking-[0.25em] text-[#3F556B]">Diagnóstico Narrativo</span>
+        <span class="font-sans text-xs md:text-sm font-bold uppercase tracking-[0.25em] text-[#3F556B]">Diagnóstico
+          Narrativo</span>
       </div>
 
       <!-- Main Question -->
-      <h1 class="relative font-display text-[4rem] md:text-[6.5rem] lg:text-[8.5rem] xl:text-[10rem] font-bold tracking-tighter uppercase text-[#1e2420] leading-[0.85] w-full flex flex-col z-20">
-        <span class="animate-on-scroll [animation:animationIn_1.2s_ease-out_0.2s_both] text-left">Sua marca <span class="italic font-accent normal-case font-normal text-[#3F556B]">sustenta</span></span>
-        <span class="animate-on-scroll [animation:animationIn_1.2s_ease-out_0.4s_both] flex items-center justify-end w-full mt-2 lg:mt-4">
+      <h1
+        class="relative font-display text-[4rem] md:text-[6.5rem] lg:text-[8.5rem] xl:text-[10rem] font-bold tracking-tighter uppercase text-[#1e2420] leading-[0.85] w-full flex flex-col z-20">
+        <span class="animate-on-scroll [animation:animationIn_1.2s_ease-out_0.2s_both] text-left">Sua marca <span
+            class="italic font-accent normal-case font-normal text-[#3F556B]">sustenta</span></span>
+        <span
+          class="animate-on-scroll [animation:animationIn_1.2s_ease-out_0.4s_both] flex items-center justify-end w-full mt-2 lg:mt-4">
           <span class="italic font-accent normal-case font-normal text-[#1e2420]">um documentário?</span>
         </span>
       </h1>
 
       <!-- The Twist & Subtitle -->
-      <div class="mt-16 lg:mt-24 w-full flex flex-col lg:flex-row items-center justify-between gap-16 lg:gap-8 relative z-30">
-        
+      <div
+        class="mt-16 lg:mt-24 w-full flex flex-col lg:flex-row items-center justify-between gap-16 lg:gap-8 relative z-30">
+
         <!-- Or Just Content? Massive Box Offset -->
         <div class="w-full lg:w-[45%] relative animate-on-scroll [animation:animationIn_1.2s_ease-out_0.6s_both]">
           <!-- Shadow anchor -->
-          <div class="absolute inset-0 bg-[#3F556B] translate-x-4 translate-y-4 lg:translate-x-6 lg:translate-y-6 -z-10 transition-transform duration-500 hover:translate-x-2 hover:translate-y-2"></div>
-          
-          <div class="relative bg-[#1e2420] text-white p-12 lg:p-14 xl:p-16 shadow-[0_30px_60px_rgba(0,0,0,0.4)] group overflow-hidden border border-[#3F556B]/30 cursor-default">
+          <div
+            class="absolute inset-0 bg-[#3F556B] translate-x-4 translate-y-4 lg:translate-x-6 lg:translate-y-6 -z-10 transition-transform duration-500 hover:translate-x-2 hover:translate-y-2">
+          </div>
+
+          <div
+            class="relative bg-[#1e2420] text-white p-12 lg:p-14 xl:p-16 shadow-[0_30px_60px_rgba(0,0,0,0.4)] group overflow-hidden border border-[#3F556B]/30 cursor-default">
             <!-- Sweep highlight hover -->
-            <div class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-[150%] group-hover:translate-x-[150%] transition-transform duration-[1.2s] ease-in-out"></div>
-            
-            <h2 class="font-display text-5xl md:text-6xl lg:text-[4.5rem] xl:text-[5.5rem] uppercase font-bold tracking-tighter leading-[0.9] mb-0 relative z-10 w-full">
-              <span class="text-white/40 font-light tracking-tight">Ou</span> <span class="italic font-accent normal-case text-white">só</span> <br>
-              <span class="text-[#ebedea] underline decoration-2 underline-offset-4 decoration-[#3F556B] group-hover:decoration-white transition-colors duration-500">conteúdo?</span>
+            <div
+              class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-[150%] group-hover:translate-x-[150%] transition-transform duration-[1.2s] ease-in-out">
+            </div>
+
+            <h2
+              class="font-display text-5xl md:text-6xl lg:text-[4.5rem] xl:text-[5.5rem] uppercase font-bold tracking-tighter leading-[0.9] mb-0 relative z-10 w-full">
+              <span class="text-white/40 font-light tracking-tight">Ou</span> <span
+                class="italic font-accent normal-case text-white">só</span> <br>
+              <span
+                class="text-[#ebedea] underline decoration-2 underline-offset-4 decoration-[#3F556B] group-hover:decoration-white transition-colors duration-500">conteúdo?</span>
             </h2>
-            
-            <div class="absolute bottom-0 right-0 p-6 transform group-hover:scale-110 transition-transform duration-500 z-10 hidden sm:block">
-              <iconify-icon icon="solar:camera-minimalistic-linear" width="80" height="80" class="text-[#3F556B] opacity-20 group-hover:opacity-40 transition-opacity duration-300"></iconify-icon>
+
+            <div
+              class="absolute bottom-0 right-0 p-6 transform group-hover:scale-110 transition-transform duration-500 z-10 hidden sm:block">
+              <iconify-icon icon="solar:camera-minimalistic-linear" width="80" height="80"
+                class="text-[#3F556B] opacity-20 group-hover:opacity-40 transition-opacity duration-300"></iconify-icon>
             </div>
           </div>
         </div>
 
         <!-- Details & CTA -->
         <div class="w-full lg:w-[50%] flex flex-col items-start lg:pl-16 relative">
-          
-          <p class="font-sans text-xl lg:text-[1.7rem] font-light text-[#2d322f] leading-relaxed mb-10 animate-on-scroll [animation:animationIn_1.2s_ease-out_0.7s_both]">
-            Diagnóstico concreto para identificar o 
+
+          <p
+            class="font-sans text-xl lg:text-[1.7rem] font-light text-[#2d322f] leading-relaxed mb-10 animate-on-scroll [animation:animationIn_1.2s_ease-out_0.7s_both]">
+            Diagnóstico concreto para identificar o
             <span class="font-bold relative inline-block text-[#1e2420] px-1">
               potencial narrativo atual
               <span class="absolute bottom-1 left-0 w-full h-[8px] bg-[#3F556B]/30 -z-10"></span>
-            </span> 
+            </span>
             da sua marca – e como transformá-lo em valor.
           </p>
-          
-          <a href="#solicitar" class="group relative flex items-center justify-center bg-[#1e2420] text-white px-10 py-5 lg:px-12 lg:py-6 overflow-hidden animate-on-scroll [animation:animationIn_1.2s_ease-out_0.9s_both] w-full md:w-auto shadow-[0_20px_40px_rgba(30,36,32,0.3)]">
-            <span class="absolute inset-0 bg-[#3F556B] -translate-x-[101%] group-hover:translate-x-0 transition-transform duration-[600ms] ease-[cubic-bezier(0.19,1,0.22,1)] z-0"></span>
-            
-            <div class="relative z-10 flex items-center gap-4 text-xs lg:text-sm font-semibold uppercase tracking-[0.2em] group-hover:text-white transition-colors duration-300">
+
+          <a href="#solicitar"
+            class="group relative flex items-center justify-center bg-[#1e2420] text-white px-10 py-5 lg:px-12 lg:py-6 overflow-hidden animate-on-scroll [animation:animationIn_1.2s_ease-out_0.9s_both] w-full md:w-auto shadow-[0_20px_40px_rgba(30,36,32,0.3)]">
+            <span
+              class="absolute inset-0 bg-[#3F556B] -translate-x-[101%] group-hover:translate-x-0 transition-transform duration-[600ms] ease-[cubic-bezier(0.19,1,0.22,1)] z-0"></span>
+
+            <div
+              class="relative z-10 flex items-center gap-4 text-xs lg:text-sm font-semibold uppercase tracking-[0.2em] group-hover:text-white transition-colors duration-300">
               SOLICITAR DIAGNÓSTICO NARRATIVO
-              <iconify-icon icon="solar:arrow-right-up-linear" width="24" height="24" class="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"></iconify-icon>
+              <iconify-icon icon="solar:arrow-right-up-linear" width="24" height="24"
+                class="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"></iconify-icon>
             </div>
           </a>
         </div>
@@ -186,104 +320,137 @@
 
   <!-- SEÇÃO 2: O Diagnóstico do Problema -->
   <section class="relative w-full py-24 lg:py-48 bg-[#1e2420] text-[#ebedea] overflow-hidden">
-    
+
     <!-- Background Architectural Grid Lines (Dark Version) -->
-    <div class="absolute inset-0 z-0 pointer-events-none mix-blend-overlay opacity-10" style="background-image: linear-gradient(rgba(235, 237, 234, 0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(235, 237, 234, 0.5) 1px, transparent 1px); background-size: 80px 80px;"></div>
-    
+    <div class="absolute inset-0 z-0 pointer-events-none mix-blend-overlay opacity-10"
+      style="background-image: linear-gradient(rgba(235, 237, 234, 0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(235, 237, 234, 0.5) 1px, transparent 1px); background-size: 80px 80px;">
+    </div>
+
     <!-- Soft Background Illumination -->
-    <div class="absolute top-0 right-[-10%] w-[600px] h-[600px] bg-[#3F556B]/20 rounded-full blur-[150px] pointer-events-none z-0"></div>
+    <div
+      class="absolute top-0 right-[-10%] w-[600px] h-[600px] bg-[#3F556B]/20 rounded-full blur-[150px] pointer-events-none z-0">
+    </div>
 
     <div class="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12">
-      
+
       <!-- Top Title -->
-      <h2 class="font-display text-[4rem] md:text-[5.5rem] lg:text-[7rem] font-bold tracking-tighter uppercase leading-[0.9] text-[#ebedea] mb-16 lg:mb-32 animate-on-scroll [animation:animationIn_1.2s_ease-out_0.2s_both]">
+      <h2
+        class="font-display text-[4rem] md:text-[5.5rem] lg:text-[7rem] font-bold tracking-tighter uppercase leading-[0.9] text-[#ebedea] mb-16 lg:mb-32 animate-on-scroll [animation:animationIn_1.2s_ease-out_0.2s_both]">
         A maioria <br><span class="italic font-accent normal-case font-normal text-[#3F556B]">das marcas:</span>
       </h2>
 
       <!-- Splintered Cards Grid (Cascading Errors) -->
-      <div class="relative w-full flex flex-col lg:flex-row justify-end gap-6 lg:gap-8 mb-24 lg:mb-40 pl-0 lg:pl-12 z-20">
-        
+      <div
+        class="relative w-full flex flex-col lg:flex-row justify-end gap-6 lg:gap-8 mb-24 lg:mb-40 pl-0 lg:pl-12 z-20">
+
         <!-- Error 1 -->
-        <div class="w-full lg:w-1/3 bg-[#ebedea]/[0.02] backdrop-blur-sm border border-[#ebedea]/10 p-10 lg:p-12 hover:bg-[#3F556B]/10 hover:border-[#3F556B]/40 transition-all duration-700 hover:-translate-y-4 relative group animate-on-scroll [animation:animationIn_1.2s_ease-out_0.3s_both]">
-           <span class="block font-display text-7xl font-bold text-[#ebedea] opacity-5 group-hover:opacity-20 absolute top-[-10px] right-6 transition-opacity duration-500 pointer-events-none">01</span>
-           <div class="w-10 h-px bg-[#3F556B] mb-8 group-hover:w-full transition-all duration-700 ease-in-out origin-left"></div>
-           <p class="font-sans text-2xl lg:text-[1.7rem] font-light text-[#ebedea] leading-tight relative z-10">
-             Investe em <br><span class="font-semibold text-white">conteúdo desconexo</span>
-           </p>
+        <div
+          class="w-full lg:w-1/3 bg-[#ebedea]/[0.02] backdrop-blur-sm border border-[#ebedea]/10 p-10 lg:p-12 hover:bg-[#3F556B]/10 hover:border-[#3F556B]/40 transition-all duration-700 hover:-translate-y-4 relative group animate-on-scroll [animation:animationIn_1.2s_ease-out_0.3s_both]">
+          <span
+            class="block font-display text-7xl font-bold text-[#ebedea] opacity-5 group-hover:opacity-20 absolute top-[-10px] right-6 transition-opacity duration-500 pointer-events-none">01</span>
+          <div
+            class="w-10 h-px bg-[#3F556B] mb-8 group-hover:w-full transition-all duration-700 ease-in-out origin-left">
+          </div>
+          <p class="font-sans text-2xl lg:text-[1.7rem] font-light text-[#ebedea] leading-tight relative z-10">
+            Investe em <br><span class="font-semibold text-white">conteúdo desconexo</span>
+          </p>
         </div>
-        
+
         <!-- Error 2 -->
-        <div class="w-full lg:w-1/3 bg-[#ebedea]/[0.02] backdrop-blur-sm border border-[#ebedea]/10 p-10 lg:p-12 lg:translate-y-12 hover:bg-[#3F556B]/10 hover:border-[#3F556B]/40 transition-all duration-700 hover:-translate-y-4 relative group animate-on-scroll [animation:animationIn_1.2s_ease-out_0.5s_both]">
-           <span class="block font-display text-7xl font-bold text-[#ebedea] opacity-5 group-hover:opacity-20 absolute top-[-10px] right-6 transition-opacity duration-500 pointer-events-none">02</span>
-           <div class="w-10 h-px bg-[#3F556B] mb-8 group-hover:w-full transition-all duration-700 ease-in-out origin-left"></div>
-           <p class="font-sans text-2xl lg:text-[1.7rem] font-light text-[#ebedea] leading-tight relative z-10">
-             Produz filmes <br><span class="font-semibold text-white">sem densidade</span>
-           </p>
+        <div
+          class="w-full lg:w-1/3 bg-[#ebedea]/[0.02] backdrop-blur-sm border border-[#ebedea]/10 p-10 lg:p-12 lg:translate-y-12 hover:bg-[#3F556B]/10 hover:border-[#3F556B]/40 transition-all duration-700 hover:-translate-y-4 relative group animate-on-scroll [animation:animationIn_1.2s_ease-out_0.5s_both]">
+          <span
+            class="block font-display text-7xl font-bold text-[#ebedea] opacity-5 group-hover:opacity-20 absolute top-[-10px] right-6 transition-opacity duration-500 pointer-events-none">02</span>
+          <div
+            class="w-10 h-px bg-[#3F556B] mb-8 group-hover:w-full transition-all duration-700 ease-in-out origin-left">
+          </div>
+          <p class="font-sans text-2xl lg:text-[1.7rem] font-light text-[#ebedea] leading-tight relative z-10">
+            Produz filmes <br><span class="font-semibold text-white">sem densidade</span>
+          </p>
         </div>
-        
+
         <!-- Error 3 -->
-        <div class="w-full lg:w-1/3 bg-[#ebedea]/[0.02] backdrop-blur-sm border border-[#ebedea]/10 p-10 lg:p-12 lg:translate-y-24 hover:bg-[#3F556B]/10 hover:border-[#3F556B]/40 transition-all duration-700 hover:-translate-y-4 relative group animate-on-scroll [animation:animationIn_1.2s_ease-out_0.7s_both]">
-           <span class="block font-display text-7xl font-bold text-[#ebedea] opacity-5 group-hover:opacity-20 absolute top-[-10px] right-6 transition-opacity duration-500 pointer-events-none">03</span>
-           <div class="w-10 h-px bg-[#3F556B] mb-8 group-hover:w-full transition-all duration-700 ease-in-out origin-left"></div>
-           <p class="font-sans text-2xl lg:text-[1.7rem] font-light text-[#ebedea] leading-tight relative z-10">
-             Comunica <br><span class="font-semibold text-white">sem gerar confiança</span>
-           </p>
+        <div
+          class="w-full lg:w-1/3 bg-[#ebedea]/[0.02] backdrop-blur-sm border border-[#ebedea]/10 p-10 lg:p-12 lg:translate-y-24 hover:bg-[#3F556B]/10 hover:border-[#3F556B]/40 transition-all duration-700 hover:-translate-y-4 relative group animate-on-scroll [animation:animationIn_1.2s_ease-out_0.7s_both]">
+          <span
+            class="block font-display text-7xl font-bold text-[#ebedea] opacity-5 group-hover:opacity-20 absolute top-[-10px] right-6 transition-opacity duration-500 pointer-events-none">03</span>
+          <div
+            class="w-10 h-px bg-[#3F556B] mb-8 group-hover:w-full transition-all duration-700 ease-in-out origin-left">
+          </div>
+          <p class="font-sans text-2xl lg:text-[1.7rem] font-light text-[#ebedea] leading-tight relative z-10">
+            Comunica <br><span class="font-semibold text-white">sem gerar confiança</span>
+          </p>
         </div>
 
       </div>
 
       <!-- The Conclusion Twist Box -->
-      <div class="relative w-full flex flex-col items-center lg:items-end animate-on-scroll [animation:animationIn_1.5s_ease-out_0.6s_both] lg:mt-32">
-        <div class="bg-[#ebedea] text-[#1e2420] p-12 lg:p-20 shadow-[0_40px_80px_rgba(0,0,0,0.6)] transform lg:rotate-1 hover:rotate-0 transition-transform duration-1000 ease-[cubic-bezier(0.19,1,0.22,1)] origin-bottom-right relative overflow-hidden group w-full lg:w-[85%] xl:w-[80%] border-t-[8px] border-[#3F556B] z-10">
-           
-           <!-- Hover dynamic light sweep -->
-           <div class="absolute inset-0 w-[200%] h-full bg-gradient-to-r from-transparent via-[#3F556B]/5 to-transparent -translate-x-[150%] group-hover:translate-x-[100%] transition-transform duration-[1.5s] ease-in-out"></div>
-           
-           <p class="font-sans text-xs md:text-sm tracking-[0.4em] font-semibold uppercase text-[#3F556B] mb-6 relative z-10 flex items-center gap-4">
-             Porque não sabe <span class="flex-grow h-px bg-[#3F556B]/30 hidden sm:block"></span>
-           </p>
-           
-           <h2 class="font-display text-[3.5rem] md:text-[5.5rem] lg:text-[6.5rem] xl:text-[7.5rem] uppercase font-bold tracking-tighter leading-[0.85] relative z-10 w-full text-[#2d322f]">
-             se sua narrativa <br>
-             <span class="italic font-accent normal-case font-normal text-[#1e2420] text-transparent relative block w-max max-w-full">
-               <span class="bg-clip-text bg-gradient-to-r from-[#2d322f] to-[#3F556B] text-transparent">se sustenta</span> <span class="relative z-10 bg-clip-text text-transparent bg-[#1e2420]">no real.</span>
-               <span class="absolute bottom-2 lg:bottom-4 left-0 w-full h-2 lg:h-3 bg-[#3F556B]/20 -z-10 group-hover:h-[80%] transition-all duration-700 delay-100"></span>
-             </span>
-           </h2>
+      <div
+        class="relative w-full flex flex-col items-center lg:items-end animate-on-scroll [animation:animationIn_1.5s_ease-out_0.6s_both] lg:mt-32">
+        <div
+          class="bg-[#ebedea] text-[#1e2420] p-12 lg:p-20 shadow-[0_40px_80px_rgba(0,0,0,0.6)] transform lg:rotate-1 hover:rotate-0 transition-transform duration-1000 ease-[cubic-bezier(0.19,1,0.22,1)] origin-bottom-right relative overflow-hidden group w-full lg:w-[85%] xl:w-[80%] border-t-[8px] border-[#3F556B] z-10">
+
+          <!-- Hover dynamic light sweep -->
+          <div
+            class="absolute inset-0 w-[200%] h-full bg-gradient-to-r from-transparent via-[#3F556B]/5 to-transparent -translate-x-[150%] group-hover:translate-x-[100%] transition-transform duration-[1.5s] ease-in-out">
+          </div>
+
+          <p
+            class="font-sans text-xs md:text-sm tracking-[0.4em] font-semibold uppercase text-[#3F556B] mb-6 relative z-10 flex items-center gap-4">
+            Porque não sabe <span class="flex-grow h-px bg-[#3F556B]/30 hidden sm:block"></span>
+          </p>
+
+          <h2
+            class="font-display text-[3.5rem] md:text-[5.5rem] lg:text-[6.5rem] xl:text-[7.5rem] uppercase font-bold tracking-tighter leading-[0.85] relative z-10 w-full text-[#2d322f]">
+            se sua narrativa <br>
+            <span
+              class="italic font-accent normal-case font-normal text-[#1e2420] text-transparent relative block w-max max-w-full">
+              <span class="bg-clip-text bg-gradient-to-r from-[#2d322f] to-[#3F556B] text-transparent">se
+                sustenta</span> <span class="relative z-10 bg-clip-text text-transparent bg-[#1e2420]">no real.</span>
+              <span
+                class="absolute bottom-2 lg:bottom-4 left-0 w-full h-2 lg:h-3 bg-[#3F556B]/20 -z-10 group-hover:h-[80%] transition-all duration-700 delay-100"></span>
+            </span>
+          </h2>
         </div>
-        
+
         <!-- Architectural Decoration Elements (Enhanced Circular Tracker) -->
-        <div class="absolute top-1/2 -translate-y-1/2 left-[-25%] lg:left-[-15%] w-[600px] h-[600px] lg:w-[1000px] lg:h-[1000px] z-0 pointer-events-none opacity-70 mix-blend-screen">
-           <svg width="100%" height="100%" viewBox="0 0 1000 1000" fill="none">
-             <!-- Outer Delicate Orbit -->
-             <g class="animate-[spin_60s_linear_infinite]" style="transform-origin: center;">
-               <circle cx="500" cy="500" r="460" stroke="#3F556B" stroke-width="1.5" stroke-dasharray="2 12" />
-               <!-- Satellite markers -->
-               <circle cx="500" cy="40" r="6" fill="#ebedea" />
-               <circle cx="500" cy="960" r="4" fill="#3F556B" />
-               <circle cx="40" cy="500" r="3" fill="#ebedea" />
-               <circle cx="960" cy="500" r="5" fill="#3F556B" />
-             </g>
+        <div
+          class="absolute top-1/2 -translate-y-1/2 left-[-25%] lg:left-[-15%] w-[600px] h-[600px] lg:w-[1000px] lg:h-[1000px] z-0 pointer-events-none opacity-70 mix-blend-screen">
+          <svg width="100%" height="100%" viewBox="0 0 1000 1000" fill="none">
+            <!-- Outer Delicate Orbit -->
+            <g class="animate-[spin_60s_linear_infinite]" style="transform-origin: center;">
+              <circle cx="500" cy="500" r="460" stroke="#3F556B" stroke-width="1.5" stroke-dasharray="2 12" />
+              <!-- Satellite markers -->
+              <circle cx="500" cy="40" r="6" fill="#ebedea" />
+              <circle cx="500" cy="960" r="4" fill="#3F556B" />
+              <circle cx="40" cy="500" r="3" fill="#ebedea" />
+              <circle cx="960" cy="500" r="5" fill="#3F556B" />
+            </g>
 
-             <!-- Secondary Orbit (Reverse) -->
-             <g class="animate-[spin_50s_linear_infinite_reverse]" style="transform-origin: center;">
-               <circle cx="500" cy="500" r="380" stroke="#ebedea" stroke-width="1.5" stroke-dasharray="20 40 5 40" opacity="0.5" />
-               <circle cx="500" cy="500" r="350" stroke="#3F556B" stroke-width="1" stroke-dasharray="1 8" opacity="0.8" />
-             </g>
+            <!-- Secondary Orbit (Reverse) -->
+            <g class="animate-[spin_50s_linear_infinite_reverse]" style="transform-origin: center;">
+              <circle cx="500" cy="500" r="380" stroke="#ebedea" stroke-width="1.5" stroke-dasharray="20 40 5 40"
+                opacity="0.5" />
+              <circle cx="500" cy="500" r="350" stroke="#3F556B" stroke-width="1" stroke-dasharray="1 8"
+                opacity="0.8" />
+            </g>
 
-             <!-- Thick Mechanical Ring -->
-             <g class="animate-[spin_80s_linear_infinite]" style="transform-origin: center;">
-               <circle cx="500" cy="500" r="280" stroke="#3F556B" stroke-width="16" stroke-dasharray="30 60 5 60" opacity="0.4" />
-               <circle cx="500" cy="500" r="280" stroke="#ebedea" stroke-width="3" stroke-dasharray="30 125" opacity="0.9" />
-             </g>
+            <!-- Thick Mechanical Ring -->
+            <g class="animate-[spin_80s_linear_infinite]" style="transform-origin: center;">
+              <circle cx="500" cy="500" r="280" stroke="#3F556B" stroke-width="16" stroke-dasharray="30 60 5 60"
+                opacity="0.4" />
+              <circle cx="500" cy="500" r="280" stroke="#ebedea" stroke-width="3" stroke-dasharray="30 125"
+                opacity="0.9" />
+            </g>
 
-             <!-- Inner Core & Crosshairs (Static) -->
-             <circle cx="500" cy="500" r="200" stroke="#3F556B" stroke-width="1" opacity="0.6" />
-             <path d="M500 250 L500 750 M250 500 L750 500" stroke="#ebedea" stroke-width="1" stroke-dasharray="5 5" opacity="0.4" />
-             <circle cx="500" cy="500" r="4" fill="#ebedea" />
-             <circle cx="500" cy="500" r="25" stroke="#3F556B" stroke-width="1.5" />
-             <circle cx="500" cy="500" r="40" stroke="#ebedea" stroke-width="1" stroke-dasharray="2 4" opacity="0.5" />
-           </svg>
+            <!-- Inner Core & Crosshairs (Static) -->
+            <circle cx="500" cy="500" r="200" stroke="#3F556B" stroke-width="1" opacity="0.6" />
+            <path d="M500 250 L500 750 M250 500 L750 500" stroke="#ebedea" stroke-width="1" stroke-dasharray="5 5"
+              opacity="0.4" />
+            <circle cx="500" cy="500" r="4" fill="#ebedea" />
+            <circle cx="500" cy="500" r="25" stroke="#3F556B" stroke-width="1.5" />
+            <circle cx="500" cy="500" r="40" stroke="#ebedea" stroke-width="1" stroke-dasharray="2 4" opacity="0.5" />
+          </svg>
         </div>
       </div>
 
@@ -291,105 +458,279 @@
   </section>
 
   <!-- SEÇÃO 3: O Diagnóstico (Solução Estrutural Bento Grid) -->
-  <section class="relative w-full py-24 lg:py-48 bg-[#ebedea] text-[#2d322f] overflow-hidden border-t-2 border-[#1e2420]/5">
-    
+  <section
+    class="relative w-full py-24 lg:py-48 bg-[#ebedea] text-[#2d322f] overflow-hidden border-t-2 border-[#1e2420]/5">
+
     <!-- Clean Abstract Blueprint Grid Background -->
-    <div class="absolute inset-0 z-0 pointer-events-none mix-blend-multiply opacity-20" style="background-image: linear-gradient(#3F556B 1px, transparent 1px), linear-gradient(90deg, #3F556B 1px, transparent 1px); background-size: 80px 80px; mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%); -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);"></div>
+    <div class="absolute inset-0 z-0 pointer-events-none mix-blend-multiply opacity-20"
+      style="background-image: linear-gradient(#3F556B 1px, transparent 1px), linear-gradient(90deg, #3F556B 1px, transparent 1px); background-size: 80px 80px; mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%); -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);">
+    </div>
 
     <div class="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12">
-      
+
       <!-- Headings / Center Symmetrical -->
-      <div class="w-full flex justify-center text-center animate-on-scroll [animation:animationIn_1.2s_ease-out_0.2s_both] mb-16 lg:mb-24">
-        <h2 class="font-display text-[4rem] md:text-[5rem] lg:text-[6.5rem] font-bold tracking-tighter uppercase leading-[0.9] text-[#1e2420]">
+      <div
+        class="w-full flex justify-center text-center animate-on-scroll [animation:animationIn_1.2s_ease-out_0.2s_both] mb-16 lg:mb-24">
+        <h2
+          class="font-display text-[4rem] md:text-[5rem] lg:text-[6.5rem] font-bold tracking-tighter uppercase leading-[0.9] text-[#1e2420]">
           O que é o <span class="italic font-accent normal-case font-normal text-[#3F556B]">diagnóstico?</span>
         </h2>
       </div>
 
       <!-- Massive Split Grid Structure -->
       <div class="w-full flex flex-col lg:flex-row gap-8 lg:gap-16 items-stretch">
-        
+
         <!-- Left: The Definition Foundation Block (The Base) -->
-        <div class="w-full lg:w-[35%] bg-white p-12 lg:p-16 border border-[#2d322f]/10 shadow-[0_30px_60px_rgba(0,0,0,0.05)] relative overflow-hidden group animate-on-scroll [animation:animationIn_1.2s_ease-out_0.3s_both] flex flex-col justify-start min-h-[400px]">
-           <!-- Sweep -->
-           <div class="absolute inset-0 bg-gradient-to-br from-[#ebedea]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+        <div
+          class="w-full lg:w-[35%] bg-white p-12 lg:p-16 border border-[#2d322f]/10 shadow-[0_30px_60px_rgba(0,0,0,0.05)] relative overflow-hidden group animate-on-scroll [animation:animationIn_1.2s_ease-out_0.3s_both] flex flex-col justify-start min-h-[400px]">
+          <!-- Sweep -->
+          <div
+            class="absolute inset-0 bg-gradient-to-br from-[#ebedea]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none">
+          </div>
 
-           <p class="font-sans text-3xl lg:text-[2.5rem] font-light text-[#1e2420] leading-tight relative z-10">
-             Uma <br>
-             <span class="font-bold bg-[#1e2420] text-white px-3 py-1 mt-2 mb-2 inline-block shadow-[8px_8px_0px_#3F556B] group-hover:shadow-[12px_12px_0px_#3F556B] transition-shadow duration-500">análise estruturada</span> <br>
-             que define:
-           </p>
+          <p class="font-sans text-3xl lg:text-[2.5rem] font-light text-[#1e2420] leading-tight relative z-10">
+            Uma <br>
+            <span
+              class="font-bold bg-[#1e2420] text-white px-3 py-1 mt-2 mb-2 inline-block shadow-[8px_8px_0px_#3F556B] group-hover:shadow-[12px_12px_0px_#3F556B] transition-shadow duration-500">análise
+              estruturada</span> <br>
+            que define:
+          </p>
 
-           <!-- Watermark Space -->
-           <div class="flex-grow flex items-center justify-center pt-16 pb-4 relative z-0 pointer-events-none mt-auto">
-             <img src="Muriel_Doc_logo.png" alt="Muriel Documenta Logo" class="w-[95%] md:w-[85%] object-contain filter brightness-0 opacity-[0.03] group-hover:opacity-[0.15] transform group-hover:scale-105 transition-all duration-[1s] ease-out">
-           </div>
+          <!-- Watermark Space -->
+          <div class="flex-grow flex items-center justify-center pt-16 pb-4 relative z-0 pointer-events-none mt-auto">
+            <img src="Muriel_Doc_logo.png" alt="Muriel Documenta Logo"
+              class="w-[95%] md:w-[85%] object-contain filter brightness-0 opacity-[0.03] group-hover:opacity-[0.15] transform group-hover:scale-105 transition-all duration-[1s] ease-out">
+          </div>
         </div>
 
         <!-- Right: The 3 Defined Pillars in an avant-garde grid -->
         <div class="w-full lg:w-[65%] flex flex-col gap-6 lg:gap-8 justify-between">
-          
+
           <!-- Pillar 1 / Top Row -->
-          <div class="w-full relative flex flex-col md:flex-row items-stretch gap-6 lg:gap-8 animate-on-scroll [animation:animationIn_1.2s_ease-out_0.5s_both]">
-             <div class="w-full md:w-[60%] lg:w-[70%] bg-[#1e2420] text-white p-10 lg:p-12 hover:-translate-y-2 transition-transform duration-500 shadow-[0_20px_40px_rgba(0,0,0,0.3)] relative group overflow-hidden">
-                <div class="absolute right-0 top-0 h-full w-[200%] bg-gradient-to-l from-white/10 to-transparent transform translate-x-full group-hover:translate-x-0 transition-transform duration-1000"></div>
-                <div class="font-display text-2xl text-[#3F556B] absolute top-6 right-8">01</div>
-                <h3 class="font-sans text-2xl lg:text-[2.2rem] font-light leading-snug relative z-10 w-[85%] mt-4">
-                  A <span class="font-semibold px-2 py-1 bg-[#3F556B] text-white relative z-10">maturidade narrativa</span> da sua marca
-                </h3>
-             </div>
-             
-             <!-- Decorative Node -->
-             <div class="hidden md:flex w-[40%] lg:w-[30%] bg-[#ebedea] border border-[#2d322f]/10 p-10 items-center justify-center relative overflow-hidden group shadow-[inset_0_4px_20px_rgba(0,0,0,0.02)]">
-                <div class="absolute inset-x-0 bottom-0 h-2 bg-[#3F556B] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
-                <iconify-icon icon="solar:align-bottom-linear" width="60" height="60" class="text-[#3F556B] group-hover:-translate-y-2 group-hover:scale-110 transition-transform duration-500"></iconify-icon>
-             </div>
+          <div
+            class="w-full relative flex flex-col md:flex-row items-stretch gap-6 lg:gap-8 animate-on-scroll [animation:animationIn_1.2s_ease-out_0.5s_both]">
+            <div
+              class="w-full md:w-[60%] lg:w-[70%] bg-[#1e2420] text-white p-10 lg:p-12 hover:-translate-y-2 transition-transform duration-500 shadow-[0_20px_40px_rgba(0,0,0,0.3)] relative group overflow-hidden">
+              <div
+                class="absolute right-0 top-0 h-full w-[200%] bg-gradient-to-l from-white/10 to-transparent transform translate-x-full group-hover:translate-x-0 transition-transform duration-1000">
+              </div>
+              <div class="font-display text-2xl text-[#3F556B] absolute top-6 right-8">01</div>
+              <h3 class="font-sans text-2xl lg:text-[2.2rem] font-light leading-snug relative z-10 w-[85%] mt-4">
+                A <span class="font-semibold px-2 py-1 bg-[#3F556B] text-white relative z-10">maturidade
+                  narrativa</span> da sua marca.
+              </h3>
+            </div>
+
+            <!-- Decorative Node -->
+            <div
+              class="hidden md:flex w-[40%] lg:w-[30%] bg-[#ebedea] border border-[#2d322f]/10 p-10 items-center justify-center relative overflow-hidden group shadow-[inset_0_4px_20px_rgba(0,0,0,0.02)]">
+              <div
+                class="absolute inset-x-0 bottom-0 h-2 bg-[#3F556B] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left">
+              </div>
+              <iconify-icon icon="solar:align-bottom-linear" width="60" height="60"
+                class="text-[#3F556B] group-hover:-translate-y-2 group-hover:scale-110 transition-transform duration-500"></iconify-icon>
+            </div>
           </div>
 
           <!-- Pillar 2 / Middle Row (Reversed) -->
-          <div class="w-full relative flex flex-col md:flex-row items-stretch gap-6 lg:gap-8 animate-on-scroll [animation:animationIn_1.2s_ease-out_0.6s_both]">
-             <!-- Decorative Node -->
-             <div class="hidden md:flex w-[40%] lg:w-[30%] bg-white border border-[#2d322f]/10 p-10 items-center justify-center relative overflow-hidden group shadow-[0_15px_30px_rgba(0,0,0,0.02)]">
-                <div class="absolute inset-y-0 right-0 w-2 bg-[#1e2420] transform scale-y-0 group-hover:scale-y-100 transition-transform duration-500 origin-bottom"></div>
-                <iconify-icon icon="solar:tuning-square-2-linear" width="60" height="60" class="text-[#1e2420] group-hover:rotate-45 transition-transform duration-500"></iconify-icon>
-             </div>
+          <div
+            class="w-full relative flex flex-col md:flex-row items-stretch gap-6 lg:gap-8 animate-on-scroll [animation:animationIn_1.2s_ease-out_0.6s_both]">
+            <!-- Decorative Node -->
+            <div
+              class="hidden md:flex w-[40%] lg:w-[30%] bg-white border border-[#2d322f]/10 p-10 items-center justify-center relative overflow-hidden group shadow-[0_15px_30px_rgba(0,0,0,0.02)]">
+              <div
+                class="absolute inset-y-0 right-0 w-2 bg-[#1e2420] transform scale-y-0 group-hover:scale-y-100 transition-transform duration-500 origin-bottom">
+              </div>
+              <iconify-icon icon="solar:tuning-square-2-linear" width="60" height="60"
+                class="text-[#1e2420] group-hover:rotate-45 transition-transform duration-500"></iconify-icon>
+            </div>
 
-             <div class="w-full md:w-[60%] lg:w-[70%] bg-[#3F556B] text-white p-10 lg:p-12 hover:-translate-y-2 transition-transform duration-500 shadow-[0_20px_40px_rgba(63,85,107,0.3)] relative group overflow-hidden">
-                <div class="absolute right-0 bottom-0 w-32 h-32 bg-white/10 rounded-tl-full transform group-hover:scale-[4] transition-transform duration-[1.2s] ease-out origin-bottom-right"></div>
-                <div class="font-display text-2xl text-[#1e2420] absolute top-6 right-8">02</div>
-                <h3 class="font-sans text-2xl lg:text-[2.1rem] font-light leading-snug relative z-10 w-[90%] mt-4">
-                  O <span class="font-semibold underline decoration-white underline-offset-8 decoration-2 text-white">regime narrativo</span> mais eficaz
-                </h3>
-             </div>
+            <div
+              class="w-full md:w-[60%] lg:w-[70%] bg-[#3F556B] text-white p-10 lg:p-12 hover:-translate-y-2 transition-transform duration-500 shadow-[0_20px_40px_rgba(63,85,107,0.3)] relative group overflow-hidden">
+              <div
+                class="absolute right-0 bottom-0 w-32 h-32 bg-white/10 rounded-tl-full transform group-hover:scale-[4] transition-transform duration-[1.2s] ease-out origin-bottom-right">
+              </div>
+              <div class="font-display text-2xl text-[#1e2420] absolute top-6 right-8">02</div>
+              <h3 class="font-sans text-2xl lg:text-[2.1rem] font-light leading-snug relative z-10 w-[90%] mt-4">
+                O <span
+                  class="font-semibold underline decoration-white underline-offset-8 decoration-2 text-white">regime
+                  narrativo</span> mais eficaz.
+              </h3>
+            </div>
           </div>
 
           <!-- Pillar 3 / Bottom Row -->
           <div class="w-full relative animate-on-scroll [animation:animationIn_1.2s_ease-out_0.7s_both]">
-             <div class="w-full bg-[#f4f5f4] border border-[#2d322f]/20 p-10 lg:p-12 hover:-translate-y-2 transition-transform duration-500 hover:bg-white hover:border-[#3F556B] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] relative group overflow-hidden flex flex-col md:flex-row items-start md:items-center justify-between">
-                
-                <h3 class="font-sans text-2xl lg:text-[2.2rem] font-light text-[#1e2420] leading-snug w-full md:w-[70%] relative z-10">
-                  Como construir um <span class="font-semibold italic text-[#3F556B]">sistema narrativo sustentável</span>
-                </h3>
+            <div
+              class="w-full bg-[#f4f5f4] border border-[#2d322f]/20 p-10 lg:p-12 hover:-translate-y-2 transition-transform duration-500 hover:bg-white hover:border-[#3F556B] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] relative group overflow-hidden flex flex-col md:flex-row items-start md:items-center justify-between">
 
-                <!-- Decorative Compass/Scanner Icon Container -->
-                <div class="absolute right-12 top-1/2 -translate-y-1/2 z-10 hidden md:block">
-                  <div class="w-24 h-24 flex justify-center items-center group-hover:scale-110 transition-transform duration-700 opacity-30 group-hover:opacity-100">
-                    <div class="w-full h-full border-2 border-[#3F556B]/20 rounded-full flex justify-center items-center animate-[spin_40s_linear_infinite]">
-                      <div class="w-full h-px bg-[#3F556B]/30 absolute"></div>
-                      <div class="h-full w-px bg-[#3F556B]/30 absolute"></div>
-                      <!-- Counter-spin to keep icon mostly upright -->
-                      <div class="w-12 h-12 bg-transparent absolute flex items-center justify-center animate-[spin_40s_linear_infinite_reverse]">
-                        <iconify-icon icon="solar:scanner-linear" width="36" height="36" class="text-[#3F556B]/80"></iconify-icon>
-                      </div>
+              <h3
+                class="font-sans text-2xl lg:text-[2.2rem] font-light text-[#1e2420] leading-snug w-full md:w-[70%] relative z-10">
+                Como construir um <span class="font-semibold italic text-[#3F556B]">sistema narrativo
+                  sustentável</span>.
+              </h3>
+
+              <!-- Decorative Compass/Scanner Icon Container -->
+              <div class="absolute right-12 top-1/2 -translate-y-1/2 z-10 hidden md:block">
+                <div
+                  class="w-24 h-24 flex justify-center items-center group-hover:scale-110 transition-transform duration-700 opacity-30 group-hover:opacity-100">
+                  <div
+                    class="w-full h-full border-2 border-[#3F556B]/20 rounded-full flex justify-center items-center animate-[spin_40s_linear_infinite]">
+                    <div class="w-full h-px bg-[#3F556B]/30 absolute"></div>
+                    <div class="h-full w-px bg-[#3F556B]/30 absolute"></div>
+                    <!-- Counter-spin to keep icon mostly upright -->
+                    <div
+                      class="w-12 h-12 bg-transparent absolute flex items-center justify-center animate-[spin_40s_linear_infinite_reverse]">
+                      <iconify-icon icon="solar:scanner-linear" width="36" height="36"
+                        class="text-[#3F556B]/80"></iconify-icon>
                     </div>
                   </div>
                 </div>
+              </div>
 
-                <div class="font-display text-6xl md:text-7xl font-bold text-[#ebedea] transform -skew-x-12 opacity-0 group-hover:opacity-100 transition-all duration-700 translate-x-12 group-hover:translate-x-0 absolute right-8 bottom-4 pointer-events-none group-hover:text-[#2d322f]/5 z-0">
-                  03
-                </div>
-                
-                <div class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-[#3F556B] to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-1000 origin-center"></div>
-             </div>
+              <div
+                class="font-display text-6xl md:text-7xl font-bold text-[#ebedea] transform -skew-x-12 opacity-0 group-hover:opacity-100 transition-all duration-700 translate-x-12 group-hover:translate-x-0 absolute right-8 bottom-4 pointer-events-none group-hover:text-[#2d322f]/5 z-0">
+                03
+              </div>
+
+              <div
+                class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-[#3F556B] to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-1000 origin-center">
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO 4: Deliverables -->
+  <section class="relative w-full py-24 lg:py-48 bg-[#1e2420] text-[#ebedea] overflow-hidden">
+    
+    <!-- Grain Noise -->
+    <canvas class="bg-noise absolute inset-0 w-full h-full opacity-[0.03] pointer-events-none mix-blend-overlay z-0"></canvas>
+
+    <div class="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12">
+      
+      <!-- Layout: Masthead Left, Grid Right -->
+      <div class="flex flex-col lg:flex-row gap-16 lg:gap-24 items-start">
+        
+        <!-- Left: Masthead -->
+        <div class="w-full lg:w-[35%] lg:sticky lg:top-48 animate-on-scroll [animation:animationIn_1.2s_ease-out_0.2s_both] relative z-20">
+          <div class="flex items-center gap-4 mb-8">
+            <div class="w-12 h-[2px] bg-[#3F556B]"></div>
+            <span class="font-sans text-xs md:text-sm font-bold uppercase tracking-[0.25em] text-[#3F556B]">Os Entregáveis</span>
+          </div>
+          
+          <h2 class="font-display text-[4rem] md:text-[5rem] lg:text-[5.5rem] xl:text-[6.5rem] font-bold tracking-tighter uppercase leading-[0.9] text-[#ebedea] mb-8">
+            O que você <br><span class="italic font-accent normal-case font-normal text-[#3F556B]">recebe?</span>
+          </h2>
+
+          <div class="relative p-8 border-l border-[#3F556B]/30 bg-[#ebedea]/[0.02]">
+            <p class="font-sans text-lg lg:text-xl font-light text-white/60 leading-relaxed">
+              O resultado desse cruzamento diagnóstico vira um <strong class="font-semibold text-white">dossiê estratégico e tático.</strong>
+            </p>
+          </div>
+        </div>
+
+        <!-- Right: 2x2 Grid of Dossiers -->
+        <div class="w-full lg:w-[65%] grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 relative z-20">
+          
+          <!-- Item 1: Mapa do potencial documental -->
+          <div class="group relative bg-[#ebedea]/[0.03] backdrop-blur-sm border border-[#ebedea]/10 p-10 lg:p-12 hover:bg-white hover:border-white transition-colors duration-700 overflow-hidden flex flex-col justify-between min-h-[380px] animate-on-scroll [animation:animationIn_1.2s_ease-out_0.3s_both]">
+            <div class="absolute inset-0 w-full h-[4px] bg-[#3F556B] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left top-0"></div>
+            
+            <div>
+              <div class="flex justify-between items-start mb-8 text-[#ebedea] group-hover:text-[#1e2420] transition-colors duration-700">
+                <iconify-icon icon="solar:map-arrow-linear" width="48" height="48"></iconify-icon>
+                <div class="font-display text-4xl lg:text-5xl opacity-20 font-bold group-hover:opacity-10 transition-opacity duration-700">01</div>
+              </div>
+              <h3 class="font-sans text-2xl lg:text-[2rem] font-light text-[#ebedea] group-hover:text-[#1e2420] transition-colors duration-700 mb-4 leading-snug">
+                <span class="font-bold underline decoration-[#3F556B] underline-offset-4 decoration-2">Mapa de potencial</span> documental
+              </h3>
+            </div>
+            
+            <div class="mt-8 pt-8 border-t border-[#ebedea]/10 group-hover:border-[#1e2420]/10 transition-colors duration-700 relative">
+              <p class="font-sans text-[1.1rem] text-white/60 group-hover:text-[#2d322f]/80 transition-colors duration-700 flex items-start gap-4">
+                <iconify-icon icon="solar:arrow-right-linear" class="text-[#3F556B] shrink-0 mt-1" width="20"></iconify-icon>
+                <span>onde está o <strong class="font-bold text-white group-hover:text-[#1e2420] italic">real</strong> da sua marca.</span>
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 2: Identificação de regime narrativo -->
+          <div class="group relative bg-[#ebedea]/[0.03] backdrop-blur-sm border border-[#ebedea]/10 p-10 lg:p-12 hover:bg-[#3F556B] hover:border-[#3F556B] transition-colors duration-700 overflow-hidden flex flex-col justify-between min-h-[380px] md:translate-y-16 animate-on-scroll [animation:animationIn_1.2s_ease-out_0.5s_both]">
+            <div class="absolute inset-0 w-full h-[4px] bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left top-0 z-10"></div>
+            
+            <div class="relative z-10">
+              <div class="flex justify-between items-start mb-8 text-[#ebedea] group-hover:text-white transition-colors duration-700">
+                <iconify-icon icon="solar:document-medicine-linear" width="48" height="48"></iconify-icon>
+                <div class="font-display text-4xl lg:text-5xl opacity-20 font-bold group-hover:opacity-40 transition-opacity duration-700">02</div>
+              </div>
+              <h3 class="font-sans text-2xl lg:text-[2rem] font-light text-[#ebedea] group-hover:text-white transition-colors duration-700 mb-4 leading-snug">
+                Identificação de <span class="font-bold border-b-2 border-white/20 pb-1">regime narrativo</span>
+              </h3>
+            </div>
+            
+            <div class="mt-8 pt-8 border-t border-[#ebedea]/10 group-hover:border-white/20 transition-colors duration-700 relative z-10">
+              <p class="font-sans text-[1.1rem] text-white/60 group-hover:text-white/90 transition-colors duration-700 flex items-start gap-4">
+                <iconify-icon icon="solar:arrow-right-linear" class="text-[#3F556B] group-hover:text-white shrink-0 mt-1" width="20"></iconify-icon>
+                <span>qual lógica narrativa é viável <br><span class="text-[0.95rem] opacity-70 block mt-2 text-[#ebedea]/60 group-hover:text-white/80">(legitimidade, observação, institucional, simbólica).</span></span>
+              </p>
+            </div>
+            
+            <!-- Hover graphic -->
+            <div class="absolute right-0 bottom-0 w-48 h-48 bg-white/5 rounded-tl-full transform translate-y-full translate-x-full group-hover:translate-y-0 group-hover:translate-x-0 transition-transform duration-1000 ease-out pointer-events-none z-0"></div>
+          </div>
+
+          <!-- Item 3: Riscos de contaminação -->
+          <div class="group relative bg-[#ebedea]/[0.03] backdrop-blur-sm border border-[#ebedea]/10 p-10 lg:p-12 hover:bg-[#1e2420] hover:border-[#3F556B] transition-colors duration-700 overflow-hidden flex flex-col justify-between min-h-[380px] animate-on-scroll [animation:animationIn_1.2s_ease-out_0.7s_both]">
+            <!-- Inside hover highlight -->
+            <div class="absolute inset-0 w-full h-full bg-[#1e2420] z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none shadow-[inset_0_0_80px_rgba(63,85,107,0.08)]"></div>
+            
+            <div class="absolute inset-x-0 bottom-0 h-[4px] bg-[#3F556B] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-center z-10"></div>
+            
+            <div class="relative z-10">
+              <div class="flex justify-between items-start mb-8 text-[#ebedea] transition-colors duration-700">
+                <iconify-icon icon="solar:danger-triangle-linear" width="48" height="48" class="group-hover:text-[#3F556B] transition-colors duration-700"></iconify-icon>
+                <div class="font-display text-4xl lg:text-5xl opacity-20 font-bold group-hover:text-[#3F556B] transition-colors duration-700">03</div>
+              </div>
+              <h3 class="font-sans text-2xl lg:text-[2rem] font-light text-[#ebedea] mb-4 leading-snug">
+                Riscos de <span class="font-bold text-[#ebedea] group-hover:text-white transition-colors duration-700 underline decoration-2 underline-offset-4 decoration-[#3F556B]">contaminação</span>
+              </h3>
+            </div>
+            
+            <div class="mt-8 pt-8 border-t border-[#ebedea]/10 group-hover:border-[#3F556B]/30 transition-colors duration-700 relative z-10">
+              <p class="font-sans text-[1.1rem] text-white/60 group-hover:text-white/80 transition-colors duration-700 flex items-start gap-4">
+                <iconify-icon icon="solar:arrow-right-linear" class="text-[#3F556B] shrink-0 mt-1" width="20"></iconify-icon>
+                <span>pontos sensíveis do território.</span>
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 4: Recomendação estratégica -->
+          <div class="group relative bg-[#ebedea]/[0.03] backdrop-blur-sm border border-[#ebedea]/10 p-10 lg:p-12 hover:bg-white hover:border-white transition-colors duration-700 overflow-hidden flex flex-col justify-between min-h-[380px] md:translate-y-16 animate-on-scroll [animation:animationIn_1.2s_ease-out_0.9s_both]">
+            <div class="absolute inset-0 w-[6px] h-full bg-[#3F556B] transform scale-y-0 group-hover:scale-y-100 transition-transform duration-500 origin-top right-0 z-10"></div>
+            
+            <div class="relative z-10">
+              <div class="flex justify-between items-start mb-8 text-[#ebedea] group-hover:text-[#1e2420] transition-colors duration-700">
+                <iconify-icon icon="solar:shield-star-linear" width="48" height="48"></iconify-icon>
+                <div class="font-display text-4xl lg:text-5xl opacity-20 font-bold group-hover:opacity-10 transition-opacity duration-700">04</div>
+              </div>
+              <h3 class="font-sans text-2xl lg:text-[2rem] font-light text-[#ebedea] group-hover:text-[#1e2420] transition-colors duration-700 mb-4 leading-snug">
+                Recomendação <br><span class="font-bold relative z-10">estratégica
+                  <span class="absolute bottom-1 left-0 w-full h-[6px] bg-[#3F556B] -z-10 opacity-0 group-hover:opacity-30 transition-opacity duration-700"></span>
+                </span>
+              </h3>
+            </div>
+            
+            <div class="mt-8 pt-8 border-t border-[#ebedea]/10 group-hover:border-[#1e2420]/10 transition-colors duration-700 relative z-10">
+              <p class="font-sans text-[1.1rem] text-white/60 group-hover:text-[#2d322f]/80 transition-colors duration-700 flex items-start gap-4">
+                <iconify-icon icon="solar:arrow-right-linear" class="text-[#3F556B] shrink-0 mt-1" width="20"></iconify-icon>
+                <span>como iniciar a construção do ecossistema narrativo <br><span class="text-[0.95rem] opacity-70 block mt-2 text-[#ebedea]/60 group-hover:text-[#1e2420]/70 font-semibold">(tipo de filme, formato, escala, função).</span></span>
+              </p>
+            </div>
           </div>
 
         </div>
@@ -476,4 +817,5 @@
     }
   </script>
 </body>
+
 </html>
