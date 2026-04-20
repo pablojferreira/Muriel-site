@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sistema Orbital Muriel™ | Muriel Filmes</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lenis@1.0.45/dist/lenis.min.js"></script>
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #ebedea;
+      color: #2d322f;
+    }
+
+    .font-display {
+      font-family: 'Oswald', sans-serif;
+    }
+
+    .font-accent {
+      font-family: 'Playfair Display', serif;
+    }
+
+    html,
+    body {
+      min-height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    .page-shell {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .content {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem 1.5rem;
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      padding: 0.5rem 1rem;
+      border: 1px solid rgba(45, 50, 47, 0.15);
+      border-radius: 9999px;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      color: #3F556B;
+      background: rgba(63, 85, 107, 0.05);
+      margin-bottom: 1.5rem;
+    }
+
+    a.button-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: #1e2420;
+      border: 1px solid #1e2420;
+      padding: 0.85rem 1.4rem;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    a.button-back:hover {
+      background: #1e2420;
+      color: #ffffff;
+    }
+  </style>
+</head>
+
+<body class="page-shell">
+  <header class="w-full border-b border-[#2d322f]/10 bg-[#ebedea]/90 backdrop-blur-xl">
+    <div class="max-w-[1400px] mx-auto px-6 lg:px-12 py-6 flex items-center justify-between">
+      <div>
+        <a href="index.html" class="font-display uppercase tracking-[0.35em] text-sm text-[#1e2420]">Muriel Filmes</a>
+      </div>
+      <nav>
+        <a href="muriel-documenta.html" class="text-xs uppercase tracking-[0.25em] text-[#3F556B] hover:text-[#1e2420] transition-colors">Voltar para Muriel Documenta</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="content">
+    <div>
+      <span class="badge">Novo Subpágina</span>
+      <h1 class="font-display text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight mb-6">Sistema Orbital Muriel™</h1>
+      <p class="max-w-2xl mx-auto text-base md:text-lg leading-8 text-[#2d322f]/80">Página provisoriamente vazia. Conteúdo em construção para o Sistema Orbital Muriel™.</p>
+      <div class="mt-10">
+        <a href="muriel-documenta.html" class="button-back">
+          <iconify-icon icon="solar:arrow-left-line" width="20" height="20"></iconify-icon>
+          Voltar para Muriel Documenta
+        </a>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>
