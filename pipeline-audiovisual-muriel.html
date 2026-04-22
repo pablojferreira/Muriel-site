@@ -239,7 +239,8 @@
           <h1
             class="relative font-display text-[4rem] md:text-[6rem] lg:text-[7.5rem] xl:text-[8.5rem] font-bold tracking-tighter uppercase text-[#ebedea] leading-[0.85] z-20">
             <span
-              class="block opacity-0 animate-on-scroll transition-all duration-[1.2s] ease-out delay-200 translate-y-8"><span class="text-white/20">Da</span> concepção</span>
+              class="block opacity-0 animate-on-scroll transition-all duration-[1.2s] ease-out delay-200 translate-y-8"><span
+                class="text-white/20">Da</span> concepção</span>
             <span
               class="block opacity-0 animate-on-scroll transition-all duration-[1.2s] ease-out delay-400 translate-y-8 mt-2 lg:mt-0">
               <span
@@ -300,6 +301,300 @@
     </div>
   </main>
 
+  <!-- SEÇÃO 2: Etapas do Pipeline -->
+  <section id="processos" class="relative w-full bg-[#ebedea] text-[#1e2420] overflow-hidden">
+    <div class="max-w-[1400px] mx-auto flex flex-col lg:flex-row">
+
+      <!-- Esquerda: Imagem Sticky (Diagrama) -->
+      <div
+        class="w-full lg:w-[45%] xl:w-[40%] bg-[#ebedea] relative lg:sticky lg:top-0 lg:h-screen p-12 lg:p-16 xl:p-20 flex flex-col justify-center items-start overflow-hidden">
+
+        <!-- Fundo Texturizado Sutil -->
+        <div class="absolute inset-0 bg-[#3F556B] opacity-[0.02] pointer-events-none mix-blend-multiply"
+          style="background-image: radial-gradient(#1e2420 1px, transparent 1px); background-size: 32px 32px;"></div>
+
+        <div class="relative z-10 w-full animate-on-scroll transition-all duration-1000 ease-out translate-y-8">
+          <!-- Título secundário -->
+          <div class="flex items-center gap-4 mb-8">
+            <div class="w-8 h-[2px] bg-[#3F556B]"></div>
+            <span class="font-sans text-[0.65rem] font-bold uppercase tracking-[0.3em] text-[#3F556B]">Visão
+              Macro</span>
+          </div>
+
+          <h2
+            class="font-display text-[3.5rem] lg:text-[4.5rem] xl:text-[5.5rem] uppercase font-bold tracking-tighter text-[#1e2420] mb-12 lg:mb-20 leading-[0.85]">
+            Decupagem<br>
+            <span class="italic font-accent normal-case font-normal text-[#3F556B]">do Sistema.</span>
+          </h2>
+
+          <!-- Imagem Processos -->
+          <div
+            class="group relative w-full max-w-[480px] hover:scale-105 transition-transform duration-1000 ease-[cubic-bezier(0.19,1,0.22,1)] cursor-pointer"
+            onclick="openLightbox()">
+            <img src="Muriel_processos.png" alt="Fluxograma de Processos Muriel"
+              class="w-full h-auto object-contain drop-shadow-2xl mix-blend-multiply" />
+            <!-- Zoom Overlay Elegante -->
+            <div
+              class="absolute inset-0 bg-[#ebedea]/30 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex justify-center items-center rounded-[2rem] border border-[#3F556B]/30 shadow-[0_20px_40px_rgba(63,85,107,0.15)]">
+              <iconify-icon icon="solar:maximize-square-minimalistic-linear" width="56"
+                class="text-[#3F556B] drop-shadow-lg scale-75 group-hover:scale-100 transition-transform duration-[600ms] ease-out"></iconify-icon>
+            </div>
+          </div>
+        </div>
+
+        <!-- Decorativo: Linha separadora Y -->
+        <div
+          class="hidden lg:block absolute right-0 top-[10%] h-[80%] w-px bg-gradient-to-b from-transparent via-[#1e2420]/10 to-transparent">
+        </div>
+      </div>
+
+      <!-- Direita: Lista de Etapas (Scrolling Content) -->
+      <div class="w-full lg:w-[55%] xl:w-[60%] px-6 py-20 lg:px-20 lg:py-32">
+
+        <div class="flex flex-col w-full relative z-10">
+
+          <!-- Header da Tabela Editorial -->
+          <div
+            class="hidden md:flex flex-row gap-10 items-end pb-4 border-b-2 border-[#1e2420]/20 mb-4 animate-on-scroll">
+            <div class="w-[35%]"><span
+                class="font-sans text-[0.65rem] font-bold uppercase tracking-[0.2em] text-[#1e2420]/50">Fase /
+                Estágio</span></div>
+            <div class="w-[65%]"><span
+                class="font-sans text-[0.65rem] font-bold uppercase tracking-[0.2em] text-[#1e2420]/50">Detalhamento
+                Operacional</span></div>
+          </div>
+
+          <!-- Etapa 01 -->
+          <div
+            class="border-b border-[#1e2420]/10 py-10 lg:py-12 group hover:border-[#3F556B] hover:bg-white/40 transition-all duration-500 animate-on-scroll px-4 md:px-0 -mx-4 md:mx-0">
+            <div class="flex flex-col md:flex-row gap-4 md:gap-10 items-start md:px-4">
+              <div class="flex items-center gap-6 md:w-[35%] shrink-0 pt-1">
+                <span
+                  class="font-display text-[#3F556B] text-lg font-semibold tracking-widest opacity-40 group-hover:opacity-100 transition-opacity">01</span>
+                <h3
+                  class="font-display text-4xl uppercase font-bold tracking-tighter text-[#1e2420] group-hover:text-[#3F556B] transition-colors duration-500">
+                  Contato</h3>
+              </div>
+              <div class="md:w-[65%] pt-2 md:pt-1">
+                <p
+                  class="font-sans text-lg font-light text-[#1e2420]/70 leading-[1.6] group-hover:text-[#1e2420] transition-colors duration-500">
+                  Conversa inicial (online ou presencial) para entender a marca e estabelecer os objetivos do projeto.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Etapa 02 -->
+          <div
+            class="border-b border-[#1e2420]/10 py-10 lg:py-12 group hover:border-[#3F556B] hover:bg-white/40 transition-all duration-500 animate-on-scroll px-4 md:px-0 -mx-4 md:mx-0">
+            <div class="flex flex-col md:flex-row gap-4 md:gap-10 items-start md:px-4">
+              <div class="flex items-center gap-6 md:w-[35%] shrink-0 pt-1">
+                <span
+                  class="font-display text-[#3F556B] text-lg font-semibold tracking-widest opacity-40 group-hover:opacity-100 transition-opacity">02</span>
+                <h3
+                  class="font-display text-4xl uppercase font-bold tracking-tighter text-[#1e2420] group-hover:text-[#3F556B] transition-colors duration-500">
+                  Cálculo</h3>
+              </div>
+              <div class="md:w-[65%] pt-2 md:pt-1">
+                <p
+                  class="font-sans text-lg font-light text-[#1e2420]/70 leading-[1.6] group-hover:text-[#1e2420] transition-colors duration-500">
+                  Análise da demanda e levantamento de custos, tomando por base as informações iniciais.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Etapa 03 -->
+          <div
+            class="border-b border-[#1e2420]/10 py-10 lg:py-12 group hover:border-[#3F556B] hover:bg-white/40 transition-all duration-500 animate-on-scroll px-4 md:px-0 -mx-4 md:mx-0">
+            <div class="flex flex-col md:flex-row gap-4 md:gap-10 items-start md:px-4">
+              <div class="flex items-center gap-6 md:w-[35%] shrink-0 pt-1">
+                <span
+                  class="font-display text-[#3F556B] text-lg font-semibold tracking-widest opacity-40 group-hover:opacity-100 transition-opacity">03</span>
+                <h3
+                  class="font-display text-4xl uppercase font-bold tracking-tighter text-[#1e2420] group-hover:text-[#3F556B] transition-colors duration-500 inline-block align-middle truncate">
+                  Orçamento</h3>
+              </div>
+              <div class="md:w-[65%] pt-2 md:pt-1">
+                <p
+                  class="font-sans text-lg font-light text-[#1e2420]/70 leading-[1.6] group-hover:text-[#1e2420] transition-colors duration-500">
+                  Apresentação do orçamento e do racional orçamentário para o escopo de produção escolhido (com opções
+                  de ajustes).
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Etapa 04 -->
+          <div
+            class="border-b border-[#1e2420]/10 py-10 lg:py-12 group hover:border-[#3F556B] hover:bg-white/40 transition-all duration-500 animate-on-scroll px-4 md:px-0 -mx-4 md:mx-0">
+            <div class="flex flex-col md:flex-row gap-4 md:gap-10 items-start md:px-4">
+              <div class="flex items-center gap-6 md:w-[35%] shrink-0 pt-1">
+                <span
+                  class="font-display text-[#3F556B] text-lg font-semibold tracking-widest opacity-40 group-hover:opacity-100 transition-opacity">04</span>
+                <h3
+                  class="font-display text-4xl uppercase font-bold tracking-tighter text-[#1e2420] group-hover:text-[#3F556B] transition-colors duration-500">
+                  Projeto</h3>
+              </div>
+              <div class="md:w-[65%] pt-2 md:pt-1">
+                <p
+                  class="font-sans text-lg font-light text-[#1e2420]/70 leading-[1.6] group-hover:text-[#1e2420] transition-colors duration-500">
+                  Definição de equipe, realização de visitas técnicas, desenho de produção, cronograma e roteiro de
+                  gravação.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Etapa 05 -->
+          <div
+            class="border-b border-[#1e2420]/10 py-10 lg:py-12 group hover:border-[#3F556B] hover:bg-white/40 transition-all duration-500 animate-on-scroll px-4 md:px-0 -mx-4 md:mx-0">
+            <div class="flex flex-col md:flex-row gap-4 md:gap-10 items-start md:px-4">
+              <div class="flex items-center gap-6 md:w-[35%] shrink-0 pt-1">
+                <span
+                  class="font-display text-[#3F556B] text-lg font-semibold tracking-widest opacity-40 group-hover:opacity-100 transition-opacity">05</span>
+                <h3
+                  class="font-display text-4xl uppercase font-bold tracking-tighter text-[#1e2420] group-hover:text-[#3F556B] transition-colors duration-500">
+                  Largada</h3>
+              </div>
+              <div class="md:w-[65%] pt-2 md:pt-1">
+                <p
+                  class="font-sans text-lg font-light text-[#1e2420]/70 leading-[1.6] group-hover:text-[#1e2420] transition-colors duration-500">
+                  Realinhamento (online ou presencial) entre equipe e cliente para esclarecimento de dúvidas, solução de
+                  problemas e consolidação de alterações.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Etapa 06 -->
+          <div
+            class="border-b border-[#1e2420]/10 py-10 lg:py-12 group hover:border-[#3F556B] hover:bg-white/40 transition-all duration-500 animate-on-scroll px-4 md:px-0 -mx-4 md:mx-0">
+            <div class="flex flex-col md:flex-row gap-4 md:gap-10 items-start md:px-4">
+              <div class="flex items-center gap-6 md:w-[35%] shrink-0 pt-1">
+                <span
+                  class="font-display text-[#3F556B] text-lg font-semibold tracking-widest opacity-40 group-hover:opacity-100 transition-opacity">06</span>
+                <h3
+                  class="font-display text-4xl uppercase font-bold tracking-tighter text-[#1e2420] group-hover:text-[#3F556B] transition-colors duration-500">
+                  Balanço</h3>
+              </div>
+              <div class="md:w-[65%] pt-2 md:pt-1">
+                <p
+                  class="font-sans text-lg font-light text-[#1e2420]/70 leading-[1.6] group-hover:text-[#1e2420] transition-colors duration-500">
+                  Apresentação final do projeto antes de abrir câmera.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Etapa 07 -->
+          <div
+            class="border-b border-[#1e2420]/10 py-10 lg:py-12 group hover:border-[#3F556B] hover:bg-white/40 transition-all duration-500 animate-on-scroll px-4 md:px-0 -mx-4 md:mx-0">
+            <div class="flex flex-col md:flex-row gap-4 md:gap-10 items-start md:px-4">
+              <div class="flex items-center gap-6 md:w-[35%] shrink-0 pt-1">
+                <span
+                  class="font-display text-[#3F556B] text-lg font-semibold tracking-widest opacity-40 group-hover:opacity-100 transition-opacity">07</span>
+                <h3
+                  class="font-display text-4xl uppercase font-bold tracking-tighter text-[#1e2420] group-hover:text-[#3F556B] transition-colors duration-500">
+                  Gravação</h3>
+              </div>
+              <div class="md:w-[65%] pt-2 md:pt-1">
+                <p
+                  class="font-sans text-lg font-light text-[#1e2420]/70 leading-[1.6] group-hover:text-[#1e2420] transition-colors duration-500">
+                  Captação do material bruto com sensibilidade e excelência técnica.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Etapa 08 -->
+          <div
+            class="border-b border-[#1e2420]/10 py-10 lg:py-12 group hover:border-[#3F556B] hover:bg-white/40 transition-all duration-500 animate-on-scroll px-4 md:px-0 -mx-4 md:mx-0">
+            <div class="flex flex-col md:flex-row gap-4 md:gap-10 items-start md:px-4">
+              <div class="flex items-center gap-6 md:w-[35%] shrink-0 pt-1">
+                <span
+                  class="font-display text-[#3F556B] text-lg font-semibold tracking-widest opacity-40 group-hover:opacity-100 transition-opacity">08</span>
+                <h3
+                  class="font-display text-4xl uppercase font-bold tracking-tighter text-[#1e2420] group-hover:text-[#3F556B] transition-colors duration-500">
+                  Edição</h3>
+              </div>
+              <div class="md:w-[65%] pt-2 md:pt-1">
+                <p
+                  class="font-sans text-lg font-light text-[#1e2420]/70 leading-[1.6] group-hover:text-[#1e2420] transition-colors duration-500">
+                  Edição offline, color grading, desenho de som, mixagem, letreiros, animações, etc.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Etapa 09 -->
+          <div
+            class="border-b border-[#1e2420]/10 py-10 lg:py-12 group hover:border-[#3F556B] hover:bg-white/40 transition-all duration-500 animate-on-scroll px-4 md:px-0 -mx-4 md:mx-0">
+            <div class="flex flex-col md:flex-row gap-4 md:gap-10 items-start md:px-4">
+              <div class="flex items-center gap-6 md:w-[35%] shrink-0 pt-1">
+                <span
+                  class="font-display text-[#3F556B] text-lg font-semibold tracking-widest opacity-40 group-hover:opacity-100 transition-opacity">09</span>
+                <h3
+                  class="font-display text-4xl uppercase font-bold tracking-tighter text-[#1e2420] group-hover:text-[#3F556B] transition-colors duration-500">
+                  Aprovação</h3>
+              </div>
+              <div class="md:w-[65%] pt-2 md:pt-1">
+                <p
+                  class="font-sans text-lg font-light text-[#1e2420]/70 leading-[1.6] group-hover:text-[#1e2420] transition-colors duration-500">
+                  Validação do cliente em cada etapa de pós-produção até a entrega do filme finalizado.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Etapa 10 -->
+          <div
+            class="border-b border-[#1e2420]/10 py-10 lg:py-12 group hover:border-[#3F556B] hover:bg-white/40 transition-all duration-500 animate-on-scroll px-4 md:px-0 -mx-4 md:mx-0">
+            <div class="flex flex-col md:flex-row gap-4 md:gap-10 items-start md:px-4">
+              <div class="flex items-center gap-6 md:w-[35%] shrink-0 pt-1">
+                <span
+                  class="font-display text-[#3F556B] text-lg font-semibold tracking-widest opacity-40 group-hover:opacity-100 transition-opacity">10</span>
+                <h3
+                  class="font-display text-4xl uppercase font-bold tracking-tighter text-[#1e2420] group-hover:text-[#3F556B] transition-colors duration-500">
+                  Avaliação</h3>
+              </div>
+              <div class="md:w-[65%] pt-2 md:pt-1">
+                <p
+                  class="font-sans text-lg font-light text-[#1e2420]/70 leading-[1.6] group-hover:text-[#1e2420] transition-colors duration-500">
+                  Implementação de soluções e aprendizados nos processos da produtora a partir da coleta de feedbacks
+                  (cliente e equipe).
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox Minimalista -->
+  <div id="image-lightbox"
+    class="fixed inset-0 z-[100] flex items-center justify-center bg-[#1e2420]/95 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-700"
+    onclick="closeLightbox()">
+
+    <!-- Botão Fechar -->
+    <button
+      class="absolute top-6 right-6 lg:top-10 lg:right-10 text-[#ebedea]/60 hover:text-white transition-colors p-4 z-10 focus:outline-none"
+      aria-label="Fechar" onclick="closeLightbox(); event.stopPropagation();">
+      <iconify-icon icon="solar:close-circle-linear" width="40"></iconify-icon>
+    </button>
+
+    <!-- Imagem e Zoom -->
+    <div
+      class="relative w-[90vw] h-[90vh] flex items-center justify-center transform scale-95 transition-transform duration-700 ease-[cubic-bezier(0.19,1,0.22,1)]"
+      id="lightbox-content">
+      <img src="Muriel_processos.png" alt="Fluxograma de Processos Muriel Expandido"
+        class="max-w-full max-h-full object-contain filter drop-shadow-2xl" />
+    </div>
+
+  </div>
+
   <script>
     // Smooth Scroll System via Lenis
     const lenis = new Lenis({
@@ -329,6 +624,34 @@
       document.querySelectorAll(".animate-on-scroll").forEach((el) => {
         observer.observe(el);
       });
+    });
+
+    // Lightbox Logic
+    function openLightbox() {
+      const lightbox = document.getElementById('image-lightbox');
+      const content = document.getElementById('lightbox-content');
+      lightbox.classList.remove('opacity-0', 'pointer-events-none');
+      lightbox.classList.add('opacity-100');
+      content.classList.remove('scale-95');
+      content.classList.add('scale-100');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      const lightbox = document.getElementById('image-lightbox');
+      const content = document.getElementById('lightbox-content');
+      lightbox.classList.remove('opacity-100');
+      lightbox.classList.add('opacity-0', 'pointer-events-none');
+      content.classList.remove('scale-100');
+      content.classList.add('scale-95');
+      document.body.style.overflow = '';
+    }
+
+    // Fechar ao apertar ESC
+    document.addEventListener('keydown', function (event) {
+      if (event.key === "Escape") {
+        closeLightbox();
+      }
     });
   </script>
 </body>
