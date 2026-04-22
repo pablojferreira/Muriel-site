@@ -227,7 +227,7 @@
     </div>
     
     <!-- Hint de Scroll -->
-    <div class="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-80 animate-in z-20" style="animation-delay: 1.5s;">
+    <div onclick="const next = document.querySelector('section'); if(next) next.scrollIntoView({ behavior: 'smooth' })" class="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-80 hover:opacity-100 transition-opacity cursor-pointer animate-in z-50" style="animation-delay: 1.5s;">
       <span class="font-sans text-[10px] uppercase tracking-[0.2em] text-[#3F556B] font-semibold">Explore</span>
       <iconify-icon class="animate-bounce text-white" icon="solar:arrow-down-linear"></iconify-icon>
     </div>
