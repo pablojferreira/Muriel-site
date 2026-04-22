@@ -13,7 +13,9 @@
   <!-- Google Fonts for AEX Design System -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&display=swap"
+    rel="stylesheet">
 
   <style>
     body {
@@ -31,21 +33,41 @@
     ::-webkit-scrollbar {
       width: 8px;
     }
+
     ::-webkit-scrollbar-track {
       background: #1e2420;
     }
+
     ::-webkit-scrollbar-thumb {
       background: #3F556B;
     }
 
     @keyframes animationIn {
-      0% { opacity: 0; transform: translateY(30px); filter: blur(8px); }
-      100% { opacity: 1; transform: translateY(0); filter: blur(0px); }
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+        filter: blur(8px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0px);
+      }
     }
-    
+
     @keyframes fadeIn {
-      0% { opacity: 0; filter: blur(15px); scale: 1.05; }
-      100% { opacity: 1; filter: blur(0px); scale: 1; }
+      0% {
+        opacity: 0;
+        filter: blur(15px);
+        scale: 1.05;
+      }
+
+      100% {
+        opacity: 1;
+        filter: blur(0px);
+        scale: 1;
+      }
     }
 
     .animate-in {
@@ -56,13 +78,14 @@
       animation: fadeIn 2s cubic-bezier(0.19, 1, 0.22, 1) both;
     }
 
-    html, body {
+    html,
+    body {
       overflow-x: hidden !important;
       min-height: 100% !important;
       background: #1e2420;
       color: #ebedea;
     }
-    
+
     .bg-noise {
       position: absolute;
       inset: 0;
@@ -123,65 +146,88 @@
   </header>
 
   <main class="relative min-h-screen w-full flex items-center justify-center pt-20 pb-20 overflow-hidden bg-[#3F556B]">
-    
+
     <!-- Fundo Grid Matrix Editorial (Dark) -->
     <div class="absolute inset-0 z-0 pointer-events-none mix-blend-overlay opacity-[0.08]"
       style="background-image: linear-gradient(rgba(235, 237, 234, 0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(235, 237, 234, 0.5) 1px, transparent 1px); background-size: 80px 80px;">
     </div>
 
     <!-- Efeitos Orbitais e Fundo Cinematográfico -->
-    <div class="absolute inset-0 z-0 flex items-center justify-center overflow-hidden fade-in pointer-events-none select-none">
+    <div
+      class="absolute inset-0 z-0 flex items-center justify-center overflow-hidden fade-in pointer-events-none select-none">
 
       <!-- Círculo Orbital 1 (Borda Externa Larga) -->
-      <div class="absolute w-[180vw] md:w-[110vw] aspect-square rounded-full border border-[#ebedea]/20 animate-[spin_80s_linear_infinite]">
+      <div
+        class="absolute w-[180vw] md:w-[110vw] aspect-square rounded-full border border-[#ebedea]/20 animate-[spin_80s_linear_infinite]">
         <!-- Ponto Orbital -->
-        <div class="absolute top-0 left-[20%] w-2 h-2 md:w-3 md:h-3 rounded-full bg-[#1e2420] border-2 border-[#ebedea] -translate-x-1/2 -translate-y-1/2 shadow-[0_0_20px_rgba(235,237,234,0.5)]"></div>
+        <div
+          class="absolute top-0 left-[20%] w-2 h-2 md:w-3 md:h-3 rounded-full bg-[#1e2420] border-2 border-[#ebedea] -translate-x-1/2 -translate-y-1/2 shadow-[0_0_20px_rgba(235,237,234,0.5)]">
+        </div>
         <div class="absolute left-0 top-[80%] w-[1px] h-[30px] bg-gradient-to-b from-[#ebedea]/60 to-transparent"></div>
       </div>
 
       <!-- Círculo Orbital 2 (Intermediário Tracejado) -->
-      <div class="absolute w-[120vw] md:w-[75vw] aspect-square rounded-full border-[1px] border-dashed border-[#ebedea]/20 animate-[spin_50s_linear_infinite_reverse]">
+      <div
+        class="absolute w-[120vw] md:w-[75vw] aspect-square rounded-full border-[1px] border-dashed border-[#ebedea]/20 animate-[spin_50s_linear_infinite_reverse]">
         <!-- Ponto Orbital Múltiplo -->
-        <div class="absolute top-[14%] right-[14%] w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-white shadow-[0_0_20px_#ffffff]"></div>
-        <div class="absolute bottom-[10%] left-[20%] w-[8px] h-[8px] border-2 border-[#ebedea] rotate-45 flex items-center justify-center">
-            <div class="w-1 h-1 bg-[#ebedea] opacity-50"></div>
+        <div
+          class="absolute top-[14%] right-[14%] w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-white shadow-[0_0_20px_#ffffff]">
+        </div>
+        <div
+          class="absolute bottom-[10%] left-[20%] w-[8px] h-[8px] border-2 border-[#ebedea] rotate-45 flex items-center justify-center">
+          <div class="w-1 h-1 bg-[#ebedea] opacity-50"></div>
         </div>
       </div>
 
       <!-- Círculo Orbital 3 (Interno Precisão) -->
-      <div class="absolute w-[80vw] md:w-[45vw] aspect-square rounded-full border-[2px] border-[#ebedea]/30 animate-[spin_30s_linear_infinite] shadow-[0_0_50px_rgba(235,237,234,0.15)] flex items-center justify-center">
+      <div
+        class="absolute w-[80vw] md:w-[45vw] aspect-square rounded-full border-[2px] border-[#ebedea]/30 animate-[spin_30s_linear_infinite] shadow-[0_0_50px_rgba(235,237,234,0.15)] flex items-center justify-center">
         <!-- Calibradores de Alta Precisão -->
         <div class="absolute top-0 w-[2px] h-6 bg-[#ebedea] shadow-[0_0_15px_rgba(235,237,234,0.6)]"></div>
         <div class="absolute bottom-0 w-[2px] h-6 bg-[#ebedea] shadow-[0_0_15px_rgba(235,237,234,0.6)]"></div>
         <div class="absolute left-0 h-[2px] w-6 bg-[#ebedea] shadow-[0_0_15px_rgba(235,237,234,0.6)]"></div>
         <div class="absolute right-0 h-[2px] w-6 bg-[#ebedea] shadow-[0_0_15px_rgba(235,237,234,0.6)]"></div>
       </div>
-      
+
       <!-- Linhas de Construção Cinematográficas -->
-      <div class="absolute w-full h-[1px] bg-gradient-to-r from-transparent via-[#ebedea]/30 to-transparent top-1/2 -translate-y-1/2"></div>
-      <div class="absolute h-full w-[1px] bg-gradient-to-b from-transparent via-[#ebedea]/30 to-transparent left-1/2 -translate-x-1/2"></div>
+      <div
+        class="absolute w-full h-[1px] bg-gradient-to-r from-transparent via-[#ebedea]/30 to-transparent top-1/2 -translate-y-1/2">
+      </div>
+      <div
+        class="absolute h-full w-[1px] bg-gradient-to-b from-transparent via-[#ebedea]/30 to-transparent left-1/2 -translate-x-1/2">
+      </div>
     </div>
 
     <!-- Container de Conteúdo -->
-    <div class="relative z-10 max-w-[1400px] mx-auto w-full px-6 lg:px-12 flex flex-col items-center justify-center text-center mt-12 md:mt-0">
-      
+    <div
+      class="relative z-10 max-w-[1400px] mx-auto w-full px-6 lg:px-12 flex flex-col items-center justify-center text-center mt-12 md:mt-0">
+
       <!-- Label Header -->
-      <div class="flex items-center gap-4 animate-in relative backdrop-blur-sm bg-[#1e2420]/40 px-5 py-2 rounded-full border border-[#ebedea]/30 shadow-[0_4px_30px_rgba(0,0,0,0.3)]" style="animation-delay: 0.3s;">
+      <div
+        class="flex items-center gap-4 animate-in relative backdrop-blur-sm bg-[#1e2420]/40 px-5 py-2 rounded-full border border-[#ebedea]/30 shadow-[0_4px_30px_rgba(0,0,0,0.3)]"
+        style="animation-delay: 0.3s;">
         <div class="w-1.5 h-1.5 rounded-full bg-[#ebedea] animate-pulse"></div>
-        <span class="font-sans text-[10px] md:text-xs font-bold uppercase tracking-[0.25em] text-[#ebedea] drop-shadow-md">Metodologia Muriel</span>
+        <span
+          class="font-sans text-[10px] md:text-xs font-bold uppercase tracking-[0.25em] text-[#ebedea] drop-shadow-md">Metodologia
+          Muriel</span>
       </div>
 
       <!-- Título Monumental -->
       <div class="mt-8 mb-10 md:mb-12 relative animate-in" style="animation-delay: 0.5s;">
         <!-- Tipografia "Sistema" translúcida no fundo de escala gigante -->
-        <h1 class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-display text-[7rem] sm:text-[10rem] md:text-[14rem] lg:text-[20rem] uppercase font-bold tracking-tighter opacity-[0.025] text-white whitespace-nowrap select-none pointer-events-none mix-blend-screen">SISTEMA</h1>
-        
-        <h2 class="relative z-10 font-display text-[4rem] sm:text-[5rem] md:text-[7rem] lg:text-[9rem] uppercase font-bold tracking-tighter leading-[0.85] text-white drop-shadow-[0_15px_30px_rgba(0,0,0,0.5)] flex flex-col items-center">
+        <h1
+          class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-display text-[7rem] sm:text-[10rem] md:text-[14rem] lg:text-[20rem] uppercase font-bold tracking-tighter opacity-[0.025] text-white whitespace-nowrap select-none pointer-events-none mix-blend-screen">
+          SISTEMA</h1>
+
+        <h2
+          class="relative z-10 font-display text-[4rem] sm:text-[5rem] md:text-[7rem] lg:text-[9rem] uppercase font-bold tracking-tighter leading-[0.85] text-white drop-shadow-[0_15px_30px_rgba(0,0,0,0.5)] flex flex-col items-center">
           <span class="block relative group pb-2">
-            <span class="relative z-10 text-transparent bg-clip-text bg-gradient-to-b from-white to-[#ebedea]/60">Sistema</span>
+            <span
+              class="relative z-10 text-transparent bg-clip-text bg-gradient-to-b from-white to-[#ebedea]/60">Sistema</span>
           </span>
           <span class="block mt-0 relative group flex items-center justify-center gap-3 lg:gap-5 flex-wrap">
-            <span class="italic font-accent normal-case font-extralight text-[#1e2420] drop-shadow-[0_0_15px_rgba(30,36,32,0.5)] animate-[pulse_4s_infinite_alternate]">Orbital</span>
+            <span
+              class="italic font-accent normal-case font-extralight text-[#1e2420] drop-shadow-[0_0_15px_rgba(30,36,32,0.5)] animate-[pulse_4s_infinite_alternate]">Orbital</span>
             <span class="relative z-10 text-white">Muriel<span class="text-[0.5em] align-super">™</span></span>
           </span>
         </h2>
@@ -189,50 +235,238 @@
 
       <!-- Descrição (Texto fornecido) -->
       <div class="max-w-[1100px] w-full mx-auto animate-in relative z-20" style="animation-delay: 0.7s;">
-        <div class="absolute inset-0 bg-[#1e2420]/30 backdrop-blur-2xl -z-10 rounded-[2rem] scale-110 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-        <p class="font-sans text-[1.15rem] sm:text-[1.35rem] md:text-[1.85rem] lg:text-[2.15rem] font-light text-[#ebedea]/70 leading-[1.6] md:leading-[1.7] tracking-tight text-center">
+        <div
+          class="absolute inset-0 bg-[#1e2420]/30 backdrop-blur-2xl -z-10 rounded-[2rem] scale-110 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+        </div>
+        <p
+          class="font-sans text-[1.15rem] sm:text-[1.35rem] md:text-[1.85rem] lg:text-[2.15rem] font-light text-[#ebedea]/70 leading-[1.6] md:leading-[1.7] tracking-tight text-center">
           <span class="block">
-            <strong class="font-display font-medium text-[#1e2420] uppercase tracking-widest text-[1.05em] relative inline-block mx-1 drop-shadow-[0_0_8px_rgba(235,237,234,0.3)]">
+            <strong
+              class="font-display font-medium text-[#1e2420] uppercase tracking-widest text-[1.05em] relative inline-block mx-1 drop-shadow-[0_0_8px_rgba(235,237,234,0.3)]">
               Documentários de marca
-              <span class="absolute bottom-[-2px] left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[#1e2420]/80 to-transparent"></span>
+              <span
+                class="absolute bottom-[-2px] left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[#1e2420]/80 to-transparent"></span>
             </strong>
-             inspiram, engajam e entretêm
+            inspiram, engajam e entretêm
           </span>
           <span class="block mt-1 md:mt-2">
-            por meio de <span class="italic font-accent text-[1.15em] text-[#ebedea] font-normal px-1 drop-shadow-[0_0_15px_rgba(235,237,234,0.4)]">narrativas complexas</span> que criam
+            por meio de <span
+              class="italic font-accent text-[1.15em] text-[#ebedea] font-normal px-1 drop-shadow-[0_0_15px_rgba(235,237,234,0.4)]">narrativas
+              complexas</span> que criam
           </span>
           <span class="block mt-1 md:mt-2">
-            uma conexão duradoura com o <strong class="font-display font-medium uppercase tracking-widest text-[1.05em] text-[#ebedea] bg-[#1e2420] py-1 px-3 ml-2 shadow-[0_4px_15px_rgba(30,36,32,0.6)] rounded-sm inline-block transform -rotate-1 border border-[#2d322f]/50">público.</strong>
+            uma conexão duradoura com o <strong
+              class="font-display font-medium uppercase tracking-widest text-[1.05em] text-[#ebedea] bg-[#1e2420] py-1 px-3 ml-2 shadow-[0_4px_15px_rgba(30,36,32,0.6)] rounded-sm inline-block transform -rotate-1 border border-[#2d322f]/50">público.</strong>
           </span>
         </p>
       </div>
 
       <!-- Call To Action -->
       <div class="mt-16 md:mt-24 lg:mt-32 animate-in relative z-30" style="animation-delay: 0.9s;">
-        <a href="#diagnostico" class="group relative inline-flex items-center justify-between bg-[#ebedea] text-[#1e2420] overflow-hidden px-8 py-5 lg:px-12 xl:py-6 border border-transparent shadow-[0_20px_50px_rgba(0,0,0,0.6)] hover:shadow-[0_20px_70px_rgba(30,36,32,0.4)] transition-shadow duration-700">
-          
+        <a href="#diagnostico"
+          class="group relative inline-flex items-center justify-between bg-[#ebedea] text-[#1e2420] overflow-hidden px-8 py-5 lg:px-12 xl:py-6 border border-transparent shadow-[0_20px_50px_rgba(0,0,0,0.6)] hover:shadow-[0_20px_70px_rgba(30,36,32,0.4)] transition-shadow duration-700">
+
           <!-- Background Swipe Escuro/Azul Metálico -->
-          <span class="absolute inset-0 w-full h-full bg-[#1e2420] transform scale-x-0 origin-right group-hover:scale-x-100 transition-transform duration-[800ms] ease-[cubic-bezier(0.19,1,0.22,1)] z-0"></span>
-          
-          <span class="relative z-10 font-sans font-bold text-xs lg:text-sm uppercase tracking-[0.25em] group-hover:text-white transition-colors duration-500 pr-10 md:pr-14 text-left leading-tight text-[#131715]">
+          <span
+            class="absolute inset-0 w-full h-full bg-[#1e2420] transform scale-x-0 origin-right group-hover:scale-x-100 transition-transform duration-[800ms] ease-[cubic-bezier(0.19,1,0.22,1)] z-0"></span>
+
+          <span
+            class="relative z-10 font-sans font-bold text-xs lg:text-sm uppercase tracking-[0.25em] group-hover:text-white transition-colors duration-500 pr-10 md:pr-14 text-left leading-tight text-[#131715]">
             Diagnosticar Meu Projeto
           </span>
-          
-          <div class="relative z-10 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center bg-[#131715] text-[#ebedea] rounded-full group-hover:bg-white group-hover:text-[#131715] transition-all duration-500 shrink-0 transform group-hover:scale-90">
-            <iconify-icon icon="solar:arrow-right-up-linear" width="22" class="transform group-hover:rotate-45 transition-transform duration-500"></iconify-icon>
+
+          <div
+            class="relative z-10 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center bg-[#131715] text-[#ebedea] rounded-full group-hover:bg-white group-hover:text-[#131715] transition-all duration-500 shrink-0 transform group-hover:scale-90">
+            <iconify-icon icon="solar:arrow-right-up-linear" width="22"
+              class="transform group-hover:rotate-45 transition-transform duration-500"></iconify-icon>
           </div>
         </a>
       </div>
-      
+
     </div>
-    
+
     <!-- Hint de Scroll -->
-    <div onclick="const next = document.querySelector('section'); if(next) next.scrollIntoView({ behavior: 'smooth' })" class="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-80 hover:opacity-100 transition-opacity cursor-pointer animate-in z-50" style="animation-delay: 1.5s;">
+    <div onclick="const next = document.querySelector('section'); if(next) next.scrollIntoView({ behavior: 'smooth' })"
+      class="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-80 hover:opacity-100 transition-opacity cursor-pointer animate-in z-50"
+      style="animation-delay: 1.5s;">
       <span class="font-sans text-[10px] uppercase tracking-[0.2em] text-[#ebedea] font-semibold">Explore</span>
       <iconify-icon class="animate-bounce text-white" icon="solar:arrow-down-linear"></iconify-icon>
     </div>
-    
+
   </main>
 
+  <!-- SEÇÃO 2: Estratégia Documental -->
+  <section id="detalhes"
+    class="relative py-24 md:py-32 lg:py-40 w-full bg-[#ebedea] border-b border-[#2d322f]/10 overflow-hidden z-20 group/section">
+    <!-- Vídeo Background Texturizado -->
+    <div class="absolute inset-0 z-0 pointer-events-none opacity-[0.125] mix-blend-multiply">
+      <video autoplay loop muted playsinline class="w-full h-full object-cover">
+        <source src="Background23.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div
+      class="max-w-[1300px] mx-auto px-6 lg:px-12 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+
+      <!-- Esquerda (Fundamentos & Card) -->
+      <div class="col-span-1 lg:col-span-5 flex flex-col gap-10 lg:gap-12 mt-12 lg:mt-0">
+
+        <!-- Top Block: Documentários não são... -->
+        <div class="pl-5 md:pl-7 border-l-[1.5px] border-[#3F556B]/60 relative animate-on-scroll">
+          <div class="flex items-center gap-3 sm:gap-4 mb-7 sm:mb-9">
+            <div class="w-8 md:w-10 h-[1.5px] bg-[#3F556B]"></div>
+            <span class="text-[10px] md:text-[11px] uppercase font-bold tracking-[0.2em] text-[#3F556B]">Fundamentos</span>
+          </div>
+
+          <div class="flex flex-col items-start gap-3">
+            <div
+              class="inline-block bg-[#1e2420] text-white font-sans font-medium uppercase tracking-[0.08em] text-[0.95rem] md:text-[1.05rem] px-3.5 py-1.5 transform -rotate-[1deg] shadow-lg mb-1 hover:-rotate-[2.5deg] hover:scale-[1.03] transition-all duration-300">
+              Documentários Não São
+            </div>
+
+            <p
+              class="font-sans text-[1.25rem] sm:text-[1.4rem] md:text-[1.65rem] text-[#2d322f]/70 leading-[1.6] max-w-[34ch] font-light">
+              peças descartáveis de campanha, mas <strong class="font-medium text-[#1e2420]">ativos estratégicos
+                permanentes</strong> com valor histórico e relevância cultural.
+            </p>
+          </div>
+        </div>
+
+        <!-- Bottom Card: A abordagem... -->
+        <div
+          class="bg-white border border-[#2d322f]/5 shadow-[0_15px_40px_-5px_rgba(30,36,32,0.06)] p-6 sm:p-8 md:p-10 relative rounded-sm animate-on-scroll shrink-0 w-full lg:w-[110%] z-10 hover:-translate-y-1 transition-transform duration-500"
+          style="transition-delay: 0.1s;">
+          <!-- Detalhe superior direito cortado (Design de Referência) -->
+          <div
+            class="absolute top-[-1px] right-[-1px] w-16 h-16 sm:w-20 sm:h-20 bg-[#ebedea] rounded-bl-[100px] border-l border-b border-[#2d322f]/5 z-0">
+          </div>
+
+          <iconify-icon icon="solar:clock-circle-linear" width="22" height="22"
+            class="text-[#3F556B] mb-5 sm:mb-6 opacity-60 relative z-10"></iconify-icon>
+
+          <p class="font-sans text-[0.95rem] md:text-[1rem] lg:text-[1.05rem] text-[#2d322f]/70 leading-[1.8] relative z-10">
+            A abordagem em estilo documentário organiza um modelo de marketing que <span
+              class="font-accent italic text-[#2d322f] text-[1.05em]">estimula a retenção</span> do público e
+            potencializa resultados de negócios.
+          </p>
+        </div>
+      </div>
+
+      <!-- Direita (Integridade Editorial) -->
+      <div class="col-span-1 lg:col-span-7 relative flex flex-col justify-center min-h-[350px] md:min-h-[450px]">
+
+        <!-- Watermark Background Text -->
+        <div
+          class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full flex flex-col justify-center pointer-events-none select-none z-0 overflow-hidden">
+          <span
+            class="font-display text-[6.5rem] sm:text-[9rem] md:text-[11rem] lg:text-[14rem] font-bold text-[#2d322f]/[0.03] leading-[0.73] tracking-tighter w-full text-center lg:text-left block lg:ml-[-5%] transition-transform duration-[20s] ease-linear group-hover/section:translate-x-6">BRAND</span>
+          <span
+            class="font-display text-[6.5rem] sm:text-[9rem] md:text-[11rem] lg:text-[14rem] font-bold text-[#2d322f]/[0.03] leading-[0.73] tracking-tighter w-full text-center lg:text-left block lg:ml-[25%] transition-transform duration-[20s] ease-linear group-hover/section:-translate-x-6">DOC.</span>
+        </div>
+
+        <!-- Conteúdo -->
+        <div class="relative z-10 lg:pl-16 flex flex-col items-start pt-12 lg:pt-0 animate-on-scroll-container">
+
+          <!-- Label Oval -->
+          <div
+            class="bg-white/90 backdrop-blur-sm border border-[#2d322f]/10 shadow-sm rounded-full px-3 py-1.5 flex items-center gap-2 mb-6 pointer-events-none fade-in-up">
+            <iconify-icon icon="solar:document-text-linear" width="12" height="12"
+              class="text-[#3F556B]"></iconify-icon>
+            <span class="text-[8px] uppercase font-bold tracking-[0.2em] text-[#2d322f]/70 pt-px">No documentário de
+              marca</span>
+          </div>
+
+          <!-- Título Principal -->
+          <h2
+            class="font-display text-[#1e2420] text-[3.5rem] sm:text-[4.5rem] md:text-[5.5rem] lg:text-[6.5rem] uppercase font-bold tracking-tighter leading-[0.8] mb-4 text-left">
+            <span class="block overflow-hidden pb-1"><span class="block reveal-text" style="transition-delay: 0.1s;">Integridade</span></span>
+            <span class="block overflow-hidden pb-1"><span class="block reveal-text" style="transition-delay: 0.25s;">Editorial</span></span>
+          </h2>
+
+          <!-- Subtítulo -->
+          <p class="text-[1.1rem] sm:text-[1.2rem] md:text-[1.3rem] lg:text-[1.5rem] text-[#2d322f]/60 mb-8 sm:mb-10 lg:mb-12 font-sans pl-1 fade-in-up" style="transition-delay: 0.4s;">
+            <span class="font-accent italic text-[#3F556B] px-1 text-[1.1em] font-medium">não limita</span> a
+            estratégia.
+          </p>
+
+          <!-- Bloco Preto / Botão -->
+          <div class="relative w-full md:w-auto lg:-translate-x-4 fade-in-up" style="transition-delay: 0.5s;">
+            <div
+              class="group flex items-end justify-between bg-[#1e2420] text-white px-6 py-5 sm:px-8 sm:py-6 md:px-10 md:py-8 shadow-[0_15px_40px_rgba(0,0,0,0.15)] transform -rotate-[1deg] lg:-rotate-[1.5deg] hover:-translate-y-2 hover:-rotate-[0.5deg] transition-all duration-500 w-full sm:min-w-[360px] md:min-w-[460px] cursor-pointer border border-white/5 overflow-hidden">
+              
+              <!-- Efeito Hover Varredura -->
+              <span class="absolute inset-0 w-full h-full bg-[#3F556B] transform scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-[600ms] ease-[cubic-bezier(0.19,1,0.22,1)] z-0"></span>
+
+              <div
+                class="relative z-10 font-display text-[2rem] sm:text-[2.5rem] md:text-[3.2rem] lg:text-[4rem] uppercase font-bold tracking-tighter leading-[0.85] text-left">
+                <span class="block text-white group-hover:text-white transition-colors duration-300">Ela é a</span>
+                <span class="block text-white group-hover:text-white transition-colors duration-300">Estratégia.</span>
+              </div>
+
+              <iconify-icon icon="solar:arrow-right-up-linear" width="28" height="28"
+                class="relative z-10 text-[#ebedea]/60 group-hover:text-white group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300 mb-2 shrink-0"></iconify-icon>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <style>
+    /* Classes de animação globais do container */
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 1s cubic-bezier(0.19, 1, 0.22, 1), transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+    .animate-on-scroll.animate {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Animações Complexas Sequenciais (Direita) */
+    .fade-in-up {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s cubic-bezier(0.19, 1, 0.22, 1), transform 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+    .animate-on-scroll-container.animate .fade-in-up {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .reveal-text {
+      opacity: 0;
+      transform: translateY(100%) rotate(2deg);
+      transform-origin: left bottom;
+      transition: opacity 0.8s cubic-bezier(0.19, 1, 0.22, 1), transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+    .animate-on-scroll-container.animate .reveal-text {
+      opacity: 1;
+      transform: translateY(0) rotate(0deg);
+    }
+  </style>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Intersection Observer para as seções entrarem suavemente
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15, rootMargin: "0px 0px -5% 0px" });
+
+      document.querySelectorAll(".animate-on-scroll, .animate-on-scroll-container").forEach((el) => {
+        observer.observe(el);
+      });
+    });
+  </script>
+
 </body>
+
 </html>
