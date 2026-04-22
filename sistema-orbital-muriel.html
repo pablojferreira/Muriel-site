@@ -122,10 +122,10 @@
     </div>
   </header>
 
-  <main class="relative min-h-screen w-full flex items-center justify-center pt-20 pb-20 overflow-hidden">
+  <main class="relative min-h-screen w-full flex items-center justify-center pt-20 pb-20 overflow-hidden bg-[#3F556B]">
     
     <!-- Fundo Grid Matrix Editorial (Dark) -->
-    <div class="absolute inset-0 z-0 pointer-events-none mix-blend-overlay opacity-[0.04]"
+    <div class="absolute inset-0 z-0 pointer-events-none mix-blend-overlay opacity-[0.08]"
       style="background-image: linear-gradient(rgba(235, 237, 234, 0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(235, 237, 234, 0.5) 1px, transparent 1px); background-size: 80px 80px;">
     </div>
 
@@ -133,44 +133,41 @@
     <div class="absolute inset-0 z-0 flex items-center justify-center overflow-hidden fade-in pointer-events-none select-none">
 
       <!-- Círculo Orbital 1 (Borda Externa Larga) -->
-      <div class="absolute w-[180vw] md:w-[110vw] aspect-square rounded-full border border-[#3F556B]/15 animate-[spin_80s_linear_infinite]">
+      <div class="absolute w-[180vw] md:w-[110vw] aspect-square rounded-full border border-[#ebedea]/20 animate-[spin_80s_linear_infinite]">
         <!-- Ponto Orbital -->
-        <div class="absolute top-0 left-[20%] w-2 h-2 md:w-3 md:h-3 rounded-full bg-[#1e2420] border-2 border-[#3F556B] -translate-x-1/2 -translate-y-1/2 shadow-[0_0_20px_rgba(63,85,107,0.8)]"></div>
-        <div class="absolute left-0 top-[80%] w-[1px] h-[30px] bg-gradient-to-b from-[#3F556B] to-transparent"></div>
+        <div class="absolute top-0 left-[20%] w-2 h-2 md:w-3 md:h-3 rounded-full bg-[#1e2420] border-2 border-[#ebedea] -translate-x-1/2 -translate-y-1/2 shadow-[0_0_20px_rgba(235,237,234,0.5)]"></div>
+        <div class="absolute left-0 top-[80%] w-[1px] h-[30px] bg-gradient-to-b from-[#ebedea]/60 to-transparent"></div>
       </div>
 
       <!-- Círculo Orbital 2 (Intermediário Tracejado) -->
-      <div class="absolute w-[120vw] md:w-[75vw] aspect-square rounded-full border-[1px] border-dashed border-[#ebedea]/10 animate-[spin_50s_linear_infinite_reverse]">
+      <div class="absolute w-[120vw] md:w-[75vw] aspect-square rounded-full border-[1px] border-dashed border-[#ebedea]/20 animate-[spin_50s_linear_infinite_reverse]">
         <!-- Ponto Orbital Múltiplo -->
         <div class="absolute top-[14%] right-[14%] w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-white shadow-[0_0_20px_#ffffff]"></div>
-        <div class="absolute bottom-[10%] left-[20%] w-[8px] h-[8px] border-2 border-[#3F556B] rotate-45 flex items-center justify-center">
-            <div class="w-1 h-1 bg-[#3F556B] opacity-50"></div>
+        <div class="absolute bottom-[10%] left-[20%] w-[8px] h-[8px] border-2 border-[#ebedea] rotate-45 flex items-center justify-center">
+            <div class="w-1 h-1 bg-[#ebedea] opacity-50"></div>
         </div>
       </div>
 
       <!-- Círculo Orbital 3 (Interno Precisão) -->
-      <div class="absolute w-[80vw] md:w-[45vw] aspect-square rounded-full border-[2px] border-[#3F556B]/30 animate-[spin_30s_linear_infinite] shadow-[0_0_50px_rgba(63,85,107,0.1)] flex items-center justify-center">
+      <div class="absolute w-[80vw] md:w-[45vw] aspect-square rounded-full border-[2px] border-[#ebedea]/30 animate-[spin_30s_linear_infinite] shadow-[0_0_50px_rgba(235,237,234,0.15)] flex items-center justify-center">
         <!-- Calibradores de Alta Precisão -->
-        <div class="absolute top-0 w-[2px] h-6 bg-[#3F556B] shadow-[0_0_15px_#3F556B]"></div>
-        <div class="absolute bottom-0 w-[2px] h-6 bg-[#3F556B] shadow-[0_0_15px_#3F556B]"></div>
-        <div class="absolute left-0 h-[2px] w-6 bg-[#3F556B] shadow-[0_0_15px_#3F556B]"></div>
-        <div class="absolute right-0 h-[2px] w-6 bg-[#3F556B] shadow-[0_0_15px_#3F556B]"></div>
-        
-        <!-- Elemento Central Estático Base (Lente) -->
-        <div class="w-[50vw] md:w-[30vw] aspect-square rounded-full bg-[#1e2420]/60 backdrop-blur-3xl border border-[#ebedea]/5 pointer-events-auto"></div>
+        <div class="absolute top-0 w-[2px] h-6 bg-[#ebedea] shadow-[0_0_15px_rgba(235,237,234,0.6)]"></div>
+        <div class="absolute bottom-0 w-[2px] h-6 bg-[#ebedea] shadow-[0_0_15px_rgba(235,237,234,0.6)]"></div>
+        <div class="absolute left-0 h-[2px] w-6 bg-[#ebedea] shadow-[0_0_15px_rgba(235,237,234,0.6)]"></div>
+        <div class="absolute right-0 h-[2px] w-6 bg-[#ebedea] shadow-[0_0_15px_rgba(235,237,234,0.6)]"></div>
       </div>
       
       <!-- Linhas de Construção Cinematográficas -->
-      <div class="absolute w-full h-[1px] bg-gradient-to-r from-transparent via-[#3F556B]/30 to-transparent top-1/2 -translate-y-1/2"></div>
-      <div class="absolute h-full w-[1px] bg-gradient-to-b from-transparent via-[#3F556B]/30 to-transparent left-1/2 -translate-x-1/2"></div>
+      <div class="absolute w-full h-[1px] bg-gradient-to-r from-transparent via-[#ebedea]/30 to-transparent top-1/2 -translate-y-1/2"></div>
+      <div class="absolute h-full w-[1px] bg-gradient-to-b from-transparent via-[#ebedea]/30 to-transparent left-1/2 -translate-x-1/2"></div>
     </div>
 
     <!-- Container de Conteúdo -->
     <div class="relative z-10 max-w-[1400px] mx-auto w-full px-6 lg:px-12 flex flex-col items-center justify-center text-center mt-12 md:mt-0">
       
       <!-- Label Header -->
-      <div class="flex items-center gap-4 animate-in relative backdrop-blur-sm bg-[#131715]/40 px-5 py-2 rounded-full border border-[#3F556B]/30 shadow-[0_4px_30px_rgba(0,0,0,0.5)]" style="animation-delay: 0.3s;">
-        <div class="w-1.5 h-1.5 rounded-full bg-[#3F556B] animate-pulse"></div>
+      <div class="flex items-center gap-4 animate-in relative backdrop-blur-sm bg-[#1e2420]/40 px-5 py-2 rounded-full border border-[#ebedea]/30 shadow-[0_4px_30px_rgba(0,0,0,0.3)]" style="animation-delay: 0.3s;">
+        <div class="w-1.5 h-1.5 rounded-full bg-[#ebedea] animate-pulse"></div>
         <span class="font-sans text-[10px] md:text-xs font-bold uppercase tracking-[0.25em] text-[#ebedea] drop-shadow-md">Metodologia Muriel</span>
       </div>
 
@@ -184,7 +181,7 @@
             <span class="relative z-10 text-transparent bg-clip-text bg-gradient-to-b from-white to-[#ebedea]/60">Sistema</span>
           </span>
           <span class="block mt-0 relative group flex items-center justify-center gap-3 lg:gap-5 flex-wrap">
-            <span class="italic font-accent normal-case font-extralight text-[#3F556B] drop-shadow-[0_0_15px_rgba(63,85,107,0.6)] animate-[pulse_4s_infinite_alternate]">Orbital</span>
+            <span class="italic font-accent normal-case font-extralight text-[#1e2420] drop-shadow-[0_0_15px_rgba(30,36,32,0.5)] animate-[pulse_4s_infinite_alternate]">Orbital</span>
             <span class="relative z-10 text-white">Muriel<span class="text-[0.5em] align-super">™</span></span>
           </span>
         </h2>
@@ -193,29 +190,29 @@
       <!-- Descrição (Texto fornecido) -->
       <div class="max-w-[1100px] w-full mx-auto animate-in relative z-20" style="animation-delay: 0.7s;">
         <div class="absolute inset-0 bg-[#1e2420]/30 backdrop-blur-2xl -z-10 rounded-[2rem] scale-110 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-        <p class="font-sans text-[1.15rem] sm:text-[1.35rem] md:text-[1.85rem] lg:text-[2.15rem] font-light text-[#ebedea]/65 leading-[1.6] md:leading-[1.7] tracking-tight text-center">
+        <p class="font-sans text-[1.15rem] sm:text-[1.35rem] md:text-[1.85rem] lg:text-[2.15rem] font-light text-[#ebedea]/70 leading-[1.6] md:leading-[1.7] tracking-tight text-center">
           <span class="block">
-            <strong class="font-display font-medium text-white uppercase tracking-widest text-[1.05em] relative inline-block mx-1">
+            <strong class="font-display font-medium text-[#1e2420] uppercase tracking-widest text-[1.05em] relative inline-block mx-1 drop-shadow-[0_0_8px_rgba(235,237,234,0.3)]">
               Documentários de marca
-              <span class="absolute bottom-[-2px] left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[#3F556B]/80 to-transparent"></span>
+              <span class="absolute bottom-[-2px] left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[#1e2420]/80 to-transparent"></span>
             </strong>
              inspiram, engajam e entretêm
           </span>
           <span class="block mt-1 md:mt-2">
-            por meio de <span class="italic font-accent text-[1.15em] text-[#78aae0] font-normal px-1 drop-shadow-md">narrativas complexas</span> que criam
+            por meio de <span class="italic font-accent text-[1.15em] text-[#ebedea] font-normal px-1 drop-shadow-[0_0_15px_rgba(235,237,234,0.4)]">narrativas complexas</span> que criam
           </span>
           <span class="block mt-1 md:mt-2">
-            uma conexão duradoura com o <strong class="font-display font-medium uppercase tracking-widest text-[1.05em] text-[#131715] bg-[#ebedea] py-1 px-3 ml-2 shadow-[0_0_20px_rgba(235,237,234,0.25)] rounded-sm inline-block transform -rotate-1">público.</strong>
+            uma conexão duradoura com o <strong class="font-display font-medium uppercase tracking-widest text-[1.05em] text-[#ebedea] bg-[#1e2420] py-1 px-3 ml-2 shadow-[0_4px_15px_rgba(30,36,32,0.6)] rounded-sm inline-block transform -rotate-1 border border-[#2d322f]/50">público.</strong>
           </span>
         </p>
       </div>
 
       <!-- Call To Action -->
       <div class="mt-16 md:mt-24 lg:mt-32 animate-in relative z-30" style="animation-delay: 0.9s;">
-        <a href="#diagnostico" class="group relative inline-flex items-center justify-between bg-[#ebedea] text-[#1e2420] overflow-hidden px-8 py-5 lg:px-12 xl:py-6 border border-transparent shadow-[0_20px_50px_rgba(0,0,0,0.6)] hover:shadow-[0_20px_70px_rgba(63,85,107,0.4)] transition-shadow duration-700">
+        <a href="#diagnostico" class="group relative inline-flex items-center justify-between bg-[#ebedea] text-[#1e2420] overflow-hidden px-8 py-5 lg:px-12 xl:py-6 border border-transparent shadow-[0_20px_50px_rgba(0,0,0,0.6)] hover:shadow-[0_20px_70px_rgba(30,36,32,0.4)] transition-shadow duration-700">
           
           <!-- Background Swipe Escuro/Azul Metálico -->
-          <span class="absolute inset-0 w-full h-full bg-[#3F556B] transform scale-x-0 origin-right group-hover:scale-x-100 transition-transform duration-[800ms] ease-[cubic-bezier(0.19,1,0.22,1)] z-0"></span>
+          <span class="absolute inset-0 w-full h-full bg-[#1e2420] transform scale-x-0 origin-right group-hover:scale-x-100 transition-transform duration-[800ms] ease-[cubic-bezier(0.19,1,0.22,1)] z-0"></span>
           
           <span class="relative z-10 font-sans font-bold text-xs lg:text-sm uppercase tracking-[0.25em] group-hover:text-white transition-colors duration-500 pr-10 md:pr-14 text-left leading-tight text-[#131715]">
             Diagnosticar Meu Projeto
@@ -231,7 +228,7 @@
     
     <!-- Hint de Scroll -->
     <div onclick="const next = document.querySelector('section'); if(next) next.scrollIntoView({ behavior: 'smooth' })" class="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-80 hover:opacity-100 transition-opacity cursor-pointer animate-in z-50" style="animation-delay: 1.5s;">
-      <span class="font-sans text-[10px] uppercase tracking-[0.2em] text-[#3F556B] font-semibold">Explore</span>
+      <span class="font-sans text-[10px] uppercase tracking-[0.2em] text-[#ebedea] font-semibold">Explore</span>
       <iconify-icon class="animate-bounce text-white" icon="solar:arrow-down-linear"></iconify-icon>
     </div>
     
