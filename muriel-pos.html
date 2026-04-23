@@ -22,12 +22,83 @@
     .font-display { font-family: 'Oswald', sans-serif; }
     .font-accent { font-family: 'Playfair Display', serif; }
     ::-webkit-scrollbar { width: 8px; }
-    ::-webkit-scrollbar-track { background: #1e2420; }
+    ::-webkit-scrollbar-track { background: #ebedea; }
     ::-webkit-scrollbar-thumb { background: #3F556B; }
-    html, body { overflow-x: hidden !important; min-height: 100% !important; background: #1e2420; color: #ebedea; }
+    html, body { overflow-x: hidden !important; min-height: 100% !important; scroll-behavior: auto !important; }
+
+    /* ───── Abstract Editorial Background ───── */
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      z-index: 0;
+      pointer-events: none;
+    }
+    .bg-base {
+      position: absolute;
+      inset: 0;
+      background: #ebedea;
+    }
+    .bg-layers {
+      position: absolute;
+      inset: 0;
+      filter: blur(60px);
+    }
+    .layer {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.7;
+      mix-blend-mode: multiply;
+    }
+    .layer-1 {
+      width: 600px;
+      height: 600px;
+      background: #f2f2f2;
+      top: 10%;
+      left: 15%;
+      animation: float1 28s ease-in-out infinite alternate;
+    }
+    .layer-2 {
+      width: 500px;
+      height: 500px;
+      background: #eaeaea;
+      top: 40%;
+      left: 55%;
+      animation: float2 32s ease-in-out infinite alternate;
+    }
+    .layer-3 {
+      width: 700px;
+      height: 700px;
+      background: #f5f5f5;
+      top: 60%;
+      left: 20%;
+      animation: float3 36s ease-in-out infinite alternate;
+    }
+    @keyframes float1 {
+      0% { transform: translate(0px, 0px) scale(1); }
+      100% { transform: translate(40px, -30px) scale(1.05); }
+    }
+    @keyframes float2 {
+      0% { transform: translate(0px, 0px) scale(1); }
+      100% { transform: translate(-30px, 40px) scale(1.08); }
+    }
+    @keyframes float3 {
+      0% { transform: translate(0px, 0px) scale(1); }
+      100% { transform: translate(20px, 30px) scale(1.04); }
+    }
+    .bg-noise {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.055;
+      mix-blend-mode: multiply;
+      pointer-events: none;
+      z-index: 50;
+    }
   </style>
 </head>
-<body class="bg-[#1e2420] text-[#ebedea] antialiased selection:bg-[#3F556B] selection:text-white">
+<body class="bg-[#ebedea] text-[#2d322f] antialiased selection:bg-[#3F556B] selection:text-white overflow-x-hidden">
   <header class="fixed top-0 inset-x-0 w-full border-b border-[#2d322f]/10 bg-[#ebedea]/60 backdrop-blur-xl z-50">
     <div class="max-w-[1400px] mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
       <div class="flex justify-start items-center">
@@ -50,16 +121,33 @@
     </div>
   </header>
 
-  <main class="relative min-h-screen w-full flex items-center justify-center pt-20 pb-20 overflow-hidden bg-[#1e2420]">
-    <div class="relative z-10 max-w-[1400px] mx-auto w-full px-6 flex flex-col items-center text-center">
-      <div class="flex items-center gap-4 relative backdrop-blur-sm bg-[#ebedea]/10 px-5 py-2 rounded-full border border-[#ebedea]/20 mb-8">
-        <div class="w-1.5 h-1.5 rounded-full bg-[#3F556B] animate-pulse"></div>
-        <span class="font-sans text-[10px] md:text-xs font-bold uppercase tracking-[0.25em] text-[#ebedea]">Em Breve</span>
+  <main class="relative min-h-screen w-full flex items-center justify-center pt-20 pb-20 overflow-hidden" id="hero">
+    <!-- Abstract Editorial Background -->
+    <div class="hero-bg">
+      <div class="bg-base"></div>
+      <div class="bg-layers">
+        <div class="layer layer-1"></div>
+        <div class="layer layer-2"></div>
+        <div class="layer layer-3"></div>
       </div>
-      <h1 class="font-display text-[4rem] sm:text-[6rem] md:text-[8rem] uppercase font-bold tracking-tighter leading-none text-white mb-6">
+
+      <!-- Logo Watermark GIGANTE -->
+      <div class="absolute top-[50%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140vw] md:w-[100vw] lg:w-[75vw] max-w-[1600px] flex justify-center opacity-[0.068] pointer-events-none select-none z-[5]">
+        <img src="./Muriel_Pos_logo.png" alt="Muriel Pós Watermark" class="w-full h-auto object-contain filter brightness-0">
+      </div>
+
+      <canvas class="bg-noise"></canvas>
+    </div>
+
+    <div class="relative z-10 max-w-[1400px] mx-auto w-full px-6 flex flex-col items-center text-center">
+      <div class="flex items-center gap-4 relative backdrop-blur-sm bg-[#1e2420]/5 px-5 py-2 rounded-full border border-[#1e2420]/10 mb-8">
+        <div class="w-1.5 h-1.5 rounded-full bg-[#3F556B] animate-pulse"></div>
+        <span class="font-sans text-[10px] md:text-xs font-bold uppercase tracking-[0.25em] text-[#1e2420]">Em Breve</span>
+      </div>
+      <h1 class="font-display text-[4rem] sm:text-[6rem] md:text-[8rem] uppercase font-bold tracking-tighter leading-none text-[#2d322f] mb-6">
         MURIEL <span class="font-accent italic text-[#3F556B] font-light lowercase">pós</span>
       </h1>
-      <p class="font-sans text-[1.1rem] md:text-[1.3rem] font-light text-[#ebedea]/60 max-w-2xl">
+      <p class="font-sans text-[1.1rem] md:text-[1.3rem] font-light text-[#2d322f]/70 max-w-2xl">
         Página provisoriamente vazia. Em breve, novas informações sobre a pós-produção da Muriel.
       </p>
     </div>
@@ -74,5 +162,43 @@
       </div>
     </div>
   </footer>
+  <script>
+    // Editorial Grain
+    const canvas = document.querySelector('.bg-noise');
+    if (canvas) {
+      const ctx = canvas.getContext('2d');
+
+      function resizeCanvas() {
+        canvas.width = window.innerWidth / 2;
+        canvas.height = window.innerHeight / 2;
+      }
+
+      resizeCanvas();
+      window.addEventListener('resize', resizeCanvas);
+
+      function renderNoise() {
+        const imageData = ctx.createImageData(canvas.width, canvas.height);
+        const buffer = new Uint32Array(imageData.data.buffer);
+
+        for (let i = 0; i < buffer.length; i++) {
+          const val = Math.random() * 255 | 0;
+          buffer[i] =
+            (255 << 24) |
+            (val << 16) |
+            (val << 8) |
+            val;
+        }
+
+        ctx.putImageData(imageData, 0, 0);
+      }
+
+      function loopNoise() {
+        renderNoise();
+        requestAnimationFrame(loopNoise);
+      }
+
+      loopNoise();
+    }
+  </script>
 </body>
 </html>
