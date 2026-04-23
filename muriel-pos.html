@@ -26,6 +26,27 @@
     ::-webkit-scrollbar-thumb { background: #3F556B; }
     html, body { overflow-x: hidden !important; min-height: 100% !important; scroll-behavior: auto !important; }
 
+    @keyframes animationIn {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+        filter: blur(8px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0px);
+      }
+    }
+
+    .animate-on-scroll {
+      animation-play-state: paused !important;
+    }
+
+    .animate-on-scroll.animate {
+      animation-play-state: running !important;
+    }
+
     /* ───── Abstract Editorial Background ───── */
     .hero-bg {
       position: absolute;
@@ -139,17 +160,55 @@
       <canvas class="bg-noise"></canvas>
     </div>
 
-    <div class="relative z-10 max-w-[1400px] mx-auto w-full px-6 flex flex-col items-center text-center">
-      <div class="flex items-center gap-4 relative backdrop-blur-sm bg-[#1e2420]/5 px-5 py-2 rounded-full border border-[#1e2420]/10 mb-8">
-        <div class="w-1.5 h-1.5 rounded-full bg-[#3F556B] animate-pulse"></div>
-        <span class="font-sans text-[10px] md:text-xs font-bold uppercase tracking-[0.25em] text-[#1e2420]">Em Breve</span>
-      </div>
-      <h1 class="font-display text-[4rem] sm:text-[6rem] md:text-[8rem] uppercase font-bold tracking-tighter leading-none text-[#2d322f] mb-6">
-        MURIEL <span class="font-accent italic text-[#3F556B] font-light lowercase">pós</span>
+    <div class="relative z-10 max-w-[1400px] mx-auto w-full px-6 lg:px-12 flex flex-col items-start lg:pt-16">
+      
+
+
+      <!-- Headline -->
+      <h1 class="font-display text-[3.5rem] md:text-[5.5rem] lg:text-[7rem] xl:text-[8rem] uppercase font-bold tracking-tighter leading-[0.85] text-[#2d322f] w-full max-w-[1250px] relative">
+        <div class="flex flex-col lg:gap-2 relative z-10">
+          <span class="block animate-on-scroll [animation:animationIn_1.2s_ease-out_0.3s_both] text-[#3F556B]">Pós-produção</span>
+          <span class="block animate-on-scroll [animation:animationIn_1.2s_ease-out_0.4s_both] text-[#2d322f]/80">orientada por <span class="font-accent italic font-normal text-[#3F556B] lowercase relative inline-block group cursor-default">arquitetura narrativa<span class="absolute bottom-2 lg:bottom-4 left-0 w-full h-[4px] md:h-[6px] bg-[#3F556B]/30 group-hover:h-full transition-all duration-500 -z-10 group-hover:bg-[#3F556B]/20"></span></span></span>
+          <span class="block animate-on-scroll [animation:animationIn_1.2s_ease-out_0.5s_both] text-[#2d322f] flex items-center flex-wrap gap-4 lg:gap-6 mt-2">
+            <span class="hidden md:block w-12 md:w-20 lg:w-32 h-[4px] md:h-[6px] bg-[#3F556B] mt-2 lg:mt-4"></span>
+            e acabamento <span class="text-[#3F556B]">cinematográfico.</span>
+          </span>
+        </div>
       </h1>
-      <p class="font-sans text-[1.1rem] md:text-[1.3rem] font-light text-[#2d322f]/70 max-w-2xl">
-        Página provisoriamente vazia. Em breve, novas informações sobre a pós-produção da Muriel.
-      </p>
+
+      <!-- Divider & Description Row -->
+      <div class="w-full flex flex-col lg:flex-row items-start lg:items-end justify-between gap-12 mt-20 lg:mt-32 pt-12 relative">
+        
+        <!-- Top border -->
+        <div class="absolute top-0 left-0 h-[1px] bg-[#2d322f]/20 w-full animate-on-scroll [animation:animationIn_1.2s_ease-out_0.6s_both]"></div>
+
+        <div class="flex gap-6 lg:gap-8 max-w-[700px] animate-on-scroll [animation:animationIn_1.2s_ease-out_0.6s_both]">
+          <!-- Decorative bracket -->
+          <div class="w-1 h-auto bg-gradient-to-b from-[#3F556B] to-transparent shrink-0"></div>
+          
+          <p class="font-sans text-[1.2rem] md:text-[1.5rem] font-light text-[#2d322f]/70 leading-[1.6]">
+            Editamos e finalizamos vídeos com <strong class="font-semibold text-[#1e2420]">excelência técnica</strong>, <strong class="font-semibold text-[#1e2420]">coerência estratégica</strong> e <strong class="font-semibold text-[#1e2420]">aderência absoluta aos prazos</strong>.
+          </p>
+        </div>
+
+        <div class="w-full lg:w-auto animate-on-scroll [animation:animationIn_1.2s_ease-out_0.7s_both]">
+          <a href="#orcamento" class="group relative flex items-center justify-center bg-[#2d322f] text-white px-8 py-5 md:px-12 md:py-6 overflow-hidden w-full sm:w-auto shrink-0 shadow-[0_20px_40px_rgba(45,50,47,0.15)] hover:shadow-[0_10px_20px_rgba(45,50,47,0.2)] transition-all duration-500 border border-[#2d322f] hover:border-[#3F556B]">
+            <span class="absolute inset-0 bg-[#3F556B] translate-y-[101%] group-hover:translate-y-0 transition-transform duration-[600ms] ease-[cubic-bezier(0.19,1,0.22,1)] z-0"></span>
+            <div class="relative z-10 flex items-center gap-4 text-xs font-bold uppercase tracking-[0.2em] group-hover:text-white transition-colors duration-300">
+              Quero Fazer um Orçamento
+              <iconify-icon icon="solar:arrow-right-up-linear" width="20" height="20" class="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"></iconify-icon>
+            </div>
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Scroll Hint bottom -->
+    <div onclick="const next = document.querySelector('section, footer'); if(next) next.scrollIntoView({ behavior: 'smooth' })"
+      class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-80 hover:opacity-100 transition-opacity cursor-pointer z-50 [animation:animationIn_0.8s_ease-out_1.2s_both]">
+      <span class="text-[10px] uppercase tracking-[0.2em] text-[#3F556B] font-semibold">Explore</span>
+      <iconify-icon class="animate-bounce text-[#2d322f]" icon="solar:arrow-down-linear" width="24" height="24"></iconify-icon>
     </div>
   </main>
   
@@ -163,6 +222,45 @@
     </div>
   </footer>
   <script>
+    // Smooth Scroll System via Lenis
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      direction: 'vertical',
+      gestureDirection: 'vertical',
+      smooth: true,
+      mouseMultiplier: 1,
+      smoothTouch: false,
+      touchMultiplier: 2,
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    // Intersection Observer for Animate On Scroll
+    (function () {
+      const once = true;
+      if (!window.__inViewIO) {
+        window.__inViewIO = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("animate");
+              if (once) window.__inViewIO.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1, rootMargin: "0px 0px -10% 0px" });
+      }
+      window.initInViewAnimations = function (selector = ".animate-on-scroll") {
+        document.querySelectorAll(selector).forEach((el) => {
+          window.__inViewIO.observe(el);
+        });
+      };
+      document.addEventListener("DOMContentLoaded", () => initInViewAnimations());
+    })();
+
     // Editorial Grain
     const canvas = document.querySelector('.bg-noise');
     if (canvas) {
