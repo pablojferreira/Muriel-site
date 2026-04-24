@@ -65,6 +65,18 @@
       }
     }
 
+    @keyframes animationInGlass {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
     .animate-on-scroll {
       animation-play-state: paused !important;
     }
@@ -334,6 +346,82 @@
       <iconify-icon class="animate-bounce text-[#2d322f]" icon="solar:arrow-down-linear"></iconify-icon>
     </div>
   </main>
+
+  <!-- SEÇÃO 2: O Real na Ficção -->
+  <section class="relative w-full py-24 lg:py-28 xl:py-32 bg-[#1e2420] text-[#ebedea] overflow-hidden">
+
+    <!-- Background Architectural Grid Lines (Dark Version) -->
+    <div class="absolute inset-0 z-0 pointer-events-none mix-blend-overlay opacity-10"
+      style="background-image: linear-gradient(rgba(235, 237, 234, 0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(235, 237, 234, 0.5) 1px, transparent 1px); background-size: 80px 80px;">
+    </div>
+
+    <!-- Soft Background Illumination -->
+    <div class="absolute top-[-20%] left-[-10%] w-[800px] h-[800px] bg-[#3F556B]/10 rounded-full blur-[150px] pointer-events-none z-0"></div>
+
+    <!-- Logo Watermark GIGANTE -->
+    <div
+      class="absolute top-[20%] right-[-20%] w-[120vw] md:w-[80vw] lg:w-[60vw] max-w-[1200px] flex justify-center opacity-[0.03] pointer-events-none select-none z-[5] rotate-12">
+      <img src="./Muriel_Cas_logo.png" alt="Muriel Casulo Watermark" class="w-full h-auto object-contain filter invert">
+    </div>
+
+    <div class="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12">
+      
+      <!-- Massive Statement -->
+      <h2 class="font-display text-[2.8rem] md:text-[4.5rem] lg:text-[5.5rem] xl:text-[6.5rem] font-bold tracking-tighter uppercase leading-[0.85] text-[#ebedea] mb-12 lg:mb-16 w-full z-20 relative flex flex-col">
+        <span class="animate-on-scroll [animation:animationIn_1.2s_ease-out_0.2s_both] text-left text-white/20 font-light tracking-tight">Como a ficção</span>
+        <span class="animate-on-scroll [animation:animationIn_1.2s_ease-out_0.3s_both] text-left lg:ml-12"><span class="italic font-accent normal-case font-normal text-[#3F556B]">inventa</span> mundos,</span>
+        <span class="animate-on-scroll [animation:animationIn_1.2s_ease-out_0.4s_both] text-right mt-6 lg:mt-8 text-white/20">o <span class="text-[#3F556B]">real</span> <span class="italic font-accent normal-case font-normal text-white/20">também</span></span>
+        <span class="animate-on-scroll [animation:animationIn_1.2s_ease-out_0.5s_both] text-right">
+          <span class="text-[#ebedea] underline decoration-4 underline-offset-8 decoration-[#3F556B]">habita a <span class="text-[#3F556B]">ficção.</span></span>
+        </span>
+      </h2>
+
+      <!-- Content Split Grid -->
+      <div class="w-full flex flex-col relative z-30 lg:mt-8">
+        
+        <!-- Decoration / Abstract element (Absolute Left) -->
+        <div class="hidden lg:flex absolute left-[-2%] top-[-5%] xl:top-[-10%] w-80 h-80 xl:w-96 xl:h-96 justify-center items-center animate-on-scroll [animation:animationIn_1.2s_ease-out_0.5s_both] z-10 pointer-events-none">
+          <!-- Rotating Rings -->
+          <div class="absolute inset-0 border border-[#3F556B]/30 rounded-full animate-[spin_20s_linear_infinite]"></div>
+          <div class="absolute inset-4 border border-[#ebedea]/10 rounded-full animate-[spin_15s_linear_infinite_reverse]"></div>
+          <div class="absolute inset-0 flex items-center justify-center">
+            <iconify-icon icon="solar:infinity-linear" width="80" class="text-[#3F556B]/40 animate-pulse"></iconify-icon>
+          </div>
+        </div>
+
+        <!-- The two paragraphs as editorial cards -->
+        <div class="w-full flex flex-col gap-12 lg:gap-0">
+          
+          <!-- Card 1 (Extreme Left, overlapping circle) -->
+          <div class="bg-white/5 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] p-6 lg:p-8 xl:p-10 hover:bg-white/10 hover:border-white/20 transition-all duration-700 hover:-translate-y-2 lg:absolute relative group animate-on-scroll [animation:animationInGlass_1.2s_ease-out_0.6s_both] z-20 w-fit self-start lg:-top-32 xl:-top-48 lg:-left-12 xl:-left-20">
+            <div class="absolute top-0 left-0 w-2 h-full bg-[#3F556B] scale-y-0 group-hover:scale-y-100 transition-transform duration-500 origin-top"></div>
+            <iconify-icon icon="solar:eye-scan-linear" width="28" class="text-[#3F556B] mb-3 lg:mb-5"></iconify-icon>
+            <p class="font-sans text-base lg:text-[1.1rem] xl:text-[1.2rem] font-light text-[#ebedea] leading-relaxed">
+              Narrar o real, nesse caso, é ter uma visão sólida<br class="hidden lg:block">
+              das premissas que <span class="font-medium text-white italic">sustentam o mundo ficcional</span>,<br class="hidden lg:block">
+              dos seus reflexos na ação e na vida dos personagens.
+            </p>
+          </div>
+
+          <!-- Card 2 (Offset UP and Extreme RIGHT) -->
+          <div class="bg-[#ebedea] text-[#1e2420] p-8 lg:p-10 xl:p-12 shadow-[0_30px_60px_rgba(0,0,0,0.6)] hover:bg-[#3F556B] hover:text-white transition-colors duration-700 relative group animate-on-scroll [animation:animationIn_1.2s_ease-out_0.8s_both] z-10 self-end w-full lg:w-[55%] xl:w-[50%] lg:mt-16 xl:mt-24">
+            <!-- Sweep highlight hover -->
+            <div class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-[150%] group-hover:translate-x-[150%] transition-transform duration-[1.2s] ease-in-out"></div>
+            
+            <p class="font-sans text-base lg:text-[1.3rem] font-light text-[#2d322f] group-hover:text-white transition-colors duration-500 leading-relaxed relative z-10">
+              A Muriel Casulo está aberta para ouvir e acolher sua história. Queremos compor com você a <strong class="font-bold text-[#1e2420] group-hover:text-[#2d322f] uppercase tracking-wider text-[10px] lg:text-xs bg-[#3F556B]/20 group-hover:bg-[#ebedea]/90 px-2 py-1 mx-1 transition-colors">mesa perfeita de roteiristas</strong> para desenvolvê-la de modo original, memorável e envolvente.
+            </p>
+
+            <div class="absolute bottom-6 right-6 transform group-hover:translate-x-2 group-hover:-translate-y-2 transition-transform duration-500 z-10 hidden sm:block opacity-10 group-hover:opacity-100">
+              <iconify-icon icon="solar:pen-new-square-linear" width="40" height="40" class="text-[#2d322f] group-hover:text-white transition-colors duration-500"></iconify-icon>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
 
   <script>
     // In-View Animation Observer
