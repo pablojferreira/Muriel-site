@@ -323,57 +323,69 @@
 
   <!-- SEÇÃO 2: Tese & O Problema -->
   <section id="problema"
-    class="relative w-full py-32 lg:py-48 bg-[#ebedea] border-t border-[#2d322f]/10 overflow-hidden">
+    class="relative w-full py-32 lg:py-48 bg-[#2d322f] border-t border-white/10 overflow-hidden">
+    
+    <!-- Fundo abstrato luminoso muito sutil -->
+    <div class="absolute inset-0 pointer-events-none opacity-50">
+      <div class="absolute top-0 right-1/4 w-[800px] h-[800px] bg-[#3F556B]/5 blur-[120px] rounded-full mix-blend-screen"></div>
+    </div>
+
     <div class="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
 
       <!-- TESE -->
-      <div class="mb-24 md:mb-32 max-w-5xl animate-on-scroll [animation:animationIn_1.2s_ease-out_0.2s_both]">
-        <h2
-          class="font-display text-4xl md:text-5xl lg:text-7xl font-semibold tracking-tighter uppercase text-[#2d322f] leading-[0.95]">
-          Toda marca produz conteúdo,<br class="hidden md:block"> mas poucas conseguem criar um <span
-            class="text-[#3F556B]">significado duradouro.</span>
+      <div class="mb-24 md:mb-32 max-w-5xl">
+        <h2 class="font-display text-4xl md:text-5xl lg:text-7xl font-semibold tracking-tighter uppercase text-white leading-[0.95]">
+          <span class="block animate-on-scroll [animation:animationIn_1.2s_ease-out_0.2s_both]">Toda marca produz conteúdo,<br class="hidden md:block"></span>
+          <span class="block animate-on-scroll [animation:animationIn_1.2s_ease-out_0.4s_both]">mas poucas conseguem criar um</span>
+          <span class="block text-[#3F556B] animate-on-scroll [animation:animationIn_1.2s_ease-out_0.6s_both] mt-2 xl:mt-4">significado duradouro.</span>
         </h2>
       </div>
 
       <!-- GRID: Argumentos & Conclusão -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 items-stretch pt-12 border-t border-[#2d322f]/10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 items-stretch pt-12 border-t border-white/10">
 
         <!-- Argumentos -->
-        <div
-          class="lg:col-span-5 flex flex-col justify-center gap-10 animate-on-scroll [animation:animationIn_1.2s_ease-out_0.4s_both]">
-          <div class="flex items-start gap-5">
+        <div class="lg:col-span-5 flex flex-col justify-center gap-10">
+          <div class="group flex items-start gap-5 animate-on-scroll [animation:animationIn_1.2s_ease-out_0.6s_both] hover:translate-x-3 transition-transform duration-500 ease-out cursor-default">
             <iconify-icon icon="solar:danger-triangle-linear" width="28"
-              class="text-[#3F556B] mt-1 shrink-0"></iconify-icon>
-            <p class="font-sans text-xl md:text-2xl text-[#2d322f]/70 leading-relaxed font-light">
-              Filmes institucionais soam <span class="font-semibold text-[#2d322f]">promocionais</span>.
+              class="text-[#3F556B] mt-1 shrink-0 group-hover:scale-125 group-hover:-rotate-6 transition-all duration-500"></iconify-icon>
+            <p class="font-sans text-xl md:text-2xl text-white/70 leading-relaxed font-light group-hover:text-white transition-colors duration-500">
+              Filmes institucionais soam <span class="font-semibold text-white">promocionais</span>.
             </p>
           </div>
-          <div class="flex items-start gap-5">
+          <div class="group flex items-start gap-5 animate-on-scroll [animation:animationIn_1.2s_ease-out_0.8s_both] hover:translate-x-3 transition-transform duration-500 ease-out cursor-default">
             <iconify-icon icon="solar:ghost-smile-linear" width="28"
-              class="text-[#3F556B] mt-1 shrink-0"></iconify-icon>
-            <p class="font-sans text-xl md:text-2xl text-[#2d322f]/70 leading-relaxed font-light">
-              Conteúdo digital parece <span class="font-semibold text-[#2d322f]">fragmentário e descartável</span>.
+              class="text-[#3F556B] mt-1 shrink-0 group-hover:scale-125 group-hover:rotate-6 transition-all duration-500"></iconify-icon>
+            <p class="font-sans text-xl md:text-2xl text-white/70 leading-relaxed font-light group-hover:text-white transition-colors duration-500">
+              Conteúdo digital parece <span class="font-semibold text-white">fragmentário e descartável</span>.
             </p>
           </div>
         </div>
 
         <!-- Conclusão (Cartão Escuro Obsidian) -->
         <div
-          class="lg:col-start-7 lg:col-span-6 bg-[#1e2420] text-white p-10 md:p-14 lg:p-16 shadow-[0_8px_32px_rgba(30,36,32,0.25)] relative overflow-hidden animate-on-scroll [animation:animationIn_1.2s_ease-out_0.6s_both]">
+          class="group lg:col-start-7 lg:col-span-6 bg-[#1e2420] text-white p-10 md:p-14 lg:p-16 shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_60px_rgba(0,0,0,0.6)] border border-white/5 hover:border-[#3F556B]/30 relative overflow-hidden animate-on-scroll [animation:animationIn_1.2s_ease-out_1s_both] transition-all duration-700 hover:-translate-y-2 cursor-default">
+          
           <!-- Soft Gradient Highlight (Steel Blue / Carbon mix) -->
           <div
-            class="absolute inset-x-0 -top-1/2 h-full bg-gradient-to-b from-[#3F556B]/20 to-transparent blur-3xl pointer-events-none">
+            class="absolute inset-x-0 -top-1/2 h-full bg-gradient-to-b from-[#3F556B]/20 to-transparent blur-3xl pointer-events-none group-hover:from-[#3F556B]/40 transition-colors duration-1000 ease-out">
           </div>
+          
+          <!-- Subtle Glow Orbs in background -->
+          <div class="absolute -right-20 -bottom-20 w-64 h-64 bg-[#3F556B]/10 rounded-full blur-[80px] group-hover:bg-[#3F556B]/20 transition-colors duration-1000 ease-out"></div>
 
-          <div class="relative z-10">
-            <span class="text-sm uppercase font-semibold tracking-[0.2em] text-[#3F556B] mb-10 block">Resultado</span>
+          <div class="relative z-10 flex flex-col h-full">
+            <span class="text-sm uppercase font-semibold tracking-[0.2em] text-[#3F556B] mb-10 block opacity-80 group-hover:opacity-100 transition-opacity duration-500">Resultado</span>
 
             <p class="font-accent italic text-3xl md:text-4xl lg:text-[2.5rem] text-white leading-snug">
-              Narrativas que <span class="text-white/60">não se sustentam</span> no tempo,<br>
-              <span class="text-white/60 block mt-5">despertam pouca confiança,</span>
+              Narrativas que <span class="text-white/60 group-hover:text-white transition-colors duration-500">não se sustentam</span> no tempo,<br>
+              <span class="text-white/60 group-hover:text-white block mt-5 transition-colors duration-500 delay-100">despertam pouca confiança,</span>
               <span
-                class="text-[#3F556B] block mt-8 pb-2 border-b-2 border-[#3F556B] inline-block font-semibold not-italic font-display uppercase tracking-wider text-2xl lg:text-3xl">geram
-                baixo impacto real.</span>
+                class="text-[#3F556B] block mt-8 relative pb-2 inline-block font-semibold not-italic font-display uppercase tracking-wider text-2xl lg:text-3xl">
+                geram baixo impacto real.
+                <!-- Animated Underline -->
+                <span class="absolute bottom-0 left-0 w-full h-[2px] bg-[#3F556B] scale-x-50 origin-left group-hover:scale-x-100 transition-transform duration-700 ease-out"></span>
+              </span>
             </p>
           </div>
         </div>
