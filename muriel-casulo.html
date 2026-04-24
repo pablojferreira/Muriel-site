@@ -562,39 +562,58 @@
   </section>
 
   <!-- SEÇÃO 4: Conclusão -->
-  <section class="relative w-full py-24 lg:py-40 bg-[#1e2420] text-[#ebedea] overflow-hidden">
+  <section class="relative w-full py-24 lg:py-40 bg-[#3F556B] text-[#ebedea] overflow-hidden">
 
-    <!-- Subtle Background Element -->
-    <div class="absolute inset-0 z-0 pointer-events-none opacity-20"
-      style="background-image: radial-gradient(circle at 50% 120%, rgba(63, 85, 107, 0.4) 0%, transparent 50%);">
+    <!-- Radial glow from bottom-center -->
+    <div class="absolute inset-0 z-0 pointer-events-none"
+      style="background-image: radial-gradient(ellipse at 50% 120%, rgba(30, 36, 32, 0.4) 0%, transparent 60%);">
     </div>
 
     <!-- Orbit rings -->
-    <div
-      class="absolute left-[50%] top-[50%] -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-white/5 rounded-full animate-[spin_30s_linear_infinite] z-0 pointer-events-none hidden md:block">
-    </div>
-    <div
-      class="absolute left-[50%] top-[50%] -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-white/5 rounded-full animate-[spin_40s_linear_infinite_reverse] z-0 pointer-events-none hidden md:block">
-    </div>
+    <div class="absolute left-[50%] top-[50%] -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-white/[0.08] rounded-full animate-[spin_30s_linear_infinite] z-0 pointer-events-none hidden md:block"></div>
+    <div class="absolute left-[50%] top-[50%] -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] border border-white/[0.05] rounded-full animate-[spin_50s_linear_infinite_reverse] z-0 pointer-events-none hidden md:block"></div>
 
-    <div
-      class="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12 flex flex-col items-center justify-center text-center">
+    <div class="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12 flex flex-col items-center justify-center text-center">
 
-      <iconify-icon icon="solar:infinity-linear" width="48"
-        class="text-[#3F556B] mb-12 lg:mb-16 animate-on-scroll [animation:animationIn_1.2s_ease-out_0.2s_both]"></iconify-icon>
+      <!-- Eyebrow icon + label -->
+      <div class="flex items-center gap-3 mb-12 lg:mb-20 animate-on-scroll [animation:animationIn_1.2s_ease-out_0.1s_both]">
+        <div class="w-px h-6 bg-[#ebedea]/50"></div>
+        <iconify-icon icon="solar:infinity-linear" width="22" class="text-[#ebedea]/70"></iconify-icon>
+        <span class="font-sans text-xs uppercase tracking-[0.25em] text-[#ebedea]/70 font-bold">Arquitetura Narrativa</span>
+        <iconify-icon icon="solar:infinity-linear" width="22" class="text-[#ebedea]/70"></iconify-icon>
+        <div class="w-px h-6 bg-[#ebedea]/50"></div>
+      </div>
 
-      <h2
-        class="font-display text-[2.2rem] md:text-[3.5rem] lg:text-[4.5rem] font-bold leading-[1.1] tracking-tighter text-white max-w-5xl animate-on-scroll [animation:animationIn_1.2s_ease-out_0.4s_both]">
-        A <span class="italic font-accent normal-case font-normal text-[#3F556B]">Muriel Casulo</span> completa
-        assim<br>
-        a arquitetura narrativa da <span
-          class="text-[#ebedea] underline decoration-[3px] underline-offset-8 decoration-[#3F556B]">Muriel
-          Filmes,</span><br>
-        <span
-          class="block mt-8 lg:mt-12 font-sans text-xl md:text-2xl lg:text-3xl font-light text-white/60 tracking-normal leading-relaxed">
-          que cobre desenvolvimento, produção e finalização.
-        </span>
-      </h2>
+      <!-- Main statement, line by line -->
+      <div class="flex flex-col items-center gap-2 lg:gap-4">
+
+        <!-- Line 1 -->
+        <div class="animate-on-scroll [animation:animationIn_1.2s_ease-out_0.25s_both]">
+          <p class="font-display text-[2rem] md:text-[3.5rem] lg:text-[4.5rem] xl:text-[5.5rem] font-bold tracking-tighter leading-none">
+            <span class="text-white/40 font-light text-[0.7em]">A </span><span class="italic font-accent normal-case font-normal text-[#1e2420]">Muriel Casulo</span><span class="text-white/40 font-light text-[0.7em]"> completa assim</span>
+          </p>
+        </div>
+
+        <div class="animate-on-scroll [animation:animationIn_1.2s_ease-out_0.45s_both]">
+          <p class="font-display text-[2rem] md:text-[3.5rem] lg:text-[4.5rem] xl:text-[5.5rem] font-bold tracking-tighter leading-none">
+            <span class="text-white/40 font-light text-[0.7em]">a arquitetura narrativa da </span><span class="text-[#ebedea] underline decoration-2 underline-offset-8 decoration-[#ebedea]/60">Muriel Filmes,</span>
+          </p>
+        </div>
+
+        <!-- Divider -->
+        <div class="w-px h-10 lg:h-16 bg-[#ebedea]/30 my-4 lg:my-6 animate-on-scroll [animation:animationIn_1.2s_ease-out_0.6s_both]"></div>
+
+        <!-- Line 3: phases -->
+        <div class="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 animate-on-scroll [animation:animationIn_1.2s_ease-out_0.75s_both]">
+          <span class="font-sans text-xs lg:text-sm uppercase tracking-[0.25em] text-white/50 font-light">que cobre</span>
+          <span class="font-display text-xl lg:text-3xl uppercase tracking-widest font-bold text-[#1e2420] border-b border-[#1e2420]/40 pb-1">Desenvolvimento</span>
+          <span class="text-[#ebedea]/50 font-light text-2xl">—</span>
+          <span class="font-display text-xl lg:text-3xl uppercase tracking-widest font-bold text-[#1e2420] border-b border-[#1e2420]/40 pb-1">Produção</span>
+          <span class="text-[#ebedea]/50 font-light text-2xl">—</span>
+          <span class="font-display text-xl lg:text-3xl uppercase tracking-widest font-bold text-[#1e2420] border-b border-[#1e2420]/40 pb-1">Finalização.</span>
+        </div>
+
+      </div>
 
     </div>
   </section>
