@@ -5,7 +5,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Quem Somos | Muriel Filmes</title>
-  <meta name="description" content="Conheça a Muriel Filmes: quem somos, nossa história e os valores que guiam nossa produção de narrativas de alto padrão." />
+  <meta name="description"
+    content="Conheça a Muriel Filmes: quem somos, nossa história e os valores que guiam nossa produção de narrativas de alto padrão." />
 
   <!-- Tailwind CSS via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -49,7 +50,7 @@
     }
 
     ::-webkit-scrollbar-thumb {
-      background: rgba(255,255,255,0.3);
+      background: rgba(255, 255, 255, 0.3);
     }
 
     @keyframes animationIn {
@@ -89,46 +90,128 @@
       z-index: 0;
       pointer-events: none;
     }
-    .bg-base { position: absolute; inset: 0; background: #3F556B; }
-    .bg-layers { position: absolute; inset: 0; filter: blur(80px); }
-    .layer { position: absolute; border-radius: 50%; mix-blend-mode: screen; }
-    .layer-1 { width: 700px; height: 700px; background: rgba(255,255,255,0.06); top: -10%; left: -10%; animation: float1 30s ease-in-out infinite alternate; }
-    .layer-2 { width: 500px; height: 500px; background: rgba(30,36,32,0.30); top: 50%; left: 60%; animation: float2 36s ease-in-out infinite alternate; }
-    .layer-3 { width: 600px; height: 600px; background: rgba(255,255,255,0.04); bottom: -10%; left: 30%; animation: float3 40s ease-in-out infinite alternate; }
-    @keyframes float1 { 0%{transform:translate(0,0) scale(1)} 100%{transform:translate(50px,-40px) scale(1.06)} }
-    @keyframes float2 { 0%{transform:translate(0,0) scale(1)} 100%{transform:translate(-40px,50px) scale(1.09)} }
-    @keyframes float3 { 0%{transform:translate(0,0) scale(1)} 100%{transform:translate(30px,30px) scale(1.05)} }
+
+    .bg-base {
+      position: absolute;
+      inset: 0;
+      background: #3F556B;
+    }
+
+    .bg-layers {
+      position: absolute;
+      inset: 0;
+      filter: blur(80px);
+    }
+
+    .layer {
+      position: absolute;
+      border-radius: 50%;
+      mix-blend-mode: screen;
+    }
+
+    .layer-1 {
+      width: 700px;
+      height: 700px;
+      background: rgba(255, 255, 255, 0.06);
+      top: -10%;
+      left: -10%;
+      animation: float1 30s ease-in-out infinite alternate;
+    }
+
+    .layer-2 {
+      width: 500px;
+      height: 500px;
+      background: rgba(30, 36, 32, 0.30);
+      top: 50%;
+      left: 60%;
+      animation: float2 36s ease-in-out infinite alternate;
+    }
+
+    .layer-3 {
+      width: 600px;
+      height: 600px;
+      background: rgba(255, 255, 255, 0.04);
+      bottom: -10%;
+      left: 30%;
+      animation: float3 40s ease-in-out infinite alternate;
+    }
+
+    @keyframes float1 {
+      0% {
+        transform: translate(0, 0) scale(1)
+      }
+
+      100% {
+        transform: translate(50px, -40px) scale(1.06)
+      }
+    }
+
+    @keyframes float2 {
+      0% {
+        transform: translate(0, 0) scale(1)
+      }
+
+      100% {
+        transform: translate(-40px, 50px) scale(1.09)
+      }
+    }
+
+    @keyframes float3 {
+      0% {
+        transform: translate(0, 0) scale(1)
+      }
+
+      100% {
+        transform: translate(30px, 30px) scale(1.05)
+      }
+    }
 
     .bg-noise {
-      position: absolute; inset: 0; width: 100%; height: 100%;
-      opacity: 0.07; mix-blend-mode: overlay;
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.07;
+      mix-blend-mode: overlay;
     }
 
     /* ── Linha decorativa animada ── */
     @keyframes lineGrow {
-      from { transform: scaleX(0); transform-origin: left; }
-      to   { transform: scaleX(1); transform-origin: left; }
+      from {
+        transform: scaleX(0);
+        transform-origin: left;
+      }
+
+      to {
+        transform: scaleX(1);
+        transform-origin: left;
+      }
     }
-    .line-grow { animation: lineGrow 1s cubic-bezier(0.76,0,0.24,1) forwards; }
+
+    .line-grow {
+      animation: lineGrow 1s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+    }
 
     /* ── Foto placeholder ── */
     .photo-frame {
       position: relative;
       width: 100%;
       aspect-ratio: 4 / 5;
-      background: rgba(255,255,255,0.08);
+      background: rgba(255, 255, 255, 0.08);
       overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.12);
+      border: 1px solid rgba(255, 255, 255, 0.12);
     }
+
     .photo-frame::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(to top, rgba(30,36,32,0.55) 0%, transparent 50%);
+      background: linear-gradient(to top, rgba(30, 36, 32, 0.55) 0%, transparent 50%);
       z-index: 1;
       opacity: 1;
       transition: opacity 0.6s ease;
     }
+
     .photo-frame-group:hover .photo-frame::before {
       opacity: 0.3;
     }
@@ -139,59 +222,115 @@
       transform: scale(1.03);
       transition: filter 0.8s ease, transform 0.8s ease;
     }
+
     .photo-frame-group:hover .photo-img {
       filter: grayscale(0);
       transform: scale(1.07);
     }
+
     .photo-frame-corner {
       position: absolute;
-      width: 28px; height: 28px;
-      border-color: rgba(255,255,255,0.45);
+      width: 28px;
+      height: 28px;
+      border-color: rgba(255, 255, 255, 0.45);
       border-style: solid;
       z-index: 2;
     }
-    .photo-frame-corner.tl { top: 12px; left: 12px; border-width: 2px 0 0 2px; }
-    .photo-frame-corner.tr { top: 12px; right: 12px; border-width: 2px 2px 0 0; }
-    .photo-frame-corner.bl { bottom: 12px; left: 12px; border-width: 0 0 2px 2px; }
-    .photo-frame-corner.br { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; }
+
+    .photo-frame-corner.tl {
+      top: 12px;
+      left: 12px;
+      border-width: 2px 0 0 2px;
+    }
+
+    .photo-frame-corner.tr {
+      top: 12px;
+      right: 12px;
+      border-width: 2px 2px 0 0;
+    }
+
+    .photo-frame-corner.bl {
+      bottom: 12px;
+      left: 12px;
+      border-width: 0 0 2px 2px;
+    }
+
+    .photo-frame-corner.br {
+      bottom: 12px;
+      right: 12px;
+      border-width: 0 2px 2px 0;
+    }
 
     /* ── Fade-in encadeado ── */
-    .fade-in { opacity: 0; animation: animationIn 1s ease-out forwards; }
-    .d-01 { animation-delay: 0.15s; }
-    .d-02 { animation-delay: 0.30s; }
-    .d-03 { animation-delay: 0.50s; }
-    .d-04 { animation-delay: 0.70s; }
-    .d-05 { animation-delay: 0.90s; }
-    .d-06 { animation-delay: 1.10s; }
-    .d-07 { animation-delay: 1.30s; }
+    .fade-in {
+      opacity: 0;
+      animation: animationIn 1s ease-out forwards;
+    }
+
+    .d-01 {
+      animation-delay: 0.15s;
+    }
+
+    .d-02 {
+      animation-delay: 0.30s;
+    }
+
+    .d-03 {
+      animation-delay: 0.50s;
+    }
+
+    .d-04 {
+      animation-delay: 0.70s;
+    }
+
+    .d-05 {
+      animation-delay: 0.90s;
+    }
+
+    .d-06 {
+      animation-delay: 1.10s;
+    }
+
+    .d-07 {
+      animation-delay: 1.30s;
+    }
 
     /* ── Hover underline no nome ── */
     .name-link {
       display: inline-block;
       position: relative;
     }
+
     .name-link::after {
       content: '';
       position: absolute;
-      bottom: 0; left: 0;
-      width: 0; height: 2px;
-      background: rgba(255,255,255,0.6);
-      transition: width 0.4s cubic-bezier(0.76,0,0.24,1);
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: rgba(255, 255, 255, 0.6);
+      transition: width 0.4s cubic-bezier(0.76, 0, 0.24, 1);
     }
-    .name-link:hover::after { width: 100%; }
+
+    .name-link:hover::after {
+      width: 100%;
+    }
 
     /* ── Hover Reveal Panel ── */
     .photo-frame-group .group-hover-panel {
       transform: translateY(100%);
       transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
     }
+
     .photo-frame-group:hover .group-hover-panel {
       transform: translateY(0);
     }
+
     .photo-frame-group .line-reveal {
       width: 0;
       transition: width 0.7s ease 0.2s;
     }
+
     .photo-frame-group:hover .line-reveal {
       width: 100%;
     }
@@ -254,7 +393,8 @@
         <div class="layer layer-3"></div>
       </div>
       <!-- Watermark -->
-      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90vw] max-w-[1400px] flex justify-center opacity-[0.06] pointer-events-none select-none z-[2]">
+      <div
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90vw] max-w-[1400px] flex justify-center opacity-[0.06] pointer-events-none select-none z-[2]">
         <img src="./Muriel_logo.png" alt="" class="w-full h-auto object-contain filter brightness-0 invert">
       </div>
       <canvas class="bg-noise"></canvas>
@@ -292,7 +432,8 @@
         <div class="flex flex-col justify-center">
 
           <!-- Nome -->
-          <h1 class="fade-in d-02 font-display uppercase font-semibold tracking-tighter leading-[0.88] text-white text-[3.5rem] md:text-[5rem] lg:text-[6.5rem] xl:text-[7.5rem] mb-4">
+          <h1
+            class="fade-in d-02 font-display uppercase font-semibold tracking-tighter leading-[0.88] text-white text-[3.5rem] md:text-[5rem] lg:text-[6.5rem] xl:text-[7.5rem] mb-4">
             <span class="name-link">Pablo</span><br>
             <span class="name-link">Ferreira</span>
           </h1>
@@ -307,16 +448,21 @@
 
           <!-- Bio parágrafo 1 -->
           <p class="fade-in d-04 font-sans text-base md:text-lg text-white/70 leading-relaxed mb-6 max-w-[55ch]">
-            Sou diretor, roteirista e editor freelancer com mais de duas décadas de experiência em produtoras de São Paulo. Formado em cinema pela ECA-USP, concluí em 2025 um mestrado na UnB sobre fenomenologia e o real no cinema.
+            Sou diretor, roteirista e editor freelancer com mais de duas décadas de experiência em produtoras de São
+            Paulo. Formado em cinema pela ECA-USP, concluí em 2025 um mestrado na UnB sobre fenomenologia e o real no
+            cinema.
           </p>
 
           <!-- Bio parágrafo 2 -->
           <p class="fade-in d-05 font-sans text-base md:text-lg text-white/70 leading-relaxed mb-6 max-w-[55ch]">
-            Além de escrever e dirigir curta-metragens, documentários e filmes institucionais, dediquei minha carreira à edição e finalização de documentários para cinema e TV, trabalhando também como co-roteirista de séries documentais.
+            Além de escrever e dirigir curta-metragens, documentários e filmes institucionais, dediquei minha carreira à
+            edição e finalização de documentários para cinema e TV, trabalhando também como co-roteirista de séries
+            documentais.
           </p>
 
           <!-- Bio parágrafo 3 (pessoal) -->
-          <p class="fade-in d-06 font-accent italic text-base md:text-lg text-white/45 leading-relaxed mb-12 max-w-[50ch]">
+          <p
+            class="fade-in d-06 font-accent italic text-base md:text-lg text-white/45 leading-relaxed mb-12 max-w-[50ch]">
             Adoro literatura, música, praia, yoga, rinocerontes, viajar e aprender coisas novas.
           </p>
 
@@ -325,7 +471,8 @@
             <a href="index.html#contato"
               class="group inline-flex items-center gap-3 bg-white text-[#3F556B] px-8 py-4 text-xs font-semibold uppercase tracking-widest hover:bg-[#1e2420] hover:text-white transition-colors duration-300">
               Fale comigo
-              <iconify-icon icon="solar:arrow-right-linear" width="16" class="group-hover:translate-x-1 transition-transform duration-300"></iconify-icon>
+              <iconify-icon icon="solar:arrow-right-linear" width="16"
+                class="group-hover:translate-x-1 transition-transform duration-300"></iconify-icon>
             </a>
           </div>
 
@@ -340,6 +487,92 @@
       <iconify-icon class="animate-bounce text-white/80" icon="solar:arrow-down-linear"></iconify-icon>
     </div>
   </main>
+
+  <!-- 2ª Dobra: colunas espelhadas -->
+  <section id="segunda-dobra" class="relative bg-[#2d322f] overflow-hidden py-24 lg:py-32">
+
+    <!-- Watermark -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90vw] max-w-[1400px] flex justify-center opacity-[0.05] pointer-events-none select-none z-0">
+      <img src="./Muriel_Cas_logo.png" alt="" class="w-full h-auto object-contain filter brightness-0 invert">
+    </div>
+
+    <!-- Conteúdo -->
+    <div class="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12">
+
+
+      <!-- Grid espelhado: [texto | foto] -->
+      <div class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-[1.55fr_1fr] gap-12 lg:gap-20 items-start">
+
+        <!-- Coluna esquerda: texto -->
+        <div class="flex flex-col justify-center">
+
+          <!-- Nome -->
+          <h2 class="animate-on-scroll [animation:animationIn_1s_ease-out_0.2s_both]
+                     font-display uppercase font-semibold tracking-tighter leading-[0.88]
+                     text-white text-[3.5rem] md:text-[5rem] lg:text-[6.5rem] xl:text-[7.5rem] mb-8">
+            <span class="name-link">Pablo</span><br>
+            <span class="name-link">Gonçalo</span>
+          </h2>
+
+          <!-- Cargo -->
+          <p class="animate-on-scroll [animation:animationIn_1s_ease-out_0.35s_both]
+                    font-accent italic text-lg md:text-xl text-white/75 mb-10">
+            Fundador e diretor criativo da Muriel Casulo
+          </p>
+
+          <!-- Divisor -->
+          <div class="animate-on-scroll [animation:animationIn_1s_ease-out_0.35s_both]
+                      w-12 h-[2px] bg-white/35 mb-10"></div>
+
+          <!-- Bio 1 -->
+          <p class="animate-on-scroll [animation:animationIn_1s_ease-out_0.5s_both]
+                    font-sans text-base md:text-lg text-white/70 leading-relaxed mb-6 max-w-[55ch]">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+          </p>
+
+          <!-- Bio 2 -->
+          <p class="animate-on-scroll [animation:animationIn_1s_ease-out_0.65s_both]
+                    font-sans text-base md:text-lg text-white/70 leading-relaxed mb-6 max-w-[55ch]">
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+          </p>
+
+          <!-- Bio 3 pessoal -->
+          <p class="animate-on-scroll [animation:animationIn_1s_ease-out_0.75s_both]
+                    font-accent italic text-base md:text-lg text-white/45 leading-relaxed mb-12 max-w-[50ch]">
+            Sunt in culpa qui officia deserunt mollit anim id est laborum et dolor fuga.
+          </p>
+
+          <!-- CTA -->
+          <div
+            class="animate-on-scroll [animation:animationIn_1s_ease-out_0.9s_both] flex flex-wrap items-center gap-5">
+            <a href="index.html#contato"
+              class="group inline-flex items-center gap-3 bg-white text-[#2d322f] px-8 py-4 text-xs font-semibold uppercase tracking-widest hover:bg-[#3F556B] hover:text-white transition-colors duration-300">
+              Fale comigo
+              <iconify-icon icon="solar:arrow-right-linear" width="16"
+                class="group-hover:translate-x-1 transition-transform duration-300"></iconify-icon>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Coluna direita: foto -->
+        <div class="flex flex-col gap-6">
+
+          <!-- Janela 4x5: placeholder negro -->
+          <div class="animate-on-scroll [animation:animationIn_1s_ease-out_0.3s_both] relative photo-frame-group">
+            <div class="photo-frame shadow-[0_24px_60px_rgba(0,0,0,0.60)] overflow-hidden" style="background:#1e2420;border:1px solid rgba(63,85,107,0.25)">
+              <div class="absolute inset-0 flex flex-col items-center justify-center gap-3">
+                <iconify-icon icon="solar:camera-linear" width="36" class="text-white/15"></iconify-icon>
+                <span class="text-[9px] uppercase tracking-[0.3em] text-white/20 font-semibold">Foto</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </section>
 
   <script>
     // In-View Animation Observer
