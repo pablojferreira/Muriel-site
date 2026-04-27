@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quem Somos | Muriel Filmes</title>
+  <meta name="description" content="Conheça a Muriel Filmes: quem somos, nossa história e os valores que guiam nossa produção de narrativas de alto padrão." />
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lenis via CDN -->
+  <script src="https://unpkg.com/lenis@1.0.45/dist/lenis.min.js"></script>
+
+  <!-- Tooling -->
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
+  <!-- GSAP Core -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+  <!-- Google Fonts for AEX Design System -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&display=swap"
+    rel="stylesheet">
+
+  <style>
+    /* ───── AEX Design System Typography ───── */
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    .font-display {
+      font-family: 'Oswald', sans-serif;
+    }
+
+    .font-accent {
+      font-family: 'Playfair Display', serif;
+    }
+
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #ebedea;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #3F556B;
+    }
+
+    @keyframes animationIn {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+        filter: blur(8px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0px);
+      }
+    }
+
+    .animate-on-scroll {
+      animation-play-state: paused !important;
+    }
+
+    .animate-on-scroll.animate {
+      animation-play-state: running !important;
+    }
+
+    html,
+    body {
+      overflow-x: hidden !important;
+      min-height: 100% !important;
+      scroll-behavior: auto !important;
+    }
+
+    /* ───── Abstract Editorial Background ───── */
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .bg-base {
+      position: absolute;
+      inset: 0;
+      background: #ebedea;
+    }
+
+    .bg-layers {
+      position: absolute;
+      inset: 0;
+      filter: blur(60px);
+    }
+
+    .layer {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.7;
+      mix-blend-mode: multiply;
+    }
+
+    .layer-1 {
+      width: 600px;
+      height: 600px;
+      background: #f2f2f2;
+      top: 10%;
+      left: 15%;
+      animation: float1 28s ease-in-out infinite alternate;
+    }
+
+    .layer-2 {
+      width: 500px;
+      height: 500px;
+      background: #eaeaea;
+      top: 40%;
+      left: 55%;
+      animation: float2 32s ease-in-out infinite alternate;
+    }
+
+    .layer-3 {
+      width: 700px;
+      height: 700px;
+      background: #f5f5f5;
+      top: 60%;
+      left: 20%;
+      animation: float3 36s ease-in-out infinite alternate;
+    }
+
+    @keyframes float1 {
+      0% { transform: translate(0px, 0px) scale(1); }
+      100% { transform: translate(40px, -30px) scale(1.05); }
+    }
+
+    @keyframes float2 {
+      0% { transform: translate(0px, 0px) scale(1); }
+      100% { transform: translate(-30px, 40px) scale(1.08); }
+    }
+
+    @keyframes float3 {
+      0% { transform: translate(0px, 0px) scale(1); }
+      100% { transform: translate(20px, 30px) scale(1.04); }
+    }
+
+    .bg-noise {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.055;
+      mix-blend-mode: multiply;
+    }
+
+    /* ── Pulsing placeholder dot ── */
+    @keyframes pulse-ring {
+      0% { transform: scale(0.8); opacity: 0.6; }
+      70% { transform: scale(1.3); opacity: 0; }
+      100% { transform: scale(1.3); opacity: 0; }
+    }
+
+    .pulse-ring {
+      animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+    }
+
+    @keyframes blink-dot {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    .blink-dot {
+      animation: blink-dot 2s ease-in-out infinite;
+    }
+  </style>
+</head>
+
+<body class="bg-[#ebedea] text-[#2d322f] antialiased selection:bg-[#3F556B] selection:text-white overflow-x-hidden">
+
+  <!-- Navegação Topo (Design System Pattern) -->
+  <header class="fixed top-0 inset-x-0 w-full border-b border-[#2d322f]/10 bg-[#ebedea]/60 backdrop-blur-xl z-50">
+    <div class="max-w-[1400px] mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
+      <!-- Logo Esquerda -->
+      <div class="flex justify-start items-center">
+        <a href="index.html" class="shrink-0 group flex items-center">
+          <img src="Muriel_nome.png" alt="Muriel Logo"
+            class="h-4 md:h-5 opacity-80 group-hover:opacity-100 transition-all duration-300 filter brightness-0">
+        </a>
+      </div>
+
+      <!-- Links & Interações Direita -->
+      <div class="flex justify-end items-center gap-10">
+        <nav class="hidden md:flex justify-end gap-10">
+          <a href="muriel-documenta.html"
+            class="relative group text-xs font-semibold text-[#2d322f]/70 hover:text-[#3F556B] transition-colors duration-300 uppercase tracking-[0.15em] py-2 whitespace-nowrap">Muriel
+            Documenta<span
+              class="absolute bottom-0 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-[#3F556B] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span></a>
+          <a href="muriel-pos.html"
+            class="relative group text-xs font-semibold text-[#2d322f]/70 hover:text-[#3F556B] transition-colors duration-300 uppercase tracking-[0.15em] py-2 whitespace-nowrap">Muriel
+            Pós<span
+              class="absolute bottom-0 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-[#3F556B] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span></a>
+          <a href="muriel-casulo.html"
+            class="relative group text-xs font-semibold text-[#2d322f]/70 hover:text-[#3F556B] transition-colors duration-300 uppercase tracking-[0.15em] py-2 whitespace-nowrap">Muriel
+            Casulo<span
+              class="absolute bottom-0 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-[#3F556B] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span></a>
+          <a href="quem-somos.html"
+            class="relative group text-xs font-bold text-[#3F556B] transition-colors duration-300 uppercase tracking-[0.15em] py-2 whitespace-nowrap">Quem
+            Somos<span
+              class="absolute bottom-0 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-[#3F556B] opacity-100 transition-opacity duration-300"></span></a>
+          <a href="index.html#contato"
+            class="relative group text-xs font-semibold text-[#2d322f]/70 hover:text-[#3F556B] transition-colors duration-300 uppercase tracking-[0.15em] py-2 whitespace-nowrap">Contato<span
+              class="absolute bottom-0 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-[#3F556B] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span></a>
+        </nav>
+
+        <button aria-label="Menu" class="md:hidden text-[#2d322f] hover:text-[#3F556B] transition-colors duration-300">
+          <iconify-icon height="24" icon="solar:hamburger-menu-linear" width="24"></iconify-icon>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero — Placeholder -->
+  <main class="relative min-h-screen overflow-hidden" id="hero">
+
+    <!-- Abstract Editorial Background -->
+    <div class="hero-bg">
+      <div class="bg-base"></div>
+      <div class="bg-layers">
+        <div class="layer layer-1"></div>
+        <div class="layer layer-2"></div>
+        <div class="layer layer-3"></div>
+      </div>
+
+      <!-- Logo Watermark GIGANTE -->
+      <div
+        class="absolute top-[50%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140vw] md:w-[100vw] lg:w-[75vw] max-w-[1600px] flex justify-center opacity-[0.068] pointer-events-none select-none z-[5]">
+        <img src="./Muriel_logo.png" alt="Muriel Watermark" class="w-full h-auto object-contain filter brightness-0">
+      </div>
+
+      <canvas class="bg-noise"></canvas>
+    </div>
+
+    <!-- Conteúdo Placeholder -->
+    <div class="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12 flex flex-col items-start justify-center min-h-screen pt-20">
+
+      <!-- Label -->
+      <div class="flex items-center gap-4 mb-10 [animation:animationIn_1.2s_ease-out_0.1s_both]">
+        <div class="w-12 lg:w-16 h-[2px] bg-[#3F556B]"></div>
+        <span class="font-sans text-xs md:text-sm font-bold uppercase tracking-[0.25em] text-[#3F556B]">Em construção</span>
+      </div>
+
+      <!-- Main Title -->
+      <h1 class="font-display text-[4rem] md:text-[7rem] lg:text-[9rem] xl:text-[11rem] font-bold tracking-tighter uppercase text-[#2d322f] leading-[0.85] flex flex-col [animation:animationIn_1.2s_ease-out_0.2s_both]">
+        <span>Quem</span>
+        <span class="font-accent italic font-normal normal-case text-[#3F556B] mt-2 lg:mt-4">Somos</span>
+      </h1>
+
+      <!-- Placeholder Card -->
+      <div class="mt-20 lg:mt-28 max-w-2xl [animation:animationIn_1.2s_ease-out_0.5s_both]">
+        <div class="relative bg-white border border-[#2d322f]/10 p-10 lg:p-14 shadow-[0_8px_32px_rgba(45,50,47,0.06)]">
+
+          <!-- Animated status indicator -->
+          <div class="flex items-center gap-4 mb-8">
+            <div class="relative flex items-center justify-center w-5 h-5">
+              <div class="absolute w-5 h-5 rounded-full bg-[#3F556B]/20 pulse-ring"></div>
+              <div class="w-2.5 h-2.5 rounded-full bg-[#3F556B] blink-dot relative z-10"></div>
+            </div>
+            <span class="font-sans text-xs uppercase tracking-[0.25em] font-semibold text-[#3F556B]">Página em desenvolvimento</span>
+          </div>
+
+          <p class="font-sans text-xl lg:text-2xl font-light text-[#2d322f]/80 leading-relaxed">
+            Esta seção está sendo preparada com cuidado.<br>
+            Em breve, você conhecerá a história, as pessoas e os valores que movem a
+            <span class="font-semibold text-[#2d322f]">Muriel Filmes.</span>
+          </p>
+
+          <div class="mt-10 w-16 h-[2px] bg-[#3F556B]"></div>
+
+          <a href="index.html"
+            class="group mt-10 inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-widest text-[#2d322f]/60 hover:text-[#3F556B] transition-colors duration-300">
+            <iconify-icon icon="solar:arrow-left-linear" width="18"
+              class="group-hover:-translate-x-1 transition-transform duration-300"></iconify-icon>
+            Voltar à página principal
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Scroll hint -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50 z-50 [animation:animationIn_0.8s_ease-out_1s_both]">
+      <span class="text-[10px] uppercase tracking-[0.2em] text-[#3F556B] font-semibold">Em breve</span>
+      <iconify-icon class="text-[#2d322f]" icon="solar:hourglass-line-linear" width="18"></iconify-icon>
+    </div>
+
+  </main>
+
+  <script>
+    // In-View Animation Observer
+    (function () {
+      const once = true;
+      if (!window.__inViewIO) {
+        window.__inViewIO = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("animate");
+              if (once) window.__inViewIO.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1, rootMargin: "0px 0px -10% 0px" });
+      }
+      window.initInViewAnimations = function (selector = ".animate-on-scroll") {
+        document.querySelectorAll(selector).forEach((el) => {
+          window.__inViewIO.observe(el);
+        });
+      };
+      document.addEventListener("DOMContentLoaded", () => initInViewAnimations());
+    })();
+
+    // Editorial Grain
+    const canvas = document.querySelector('.bg-noise');
+    if (canvas) {
+      const ctx = canvas.getContext('2d');
+
+      function resizeCanvas() {
+        canvas.width = window.innerWidth / 2;
+        canvas.height = window.innerHeight / 2;
+      }
+
+      function generateNoise() {
+        const imageData = ctx.createImageData(canvas.width, canvas.height);
+        const data = imageData.data;
+        for (let i = 0; i < data.length; i += 4) {
+          const value = Math.random() * 255;
+          data[i] = value;
+          data[i + 1] = value;
+          data[i + 2] = value;
+          data[i + 3] = 30;
+        }
+        ctx.putImageData(imageData, 0, 0);
+      }
+
+      resizeCanvas();
+      generateNoise();
+      window.addEventListener('resize', () => { resizeCanvas(); generateNoise(); });
+    }
+  </script>
+
+</body>
+
+</html>
