@@ -577,11 +577,17 @@
   <!-- 3ª Dobra: Por que Muriel? -->
   <section id="por-que-muriel" class="relative bg-[#2d322f] overflow-hidden py-24 lg:py-32">
 
-    <!-- Fundo Geométrico Animado -->
-    <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+    <!-- Fundo Geométrico Animado & Marca d'Água -->
+    <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden flex items-center justify-center">
+      
+      <!-- Marca d'Água -->
+      <div class="absolute inset-0 flex items-center justify-center opacity-[0.03]">
+        <img src="Muriel_logo.png" alt="" class="w-[85vw] max-w-[1000px] h-auto object-contain filter brightness-0 invert">
+      </div>
+
       <!-- Sistema Circular Orbitando -->
       <div
-        class="absolute -top-[20%] -right-[10%] w-[60vw] h-[60vw] rounded-full border-[1px] border-white/[0.04] animate-[spin_120s_linear_infinite]">
+        class="absolute -top-[20%] -right-[10%] w-[60vw] h-[60vw] rounded-full border-[1px] border-white/[0.04] animate-[spin_40s_linear_infinite]">
         <div class="absolute top-[10%] left-[10%] w-[80%] h-[80%] rounded-full border-[1px] border-[#3F556B]/10"></div>
         <!-- Marcador no eixo do círculo -->
         <div
@@ -595,12 +601,12 @@
 
       <!-- Quadrado Geométrico Distorcido -->
       <div
-        class="absolute bottom-[-15%] -left-[10%] w-[45vw] h-[45vw] border-[1px] border-[#3F556B]/10 rotate-[25deg] animate-[pulse_14s_ease-in-out_infinite]">
+        class="absolute bottom-[-15%] -left-[10%] w-[45vw] h-[45vw] border-[1px] border-[#3F556B]/10 animate-[spin_45s_linear_infinite_reverse]">
       </div>
 
       <!-- Nebulosa Sutil (Ponto de Luz) -->
       <div
-        class="absolute top-[40%] left-[20%] w-[50vw] h-[50vw] rounded-full bg-[#3F556B]/5 blur-[150px] animate-[pulse_10s_ease-in-out_infinite_alternate]">
+        class="absolute top-[40%] left-[20%] w-[50vw] h-[50vw] rounded-full bg-[#3F556B]/5 blur-[150px] animate-[pulse_5s_ease-in-out_infinite_alternate]">
       </div>
     </div>
 
