@@ -45,11 +45,11 @@
     }
 
     ::-webkit-scrollbar-track {
-      background: #ebedea;
+      background: #2d4558;
     }
 
     ::-webkit-scrollbar-thumb {
-      background: #3F556B;
+      background: rgba(255,255,255,0.3);
     }
 
     @keyframes animationIn {
@@ -81,7 +81,7 @@
       scroll-behavior: auto !important;
     }
 
-    /* ───── Abstract Editorial Background ───── */
+    /* ───── Background leve ───── */
     .hero-bg {
       position: absolute;
       inset: 0;
@@ -89,100 +89,116 @@
       z-index: 0;
       pointer-events: none;
     }
-
-    .bg-base {
-      position: absolute;
-      inset: 0;
-      background: #ebedea;
-    }
-
-    .bg-layers {
-      position: absolute;
-      inset: 0;
-      filter: blur(60px);
-    }
-
-    .layer {
-      position: absolute;
-      border-radius: 50%;
-      opacity: 0.7;
-      mix-blend-mode: multiply;
-    }
-
-    .layer-1 {
-      width: 600px;
-      height: 600px;
-      background: #f2f2f2;
-      top: 10%;
-      left: 15%;
-      animation: float1 28s ease-in-out infinite alternate;
-    }
-
-    .layer-2 {
-      width: 500px;
-      height: 500px;
-      background: #eaeaea;
-      top: 40%;
-      left: 55%;
-      animation: float2 32s ease-in-out infinite alternate;
-    }
-
-    .layer-3 {
-      width: 700px;
-      height: 700px;
-      background: #f5f5f5;
-      top: 60%;
-      left: 20%;
-      animation: float3 36s ease-in-out infinite alternate;
-    }
-
-    @keyframes float1 {
-      0% { transform: translate(0px, 0px) scale(1); }
-      100% { transform: translate(40px, -30px) scale(1.05); }
-    }
-
-    @keyframes float2 {
-      0% { transform: translate(0px, 0px) scale(1); }
-      100% { transform: translate(-30px, 40px) scale(1.08); }
-    }
-
-    @keyframes float3 {
-      0% { transform: translate(0px, 0px) scale(1); }
-      100% { transform: translate(20px, 30px) scale(1.04); }
-    }
+    .bg-base { position: absolute; inset: 0; background: #3F556B; }
+    .bg-layers { position: absolute; inset: 0; filter: blur(80px); }
+    .layer { position: absolute; border-radius: 50%; mix-blend-mode: screen; }
+    .layer-1 { width: 700px; height: 700px; background: rgba(255,255,255,0.06); top: -10%; left: -10%; animation: float1 30s ease-in-out infinite alternate; }
+    .layer-2 { width: 500px; height: 500px; background: rgba(30,36,32,0.30); top: 50%; left: 60%; animation: float2 36s ease-in-out infinite alternate; }
+    .layer-3 { width: 600px; height: 600px; background: rgba(255,255,255,0.04); bottom: -10%; left: 30%; animation: float3 40s ease-in-out infinite alternate; }
+    @keyframes float1 { 0%{transform:translate(0,0) scale(1)} 100%{transform:translate(50px,-40px) scale(1.06)} }
+    @keyframes float2 { 0%{transform:translate(0,0) scale(1)} 100%{transform:translate(-40px,50px) scale(1.09)} }
+    @keyframes float3 { 0%{transform:translate(0,0) scale(1)} 100%{transform:translate(30px,30px) scale(1.05)} }
 
     .bg-noise {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      opacity: 0.07; mix-blend-mode: overlay;
+    }
+
+    /* ── Linha decorativa animada ── */
+    @keyframes lineGrow {
+      from { transform: scaleX(0); transform-origin: left; }
+      to   { transform: scaleX(1); transform-origin: left; }
+    }
+    .line-grow { animation: lineGrow 1s cubic-bezier(0.76,0,0.24,1) forwards; }
+
+    /* ── Foto placeholder ── */
+    .photo-frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      background: rgba(255,255,255,0.08);
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+    .photo-frame::before {
+      content: '';
       position: absolute;
       inset: 0;
+      background: linear-gradient(to top, rgba(30,36,32,0.55) 0%, transparent 50%);
+      z-index: 1;
+      opacity: 1;
+      transition: opacity 0.6s ease;
+    }
+    .photo-frame-group:hover .photo-frame::before {
+      opacity: 0.3;
+    }
+
+    /* ── Grayscale & escala controlados pelo pai ── */
+    .photo-frame-group .photo-img {
+      filter: grayscale(1);
+      transform: scale(1.03);
+      transition: filter 0.8s ease, transform 0.8s ease;
+    }
+    .photo-frame-group:hover .photo-img {
+      filter: grayscale(0);
+      transform: scale(1.07);
+    }
+    .photo-frame-corner {
+      position: absolute;
+      width: 28px; height: 28px;
+      border-color: rgba(255,255,255,0.45);
+      border-style: solid;
+      z-index: 2;
+    }
+    .photo-frame-corner.tl { top: 12px; left: 12px; border-width: 2px 0 0 2px; }
+    .photo-frame-corner.tr { top: 12px; right: 12px; border-width: 2px 2px 0 0; }
+    .photo-frame-corner.bl { bottom: 12px; left: 12px; border-width: 0 0 2px 2px; }
+    .photo-frame-corner.br { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; }
+
+    /* ── Fade-in encadeado ── */
+    .fade-in { opacity: 0; animation: animationIn 1s ease-out forwards; }
+    .d-01 { animation-delay: 0.15s; }
+    .d-02 { animation-delay: 0.30s; }
+    .d-03 { animation-delay: 0.50s; }
+    .d-04 { animation-delay: 0.70s; }
+    .d-05 { animation-delay: 0.90s; }
+    .d-06 { animation-delay: 1.10s; }
+    .d-07 { animation-delay: 1.30s; }
+
+    /* ── Hover underline no nome ── */
+    .name-link {
+      display: inline-block;
+      position: relative;
+    }
+    .name-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 0; height: 2px;
+      background: rgba(255,255,255,0.6);
+      transition: width 0.4s cubic-bezier(0.76,0,0.24,1);
+    }
+    .name-link:hover::after { width: 100%; }
+
+    /* ── Hover Reveal Panel ── */
+    .photo-frame-group .group-hover-panel {
+      transform: translateY(100%);
+      transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+    }
+    .photo-frame-group:hover .group-hover-panel {
+      transform: translateY(0);
+    }
+    .photo-frame-group .line-reveal {
+      width: 0;
+      transition: width 0.7s ease 0.2s;
+    }
+    .photo-frame-group:hover .line-reveal {
       width: 100%;
-      height: 100%;
-      opacity: 0.055;
-      mix-blend-mode: multiply;
-    }
-
-    /* ── Pulsing placeholder dot ── */
-    @keyframes pulse-ring {
-      0% { transform: scale(0.8); opacity: 0.6; }
-      70% { transform: scale(1.3); opacity: 0; }
-      100% { transform: scale(1.3); opacity: 0; }
-    }
-
-    .pulse-ring {
-      animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
-    }
-
-    @keyframes blink-dot {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.3; }
-    }
-
-    .blink-dot {
-      animation: blink-dot 2s ease-in-out infinite;
     }
   </style>
 </head>
 
-<body class="bg-[#ebedea] text-[#2d322f] antialiased selection:bg-[#3F556B] selection:text-white overflow-x-hidden">
+<body class="bg-[#3F556B] text-white antialiased selection:bg-white selection:text-[#3F556B] overflow-x-hidden">
 
   <!-- Navegação Topo (Design System Pattern) -->
   <header class="fixed top-0 inset-x-0 w-full border-b border-[#2d322f]/10 bg-[#ebedea]/60 backdrop-blur-xl z-50">
@@ -226,10 +242,10 @@
     </div>
   </header>
 
-  <!-- Hero — Placeholder -->
+  <!-- Hero — Editorial Bio -->
   <main class="relative min-h-screen overflow-hidden" id="hero">
 
-    <!-- Abstract Editorial Background -->
+    <!-- Background -->
     <div class="hero-bg">
       <div class="bg-base"></div>
       <div class="bg-layers">
@@ -237,69 +253,92 @@
         <div class="layer layer-2"></div>
         <div class="layer layer-3"></div>
       </div>
-
-      <!-- Logo Watermark GIGANTE -->
-      <div
-        class="absolute top-[50%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140vw] md:w-[100vw] lg:w-[75vw] max-w-[1600px] flex justify-center opacity-[0.068] pointer-events-none select-none z-[5]">
-        <img src="./Muriel_logo.png" alt="Muriel Watermark" class="w-full h-auto object-contain filter brightness-0">
+      <!-- Watermark -->
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90vw] max-w-[1400px] flex justify-center opacity-[0.06] pointer-events-none select-none z-[2]">
+        <img src="./Muriel_logo.png" alt="" class="w-full h-auto object-contain filter brightness-0 invert">
       </div>
-
       <canvas class="bg-noise"></canvas>
     </div>
 
-    <!-- Conteúdo Placeholder -->
-    <div class="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12 flex flex-col items-start justify-center min-h-screen pt-20">
+    <!-- Conteúdo -->
+    <div class="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12 pt-32 pb-24 lg:pt-40 lg:pb-32">
 
-      <!-- Label -->
-      <div class="flex items-center gap-4 mb-10 [animation:animationIn_1.2s_ease-out_0.1s_both]">
-        <div class="w-12 lg:w-16 h-[2px] bg-[#3F556B]"></div>
-        <span class="font-sans text-xs md:text-sm font-bold uppercase tracking-[0.25em] text-[#3F556B]">Em construção</span>
+      <!-- Eyebrow label -->
+      <div class="max-w-5xl mx-auto flex items-center gap-4 mb-16 fade-in d-01">
+        <div class="w-10 h-px bg-white/50 line-grow"></div>
+        <span class="text-[10px] font-semibold uppercase tracking-[0.3em] text-white/60">Quem somos</span>
+        <div class="flex-1 h-px bg-white/15"></div>
       </div>
 
-      <!-- Main Title -->
-      <h1 class="font-display text-[4rem] md:text-[7rem] lg:text-[9rem] xl:text-[11rem] font-bold tracking-tighter uppercase text-[#2d322f] leading-[0.85] flex flex-col [animation:animationIn_1.2s_ease-out_0.2s_both]">
-        <span>Quem</span>
-        <span class="font-accent italic font-normal normal-case text-[#3F556B] mt-2 lg:mt-4">Somos</span>
-      </h1>
+      <!-- Grid principal -->
+      <div class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-[1fr_1.55fr] gap-12 lg:gap-20 items-start">
 
-      <!-- Placeholder Card -->
-      <div class="mt-20 lg:mt-28 max-w-2xl [animation:animationIn_1.2s_ease-out_0.5s_both]">
-        <div class="relative bg-white border border-[#2d322f]/10 p-10 lg:p-14 shadow-[0_8px_32px_rgba(45,50,47,0.06)]">
+        <!-- Coluna esquerda: foto + dados -->
+        <div class="flex flex-col gap-6">
 
-          <!-- Animated status indicator -->
-          <div class="flex items-center gap-4 mb-8">
-            <div class="relative flex items-center justify-center w-5 h-5">
-              <div class="absolute w-5 h-5 rounded-full bg-[#3F556B]/20 pulse-ring"></div>
-              <div class="w-2.5 h-2.5 rounded-full bg-[#3F556B] blink-dot relative z-10"></div>
+          <!-- Janela 4x5 -->
+          <div class="fade-in d-02 relative photo-frame-group">
+            <div class="photo-frame shadow-[0_24px_60px_rgba(0,0,0,0.40)] overflow-hidden">
+              <!-- Foto: grayscale → cor no hover -->
+              <img src="Pablo_CV.png" alt="Pablo Ferreira"
+                class="photo-img absolute inset-0 w-full h-full object-cover object-top">
             </div>
-            <span class="font-sans text-xs uppercase tracking-[0.25em] font-semibold text-[#3F556B]">Página em desenvolvimento</span>
           </div>
 
-          <p class="font-sans text-xl lg:text-2xl font-light text-[#2d322f]/80 leading-relaxed">
-            Esta seção está sendo preparada com cuidado.<br>
-            Em breve, você conhecerá a história, as pessoas e os valores que movem a
-            <span class="font-semibold text-[#2d322f]">Muriel Filmes.</span>
+
+        </div>
+
+        <!-- Coluna direita: texto -->
+        <div class="flex flex-col justify-center">
+
+          <!-- Nome -->
+          <h1 class="fade-in d-02 font-display uppercase font-semibold tracking-tighter leading-[0.88] text-white text-[3.5rem] md:text-[5rem] lg:text-[6.5rem] xl:text-[7.5rem] mb-4">
+            <span class="name-link">Pablo</span><br>
+            <span class="name-link">Ferreira</span>
+          </h1>
+
+          <!-- Cargo -->
+          <p class="fade-in d-03 font-accent italic text-lg md:text-xl text-white/75 mb-10">
+            Fundador e diretor geral da Muriel Filmes
           </p>
 
-          <div class="mt-10 w-16 h-[2px] bg-[#3F556B]"></div>
+          <!-- Divisor -->
+          <div class="fade-in d-03 w-12 h-[2px] bg-white/35 mb-10"></div>
 
-          <a href="index.html"
-            class="group mt-10 inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-widest text-[#2d322f]/60 hover:text-[#3F556B] transition-colors duration-300">
-            <iconify-icon icon="solar:arrow-left-linear" width="18"
-              class="group-hover:-translate-x-1 transition-transform duration-300"></iconify-icon>
-            Voltar à página principal
-          </a>
+          <!-- Bio parágrafo 1 -->
+          <p class="fade-in d-04 font-sans text-base md:text-lg text-white/70 leading-relaxed mb-6 max-w-[55ch]">
+            Sou diretor, roteirista e editor freelancer com mais de duas décadas de experiência em produtoras de São Paulo. Formado em cinema pela ECA-USP, concluí em 2025 um mestrado na UnB sobre fenomenologia e o real no cinema.
+          </p>
+
+          <!-- Bio parágrafo 2 -->
+          <p class="fade-in d-05 font-sans text-base md:text-lg text-white/70 leading-relaxed mb-6 max-w-[55ch]">
+            Além de escrever e dirigir curta-metragens, documentários e filmes institucionais, dediquei minha carreira à edição e finalização de documentários para cinema e TV, trabalhando também como co-roteirista de séries documentais.
+          </p>
+
+          <!-- Bio parágrafo 3 (pessoal) -->
+          <p class="fade-in d-06 font-accent italic text-base md:text-lg text-white/45 leading-relaxed mb-12 max-w-[50ch]">
+            Adoro literatura, música, praia, yoga, rinocerontes, viajar e aprender coisas novas.
+          </p>
+
+          <!-- CTA -->
+          <div class="fade-in d-07 flex flex-wrap items-center gap-5">
+            <a href="index.html#contato"
+              class="group inline-flex items-center gap-3 bg-white text-[#3F556B] px-8 py-4 text-xs font-semibold uppercase tracking-widest hover:bg-[#1e2420] hover:text-white transition-colors duration-300">
+              Fale comigo
+              <iconify-icon icon="solar:arrow-right-linear" width="16" class="group-hover:translate-x-1 transition-transform duration-300"></iconify-icon>
+            </a>
+          </div>
+
         </div>
       </div>
-
     </div>
 
-    <!-- Scroll hint -->
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50 z-50 [animation:animationIn_0.8s_ease-out_1s_both]">
-      <span class="text-[10px] uppercase tracking-[0.2em] text-[#3F556B] font-semibold">Em breve</span>
-      <iconify-icon class="text-[#2d322f]" icon="solar:hourglass-line-linear" width="18"></iconify-icon>
+    <!-- Explore + seta -->
+    <div onclick="const next = document.querySelector('section'); if(next) next.scrollIntoView({ behavior: 'smooth' })"
+      class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-80 hover:opacity-100 transition-opacity cursor-pointer z-50 [animation:animationIn_0.8s_ease-out_1.2s_both]">
+      <span class="text-[10px] uppercase tracking-[0.2em] text-white/70 font-semibold">Explore</span>
+      <iconify-icon class="animate-bounce text-white/80" icon="solar:arrow-down-linear"></iconify-icon>
     </div>
-
   </main>
 
   <script>
