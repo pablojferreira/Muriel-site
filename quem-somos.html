@@ -94,7 +94,7 @@
     .bg-base {
       position: absolute;
       inset: 0;
-      background: #3F556B;
+      background: #1e2420;
     }
 
     .bg-layers {
@@ -338,7 +338,7 @@
   </style>
 </head>
 
-<body class="bg-[#3F556B] text-white antialiased selection:bg-white selection:text-[#3F556B] overflow-x-hidden">
+<body class="bg-[#1e2420] text-white antialiased selection:bg-white selection:text-[#1e2420] overflow-x-hidden">
 
   <!-- Navegação Topo (Design System Pattern) -->
   <header class="fixed top-0 inset-x-0 w-full border-b border-[#2d322f]/10 bg-[#ebedea]/60 backdrop-blur-xl z-50">
@@ -388,9 +388,24 @@
     <!-- Background -->
     <div class="hero-bg">
       <div class="bg-base"></div>
-      <div class="bg-layers">
-        <div class="layer layer-1"></div>
-        <div class="layer layer-3"></div>
+
+      <!-- Elementos Geométricos Editoriais -->
+      <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+        <!-- Sistema Circular Orbitando -->
+        <div class="absolute -top-[10%] -left-[10%] w-[50vw] h-[50vw] rounded-full border-[1px] border-white/[0.04] animate-[spin_40s_linear_infinite]">
+          <div class="absolute top-[10%] left-[10%] w-[80%] h-[80%] rounded-full border-[1px] border-[#3F556B]/20"></div>
+          <div class="absolute top-0 left-1/2 w-48 h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-1/2"></div>
+        </div>
+
+        <!-- Linhas Verticais Arquitetônicas -->
+        <div class="absolute top-0 bottom-0 left-[25%] w-[1px] bg-white/[0.03]"></div>
+        <div class="absolute top-0 bottom-0 right-[15%] w-[1px] bg-white/[0.03]"></div>
+
+        <!-- Quadrado Geométrico -->
+        <div class="absolute bottom-[-15%] -right-[5%] w-[40vw] h-[40vw] border-[1px] border-[#3F556B]/15 animate-[spin_45s_linear_infinite_reverse]"></div>
+
+        <!-- Nebulosa Sutil -->
+        <div class="absolute top-[20%] right-[10%] w-[50vw] h-[50vw] rounded-full bg-[#3F556B]/10 blur-[150px] animate-[pulse_5s_ease-in-out_infinite_alternate]"></div>
       </div>
 
       <canvas class="bg-noise"></canvas>
@@ -468,7 +483,7 @@
           <!-- CTA -->
           <div class="fade-in d-07 flex flex-wrap items-center gap-5">
             <a href="index.html#contato"
-              class="group inline-flex items-center gap-3 bg-white text-[#3F556B] px-8 py-4 text-xs font-semibold uppercase tracking-widest hover:bg-[#1e2420] hover:text-white transition-colors duration-300">
+              class="group inline-flex items-center gap-3 bg-white text-[#1e2420] px-8 py-4 text-xs font-semibold uppercase tracking-widest hover:bg-[#3F556B] hover:text-white transition-colors duration-300">
               Fale comigo
               <iconify-icon icon="solar:arrow-right-linear" width="16"
                 class="group-hover:translate-x-1 transition-transform duration-300"></iconify-icon>
