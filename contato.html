@@ -362,8 +362,10 @@
   </main>
 
   <!-- FOOTER -->
-  <footer
-    class="relative w-full pt-32 pb-24 lg:pt-48 lg:pb-36 bg-[#1e2420] text-[#ebedea] overflow-hidden border-t border-white/5">
+  <footer class="relative w-full pt-32 pb-24 lg:pt-48 lg:pb-36 bg-[#1e2420] text-[#ebedea] overflow-hidden border-t border-white/5">
+    <!-- Efeito de transição de gradiente (merge suave com a cor de fundo) -->
+    <div class="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-[#3F556B]/10 to-transparent pointer-events-none">
+    </div>
     <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#3F556B]/40 to-transparent"></div>
 
     <!-- Watermark GIGANTE -->
@@ -374,6 +376,7 @@
 
     <div
       class="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center md:items-end justify-between gap-16 md:gap-12 mt-8 lg:mt-16">
+
       <!-- Text Block -->
       <div class="text-center md:text-left flex flex-col items-center md:items-start group">
         <h3 class="font-display text-5xl lg:text-7xl font-semibold tracking-tighter uppercase mb-6 text-[#ebedea]">
@@ -389,6 +392,17 @@
       <!-- Social Icons Group -->
       <div class="flex flex-col items-center md:items-end gap-6">
         <div class="flex items-center gap-4">
+          <!-- WhatsApp -->
+          <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"
+            class="group relative flex items-center justify-center w-14 h-14 rounded-full border border-white/5 bg-[#2d322f]/50 hover:border-[#3F556B]/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_15px_30px_rgba(63,85,107,0.3)] overflow-hidden">
+            <div
+              class="absolute inset-0 w-full h-full rounded-full bg-[#3F556B] scale-0 group-hover:scale-125 transition-transform duration-500 ease-out z-0">
+            </div>
+            <iconify-icon icon="mdi:whatsapp" width="26" height="26"
+              class="relative z-10 text-[#ebedea]/70 group-hover:text-white transition-colors duration-300"></iconify-icon>
+          </a>
+
+          <!-- Email -->
           <a href="mailto:contato@muriel.com.br" aria-label="Email"
             class="group relative flex items-center justify-center w-14 h-14 rounded-full border border-white/5 bg-[#2d322f]/50 hover:border-[#3F556B]/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_15px_30px_rgba(63,85,107,0.3)] overflow-hidden">
             <div
@@ -397,6 +411,8 @@
             <iconify-icon icon="solar:letter-linear" width="24" height="24"
               class="relative z-10 text-[#ebedea]/70 group-hover:text-white transition-colors duration-300"></iconify-icon>
           </a>
+
+          <!-- Instagram -->
           <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
             class="group relative flex items-center justify-center w-14 h-14 rounded-full border border-white/5 bg-[#2d322f]/50 hover:border-[#3F556B]/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_15px_30px_rgba(63,85,107,0.3)] overflow-hidden">
             <div
@@ -405,6 +421,8 @@
             <iconify-icon icon="mdi:instagram" width="24" height="24"
               class="relative z-10 text-[#ebedea]/70 group-hover:text-white transition-colors duration-300"></iconify-icon>
           </a>
+
+          <!-- LinkedIn -->
           <a href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
             class="group relative flex items-center justify-center w-14 h-14 rounded-full border border-white/5 bg-[#2d322f]/50 hover:border-[#3F556B]/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_15px_30px_rgba(63,85,107,0.3)] overflow-hidden">
             <div
@@ -415,6 +433,7 @@
           </a>
         </div>
       </div>
+
     </div>
   </footer>
 
