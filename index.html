@@ -511,7 +511,7 @@
           </svg>
 
           <!-- O1 (Alta Densidade) -->
-          <div class="absolute w-[200px] h-[200px] rounded-full orbit-track orbit-1 pointer-events-none">
+          <div class="absolute w-[25%] h-[25%] rounded-full orbit-track orbit-1 pointer-events-none">
             <div style="left: 50%; top: 0%;"
               class="absolute -ml-4 -mt-4 w-8 h-8 rounded-full bg-[#3F556B] flex items-center justify-center orbit-item orbit-trigger cursor-pointer pointer-events-auto hover:scale-125 transition-all duration-300 shadow-lg"
               data-orbit="1"></div>
@@ -524,7 +524,7 @@
           </div>
 
           <!-- O2 (Média Densidade) -->
-          <div class="absolute w-[360px] h-[360px] rounded-full orbit-track orbit-2 pointer-events-none">
+          <div class="absolute w-[45%] h-[45%] rounded-full orbit-track orbit-2 pointer-events-none">
             <div style="left: 85.35%; top: 14.65%;"
               class="absolute -ml-3 -mt-3 w-6 h-6 rounded-full bg-[#4a6352] orbit-item orbit-trigger cursor-pointer pointer-events-auto hover:scale-150 transition-all duration-300 shadow-md"
               data-orbit="2"></div>
@@ -540,7 +540,7 @@
           </div>
 
           <!-- O3 (Baixa Densidade) -->
-          <div class="absolute w-[560px] h-[560px] rounded-full orbit-track orbit-3 pointer-events-none">
+          <div class="absolute w-[70%] h-[70%] rounded-full orbit-track orbit-3 pointer-events-none">
             <div style="left: 50%; top: 0%;"
               class="absolute -ml-2 -mt-2 w-4 h-4 rounded-full bg-[#b36a4d] orbit-item orbit-trigger cursor-pointer pointer-events-auto hover:scale-150 transition-all duration-300 shadow-sm"
               data-orbit="3"></div>
@@ -559,7 +559,7 @@
           </div>
 
           <!-- O4 (Performance) -->
-          <div class="absolute w-[760px] h-[760px] rounded-full orbit-track orbit-4 pointer-events-none">
+          <div class="absolute w-[95%] h-[95%] rounded-full orbit-track orbit-4 pointer-events-none">
             <div style="left: 100%; top: 50%;"
               class="absolute -ml-[6px] -mt-[6px] w-3 h-3 rounded-full bg-[#d6a65c] orbit-item orbit-trigger cursor-pointer pointer-events-auto hover:scale-[2] transition-all duration-300 shadow-sm"
               data-orbit="4"></div>
@@ -725,7 +725,7 @@
           class="font-display text-4xl md:text-5xl lg:text-5xl font-semibold tracking-tighter uppercase text-[#2d322f] leading-[0.95] mb-12">
           A maioria das produtoras entrega filmes. <br class="hidden lg:block" />
           <span
-            class="font-accent italic font-normal normal-case text-[#3F556B] mt-6 lg:mt-8 block text-[3rem] md:text-6xl lg:text-[5.5rem] xl:text-7xl leading-[0.9] whitespace-nowrap">
+            class="font-accent italic font-normal normal-case text-[#3F556B] mt-6 lg:mt-8 block text-[3rem] md:text-6xl lg:text-[5.5rem] xl:text-7xl leading-[0.9] sm:whitespace-nowrap">
             A Muriel constrói<br />
             sistemas narrativos.
           </span>
@@ -1552,6 +1552,35 @@
 
       loopNoise();
     }
+  </script>
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="fixed inset-0 bg-[#ebedea] z-40 transform translate-x-full transition-transform duration-500 ease-in-out md:hidden flex flex-col pt-24 px-8 overflow-y-auto">
+    <nav class="flex flex-col gap-6 items-start mt-8">
+      <a href="index.html" class="font-display text-2xl uppercase tracking-widest text-[#2d322f] hover:text-[#3F556B] transition-colors">Início</a>
+      <a href="muriel-documenta.html" class="font-display text-2xl uppercase tracking-widest text-[#2d322f] hover:text-[#3F556B] transition-colors">Muriel Documenta</a>
+      <a href="muriel-pos.html" class="font-display text-2xl uppercase tracking-widest text-[#2d322f] hover:text-[#3F556B] transition-colors">Muriel Pós</a>
+      <a href="muriel-casulo.html" class="font-display text-2xl uppercase tracking-widest text-[#2d322f] hover:text-[#3F556B] transition-colors">Muriel Casulo</a>
+      <a href="quem-somos.html" class="font-display text-2xl uppercase tracking-widest text-[#2d322f] hover:text-[#3F556B] transition-colors">Quem Somos</a>
+      <a href="contato.html" class="font-display text-2xl uppercase tracking-widest text-[#2d322f] hover:text-[#3F556B] transition-colors">Contato</a>
+    </nav>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const menuBtn = document.querySelector('button[aria-label="Menu"]');
+      const mobileMenu = document.getElementById("mobile-menu");
+      if(menuBtn && mobileMenu) {
+        menuBtn.addEventListener("click", () => {
+          const isClosed = mobileMenu.classList.contains("translate-x-full");
+          if(isClosed) {
+            mobileMenu.classList.remove("translate-x-full");
+            menuBtn.innerHTML = '<iconify-icon height="24" icon="solar:close-circle-linear" width="24"></iconify-icon>';
+          } else {
+            mobileMenu.classList.add("translate-x-full");
+            menuBtn.innerHTML = '<iconify-icon height="24" icon="solar:hamburger-menu-linear" width="24"></iconify-icon>';
+          }
+        });
+      }
+    });
   </script>
 </body>
 

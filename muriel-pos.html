@@ -893,6 +893,35 @@
       loopNoise();
     }
   </script>
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="fixed inset-0 bg-[#ebedea] z-40 transform translate-x-full transition-transform duration-500 ease-in-out md:hidden flex flex-col pt-24 px-8 overflow-y-auto">
+    <nav class="flex flex-col gap-6 items-start mt-8">
+      <a href="index.html" class="font-display text-2xl uppercase tracking-widest text-[#2d322f] hover:text-[#3F556B] transition-colors">Início</a>
+      <a href="muriel-documenta.html" class="font-display text-2xl uppercase tracking-widest text-[#2d322f] hover:text-[#3F556B] transition-colors">Muriel Documenta</a>
+      <a href="muriel-pos.html" class="font-display text-2xl uppercase tracking-widest text-[#2d322f] hover:text-[#3F556B] transition-colors">Muriel Pós</a>
+      <a href="muriel-casulo.html" class="font-display text-2xl uppercase tracking-widest text-[#2d322f] hover:text-[#3F556B] transition-colors">Muriel Casulo</a>
+      <a href="quem-somos.html" class="font-display text-2xl uppercase tracking-widest text-[#2d322f] hover:text-[#3F556B] transition-colors">Quem Somos</a>
+      <a href="contato.html" class="font-display text-2xl uppercase tracking-widest text-[#2d322f] hover:text-[#3F556B] transition-colors">Contato</a>
+    </nav>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const menuBtn = document.querySelector('button[aria-label="Menu"]');
+      const mobileMenu = document.getElementById("mobile-menu");
+      if(menuBtn && mobileMenu) {
+        menuBtn.addEventListener("click", () => {
+          const isClosed = mobileMenu.classList.contains("translate-x-full");
+          if(isClosed) {
+            mobileMenu.classList.remove("translate-x-full");
+            menuBtn.innerHTML = '<iconify-icon height="24" icon="solar:close-circle-linear" width="24"></iconify-icon>';
+          } else {
+            mobileMenu.classList.add("translate-x-full");
+            menuBtn.innerHTML = '<iconify-icon height="24" icon="solar:hamburger-menu-linear" width="24"></iconify-icon>';
+          }
+        });
+      }
+    });
+  </script>
 </body>
 
 </html>
