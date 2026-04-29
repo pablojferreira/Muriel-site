@@ -301,22 +301,12 @@
         <div
           class="w-full lg:w-[115%] lg:translate-x-[3%] aspect-[4/3] lg:aspect-auto lg:h-[650px] flex items-center justify-center overflow-hidden relative group order-1 lg:order-2 bg-[#1e2420] shadow-2xl [animation:animationIn_1.2s_ease-out_0.4s_both]">
 
-          <div class="absolute inset-x-0 -top-[30%] h-[160%] w-full">
-            <!-- Janela de Showreel -->
-            <video id="hero-showreel-video" src="assets/videos/White_pen_writing.mp4"
-              class="w-full h-full object-cover relative z-0 transition-transform duration-[2.5s] ease-out group-hover:scale-[1.04]"
-              autoplay loop muted playsinline>
-            </video>
-          </div>
-
-          <!-- Glass Icon Hover Overlay (AEX Interaction Style) -->
-          <div
-            class="absolute inset-0 flex items-center justify-center pointer-events-none group-hover:bg-[#1e2420]/10 transition-colors duration-500 z-20">
-            <button
-              class="w-24 h-24 bg-[#ebedea]/70 backdrop-blur-md rounded-full flex flex-col items-center justify-center text-[#2d322f] scale-90 opacity-0 group-hover:scale-100 group-hover:opacity-100 hover:bg-[#3F556B] hover:scale-110 hover:text-white transition-all duration-500 shadow-[0_8px_32px_rgba(63,85,107,0.15)] pointer-events-auto"
-              onclick="openFullscreenVideo()">
-              <iconify-icon icon="solar:play-circle-linear" width="48" height="48" class="ml-1"></iconify-icon>
-            </button>
+          <!-- Mensagem Provisória -->
+          <div class="absolute inset-0 flex flex-col items-center justify-center z-10 p-8 text-center bg-[#1e2420] pointer-events-none">
+            <iconify-icon icon="solar:video-frame-linear" width="48" height="48" class="text-[#3F556B] mb-6 opacity-60"></iconify-icon>
+            <span class="font-display text-2xl lg:text-3xl uppercase tracking-[0.2em] font-semibold text-[#ebedea]/80">Showreel em finalização</span>
+            <div class="w-12 h-px bg-[#3F556B]/50 mt-6 mb-6"></div>
+            <span class="font-sans text-xs lg:text-sm uppercase tracking-[0.3em] text-[#3F556B] font-bold">Em breve</span>
           </div>
 
         </div>
