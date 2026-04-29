@@ -330,10 +330,12 @@
     </div>
 
     <!-- Scroll Hint bottom -->
-    <div onclick="const next = document.querySelector('section'); if(next) next.scrollIntoView({ behavior: 'smooth' })"
-      class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-80 hover:opacity-100 transition-opacity cursor-pointer z-50 [animation:animationIn_0.8s_ease-out_1.2s_both]">
-      <span class="text-[10px] uppercase tracking-[0.2em] text-[#3F556B] font-semibold">Explore</span>
-      <iconify-icon class="animate-bounce text-[#2d322f]" icon="solar:arrow-down-linear"></iconify-icon>
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-50">
+      <div onclick="const next = document.querySelector('section'); if(next) next.scrollIntoView({ behavior: 'smooth' })"
+        class="flex flex-col items-center gap-2 opacity-80 hover:opacity-100 transition-opacity cursor-pointer [animation:animationIn_0.8s_ease-out_1.2s_both]">
+        <span class="text-[10px] uppercase tracking-[0.2em] text-[#3F556B] font-semibold">Explore</span>
+        <iconify-icon class="animate-bounce text-[#2d322f]" icon="solar:arrow-down-linear"></iconify-icon>
+      </div>
     </div>
   </main>
 

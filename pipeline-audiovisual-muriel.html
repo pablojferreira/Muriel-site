@@ -294,10 +294,12 @@
     </div>
 
     <!-- Scroll Hint bottom -->
-    <div onclick="window.scrollBy({top: window.innerHeight, behavior: 'smooth'})"
-      class="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-60 hover:opacity-100 transition-opacity cursor-pointer z-50 opacity-0 animate-on-scroll transition-all duration-[1.2s] ease-out delay-[800ms] translate-y-4">
-      <span class="text-[9px] md:text-[10px] uppercase tracking-[0.2em] text-[#3F556B] font-semibold">Explore</span>
-      <iconify-icon class="animate-bounce text-[#ebedea]" icon="solar:arrow-down-linear"></iconify-icon>
+    <div class="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 z-50">
+      <div onclick="window.scrollBy({top: window.innerHeight, behavior: 'smooth'})"
+        class="flex flex-col items-center gap-2 opacity-60 hover:opacity-100 transition-opacity cursor-pointer opacity-0 animate-on-scroll transition-all duration-[1.2s] ease-out delay-[800ms] translate-y-4">
+        <span class="text-[9px] md:text-[10px] uppercase tracking-[0.2em] text-[#3F556B] font-semibold">Explore</span>
+        <iconify-icon class="animate-bounce text-[#ebedea]" icon="solar:arrow-down-linear"></iconify-icon>
+      </div>
     </div>
   </main>
 
