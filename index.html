@@ -25,16 +25,16 @@
   <meta name="twitter:image" content="https://murielfilmes.com/assets/images/Muriel_logomarca03.png" />
 
   <!-- Tailwind CSS via CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.tailwindcss.com"></script>
 
   <!-- Lenis via CDN -->
-  <script src="https://unpkg.com/lenis@1.0.45/dist/lenis.min.js"></script>
+  <script defer src="https://unpkg.com/lenis@1.0.45/dist/lenis.min.js"></script>
 
   <!-- Tooling -->
-  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  <script defer src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 
   <!-- GSAP Core -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
   <!-- Google Fonts for AEX Design System -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1387,7 +1387,8 @@
 
   <script>
     // Smooth Scroll System via Lenis
-    const lenis = new Lenis({
+    document.addEventListener("DOMContentLoaded", () => {
+      const lenis = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       direction: 'vertical',
@@ -1537,6 +1538,7 @@
         });
       });
     }
+    });
 
     let vimeoPlayer = null;
 
