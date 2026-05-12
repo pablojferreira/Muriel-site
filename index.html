@@ -1543,38 +1543,46 @@
       }
     }
 
-    // Editorial Grain
+    // Editorial Grain - Optimized
     const canvas = document.querySelector('.bg-noise');
     if (canvas) {
-      const ctx = canvas.getContext('2d');
+      const ctx = canvas.getContext('2d', { alpha: false });
+      let noiseFrames = [];
+      let currentFrame = 0;
+
+      function generateFrames() {
+        noiseFrames = [];
+        for (let f = 0; f < 3; f++) {
+          const imageData = ctx.createImageData(canvas.width, canvas.height);
+          const buffer = new Uint32Array(imageData.data.buffer);
+          for (let i = 0; i < buffer.length; i++) {
+            const val = Math.random() * 255 | 0;
+            buffer[i] = (255 << 24) | (val << 16) | (val << 8) | val;
+          }
+          noiseFrames.push(imageData);
+        }
+      }
 
       function resizeCanvas() {
         canvas.width = window.innerWidth / 2;
         canvas.height = window.innerHeight / 2;
+        generateFrames();
       }
 
       resizeCanvas();
-      window.addEventListener('resize', resizeCanvas);
-
-      function renderNoise() {
-        const imageData = ctx.createImageData(canvas.width, canvas.height);
-        const buffer = new Uint32Array(imageData.data.buffer);
-
-        for (let i = 0; i < buffer.length; i++) {
-          const val = Math.random() * 255 | 0;
-          buffer[i] =
-            (255 << 24) |
-            (val << 16) |
-            (val << 8) |
-            val;
-        }
-
-        ctx.putImageData(imageData, 0, 0);
-      }
+      
+      let resizeTimeout;
+      window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(resizeCanvas, 200);
+      });
 
       function loopNoise() {
-        renderNoise();
-        requestAnimationFrame(loopNoise);
+        if (noiseFrames.length > 0) {
+          ctx.putImageData(noiseFrames[currentFrame], 0, 0);
+          currentFrame = (currentFrame + 1) % noiseFrames.length;
+        }
+        setTimeout(() => requestAnimationFrame(loopNoise), 50);
       }
 
       loopNoise();
