@@ -1546,23 +1546,32 @@
       const video = document.getElementById('hero-showreel-video');
       if (!video) return;
 
+      function fallbackFullscreen() {
+        if (video.requestFullscreen) {
+          video.requestFullscreen();
+        } else if (video.webkitRequestFullscreen) { /* Safari */
+          video.webkitRequestFullscreen();
+        } else if (video.msRequestFullscreen) { /* IE11 */
+          video.msRequestFullscreen();
+        } else if (video.webkitEnterFullscreen) { /* iOS Safari */
+          video.webkitEnterFullscreen();
+        }
+      }
+
       // Handle Vimeo API if available, fallback to standard video otherwise
       if (typeof Vimeo !== 'undefined') {
         if (!vimeoPlayer) vimeoPlayer = new Vimeo.Player(video);
         vimeoPlayer.setMuted(false);
         vimeoPlayer.setVolume(1);
+        
+        if (typeof vimeoPlayer.requestFullscreen === 'function') {
+          vimeoPlayer.requestFullscreen().catch(() => fallbackFullscreen());
+        } else {
+          fallbackFullscreen();
+        }
       } else {
         video.muted = false;
-      }
-
-      if (video.requestFullscreen) {
-        video.requestFullscreen();
-      } else if (video.webkitRequestFullscreen) { /* Safari */
-        video.webkitRequestFullscreen();
-      } else if (video.msRequestFullscreen) { /* IE11 */
-        video.msRequestFullscreen();
-      } else if (video.webkitEnterFullscreen) { /* iOS Safari */
-        video.webkitEnterFullscreen();
+        fallbackFullscreen();
       }
     }
 
