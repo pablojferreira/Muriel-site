@@ -7,14 +7,16 @@
   <title>Muriel Documenta | Muriel Filmes</title>
   <!-- Open Graph / Social Media Meta Tags -->
   <meta property="og:title" content="Muriel Documenta | Muriel Filmes" />
-  <meta property="og:description" content="Produtora audiovisual especializada em documentários e narrativas autênticas." />
+  <meta property="og:description"
+    content="Produtora audiovisual especializada em documentários e narrativas autênticas." />
   <meta property="og:image" content="https://murielfilmes.com/assets/images/Muriel_Doc_logomarca03.png" />
   <meta property="og:url" content="https://murielfilmes.com/muriel-documenta.html" />
   <meta property="og:type" content="website" />
-  
+
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Muriel Documenta | Muriel Filmes" />
-  <meta name="twitter:description" content="Produtora audiovisual especializada em documentários e narrativas autênticas." />
+  <meta name="twitter:description"
+    content="Produtora audiovisual especializada em documentários e narrativas autênticas." />
   <meta name="twitter:image" content="https://murielfilmes.com/assets/images/Muriel_Doc_logomarca03.png" />
 
   <!-- Tailwind CSS via CDN -->
@@ -342,7 +344,8 @@
 
     <!-- Scroll Hint bottom -->
     <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-50">
-      <div onclick="const next = document.querySelector('section'); if(next) next.scrollIntoView({ behavior: 'smooth' })"
+      <div
+        onclick="const next = document.querySelector('section'); if(next) next.scrollIntoView({ behavior: 'smooth' })"
         class="flex flex-col items-center gap-2 opacity-80 hover:opacity-100 transition-opacity cursor-pointer [animation:animationIn_0.8s_ease-out_1.2s_both]">
         <span class="text-[10px] uppercase tracking-[0.2em] text-[#3F556B] font-semibold">Explore</span>
         <iconify-icon class="animate-bounce text-[#2d322f]" icon="solar:arrow-down-linear"></iconify-icon>
@@ -351,73 +354,151 @@
   </main>
 
   <!-- MASTER SUBMENU (Índice Editorial) -->
-  <section class="w-full border-t border-[#2d322f]/10 bg-[#ebedea] relative z-20">
-    <div class="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-3">
-      
-      <!-- Submenu Item 01: Estudos -->
-      <a href="estudos-documentais.html" class="group relative px-8 py-16 lg:p-16 border-b lg:border-b-0 lg:border-r border-[#2d322f]/10 overflow-hidden bg-transparent hover:bg-[#1e2420] transition-colors duration-700 flex flex-col justify-between min-h-[340px] animate-on-scroll">
-         <!-- Hover Sweep Filter -->
-         <div class="absolute inset-0 w-full h-full bg-gradient-to-t from-[#3F556B]/20 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-[0.8s] ease-[cubic-bezier(0.19,1,0.22,1)]"></div>
-         
-         <div class="relative z-10 flex justify-between items-start w-full">
-            <span class="font-sans text-[10px] md:text-xs uppercase tracking-[0.2em] font-semibold text-[#3F556B] group-hover:text-white/60 transition-colors">Index .01</span>
-            <div class="w-10 h-10 rounded-full border border-[#2d322f]/20 group-hover:border-[#3F556B] group-hover:bg-[#3F556B] flex items-center justify-center transition-all duration-500 group-hover:rotate-45 shadow-sm group-hover:shadow-[0_10px_20px_rgba(63,85,107,0.4)]">
-               <iconify-icon icon="solar:arrow-right-up-linear" width="20" class="text-[#2d322f] group-hover:text-white transition-colors duration-500"></iconify-icon>
+  <section class="w-full border-t border-white/10 bg-[#3F556B] relative z-20">
+    <div class="max-w-[1400px] mx-auto flex flex-col lg:flex-row items-stretch">
+
+      <!-- Video Feature Section -->
+      <div
+        class="w-full lg:w-[55%] relative p-8 lg:p-16 xl:p-20 border-b lg:border-b-0 lg:border-r border-white/10 flex flex-col justify-center bg-transparent group animate-on-scroll">
+        <!-- Watermark or background decoration -->
+        <div class="absolute inset-0 w-full h-full bg-[#1e2420]/5 pointer-events-none"></div>
+
+        <!-- Label -->
+        <div class="relative z-10 flex items-center justify-between w-full mb-8">
+          <div class="flex items-center gap-4">
+            <div class="w-8 h-[2px] bg-white"></div>
+            <span
+              class="font-sans text-[10px] md:text-xs font-bold uppercase tracking-[0.25em] text-white">Acervo</span>
+          </div>
+          <iconify-icon icon="solar:play-circle-linear" width="24"
+            class="text-white/20 group-hover:text-white transition-colors duration-500"></iconify-icon>
+        </div>
+
+        <h2
+          class="relative z-10 font-display text-4xl lg:text-5xl xl:text-6xl uppercase font-bold tracking-tighter text-[#ebedea] leading-[0.9] mb-12">
+          O registro do <br>
+          <span class="italic font-accent normal-case font-normal text-[#1e2420]">invisível</span>
+        </h2>
+
+        <!-- Video Container -->
+        <div
+          class="relative w-full shadow-[0_20px_40px_rgba(0,0,0,0.30)] group-hover:shadow-[0_30px_60px_rgba(0,0,0,0.50)] transition-shadow duration-700 bg-[#1e2420] border border-white/10 p-2 md:p-3">
+          <div style="padding:56.25% 0 0 0;position:relative;">
+            <iframe
+              src="https://player.vimeo.com/video/1191822869?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+              frameborder="0"
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              style="position:absolute;top:0;left:0;width:100%;height:100%;"
+              title="Diário dos Andes_Cena dinamite"></iframe>
+          </div>
+          <script src="https://player.vimeo.com/api/player.js"></script>
+        </div>
+
+        <!-- Description below video -->
+        <p class="relative z-10 font-sans text-sm md:text-base font-light text-[#ebedea]/70 mt-8 max-w-[90%]">
+          Cena do documentário Diário dos Andes. Uma amostra do nosso processo de observação.
+        </p>
+      </div>
+
+      <!-- Right Menu (Navigation Buttons) -->
+      <div class="w-full lg:w-[45%] flex flex-col bg-transparent">
+        <!-- Submenu Item 01: Estudos -->
+        <a href="estudos-documentais.html"
+          class="group relative px-8 py-12 lg:px-12 lg:py-0 border-b border-white/10 overflow-hidden bg-transparent hover:bg-[#1e2420] transition-colors duration-700 flex flex-col justify-center flex-1 min-h-[240px] lg:min-h-[auto] animate-on-scroll">
+          <!-- Hover Sweep Filter -->
+          <div
+            class="absolute inset-0 w-full h-full bg-gradient-to-l from-white/10 to-transparent translate-x-full group-hover:translate-x-0 transition-transform duration-[0.8s] ease-[cubic-bezier(0.19,1,0.22,1)]">
+          </div>
+
+          <div class="relative z-10 flex justify-between items-start w-full mb-8">
+            <span
+              class="font-sans text-[10px] md:text-xs uppercase tracking-[0.2em] font-semibold text-white/60 group-hover:text-white/40 transition-colors">Index
+              .01</span>
+            <div
+              class="w-10 h-10 rounded-full border border-white/20 group-hover:border-white group-hover:bg-white flex items-center justify-center transition-all duration-500 group-hover:rotate-45 shadow-sm group-hover:shadow-[0_10px_20px_rgba(0,0,0,0.2)]">
+              <iconify-icon icon="solar:arrow-right-up-linear" width="20"
+                class="text-white group-hover:text-[#1e2420] transition-colors duration-500"></iconify-icon>
             </div>
-         </div>
+          </div>
 
-         <div class="relative z-10 mt-16 group-hover:-translate-y-2 transition-transform duration-700">
-            <iconify-icon icon="solar:folder-with-files-bold-duotone" width="48" class="text-[#2d322f]/10 group-hover:text-[#3F556B] mb-8 transition-colors duration-500"></iconify-icon>
-            <h3 class="font-display text-4xl xl:text-5xl uppercase font-bold tracking-tighter text-[#2d322f] group-hover:text-white leading-[0.9] transition-colors duration-500">
-               Estudos<br>
-               <span class="italic font-accent normal-case font-normal text-[#3F556B] group-hover:text-white/90 transition-colors">Documentais</span><br>
-               Muriel
+          <div
+            class="relative z-10 flex items-center gap-6 group-hover:-translate-y-1 transition-transform duration-700">
+            <iconify-icon icon="solar:folder-with-files-bold-duotone" width="40"
+              class="text-white/20 group-hover:text-white transition-colors duration-500 shrink-0"></iconify-icon>
+            <h3
+              class="font-display text-2xl xl:text-3xl uppercase font-bold tracking-tighter text-[#ebedea] group-hover:text-white leading-[0.9] transition-colors duration-500">
+              Estudos<br>
+              <span
+                class="italic font-accent normal-case font-normal text-[#1e2420] group-hover:text-white/70 transition-colors">Documentais</span>
             </h3>
-         </div>
-      </a>
+          </div>
+        </a>
 
-      <!-- Submenu Item 02: Sistema Orbital -->
-      <a href="sistema-orbital-muriel.html" class="group relative px-8 py-16 lg:p-16 border-b lg:border-b-0 lg:border-r border-[#2d322f]/10 overflow-hidden bg-transparent hover:bg-[#1e2420] transition-colors duration-700 flex flex-col justify-between min-h-[340px] animate-on-scroll">
-         <!-- Hover Sweep Filter -->
-         <div class="absolute inset-0 w-full h-full bg-gradient-to-t from-[#3F556B]/20 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-[0.9s] ease-[cubic-bezier(0.19,1,0.22,1)]"></div>
-         
-         <div class="relative z-10 flex justify-between items-start w-full">
-            <span class="font-sans text-[10px] md:text-xs uppercase tracking-[0.2em] font-semibold text-[#3F556B] group-hover:text-white/60 transition-colors">Index .02</span>
-            <div class="w-10 h-10 rounded-full border border-[#2d322f]/20 group-hover:border-[#3F556B] group-hover:bg-[#3F556B] flex items-center justify-center transition-all duration-500 group-hover:rotate-45 shadow-sm group-hover:shadow-[0_10px_20px_rgba(63,85,107,0.4)]">
-               <iconify-icon icon="solar:arrow-right-up-linear" width="20" class="text-[#2d322f] group-hover:text-white transition-colors duration-500"></iconify-icon>
+        <!-- Submenu Item 02: Sistema Orbital -->
+        <a href="sistema-orbital-muriel.html"
+          class="group relative px-8 py-12 lg:px-12 lg:py-0 border-b border-white/10 overflow-hidden bg-transparent hover:bg-[#1e2420] transition-colors duration-700 flex flex-col justify-center flex-1 min-h-[240px] lg:min-h-[auto] animate-on-scroll">
+          <!-- Hover Sweep Filter -->
+          <div
+            class="absolute inset-0 w-full h-full bg-gradient-to-l from-white/10 to-transparent translate-x-full group-hover:translate-x-0 transition-transform duration-[0.9s] ease-[cubic-bezier(0.19,1,0.22,1)]">
+          </div>
+
+          <div class="relative z-10 flex justify-between items-start w-full mb-8">
+            <span
+              class="font-sans text-[10px] md:text-xs uppercase tracking-[0.2em] font-semibold text-white/60 group-hover:text-white/40 transition-colors">Index
+              .02</span>
+            <div
+              class="w-10 h-10 rounded-full border border-white/20 group-hover:border-white group-hover:bg-white flex items-center justify-center transition-all duration-500 group-hover:rotate-45 shadow-sm group-hover:shadow-[0_10px_20px_rgba(0,0,0,0.2)]">
+              <iconify-icon icon="solar:arrow-right-up-linear" width="20"
+                class="text-white group-hover:text-[#1e2420] transition-colors duration-500"></iconify-icon>
             </div>
-         </div>
+          </div>
 
-         <div class="relative z-10 mt-16 group-hover:-translate-y-2 transition-transform duration-700">
-            <iconify-icon icon="solar:planet-3-bold-duotone" width="48" class="text-[#2d322f]/10 group-hover:text-[#3F556B] mb-8 transition-colors duration-500"></iconify-icon>
-            <h3 class="font-display text-4xl xl:text-5xl uppercase font-bold tracking-tighter text-[#2d322f] group-hover:text-white leading-[0.9] transition-colors duration-500">
-               Sistema<br>
-               <span class="italic font-accent normal-case font-normal text-[#3F556B] group-hover:text-white/90 transition-colors">Orbital</span><br>
-               Muriel™
+          <div
+            class="relative z-10 flex items-center gap-6 group-hover:-translate-y-1 transition-transform duration-700">
+            <iconify-icon icon="solar:planet-3-bold-duotone" width="40"
+              class="text-white/20 group-hover:text-white transition-colors duration-500 shrink-0"></iconify-icon>
+            <h3
+              class="font-display text-2xl xl:text-3xl uppercase font-bold tracking-tighter text-[#ebedea] group-hover:text-white leading-[0.9] transition-colors duration-500">
+              Sistema<br>
+              <span
+                class="italic font-accent normal-case font-normal text-[#1e2420] group-hover:text-white/70 transition-colors">Orbital</span>
             </h3>
-         </div>
-      </a>
+          </div>
+        </a>
 
-      <!-- Submenu Item 03: Pipeline -->
-      <a href="pipeline-audiovisual-muriel.html" class="group relative px-8 py-16 lg:p-16 overflow-hidden bg-transparent hover:bg-[#1e2420] transition-colors duration-700 flex flex-col justify-between min-h-[340px] animate-on-scroll">
-         <!-- Hover Sweep Filter -->
-         <div class="absolute inset-0 w-full h-full bg-gradient-to-t from-[#3F556B]/20 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-[1s] ease-[cubic-bezier(0.19,1,0.22,1)]"></div>
-         
-         <div class="relative z-10 flex justify-between items-start w-full">
-            <span class="font-sans text-[10px] md:text-xs uppercase tracking-[0.2em] font-semibold text-[#3F556B] group-hover:text-white/60 transition-colors">Index .03</span>
-            <div class="w-10 h-10 rounded-full border border-[#2d322f]/20 group-hover:border-[#3F556B] group-hover:bg-[#3F556B] flex items-center justify-center transition-all duration-500 group-hover:rotate-45 shadow-sm group-hover:shadow-[0_10px_20px_rgba(63,85,107,0.4)]">
-               <iconify-icon icon="solar:arrow-right-up-linear" width="20" class="text-[#2d322f] group-hover:text-white transition-colors duration-500"></iconify-icon>
+        <!-- Submenu Item 03: Pipeline -->
+        <a href="pipeline-audiovisual-muriel.html"
+          class="group relative px-8 py-12 lg:px-12 lg:py-0 overflow-hidden bg-transparent hover:bg-[#1e2420] transition-colors duration-700 flex flex-col justify-center flex-1 min-h-[240px] lg:min-h-[auto] animate-on-scroll">
+          <!-- Hover Sweep Filter -->
+          <div
+            class="absolute inset-0 w-full h-full bg-gradient-to-l from-white/10 to-transparent translate-x-full group-hover:translate-x-0 transition-transform duration-[1s] ease-[cubic-bezier(0.19,1,0.22,1)]">
+          </div>
+
+          <div class="relative z-10 flex justify-between items-start w-full mb-8">
+            <span
+              class="font-sans text-[10px] md:text-xs uppercase tracking-[0.2em] font-semibold text-white/60 group-hover:text-white/40 transition-colors">Index
+              .03</span>
+            <div
+              class="w-10 h-10 rounded-full border border-white/20 group-hover:border-white group-hover:bg-white flex items-center justify-center transition-all duration-500 group-hover:rotate-45 shadow-sm group-hover:shadow-[0_10px_20px_rgba(0,0,0,0.2)]">
+              <iconify-icon icon="solar:arrow-right-up-linear" width="20"
+                class="text-white group-hover:text-[#1e2420] transition-colors duration-500"></iconify-icon>
             </div>
-         </div>
+          </div>
 
-         <div class="relative z-10 mt-16 group-hover:-translate-y-2 transition-transform duration-700">
-            <iconify-icon icon="solar:videocamera-record-bold-duotone" width="48" class="text-[#2d322f]/10 group-hover:text-[#3F556B] mb-8 transition-colors duration-500"></iconify-icon>
-            <h3 class="font-display text-4xl xl:text-5xl uppercase font-bold tracking-tighter text-[#2d322f] group-hover:text-white leading-[0.9] transition-colors duration-500">
-               Pipeline<br>
-               <span class="italic font-accent normal-case font-normal text-[#3F556B] group-hover:text-white/90 transition-colors">Audiovisual</span>
+          <div
+            class="relative z-10 flex items-center gap-6 group-hover:-translate-y-1 transition-transform duration-700">
+            <iconify-icon icon="solar:videocamera-record-bold-duotone" width="40"
+              class="text-white/20 group-hover:text-white transition-colors duration-500 shrink-0"></iconify-icon>
+            <h3
+              class="font-display text-2xl xl:text-3xl uppercase font-bold tracking-tighter text-[#ebedea] group-hover:text-white leading-[0.9] transition-colors duration-500">
+              Pipeline<br>
+              <span
+                class="italic font-accent normal-case font-normal text-[#1e2420] group-hover:text-white/70 transition-colors">Audiovisual</span>
             </h3>
-         </div>
-      </a>
+          </div>
+        </a>
+      </div>
 
     </div>
   </section>
@@ -1278,7 +1359,8 @@
     <!-- Watermark GIGANTE -->
     <div
       class="absolute top-[45%] left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none z-0 w-[150vw] md:w-[110vw] lg:w-[85vw] max-w-[2000px] flex justify-center opacity-[0.03]">
-      <img src="assets/images/Muriel_Doc_logomarca02.png" alt="Muriel Documenta Logo" class="w-full h-auto object-contain" />
+      <img src="assets/images/Muriel_Doc_logomarca02.png" alt="Muriel Documenta Logo"
+        class="w-full h-auto object-contain" />
     </div>
 
     <div
@@ -1422,24 +1504,35 @@
     }
   </script>
   <!-- Mobile Menu -->
-  <div id="mobile-menu" class="fixed inset-0 bg-[#ebedea] z-40 transform translate-x-full transition-transform duration-500 ease-in-out md:hidden flex flex-col pt-24 px-8 overflow-y-auto">
+  <div id="mobile-menu"
+    class="fixed inset-0 bg-[#ebedea] z-40 transform translate-x-full transition-transform duration-500 ease-in-out md:hidden flex flex-col pt-24 px-8 overflow-y-auto">
     <nav class="flex flex-col gap-6 items-start mt-8">
-      <a href="index.html" class="font-display text-2xl uppercase tracking-widest text-[#2d322f] hover:text-[#3F556B] transition-colors">Início</a>
-      <a href="muriel-documenta.html" class="font-display text-2xl uppercase tracking-widest text-[#2d322f] hover:text-[#3F556B] transition-colors">Muriel Documenta</a>
-      <a href="muriel-pos.html" class="font-display text-2xl uppercase tracking-widest text-[#2d322f] hover:text-[#3F556B] transition-colors">Muriel Pós</a>
-      <a href="muriel-casulo.html" class="font-display text-2xl uppercase tracking-widest text-[#2d322f] hover:text-[#3F556B] transition-colors">Muriel Casulo</a>
-      <a href="quem-somos.html" class="font-display text-2xl uppercase tracking-widest text-[#2d322f] hover:text-[#3F556B] transition-colors">Quem Somos</a>
-      <a href="contato.html" class="font-display text-2xl uppercase tracking-widest text-[#2d322f] hover:text-[#3F556B] transition-colors">Contato</a>
+      <a href="index.html"
+        class="font-display text-2xl uppercase tracking-widest text-[#2d322f] hover:text-[#3F556B] transition-colors">Início</a>
+      <a href="muriel-documenta.html"
+        class="font-display text-2xl uppercase tracking-widest text-[#2d322f] hover:text-[#3F556B] transition-colors">Muriel
+        Documenta</a>
+      <a href="muriel-pos.html"
+        class="font-display text-2xl uppercase tracking-widest text-[#2d322f] hover:text-[#3F556B] transition-colors">Muriel
+        Pós</a>
+      <a href="muriel-casulo.html"
+        class="font-display text-2xl uppercase tracking-widest text-[#2d322f] hover:text-[#3F556B] transition-colors">Muriel
+        Casulo</a>
+      <a href="quem-somos.html"
+        class="font-display text-2xl uppercase tracking-widest text-[#2d322f] hover:text-[#3F556B] transition-colors">Quem
+        Somos</a>
+      <a href="contato.html"
+        class="font-display text-2xl uppercase tracking-widest text-[#2d322f] hover:text-[#3F556B] transition-colors">Contato</a>
     </nav>
   </div>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const menuBtn = document.querySelector('button[aria-label="Menu"]');
       const mobileMenu = document.getElementById("mobile-menu");
-      if(menuBtn && mobileMenu) {
+      if (menuBtn && mobileMenu) {
         menuBtn.addEventListener("click", () => {
           const isClosed = mobileMenu.classList.contains("translate-x-full");
-          if(isClosed) {
+          if (isClosed) {
             mobileMenu.classList.remove("translate-x-full");
             menuBtn.innerHTML = '<iconify-icon height="24" icon="solar:close-circle-linear" width="24"></iconify-icon>';
           } else {
