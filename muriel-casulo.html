@@ -484,6 +484,78 @@
     </div>
   </section>
 
+  <!-- SEÇÃO 2B: Abertura para Projetos -->
+  <section class="relative w-full py-24 lg:py-40 bg-[#2d322f] text-white overflow-hidden border-t border-b border-white/5">
+    
+    <!-- Subtle Background Element -->
+    <div class="absolute inset-0 pointer-events-none overflow-hidden z-0 flex items-center justify-center">
+        <!-- Giant rotating ring -->
+        <div class="w-[120vw] h-[120vw] md:w-[80vw] md:h-[80vw] max-w-[1500px] max-h-[1500px] border border-white/[0.02] rounded-full animate-[spin_60s_linear_infinite] flex items-center justify-center">
+            <div class="w-[80%] h-[80%] border border-[#3F556B]/10 rounded-full animate-[spin_40s_linear_infinite_reverse]"></div>
+        </div>
+    </div>
+
+    <!-- Vertical Grid Lines -->
+    <div class="absolute inset-0 z-0 pointer-events-none flex justify-center opacity-20">
+        <div class="w-[1px] h-full bg-gradient-to-b from-transparent via-white/10 to-transparent mx-auto"></div>
+        <div class="w-[1px] h-full bg-gradient-to-b from-transparent via-[#3F556B]/20 to-transparent absolute left-1/4"></div>
+        <div class="w-[1px] h-full bg-gradient-to-b from-transparent via-[#3F556B]/20 to-transparent absolute right-1/4"></div>
+    </div>
+
+    <div class="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12 flex flex-col lg:flex-row justify-between items-center gap-16 lg:gap-12 group/section">
+      
+      <!-- First part of the statement -->
+      <div class="w-full lg:w-[45%] flex flex-col gap-8 lg:pr-12">
+        <div class="flex items-center gap-4 text-[#3F556B] animate-on-scroll [animation:animationIn_1.2s_ease-out_0.2s_both]">
+          <iconify-icon icon="solar:soundwave-linear" width="28" class="animate-pulse"></iconify-icon>
+          <span class="font-sans text-xs uppercase tracking-[0.3em] font-bold">Escuta Ativa</span>
+          <div class="flex-1 h-px bg-white/10 relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-full bg-[#3F556B] -translate-x-full group-hover/section:translate-x-0 transition-transform duration-[1.5s] ease-out"></div>
+          </div>
+        </div>
+
+        <h2 class="font-display text-4xl md:text-5xl lg:text-[4rem] xl:text-[4.5rem] uppercase font-semibold tracking-tighter leading-[1.05] text-white">
+          <span class="block animate-on-scroll [animation:animationIn_1.2s_ease-out_0.3s_both]">A <span class="text-[#3F556B]">Muriel Casulo</span></span>
+          <span class="block animate-on-scroll [animation:animationIn_1.2s_ease-out_0.45s_both]">está aberta para</span>
+          <span class="block animate-on-scroll [animation:animationIn_1.2s_ease-out_0.6s_both] text-white/40 group-hover/section:text-white transition-colors duration-700">ouvir e acolher</span>
+          <span class="block animate-on-scroll [animation:animationIn_1.2s_ease-out_0.75s_both] italic font-accent normal-case font-normal mt-2 border-b-2 border-[#3F556B] inline-block pb-1">sua história.</span>
+        </h2>
+      </div>
+
+      <!-- Second part of the statement (Tactical Glass Panel) -->
+      <div class="w-full lg:w-[50%] relative animate-on-scroll [animation:animationInGlass_1.2s_ease-out_0.6s_both]">
+        <!-- Shadow Anchor -->
+        <div class="absolute inset-0 bg-[#1e2420] translate-x-4 translate-y-4 lg:translate-x-6 lg:translate-y-6 -z-10 transition-transform duration-700 group-hover/section:translate-x-3 group-hover/section:translate-y-3"></div>
+
+        <div class="bg-[#414f3f]/80 backdrop-blur-xl border border-white/10 p-8 lg:p-12 xl:p-16 shadow-[0_30px_60px_rgba(0,0,0,0.5)] relative overflow-hidden group/card">
+          <!-- Sweep highlight hover -->
+          <div class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-[150%] group-hover/card:translate-x-[150%] transition-transform duration-[1.5s] ease-in-out pointer-events-none z-0"></div>
+
+          <!-- Decorative Line -->
+          <div class="absolute top-0 left-0 w-2 h-0 bg-[#3F556B] group-hover/card:h-full transition-all duration-700 ease-out z-10"></div>
+
+          <div class="relative z-10">
+              <iconify-icon icon="solar:pen-new-square-linear" width="40" class="text-[#3F556B] mb-8 opacity-50 group-hover/card:opacity-100 transition-opacity duration-500 group-hover/card:scale-110 transform"></iconify-icon>
+              
+              <p class="font-sans text-xl lg:text-2xl xl:text-[1.85rem] font-light text-[#ebedea] leading-[1.6]">
+                Queremos compor com você a <br class="hidden xl:block">
+                <strong class="font-bold text-white relative inline-block group-hover/card:text-[#3F556B] transition-colors duration-300">
+                  mesa perfeita de roteiristas
+                  <span class="absolute bottom-1 left-0 w-full h-[2px] bg-[#3F556B] scale-x-0 group-hover/card:scale-x-100 transition-transform duration-500 origin-left"></span>
+                </strong> <br class="hidden xl:block">
+                para desenvolvê-la de modo <span class="text-white/50 group-hover/card:text-white/80 transition-colors duration-500">original, memorável e envolvente.</span>
+              </p>
+          </div>
+
+          <div class="absolute bottom-0 right-0 p-8 transform group-hover/card:translate-x-2 group-hover/card:-translate-y-2 transition-transform duration-500 pointer-events-none hidden sm:block z-0">
+            <iconify-icon icon="solar:star-fall-bold-duotone" width="80" class="text-white/[0.03] group-hover/card:text-[#3F556B]/10 transition-colors duration-500"></iconify-icon>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
   <!-- SEÇÃO 3: Arquitetura Narrativa -->
   <section class="relative w-full py-24 lg:py-32 bg-[#ebedea] text-[#1e2420] overflow-hidden">
     <!-- Light Blueprint Grid -->
