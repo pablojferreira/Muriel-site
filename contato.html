@@ -623,6 +623,12 @@
                 if (successMsgText) {
                   successMsgText.innerText = "Sua mensagem foi enviada com sucesso diretamente para nosso email. Entraremos em contato em breve!";
                 }
+                
+                // Dispara o evento de Lead no Meta Pixel
+                if (typeof fbq !== "undefined") {
+                  fbq('track', 'Lead');
+                }
+
                 form.reset();
               })
               .catch((error) => {
