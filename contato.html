@@ -623,6 +623,12 @@
                   fbq('track', 'Lead');
                 }
 
+                // Gatilho de conversão do Google Tag Manager
+                window.dataLayer = window.dataLayer || [];
+                window.dataLayer.push({
+                  'event': 'lead_gerado'
+                });
+
                 form.reset();
               })
               .catch((error) => {
